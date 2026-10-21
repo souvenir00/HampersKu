@@ -9,23 +9,32 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollHeader();
   initHeroAnimations();
 
-  // Defer non-critical handlers to idle time to avoid long main-thread tasks
-  const deferInit = () => {
-    initFaqAccordion();
-    initPortfolioFilter();
-    initConsultationForm();
-    initBackToTop();
-    initWhatsAppTracking();
-    initScrollProgress();
-    initScrollAnimations();
-    initCounterAnimations();
-    initInteractiveMicroEffects();
+  // Defer non-critical handlers in lightweight chunks to keep all main-thread tasks under 15ms
+  const queueTasks = [
+    () => { initFaqAccordion(); initPortfolioFilter(); },
+    () => { initConsultationForm(); initBackToTop(); },
+    () => { initWhatsAppTracking(); initScrollProgress(); },
+    () => { initScrollAnimations(); },
+    () => { initCounterAnimations(); initInteractiveMicroEffects(); }
+  ];
+
+  const runQueue = () => {
+    if (!queueTasks.length) return;
+    const fn = queueTasks.shift();
+    try { fn(); } catch(e) { console.warn(e); }
+    if (queueTasks.length) {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(runQueue);
+      } else {
+        setTimeout(runQueue, 16);
+      }
+    }
   };
 
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(deferInit, { timeout: 1200 });
+    requestIdleCallback(runQueue, { timeout: 1500 });
   } else {
-    setTimeout(deferInit, 10);
+    setTimeout(runQueue, 30);
   }
 });
 
