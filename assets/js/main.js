@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollHeader();
   initHeroAnimations();
 
-  // Defer non-critical handlers in lightweight chunks to keep all main-thread tasks under 15ms
+  // Defer non-critical handlers in ultra-light microtasks
   const queueTasks = [
     () => { initFaqAccordion(); initPortfolioFilter(); },
     () => { initConsultationForm(); initBackToTop(); },
     () => { initWhatsAppTracking(); initScrollProgress(); },
-    () => { initScrollAnimations(); },
     () => { initCounterAnimations(); initInteractiveMicroEffects(); }
   ];
 
@@ -33,6 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if ('requestIdleCallback' in window) {
     requestIdleCallback(runQueue, { timeout: 1500 });
+  } else {
+    setTimeout(runQueue, 40);
+  }
+
+  // Defer scroll animations to first scroll or 2.5s idle to eliminate main-thread long tasks
+  let scrollAnimInit = false;
+  const triggerScrollAnim = () => {
+    if (scrollAnimInit) return;
+    scrollAnimInit = true;
+    window.removeEventListener('scroll', triggerScrollAnim);
+    initScrollAnimations();
+  };
+  window.addEventListener('scroll', triggerScrollAnim, { passive: true });
+  setTimeout(triggerScrollAnim, 2800);
+});
   } else {
     setTimeout(runQueue, 30);
   }
