@@ -4,18 +4,29 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Critical for initial UI & layout
   initNavbar();
-  initFaqAccordion();
-  initPortfolioFilter();
-  initConsultationForm();
-  initBackToTop();
   initScrollHeader();
-  initWhatsAppTracking();
-  initScrollProgress();
   initHeroAnimations();
-  initScrollAnimations();
-  initCounterAnimations();
-  initInteractiveMicroEffects();
+
+  // Defer non-critical handlers to idle time to avoid long main-thread tasks
+  const deferInit = () => {
+    initFaqAccordion();
+    initPortfolioFilter();
+    initConsultationForm();
+    initBackToTop();
+    initWhatsAppTracking();
+    initScrollProgress();
+    initScrollAnimations();
+    initCounterAnimations();
+    initInteractiveMicroEffects();
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(deferInit, { timeout: 1200 });
+  } else {
+    setTimeout(deferInit, 10);
+  }
 });
 
 /**
@@ -276,23 +287,30 @@ function initScrollProgress() {
     document.body.prepend(bar);
   }
 
-  let ticking = false;
-  const updateBar = () => {
-    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-    bar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
-    ticking = false;
-  };
+  // If browser supports CSS scroll-timeline, CSS animates via compositor (0 reflow!)
+  if (window.CSS && CSS.supports && CSS.supports('animation-timeline', 'scroll()')) {
+    return;
+  }
 
+  // Fallback for older browsers: cache height to avoid synchronous layout queries
+  let maxScroll = 1;
+  const updateMetrics = () => {
+    maxScroll = Math.max(1, (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight);
+  };
+  window.addEventListener('resize', updateMetrics, { passive: true });
+  updateMetrics();
+
+  let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      window.requestAnimationFrame(updateBar);
+      window.requestAnimationFrame(() => {
+        const scrolled = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+        bar.style.transform = `scaleX(${scrolled})`;
+        ticking = false;
+      });
       ticking = true;
     }
   }, { passive: true });
-
-  updateBar();
 }
 
 /**
