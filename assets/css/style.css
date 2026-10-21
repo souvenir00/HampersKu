@@ -1215,7 +1215,7 @@ textarea.cg-form-control {
 }
 
 .cg-footer-links a {
-  color: #D2C6BC;
+  color: #EDE6DF;
   text-decoration: none;
   font-size: 0.92rem;
   transition: color 0.15s ease, padding-left 0.15s ease;
@@ -1227,7 +1227,7 @@ textarea.cg-form-control {
 }
 
 .cg-footer-bottom {
-  margin-top: clamp(40px, 5vw, 60px);
+margin-top: clamp(40px, 5vw, 60px);
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
@@ -1236,7 +1236,7 @@ textarea.cg-form-control {
   flex-wrap: wrap;
   gap: 16px;
   font-size: 0.85rem;
-  color: #B5A89E;
+  color: #DCD3CB;
 }
 
 /* --------------------------------------------------------------------------
