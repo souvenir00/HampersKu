@@ -47,10 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', triggerScrollAnim, { passive: true });
   setTimeout(triggerScrollAnim, 2800);
 });
-  } else {
-    setTimeout(runQueue, 30);
-  }
-});
+
 
 /**
  * Mobile Navbar & Accessible Dropdown
