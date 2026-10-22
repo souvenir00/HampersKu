@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.hamperscorporate.web.id//sitemap.xml
+Sitemap: https://www.hamperscorporate.web.id/sitemap.xml
