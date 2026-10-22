@@ -19,7 +19,13 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   let reqUrl = decodeURI(req.url.split('?')[0]);
-  if (reqUrl.endsWith('/')) {
+  if (reqUrl === '/paket/' || reqUrl === '/paket/index.html') {
+    reqUrl = '/paket.html';
+  } else if (reqUrl === '/blog/' || reqUrl === '/blog/index.html') {
+    reqUrl = '/blog.html';
+  } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html') {
+    reqUrl = '/portofolio.html';
+  } else if (reqUrl.endsWith('/')) {
     reqUrl += 'index.html';
   }
 

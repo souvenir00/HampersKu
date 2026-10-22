@@ -10,8 +10,10 @@ User-agent: *
 Allow: /
 
 # Pastikan halaman katalog, produk, dan portofolio dapat dirayapi penuh
+Allow: /paket.html
 Allow: /paket/
-Allow: /portofolio/
+Allow: /portofolio.html
+Allow: /blog.html
 Allow: /blog/
 Allow: /tentang.html
 Allow: /kontak.html
