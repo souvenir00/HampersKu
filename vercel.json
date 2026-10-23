@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/tentang", "destination": "/tentang.html" },
+    { "source": "/paket", "destination": "/paket.html" },
+    { "source": "/portofolio", "destination": "/portofolio.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/kontak", "destination": "/kontak.html" },
+    { "source": "/kebijakan-privasi", "destination": "/kebijakan-privasi.html" },
+    { "source": "/paket/corporate-gift", "destination": "/paket/corporate-gift.html" },
+    { "source": "/paket/seminar-kit", "destination": "/paket/seminar-kit.html" },
+    { "source": "/paket/custom", "destination": "/paket/custom.html" },
+    { "source": "/blog/panduan-memilih-corporate-gift", "destination": "/blog/panduan-memilih-corporate-gift.html" },
+    { "source": "/blog/5-item-wajib-seminar-kit", "destination": "/blog/5-item-wajib-seminar-kit.html" },
+    { "source": "/blog/onboarding-hampers-karyawan-baru", "destination": "/blog/onboarding-hampers-karyawan-baru.html" },
+    { "source": "/blog/laser-engraving-vs-hotprint-gold-foil", "destination": "/blog/laser-engraving-vs-hotprint-gold-foil.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/favicon.ico",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}
