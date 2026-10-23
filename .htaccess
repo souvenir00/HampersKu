@@ -1,0 +1,55 @@
+# ==============================================================================
+# .htaccess — HampersKu (https://www.hamperscorporate.web.id)
+# Clean URLs (Sembunyikan .html) & SEO Optimization
+# ==============================================================================
+
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# 1. Hapus trailing slash kecuali jika direktori asli ada
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# 2. Redirect langsung dari /index atau /index.html ke root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index(\.html)?\ HTTP/
+RewriteRule ^(.*)index(\.html)?$ /$1 [R=301,L]
+
+# 3. Redirect permanen (301) jika ada pengunjung/bot membuka link berakhiran .html
+# Kecuali file verifikasi google
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(google[a-zA-Z0-9]+)\.html\ HTTP/ [NC]
+RewriteRule ^ - [L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html(\?[^\ ]*)?\ HTTP/
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# 4. Handler khusus untuk folder direktori paket, blog, portofolio
+RewriteRule ^paket/?$ paket.html [L]
+RewriteRule ^blog/?$ blog.html [L]
+RewriteRule ^portofolio/?$ portofolio.html [L]
+
+# 5. Internal rewrite clean URL ke file .html tanpa menampilkan .html di browser
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# ==============================================================================
+# MIME Types & Caching
+# ==============================================================================
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType image/x-icon .ico
+  AddType application/xml .xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

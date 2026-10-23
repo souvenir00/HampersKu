@@ -10,6 +10,7 @@ const MIME_TYPES = {
   '.json': 'application/json; charset=UTF-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
+  '.ico': 'image/x-icon',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
@@ -19,11 +20,20 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   let reqUrl = decodeURI(req.url.split('?')[0]);
-  if (reqUrl === '/paket/' || reqUrl === '/paket/index.html') {
+
+  // Redirect *.html requests to clean URL (except google verification)
+  if (reqUrl.endsWith('.html') && reqUrl !== '/index.html' && !reqUrl.startsWith('/google')) {
+    const cleanUrl = reqUrl.slice(0, -5);
+    res.writeHead(301, { 'Location': cleanUrl });
+    res.end();
+    return;
+  }
+
+  if (reqUrl === '/paket/' || reqUrl === '/paket/index.html' || reqUrl === '/paket') {
     reqUrl = '/paket.html';
-  } else if (reqUrl === '/blog/' || reqUrl === '/blog/index.html') {
+  } else if (reqUrl === '/blog/' || reqUrl === '/blog/index.html' || reqUrl === '/blog') {
     reqUrl = '/blog.html';
-  } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html') {
+  } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
   } else if (reqUrl.endsWith('/')) {
     reqUrl += 'index.html';

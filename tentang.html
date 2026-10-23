@@ -12,7 +12,7 @@
   <meta name="author" content="Hampersku">
   <meta name="publisher" content="Hampersku">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://www.hamperscorporate.web.id/tentang.html">
+  <link rel="canonical" href="https://www.hamperscorporate.web.id/tentang">
 
   <!-- GEO Meta Tags (Local & Geographic SEO) -->
   <meta name="geo.region" content="ID">
@@ -29,7 +29,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.hamperscorporate.web.id/tentang.html">
+  <meta property="og:url" content="https://www.hamperscorporate.web.id/tentang">
   <meta property="og:title" content="Tentang Hampersku — Mitra Kurasi Corporate Hampers Profesional">
   <meta property="og:description"
     content="Cerita kami, filosofi kurasi cermat, packaging rigid box eksklusif, dan standar kontrol kualitas pengerjaan hampers perusahaan.">
@@ -54,8 +54,13 @@
   <meta name="twitter:image:alt" content="Kurasi dan Craftsmanship Hampersku">
 
   <!-- Favicon & Styles -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+    <!-- Favicon & Brand Icons (Google SERP & Modern Browsers) -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- 2026-2027 Structured Data JSON-LD (AboutPage, BreadcrumbList, LocalBusiness/Organization) -->
@@ -65,8 +70,8 @@
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://www.hamperscorporate.web.id/tentang.html#webpage",
-        "url": "https://www.hamperscorporate.web.id/tentang.html",
+        "@id": "https://www.hamperscorporate.web.id/tentang#webpage",
+        "url": "https://www.hamperscorporate.web.id/tentang",
         "name": "Tentang Kami &mdash; Hampersku | Spesialis Corporate Hampers &amp; Gift Box Perusahaan",
         "isPartOf": {
           "@type": "WebSite",
@@ -81,7 +86,7 @@
           "url": "https://www.hamperscorporate.web.id/assets/images/about-craftsmanship.webp"
         },
         "breadcrumb": {
-          "@id": "https://www.hamperscorporate.web.id/tentang.html#breadcrumb"
+          "@id": "https://www.hamperscorporate.web.id/tentang#breadcrumb"
         },
         "mainEntity": {
           "@id": "https://www.hamperscorporate.web.id#organization"
@@ -93,7 +98,7 @@
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.hamperscorporate.web.id/tentang.html#breadcrumb",
+        "@id": "https://www.hamperscorporate.web.id/tentang#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -105,7 +110,7 @@
             "@type": "ListItem",
             "position": 2,
             "name": "Tentang Kami",
-            "item": "https://www.hamperscorporate.web.id/tentang.html"
+            "item": "https://www.hamperscorporate.web.id/tentang"
           }
         ]
       },
@@ -190,18 +195,18 @@
   <header class="cg-header" id="header">
     <div class="cg-container">
       <div class="cg-nav-inner">
-        <a href="index.html" class="cg-brand" aria-label="HampersKu Beranda">
-          <img src="assets/images/favicon.svg" alt="HampersKu Logo" class="cg-brand-logo" width="42" height="42">
+        <a href="/" class="cg-brand" aria-label="HampersKu Beranda">
+          <img src="/assets/images/favicon.svg" alt="HampersKu Logo" class="cg-brand-logo" width="42" height="42">
           <span class="cg-brand-name">HampersKu</span>
         </a>
         <div class="cg-nav-menu-wrap" id="navMenu">
           <nav aria-label="Navigasi Utama">
             <ul class="cg-nav-menu">
-              <li class="cg-nav-item"><a href="index.html" class="cg-nav-link">Beranda</a></li>
-              <li class="cg-nav-item"><a href="tentang.html" class="cg-nav-link active" aria-current="page">Tentang</a>
+              <li class="cg-nav-item"><a href="/" class="cg-nav-link">Beranda</a></li>
+              <li class="cg-nav-item"><a href="/tentang" class="cg-nav-link active" aria-current="page">Tentang</a>
               </li>
               <li class="cg-nav-item dropdown">
-                <a href="paket.html" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true"
+                <a href="/paket" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true"
                   aria-expanded="false">
                   Paket Hampers
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -210,23 +215,23 @@
                   </svg>
                 </a>
                 <ul class="cg-dropdown-panel" aria-label="Submenu Paket">
-                  <li class="cg-dropdown-item"><a href="paket/corporate-gift.html"><span
+                  <li class="cg-dropdown-item"><a href="/paket/corporate-gift"><span
                         class="cg-dropdown-title">Executive Hampers Box</span><span class="cg-dropdown-desc">Hamper
                         eksekutif & bingkisan VIP mitra</span></a></li>
-                  <li class="cg-dropdown-item"><a href="paket/seminar-kit.html"><span class="cg-dropdown-title">Event
+                  <li class="cg-dropdown-item"><a href="/paket/seminar-kit"><span class="cg-dropdown-title">Event
                         &amp; Seminar Hampers</span><span class="cg-dropdown-desc">Tote bag, tumbler, notebook &
                         lanyard</span></a></li>
-                  <li class="cg-dropdown-item"><a href="paket/custom.html"><span class="cg-dropdown-title">Onboarding
+                  <li class="cg-dropdown-item"><a href="/paket/custom"><span class="cg-dropdown-title">Onboarding
                         Welcome Hamper</span><span class="cg-dropdown-desc">Welcome pack karyawan baru & merchandise
                         tim</span></a></li>
-                  <li class="cg-dropdown-item"><a href="paket.html"><span class="cg-dropdown-title">Lihat Semua
+                  <li class="cg-dropdown-item"><a href="/paket"><span class="cg-dropdown-title">Lihat Semua
                         Katalog ➔</span><span class="cg-dropdown-desc">Koleksi lengkap hampers perusahaan</span></a>
                   </li>
                 </ul>
               </li>
-              <li class="cg-nav-item"><a href="portofolio.html" class="cg-nav-link">Portofolio</a></li>
-              <li class="cg-nav-item"><a href="blog.html" class="cg-nav-link">Blog</a></li>
-              <li class="cg-nav-item"><a href="kontak.html" class="cg-nav-link">Kontak</a></li>
+              <li class="cg-nav-item"><a href="/portofolio" class="cg-nav-link">Portofolio</a></li>
+              <li class="cg-nav-item"><a href="/blog" class="cg-nav-link">Blog</a></li>
+              <li class="cg-nav-item"><a href="/kontak" class="cg-nav-link">Kontak</a></li>
             </ul>
           </nav>
           <div class="cg-mobile-nav-cta d-lg-none">
@@ -256,7 +261,7 @@
     <section class="cg-section-sm cg-bg-soft border-bottom">
       <div class="cg-container">
         <ul class="cg-breadcrumb">
-          <li><a href="index.html">Beranda</a></li>
+          <li><a href="/">Beranda</a></li>
           <li class="cg-breadcrumb-separator">/</li>
           <li class="cg-breadcrumb-current" aria-current="page">Tentang Kami</li>
         </ul>
@@ -412,7 +417,7 @@
               class="cg-btn cg-btn-wa cg-btn-lg" target="_blank" rel="noopener noreferrer">
               Konsultasi via WhatsApp
             </a>
-            <a href="paket.html" class="cg-btn cg-btn-outline-white cg-btn-lg">
+            <a href="/paket" class="cg-btn cg-btn-outline-white cg-btn-lg">
               Lihat Katalog Hampers
             </a>
           </div>
@@ -426,8 +431,8 @@
     <div class="cg-container">
       <div class="row g-4 justify-content-between">
         <div class="col-lg-4 col-md-6">
-          <a href="index.html" class="d-inline-block mb-3" aria-label="Hampersku Beranda">
-            <img src="assets/images/logo-light.svg" alt="Hampersku Logo" width="220" height="42">
+          <a href="/" class="d-inline-block mb-3" aria-label="Hampersku Beranda">
+            <img src="/assets/images/logo-light.svg" alt="Hampersku Logo" width="220" height="42">
           </a>
           <p style="color: #EDE6DF; font-size: 0.95rem; max-width: 340px;">
             Partner terpercaya pengadaan corporate hampers custom, luxury gift box, seminar kit, dan bingkisan apresiasi
@@ -453,22 +458,22 @@
         <div class="col-lg-2 col-md-6 col-6">
           <h3 class="cg-footer-title">Navigasi</h3>
           <ul class="cg-footer-links">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="tentang.html">Tentang Kami</a></li>
-            <li><a href="paket.html">Katalog Hampers</a></li>
-            <li><a href="portofolio.html">Portofolio Proyek</a></li>
-            <li><a href="blog.html">Blog &amp; Panduan</a></li>
-            <li><a href="kontak.html">Kontak Kami</a></li>
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/tentang">Tentang Kami</a></li>
+            <li><a href="/paket">Katalog Hampers</a></li>
+            <li><a href="/portofolio">Portofolio Proyek</a></li>
+            <li><a href="/blog">Blog &amp; Panduan</a></li>
+            <li><a href="/kontak">Kontak Kami</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6 col-6">
           <h3 class="cg-footer-title">Kategori Hampers</h3>
           <ul class="cg-footer-links">
-            <li><a href="paket/corporate-gift.html">Executive Hampers Box</a></li>
-            <li><a href="paket/seminar-kit.html">Seminar &amp; Event Hamper</a></li>
-            <li><a href="paket/custom.html">Onboarding Welcome Hamper</a></li>
-            <li><a href="paket.html">Client Appreciation Hamper</a></li>
-            <li><a href="paket/custom.html">Custom Bespoke Hampers</a></li>
+            <li><a href="/paket/corporate-gift">Executive Hampers Box</a></li>
+            <li><a href="/paket/seminar-kit">Seminar &amp; Event Hamper</a></li>
+            <li><a href="/paket/custom">Onboarding Welcome Hamper</a></li>
+            <li><a href="/paket">Client Appreciation Hamper</a></li>
+            <li><a href="/paket/custom">Custom Bespoke Hampers</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -482,9 +487,9 @@
       <div class="cg-footer-bottom">
         <div>&copy; 2026 Hampersku. Seluruh hak cipta dilindungi.</div>
         <div class="d-flex gap-3">
-          <a href="kebijakan-privasi.html" style="color: #EDE6DF; text-decoration: none;">Kebijakan Privasi</a>
+          <a href="/kebijakan-privasi" style="color: #EDE6DF; text-decoration: none;">Kebijakan Privasi</a>
           <span style="color: rgba(255,255,255,0.2);">•</span>
-          <a href="kontak.html" style="color: #EDE6DF; text-decoration: none;">Bantuan &amp; Konsultasi</a>
+          <a href="/kontak" style="color: #EDE6DF; text-decoration: none;">Bantuan &amp; Konsultasi</a>
         </div>
       </div>
     </div>

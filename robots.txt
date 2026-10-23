@@ -10,14 +10,16 @@ User-agent: *
 Allow: /
 
 # Pastikan halaman katalog, produk, dan portofolio dapat dirayapi penuh
-Allow: /paket.html
+Allow: /paket
 Allow: /paket/
-Allow: /portofolio.html
-Allow: /blog.html
+Allow: /portofolio
+Allow: /portofolio/
+Allow: /blog
 Allow: /blog/
-Allow: /tentang.html
-Allow: /kontak.html
-Allow: /kebijakan-privasi.html
+Allow: /tentang
+Allow: /kontak
+Allow: /kebijakan-privasi
+Allow: /favicon.ico
 
 # Pastikan resource rendering (CSS, JS, Font, Gambar) bebas diakses Googlebot
 Allow: /assets/
