@@ -195,7 +195,20 @@
           <nav aria-label="Navigasi Utama">
             <ul class="cg-nav-menu">
               <li class="cg-nav-item"><a href="/" class="cg-nav-link">Beranda</a></li>
-              <li class="cg-nav-item"><a href="/tentang" class="cg-nav-link">Tentang</a></li>
+                            <li class="cg-nav-item dropdown">
+                <a href="/tentang" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tentang
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <ul class="cg-dropdown-panel" aria-label="Submenu Tentang">
+                  <li class="cg-dropdown-item"><a href="/tentang"><span class="cg-dropdown-title">Tentang Kami</span><span class="cg-dropdown-desc">Profil vendor, workshop &amp; legalitas</span></a></li>
+                  <li class="cg-dropdown-item"><a href="/cara-pesan"><span class="cg-dropdown-title">Cara Pesan</span><span class="cg-dropdown-desc">Panduan alur, syarat DP &amp; garansi</span></a></li>
+                  <li class="cg-dropdown-item"><a href="/penulis"><span class="cg-dropdown-title">Profil Penulis</span><span class="cg-dropdown-desc">Tim kurator hampers &amp; dewan redaksi</span></a></li>
+                </ul>
+              </li>
               <li class="cg-nav-item dropdown">
                 <a href="/paket" class="cg-nav-link active cg-nav-link-dropdown" aria-haspopup="true"
                   aria-expanded="false">
