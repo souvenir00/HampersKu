@@ -508,6 +508,7 @@ function initHampersCarousel() {
   if (!slides.length) return;
 
   // Initialize navigation dots
+  let cachedDots = [];
   if (dotsContainer) {
     dotsContainer.innerHTML = '';
     slides.forEach((_, idx) => {
@@ -520,6 +521,7 @@ function initHampersCarousel() {
       });
       dotsContainer.appendChild(dot);
     });
+    cachedDots = Array.from(dotsContainer.querySelectorAll('.cg-carousel-dot'));
   }
 
   const getScrollStep = () => {
@@ -544,8 +546,7 @@ function initHampersCarousel() {
     });
 
     // Update active dot based on center/visible card
-    if (dotsContainer) {
-      const dots = dotsContainer.querySelectorAll('.cg-carousel-dot');
+    if (cachedDots.length) {
       let activeIndex = 0;
       let minDiff = Infinity;
       slides.forEach((slide, idx) => {
@@ -555,7 +556,7 @@ function initHampersCarousel() {
           activeIndex = idx;
         }
       });
-      dots.forEach((dot, idx) => {
+      cachedDots.forEach((dot, idx) => {
         dot.classList.toggle('active', idx === activeIndex);
         dot.setAttribute('aria-selected', idx === activeIndex ? 'true' : 'false');
       });
@@ -596,48 +597,50 @@ function initHampersCarousel() {
     }
   }, { passive: true });
 
-  // Mouse Drag-to-Scroll for desktop touch and feel
-  let isDown = false;
-  let startX = 0;
-  let scrollStart = 0;
-  let hasDragged = false;
+  // Mouse Drag-to-Scroll (Desktop Pointer Only - never interferes with mobile touch scroll)
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+    let hasDragged = false;
 
-  track.addEventListener('mousedown', (e) => {
-    isDown = true;
-    hasDragged = false;
-    track.classList.add('is-dragging');
-    startX = e.pageX - track.offsetLeft;
-    scrollStart = track.scrollLeft;
-  });
+    track.addEventListener('mousedown', (e) => {
+      isDown = true;
+      hasDragged = false;
+      track.classList.add('is-dragging');
+      startX = e.pageX - track.offsetLeft;
+      scrollStart = track.scrollLeft;
+    });
 
-  const stopDragging = () => {
-    if (!isDown) return;
-    isDown = false;
-    track.classList.remove('is-dragging');
-    setTimeout(() => { hasDragged = false; }, 60);
-  };
+    const stopDragging = () => {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('is-dragging');
+      setTimeout(() => { hasDragged = false; }, 60);
+    };
 
-  window.addEventListener('mouseup', stopDragging);
-  track.addEventListener('mouseleave', stopDragging);
+    window.addEventListener('mouseup', stopDragging);
+    track.addEventListener('mouseleave', stopDragging);
 
-  track.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - track.offsetLeft;
-    const walk = (x - startX) * 1.35;
-    if (Math.abs(walk) > 6) {
-      hasDragged = true;
-    }
-    track.scrollLeft = scrollStart - walk;
-  });
-
-  // Prevent link click if dragged
-  track.addEventListener('click', (e) => {
-    if (hasDragged) {
+    track.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
       e.preventDefault();
-      e.stopPropagation();
-    }
-  }, true);
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.35;
+      if (Math.abs(walk) > 6) {
+        hasDragged = true;
+      }
+      track.scrollLeft = scrollStart - walk;
+    });
+
+    // Prevent link click if dragged
+    track.addEventListener('click', (e) => {
+      if (hasDragged) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  }
 
   window.addEventListener('resize', updateControls, { passive: true });
   updateControls();

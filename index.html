@@ -77,23 +77,31 @@
       flex-wrap: nowrap !important;
       gap: 24px !important;
       overflow-x: auto !important;
+      overflow-y: hidden !important;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
+      touch-action: pan-x pan-y pinch-zoom !important;
+      overscroll-behavior-x: contain;
+      overscroll-behavior-y: auto;
       padding: 12px 2px 28px 2px;
       margin: -6px 0 -12px 0;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      cursor: grab;
-      user-select: none;
     }
     .cg-carousel-track::-webkit-scrollbar {
       display: none;
     }
-    .cg-carousel-track.is-dragging {
-      cursor: grabbing;
-      scroll-behavior: auto;
-      scroll-snap-type: none;
+    @media (hover: hover) and (pointer: fine) {
+      .cg-carousel-track {
+        cursor: grab;
+        user-select: none;
+      }
+      .cg-carousel-track.is-dragging {
+        cursor: grabbing;
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+      }
     }
     .cg-carousel-slide {
       flex: 0 0 calc((100% - 48px) / 3) !important;
@@ -123,6 +131,8 @@
     @media (max-width: 768px) {
       .cg-carousel-wrapper {
         padding: 0 !important;
+        margin: 0 -12px !important;
+        width: calc(100% + 24px) !important;
       }
       .cg-carousel-arrow {
         display: none !important;
@@ -131,19 +141,22 @@
         display: none !important;
       }
       .cg-carousel-track {
-        scroll-snap-type: x proximity !important;
-        scroll-behavior: auto !important;
-        touch-action: pan-y pinch-zoom !important;
+        gap: 14px !important;
+        padding: 6px 16px 20px 16px !important;
+        scroll-padding: 0 16px !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-x pan-y pinch-zoom !important;
         overscroll-behavior-x: contain !important;
         overscroll-behavior-y: auto !important;
-        will-change: scroll-position;
-        padding: 8px 2px 18px 2px !important;
-        gap: 16px !important;
+        user-select: auto !important;
       }
       .cg-carousel-slide {
-        flex: 0 0 85% !important;
-        width: 85% !important;
-        max-width: 330px !important;
+        flex: 0 0 80% !important;
+        width: 80% !important;
+        max-width: 310px !important;
+        scroll-snap-align: start !important;
+        scroll-snap-stop: normal !important;
       }
       .cg-card {
         transform: none !important;
