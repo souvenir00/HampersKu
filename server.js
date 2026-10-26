@@ -41,18 +41,22 @@ const server = http.createServer((req, res) => {
     reqUrl = '/hampers-tahun-baru.html';
   } else if (reqUrl === '/paket/hampers-tahun-baru/' || reqUrl === '/paket/hampers-tahun-baru/index.html' || reqUrl === '/paket/hampers-tahun-baru') {
     reqUrl = '/paket/hampers-tahun-baru.html';
-  } else if (reqUrl === '/hampers-100-ribuan/' || reqUrl === '/hampers-100-ribuan/index.html' || reqUrl === '/hampers-100-ribuan') {
+  } else if (reqUrl === '/hampers-100-ribuan/' || reqUrl === '/hampers-100-ribuan') {
     reqUrl = '/paket/hampers-100-ribuan.html';
-  } else if (reqUrl === '/paket/hampers-100-ribuan/' || reqUrl === '/paket/hampers-100-ribuan/index.html' || reqUrl === '/paket/hampers-100-ribuan') {
+  } else if (reqUrl === '/paket/hampers-100-ribuan/' || reqUrl === '/paket/hampers-100-ribuan') {
     reqUrl = '/paket/hampers-100-ribuan.html';
-  } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan/index.html' || reqUrl === '/cara-pesan') {
+  } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan') {
     reqUrl = '/cara-pesan.html';
-  } else if (reqUrl === '/faq/' || reqUrl === '/faq/index.html' || reqUrl === '/faq') {
+  } else if (reqUrl === '/faq/' || reqUrl === '/faq') {
     reqUrl = '/faq.html';
-  } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html' || reqUrl === '/portofolio') {
+  } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
+  } else if (reqUrl === '/blog/hampers-corporate-100-ribuan/' || reqUrl === '/blog/hampers-corporate-100-ribuan') {
+    reqUrl = '/blog/hampers-corporate-100-ribuan.html';
+  } else if (reqUrl === '/') {
+    reqUrl = '/index.html';
   } else if (reqUrl.endsWith('/')) {
-    reqUrl += 'index.html';
+    reqUrl = reqUrl.slice(0, -1);
   }
 
   let filePath = path.join(__dirname, reqUrl);
@@ -61,8 +65,12 @@ const server = http.createServer((req, res) => {
   if (!path.extname(filePath)) {
     if (fs.existsSync(filePath + '.html')) {
       filePath += '.html';
-    } else if (fs.existsSync(path.join(filePath, 'index.html'))) {
-      filePath = path.join(filePath, 'index.html');
+    } else {
+      const folderName = path.basename(filePath);
+      const innerFile = path.join(filePath, folderName + '.html');
+      if (fs.existsSync(innerFile)) {
+        filePath = innerFile;
+      }
     }
   }
 
