@@ -887,22 +887,42 @@ p {
 
 @media (max-width: 768px) {
   .cg-carousel-wrapper {
-    padding: 0;
+    padding: 0 !important;
   }
   .cg-carousel-arrow {
     display: none !important;
   }
-}
-
-@media (max-width: 640px) {
-  .cg-carousel-slide {
-    flex: 0 0 84%;
-    min-width: 260px;
-    max-width: 340px;
+  .cg-carousel-nav {
+    display: none !important;
   }
   .cg-carousel-track {
-    gap: 16px;
-    padding-bottom: 18px;
+    scroll-snap-type: x proximity !important;
+    scroll-behavior: auto !important;
+    touch-action: pan-y pinch-zoom !important;
+    overscroll-behavior-x: contain !important;
+    overscroll-behavior-y: auto !important;
+    will-change: scroll-position;
+    padding: 8px 2px 18px 2px !important;
+    gap: 16px !important;
+  }
+  .cg-carousel-slide {
+    flex: 0 0 85% !important;
+    width: 85% !important;
+    max-width: 330px !important;
+  }
+  .cg-card {
+    transform: none !important;
+    transition: none !important;
+  }
+  .cg-card:hover {
+    transform: none !important;
+    box-shadow: var(--cg-shadow-sm) !important;
+  }
+  .cg-card-media img {
+    transition: none !important;
+  }
+  .cg-card:hover .cg-card-media img {
+    transform: none !important;
   }
 }
 

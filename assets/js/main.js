@@ -585,10 +585,15 @@ function initHampersCarousel() {
     }
   });
 
-  let scrollDebounce;
+  let ticking = false;
   track.addEventListener('scroll', () => {
-    clearTimeout(scrollDebounce);
-    scrollDebounce = setTimeout(updateControls, 35);
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateControls();
+        ticking = false;
+      });
+      ticking = true;
+    }
   }, { passive: true });
 
   // Mouse Drag-to-Scroll for desktop touch and feel

@@ -122,21 +122,42 @@
     }
     @media (max-width: 768px) {
       .cg-carousel-wrapper {
-        padding: 0;
+        padding: 0 !important;
       }
       .cg-carousel-arrow {
         display: none !important;
       }
-    }
-    @media (max-width: 640px) {
-      .cg-carousel-slide {
-        flex: 0 0 86% !important;
-        width: 86% !important;
-        max-width: 360px !important;
+      .cg-carousel-nav {
+        display: none !important;
       }
       .cg-carousel-track {
+        scroll-snap-type: x proximity !important;
+        scroll-behavior: auto !important;
+        touch-action: pan-y pinch-zoom !important;
+        overscroll-behavior-x: contain !important;
+        overscroll-behavior-y: auto !important;
+        will-change: scroll-position;
+        padding: 8px 2px 18px 2px !important;
         gap: 16px !important;
-        padding-bottom: 18px;
+      }
+      .cg-carousel-slide {
+        flex: 0 0 85% !important;
+        width: 85% !important;
+        max-width: 330px !important;
+      }
+      .cg-card {
+        transform: none !important;
+        transition: none !important;
+      }
+      .cg-card:hover {
+        transform: none !important;
+        box-shadow: var(--cg-shadow-sm) !important;
+      }
+      .cg-card-media img {
+        transition: none !important;
+      }
+      .cg-card:hover .cg-card-media img {
+        transform: none !important;
       }
     }
     .cg-carousel-arrow {
@@ -948,8 +969,8 @@
             <p class="text-muted mb-0">Dirancang khusus untuk bingkisan akhir tahun, perayaan hari raya, apresiasi VIP,
               dan event bisnis.</p>
           </div>
-          <div class="d-flex align-items-center gap-3 mt-3 mt-md-0">
-            <a href="/paket" class="cg-btn cg-btn-secondary d-none d-sm-inline-flex">Lihat Semua Paket ➔</a>
+          <div class="d-none d-md-flex align-items-center gap-3 mt-3 mt-md-0">
+            <a href="/paket" class="cg-btn cg-btn-secondary">Lihat Semua Paket ➔</a>
             <div class="cg-carousel-nav" aria-label="Navigasi Koleksi Hampers">
               <button type="button" class="cg-carousel-btn cg-carousel-prev" id="hampersCarouselPrev" aria-label="Paket sebelumnya">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
