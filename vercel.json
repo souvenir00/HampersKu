@@ -9,6 +9,7 @@
     { "source": "/portofolio", "destination": "/portofolio.html" },
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/kontak", "destination": "/kontak.html" },
+    { "source": "/cara-pesan", "destination": "/cara-pesan.html" },
     { "source": "/kebijakan-privasi", "destination": "/kebijakan-privasi.html" },
     { "source": "/paket/corporate-gift", "destination": "/paket/corporate-gift.html" },
     { "source": "/hampers-tahun-baru", "destination": "/hampers-tahun-baru.html" },

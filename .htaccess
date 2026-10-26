@@ -29,6 +29,7 @@ RewriteRule ^paket/?$ paket.html [L]
 RewriteRule ^blog/?$ blog.html [L]
 RewriteRule ^portofolio/?$ portofolio.html [L]
 RewriteRule ^penulis/?$ penulis.html [L]
+RewriteRule ^cara-pesan/?$ cara-pesan.html [L]
 RewriteRule ^hampers-tahun-baru/?$ hampers-tahun-baru.html [L]
 RewriteRule ^paket/hampers-tahun-baru/?$ paket/hampers-tahun-baru.html [L]
 

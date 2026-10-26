@@ -39,6 +39,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/hampers-tahun-baru.html';
   } else if (reqUrl === '/paket/hampers-tahun-baru/' || reqUrl === '/paket/hampers-tahun-baru/index.html' || reqUrl === '/paket/hampers-tahun-baru') {
     reqUrl = '/paket/hampers-tahun-baru.html';
+  } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan/index.html' || reqUrl === '/cara-pesan') {
+    reqUrl = '/cara-pesan.html';
   } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
   } else if (reqUrl.endsWith('/')) {
