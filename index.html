@@ -69,6 +69,7 @@
     .cg-carousel-wrapper {
       position: relative;
       width: 100%;
+      padding: 0 54px;
     }
     .cg-carousel-track {
       display: flex !important;
@@ -79,8 +80,8 @@
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      padding: 12px 4px 28px 4px;
-      margin: -6px -4px -12px -4px;
+      padding: 12px 2px 28px 2px;
+      margin: -6px 0 -12px 0;
       scrollbar-width: none;
       -ms-overflow-style: none;
       cursor: grab;
@@ -119,6 +120,14 @@
         padding-bottom: 22px;
       }
     }
+    @media (max-width: 768px) {
+      .cg-carousel-wrapper {
+        padding: 0;
+      }
+      .cg-carousel-arrow {
+        display: none !important;
+      }
+    }
     @media (max-width: 640px) {
       .cg-carousel-slide {
         flex: 0 0 86% !important;
@@ -132,11 +141,11 @@
     }
     .cg-carousel-arrow {
       position: absolute;
-      top: calc(50% - 16px);
+      top: 50%;
       transform: translateY(-50%);
       z-index: 5;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: #FFFFFF;
       border: 1.5px solid #E5DED4;
@@ -145,7 +154,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(11, 25, 44, 0.16);
+      box-shadow: 0 4px 16px rgba(11, 25, 44, 0.14);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .cg-carousel-arrow:hover:not(:disabled) {
@@ -153,28 +162,21 @@
       color: #FFFFFF;
       border-color: #1B365D;
       transform: translateY(-50%) scale(1.08);
-      box-shadow: 0 10px 26px rgba(11, 25, 44, 0.25);
+      box-shadow: 0 8px 22px rgba(11, 25, 44, 0.22);
     }
     .cg-carousel-arrow:active:not(:disabled) {
       transform: translateY(-50%) scale(0.95);
     }
     .cg-carousel-arrow:disabled {
-      opacity: 0.25;
+      opacity: 0.2;
       cursor: not-allowed;
       pointer-events: none;
     }
     .cg-carousel-arrow-prev {
-      left: -22px;
+      left: 2px;
     }
     .cg-carousel-arrow-next {
-      right: -22px;
-    }
-    @media (max-width: 1260px) {
-      .cg-carousel-arrow-prev { left: -10px; }
-      .cg-carousel-arrow-next { right: -10px; }
-    }
-    @media (max-width: 768px) {
-      .cg-carousel-arrow { display: none; }
+      right: 2px;
     }
     .cg-carousel-nav {
       display: inline-flex;
