@@ -28,6 +28,7 @@ RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 RewriteRule ^paket/?$ paket.html [L]
 RewriteRule ^blog/?$ blog.html [L]
 RewriteRule ^portofolio/?$ portofolio.html [L]
+RewriteRule ^penulis/?$ penulis.html [L]
 
 # 5. Internal rewrite clean URL ke file .html tanpa menampilkan .html di browser
 RewriteCond %{REQUEST_FILENAME} !-d

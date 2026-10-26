@@ -64,7 +64,7 @@
   <meta name="twitter:image:alt" content="Onboarding Welcome Pack Hampersku">
 
   <!-- Favicon & Styles -->
-    <!-- Favicon & Brand Icons (Google SERP & Modern Browsers) -->
+  <!-- Favicon & Brand Icons (Google SERP & Modern Browsers) -->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
@@ -101,9 +101,9 @@
         },
         "author": {
           "@type": "Person",
-          "@id": "https://www.hamperscorporate.web.id#author-rizky",
+          "@id": "https://www.hamperscorporate.web.id/penulis#author",
           "name": "Mochammad Evan Pratama",
-          "url": "https://www.hamperscorporate.web.id/tentang",
+          "url": "https://www.hamperscorporate.web.id/penulis",
           "jobTitle": "Head of Corporate Curation & Gifting Strategy",
           "worksFor": {
             "@type": "Organization",
@@ -209,8 +209,7 @@
               <li class="cg-nav-item"><a href="/" class="cg-nav-link">Beranda</a></li>
               <li class="cg-nav-item"><a href="/tentang" class="cg-nav-link">Tentang</a></li>
               <li class="cg-nav-item dropdown">
-                <a href="/paket" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true"
-                  aria-expanded="false">
+                <a href="/paket" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
                   Paket
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                     <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -218,8 +217,8 @@
                   </svg>
                 </a>
                 <ul class="cg-dropdown-panel" aria-label="Submenu Paket">
-                  <li class="cg-dropdown-item"><a href="/paket/corporate-gift"><span
-                        class="cg-dropdown-title">Paket Corporate Hampers</span><span class="cg-dropdown-desc">Luxury
+                  <li class="cg-dropdown-item"><a href="/paket/corporate-gift"><span class="cg-dropdown-title">Paket
+                        Corporate Hampers</span><span class="cg-dropdown-desc">Luxury
                         gift set eksekutif &amp; bingkisan VIP</span></a></li>
                   <li class="cg-dropdown-item"><a href="/paket/seminar-kit"><span class="cg-dropdown-title">Paket
                         Seminar Kit</span><span class="cg-dropdown-desc">Tote bag, notebook, tumbler, &amp; lanyard
@@ -280,7 +279,9 @@
 
           <!-- Article Meta -->
           <div class="d-flex flex-wrap align-items-center gap-3 text-muted small mb-4 pb-3 border-bottom">
-            <span>Ditulis oleh <strong style="color: var(--cg-primary);">Mochammad Evan Pratama</strong></span>
+            <span>Ditulis oleh <a href="/penulis"
+                style="color: var(--cg-primary); text-decoration: none; font-weight: 700;">Mochammad Evan
+                Pratama</a></span>
             <span>&bull;</span>
             <span>17 Oktober 2026</span>
             <span>&bull;</span>
@@ -563,29 +564,38 @@
             <div class="d-flex gap-4 align-items-start flex-column flex-sm-row">
               <!-- Avatar -->
               <div class="flex-shrink-0">
-                <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold text-white fs-4"
-                  style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--cg-primary) 0%, var(--cg-primary-light) 100%); letter-spacing: -1px;">
-                  RA
-                </div>
+                <a href="/penulis" aria-label="Profil Mochammad Evan Pratama">
+                  <img src="/assets/images/mochammad-evan-pratama.webp" alt="Mochammad Evan Pratama"
+                    class="rounded-circle object-fit-cover shadow-sm border" width="80" height="80"
+                    style="border-color: #FFFFFF !important; border-width: 3px !important; display: block;">
+                </a>
               </div>
-              <div>
+              <div class="flex-grow-1">
                 <div class="small text-muted mb-1"
                   style="letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;">Tentang Penulis</div>
-                <div class="fw-bold fs-6 mb-1" style="color: var(--cg-primary-dark);">Mochammad Evan Pratama</div>
+                <div class="fw-bold fs-6 mb-1">
+                  <a href="/penulis" class="text-decoration-none" style="color: var(--cg-primary-dark);">Mochammad Evan
+                    Pratama</a>
+                </div>
                 <div class="small mb-2" style="color: var(--cg-primary); font-weight: 600;">Head of Corporate Curation
                   &amp; Gifting Strategy &middot; Hampersku</div>
                 <p class="small text-muted mb-3" style="line-height: 1.65;">
-                  Rizky memiliki pengalaman lebih dari 6 tahun dalam dunia kurasi corporate gift, souvenir event, dan
+                  Evan memiliki pengalaman lebih dari 6 tahun dalam dunia kurasi corporate gift, souvenir event, dan
                   luxury packaging di
                   Indonesia. Ia memimpin tim strategic sourcing Hampersku dalam mengelola pengadaan bingkisan korporat
                   untuk lebih dari 200 klien perusahaan per tahun, mulai dari startup teknologi, perbankan nasional,
                   hingga
                   perusahaan multinasional FMCG.
                 </p>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="cg-badge">Employee Onboarding</span>
-                  <span class="cg-badge">Employer Branding</span>
-                  <span class="cg-badge">Corporate Gifting</span>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="cg-badge">Employee Onboarding</span>
+                    <span class="cg-badge">Employer Branding</span>
+                    <span class="cg-badge">Corporate Gifting</span>
+                  </div>
+                  <a href="/penulis" class="small fw-bold text-decoration-none" style="color: var(--cg-primary);">
+                    Lihat Profil Lengkap &rarr;
+                  </a>
                 </div>
               </div>
             </div>

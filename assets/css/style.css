@@ -20,6 +20,9 @@
   --cg-brown: #1B365D;            /* Primary Deep Navy */
   --cg-brown-dark: #0B192C;       /* Midnight Dark Navy */
   --cg-brown-light: #284B79;      /* Slate Medium Navy */
+  --cg-primary: var(--cg-brown);
+  --cg-primary-dark: var(--cg-brown-dark);
+  --cg-primary-light: var(--cg-brown-light);
   --cg-tan: #D4B996;              /* Warm Beige / Champagne Accent */
   --cg-border: #E5DED4;           /* Soft beige border */
   --cg-text: #17212F;             /* Crisp dark navy body text */

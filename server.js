@@ -33,6 +33,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/paket.html';
   } else if (reqUrl === '/blog/' || reqUrl === '/blog/index.html' || reqUrl === '/blog') {
     reqUrl = '/blog.html';
+  } else if (reqUrl === '/penulis/' || reqUrl === '/penulis/index.html' || reqUrl === '/penulis') {
+    reqUrl = '/penulis.html';
   } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
   } else if (reqUrl.endsWith('/')) {
