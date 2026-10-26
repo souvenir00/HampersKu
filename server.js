@@ -35,6 +35,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/blog.html';
   } else if (reqUrl === '/penulis/' || reqUrl === '/penulis/index.html' || reqUrl === '/penulis') {
     reqUrl = '/penulis.html';
+  } else if (reqUrl === '/hampers-tahun-baru/' || reqUrl === '/hampers-tahun-baru/index.html' || reqUrl === '/hampers-tahun-baru') {
+    reqUrl = '/paket/hampers-tahun-baru.html';
   } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
   } else if (reqUrl.endsWith('/')) {
