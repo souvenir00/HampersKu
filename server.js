@@ -29,7 +29,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  if (reqUrl === '/paket/' || reqUrl === '/paket/index.html' || reqUrl === '/paket') {
+  if (reqUrl === '/tentang-kami/' || reqUrl === '/tentang-kami/index.html' || reqUrl === '/tentang-kami' || reqUrl === '/tentang/' || reqUrl === '/tentang/index.html' || reqUrl === '/tentang') {
+    reqUrl = '/tentang-kami.html';
+  } else if (reqUrl === '/paket/' || reqUrl === '/paket/index.html' || reqUrl === '/paket') {
     reqUrl = '/paket.html';
   } else if (reqUrl === '/blog/' || reqUrl === '/blog/index.html' || reqUrl === '/blog') {
     reqUrl = '/blog.html';

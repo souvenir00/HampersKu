@@ -3,7 +3,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/tentang", "destination": "/tentang.html" },
+    { "source": "/tentang", "destination": "/tentang-kami.html" },
+    { "source": "/tentang-kami", "destination": "/tentang-kami.html" },
     { "source": "/penulis", "destination": "/penulis.html" },
     { "source": "/paket", "destination": "/paket.html" },
     { "source": "/portofolio", "destination": "/portofolio.html" },
