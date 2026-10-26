@@ -35,6 +35,8 @@ RewriteRule ^cara-pesan/?$ cara-pesan.html [L]
 RewriteRule ^faq/?$ faq.html [L]
 RewriteRule ^hampers-tahun-baru/?$ hampers-tahun-baru.html [L]
 RewriteRule ^paket/hampers-tahun-baru/?$ paket/hampers-tahun-baru.html [L]
+RewriteRule ^hampers-100-ribuan/?$ paket/hampers-100-ribuan.html [L]
+RewriteRule ^paket/hampers-100-ribuan/?$ paket/hampers-100-ribuan.html [L]
 
 # 5. Internal rewrite clean URL ke file .html tanpa menampilkan .html di browser
 RewriteCond %{REQUEST_FILENAME} !-d

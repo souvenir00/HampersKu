@@ -16,6 +16,8 @@
     { "source": "/paket/corporate-gift", "destination": "/paket/corporate-gift.html" },
     { "source": "/hampers-tahun-baru", "destination": "/hampers-tahun-baru.html" },
     { "source": "/paket/hampers-tahun-baru", "destination": "/paket/hampers-tahun-baru.html" },
+    { "source": "/hampers-100-ribuan", "destination": "/paket/hampers-100-ribuan.html" },
+    { "source": "/paket/hampers-100-ribuan", "destination": "/paket/hampers-100-ribuan.html" },
     { "source": "/paket/seminar-kit", "destination": "/paket/seminar-kit.html" },
     { "source": "/paket/custom", "destination": "/paket/custom.html" },
     { "source": "/blog/panduan-memilih-corporate-gift", "destination": "/blog/panduan-memilih-corporate-gift.html" },
