@@ -41,6 +41,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/paket/hampers-tahun-baru.html';
   } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan/index.html' || reqUrl === '/cara-pesan') {
     reqUrl = '/cara-pesan.html';
+  } else if (reqUrl === '/faq/' || reqUrl === '/faq/index.html' || reqUrl === '/faq') {
+    reqUrl = '/faq.html';
   } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio/index.html' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
   } else if (reqUrl.endsWith('/')) {

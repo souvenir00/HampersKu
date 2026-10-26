@@ -53,7 +53,7 @@
   <meta name="twitter:image" content="https://www.hamperscorporate.web.id/assets/images/hero-hampersku.webp">
   <meta name="twitter:image:alt" content="Corporate Hampers Eksklusif Hampersku">
 
-    <!-- Favicon & Brand Icons (Google SERP & Modern Browsers) -->
+  <!-- Favicon & Brand Icons (Google SERP & Modern Browsers) -->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
@@ -71,6 +71,7 @@
       width: 100%;
       padding: 0 54px;
     }
+
     .cg-carousel-track {
       display: flex !important;
       flex-direction: row !important;
@@ -89,20 +90,24 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
     }
+
     .cg-carousel-track::-webkit-scrollbar {
       display: none;
     }
+
     @media (hover: hover) and (pointer: fine) {
       .cg-carousel-track {
         cursor: grab;
         user-select: none;
       }
+
       .cg-carousel-track.is-dragging {
         cursor: grabbing;
         scroll-behavior: auto;
         scroll-snap-type: none;
       }
     }
+
     .cg-carousel-slide {
       flex: 0 0 calc((100% - 48px) / 3) !important;
       width: calc((100% - 48px) / 3) !important;
@@ -112,34 +117,41 @@
       scroll-snap-stop: normal;
       display: flex !important;
     }
+
     .cg-carousel-slide .cg-card {
       width: 100%;
       display: flex;
       flex-direction: column;
     }
+
     @media (max-width: 991px) {
       .cg-carousel-slide {
         flex: 0 0 calc((100% - 20px) / 2) !important;
         width: calc((100% - 20px) / 2) !important;
         max-width: calc((100% - 20px) / 2) !important;
       }
+
       .cg-carousel-track {
         gap: 20px !important;
         padding-bottom: 22px;
       }
     }
+
     @media (max-width: 768px) {
       .cg-carousel-wrapper {
         padding: 0 !important;
         margin: 0 -12px !important;
         width: calc(100% + 24px) !important;
       }
+
       .cg-carousel-arrow {
         display: none !important;
       }
+
       .cg-carousel-nav {
         display: none !important;
       }
+
       .cg-carousel-track {
         gap: 14px !important;
         padding: 6px 16px 20px 16px !important;
@@ -151,6 +163,7 @@
         overscroll-behavior-y: auto !important;
         user-select: auto !important;
       }
+
       .cg-carousel-slide {
         flex: 0 0 80% !important;
         width: 80% !important;
@@ -158,21 +171,26 @@
         scroll-snap-align: start !important;
         scroll-snap-stop: normal !important;
       }
+
       .cg-card {
         transform: none !important;
         transition: none !important;
       }
+
       .cg-card:hover {
         transform: none !important;
         box-shadow: var(--cg-shadow-sm) !important;
       }
+
       .cg-card-media img {
         transition: none !important;
       }
+
       .cg-card:hover .cg-card-media img {
         transform: none !important;
       }
     }
+
     .cg-carousel-arrow {
       position: absolute;
       top: 50%;
@@ -191,6 +209,7 @@
       box-shadow: 0 4px 16px rgba(11, 25, 44, 0.14);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .cg-carousel-arrow:hover:not(:disabled) {
       background: #1B365D;
       color: #FFFFFF;
@@ -198,25 +217,31 @@
       transform: translateY(-50%) scale(1.08);
       box-shadow: 0 8px 22px rgba(11, 25, 44, 0.22);
     }
+
     .cg-carousel-arrow:active:not(:disabled) {
       transform: translateY(-50%) scale(0.95);
     }
+
     .cg-carousel-arrow:disabled {
       opacity: 0.2;
       cursor: not-allowed;
       pointer-events: none;
     }
+
     .cg-carousel-arrow-prev {
       left: 2px;
     }
+
     .cg-carousel-arrow-next {
       right: 2px;
     }
+
     .cg-carousel-nav {
       display: inline-flex;
       align-items: center;
       gap: 10px;
     }
+
     .cg-carousel-btn {
       width: 42px;
       height: 42px;
@@ -231,16 +256,19 @@
       box-shadow: 0 3px 10px rgba(11, 25, 44, 0.05);
       transition: all 0.2s ease;
     }
+
     .cg-carousel-btn:hover:not(:disabled) {
       background: #1B365D;
       color: #FFFFFF;
       border-color: #1B365D;
       transform: translateY(-2px);
     }
+
     .cg-carousel-btn:disabled {
       opacity: 0.3;
       cursor: not-allowed;
     }
+
     .cg-carousel-dots {
       display: flex;
       align-items: center;
@@ -248,6 +276,7 @@
       gap: 8px;
       margin-top: 14px;
     }
+
     .cg-carousel-dot {
       width: 10px;
       height: 10px;
@@ -258,11 +287,13 @@
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .cg-carousel-dot.active {
       width: 28px;
       background: #1B365D;
       border-radius: 9999px;
     }
+
     .cg-carousel-dot:hover:not(.active) {
       background: #D4B996;
     }
@@ -734,8 +765,7 @@
                 <a href="/" class="cg-nav-link active" aria-current="page">Beranda</a>
               </li>
               <li class="cg-nav-item dropdown">
-                <a href="/tentang" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true"
-                  aria-expanded="false">
+                <a href="/tentang" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
                   Tentang
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                     <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -756,6 +786,12 @@
                     </a>
                   </li>
                   <li class="cg-dropdown-item">
+                    <a href="/faq">
+                      <span class="cg-dropdown-title">FAQ Hampers</span>
+                      <span class="cg-dropdown-desc">Tanya jawab pengadaan B2B corporate</span>
+                    </a>
+                  </li>
+                  <li class="cg-dropdown-item">
                     <a href="/penulis">
                       <span class="cg-dropdown-title">Profil Penulis</span>
                       <span class="cg-dropdown-desc">Tim kurator hampers &amp; dewan redaksi</span>
@@ -764,8 +800,7 @@
                 </ul>
               </li>
               <li class="cg-nav-item dropdown">
-                <a href="/paket" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true"
-                  aria-expanded="false">
+                <a href="/paket" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
                   Paket Hampers
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                     <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -1012,24 +1047,30 @@
           <div class="d-none d-md-flex align-items-center gap-3 mt-3 mt-md-0">
             <a href="/paket" class="cg-btn cg-btn-secondary">Lihat Semua Paket ➔</a>
             <div class="cg-carousel-nav" aria-label="Navigasi Koleksi Hampers">
-              <button type="button" class="cg-carousel-btn cg-carousel-prev" id="hampersCarouselPrev" aria-label="Paket sebelumnya">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M15 18l-6-6 6-6"/>
+              <button type="button" class="cg-carousel-btn cg-carousel-prev" id="hampersCarouselPrev"
+                aria-label="Paket sebelumnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6" />
                 </svg>
               </button>
-              <button type="button" class="cg-carousel-btn cg-carousel-next" id="hampersCarouselNext" aria-label="Paket berikutnya">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M9 18l6-6-6-6"/>
+              <button type="button" class="cg-carousel-btn cg-carousel-next" id="hampersCarouselNext"
+                aria-label="Paket berikutnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6" />
                 </svg>
               </button>
             </div>
           </div>
         </div>
 
-        <div class="cg-carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Koleksi Paket Hampers Perusahaan">
+        <div class="cg-carousel-wrapper" role="region" aria-roledescription="carousel"
+          aria-label="Koleksi Paket Hampers Perusahaan">
           <!-- Floating Side Navigation Arrow: Prev -->
           <button type="button" class="cg-carousel-arrow cg-carousel-arrow-prev" aria-label="Geser ke paket sebelumnya">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
@@ -1053,27 +1094,28 @@
                     <a href="/paket/corporate-gift">Executive Hampers Box</a>
                   </h3>
                   <p class="cg-card-desc">
-                    Bingkisan mewah untuk direksi, pemangku kepentingan, dan mitra strategis dalam boks rigid navy berhias
+                    Bingkisan mewah untuk direksi, pemangku kepentingan, dan mitra strategis dalam boks rigid navy
+                    berhias
                     pita satin elegan.
                   </p>
                   <ul class="cg-card-features">
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Buku agenda kulit sintetis A5 (Deboss logo)
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Vacuum tumbler 500ml (Laser grafir)
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Artisan coffee, lilin aroma &amp; pena logam
@@ -1085,7 +1127,8 @@
                       &rarr;</a>
                     <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Executive%20Hampers%20Box."
                       class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
-                      data-wa-source="card_executive_gift" aria-label="Tanya via WhatsApp seputar Executive Hampers Box">
+                      data-wa-source="card_executive_gift"
+                      aria-label="Tanya via WhatsApp seputar Executive Hampers Box">
                       Tanya via WA
                     </a>
                   </div>
@@ -1098,8 +1141,8 @@
               <article class="cg-card">
                 <div class="cg-card-media">
                   <img src="assets/images/portfolio-holiday-hamper.webp"
-                    alt="Hampers Tahun Baru Corporate untuk perayaan tahun baru dan akhir tahun perusahaan"
-                    width="400" height="300" loading="lazy">
+                    alt="Hampers Tahun Baru Corporate untuk perayaan tahun baru dan akhir tahun perusahaan" width="400"
+                    height="300" loading="lazy">
                   <div class="cg-card-tag">
                     <span class="cg-badge cg-badge-tan">Tahun Baru &amp; Holiday</span>
                   </div>
@@ -1109,26 +1152,27 @@
                     <a href="/hampers-tahun-baru/">Hampers Tahun Baru Corporate</a>
                   </h3>
                   <p class="cg-card-desc">
-                    Hadiah akhir tahun apresiasi bagi karyawan, mitra &amp; klien. Desain kalender meja, agenda kerja, dan kemasan eksklusif.
+                    Hadiah akhir tahun apresiasi bagi karyawan, mitra &amp; klien. Desain kalender meja, agenda kerja,
+                    dan kemasan eksklusif.
                   </p>
                   <ul class="cg-card-features">
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Festive desk calendar &amp; executive planner
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Scented candle wangi &amp; artisan snacks
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Custom sleeve packaging &amp; greeting card
@@ -1136,7 +1180,8 @@
                   </ul>
                   <div class="cg-card-footer">
                     <a href="/hampers-tahun-baru/" class="text-decoration-none fw-semibold"
-                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Hampers Tahun Baru Corporate">Lihat Detail
+                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Hampers Tahun Baru Corporate">Lihat
+                      Detail
                       &rarr;</a>
                     <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20ingin%20konsultasikan%20pilihan%20hampers%20tahun%20baru%20perusahaan."
                       class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
@@ -1171,22 +1216,22 @@
                   </p>
                   <ul class="cg-card-features">
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Tote bag kanvas premium dengan cetak logo
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Buku catatan kraft A5 + Pulpen ramah lingkungan
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Tali lanyard custom + Card holder akrilik
@@ -1229,22 +1274,22 @@
                   </p>
                   <ul class="cg-card-features">
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Mug keramik doff dengan sablon presisi
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Notebook kerja hardcover + Wireless charger
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Kartu sambutan pimpinan + Mailer hamper box
@@ -1269,8 +1314,8 @@
               <article class="cg-card">
                 <div class="cg-card-media">
                   <img src="assets/images/portfolio-vip-hamper.webp"
-                    alt="Bespoke Wooden VIP Hamper dalam kotak kayu solid berengsel kuningan"
-                    width="400" height="300" loading="lazy">
+                    alt="Bespoke Wooden VIP Hamper dalam kotak kayu solid berengsel kuningan" width="400" height="300"
+                    loading="lazy">
                   <div class="cg-card-tag">
                     <span class="cg-badge cg-badge-tan">Luxury Hamper</span>
                   </div>
@@ -1280,37 +1325,40 @@
                     <a href="/paket/corporate-gift">Bespoke Wooden VIP Hamper</a>
                   </h3>
                   <p class="cg-card-desc">
-                    Bingkisan apresiasi kemitraan dalam kotak kayu pinus solid berpahat logo: cangkir keramik, cokelat artisan, lilin aroma.
+                    Bingkisan apresiasi kemitraan dalam kotak kayu pinus solid berpahat logo: cangkir keramik, cokelat
+                    artisan, lilin aroma.
                   </p>
                   <ul class="cg-card-features">
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Wooden box pinus berukir logo presisi
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Artisan chocolate bar &amp; cangkir keramik
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Scented candle &amp; personalized greeting card
                     </li>
                   </ul>
                   <div class="cg-card-footer">
-                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold" style="color: var(--cg-brown);"
-                      aria-label="Lihat detail Paket Bespoke Wooden VIP Hamper">Lihat Detail &rarr;</a>
+                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold"
+                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Bespoke Wooden VIP Hamper">Lihat
+                      Detail &rarr;</a>
                     <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Bespoke%20Wooden%20VIP%20Hamper."
                       class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
-                      data-wa-source="card_wooden_vip" aria-label="Tanya via WhatsApp seputar Bespoke Wooden VIP Hamper">
+                      data-wa-source="card_wooden_vip"
+                      aria-label="Tanya via WhatsApp seputar Bespoke Wooden VIP Hamper">
                       Tanya via WA
                     </a>
                   </div>
@@ -1323,8 +1371,8 @@
               <article class="cg-card">
                 <div class="cg-card-media">
                   <img src="assets/images/hero-gift-set.webp"
-                    alt="Executive Leadership Folio Set map kulit dan pena logam eksklusif"
-                    width="400" height="300" loading="lazy">
+                    alt="Executive Leadership Folio Set map kulit dan pena logam eksklusif" width="400" height="300"
+                    loading="lazy">
                   <div class="cg-card-tag">
                     <span class="cg-badge">Executive VIP</span>
                   </div>
@@ -1334,37 +1382,40 @@
                     <a href="/paket/corporate-gift">Executive Leadership Folio</a>
                   </h3>
                   <p class="cg-card-desc">
-                    Set hadiah formal jajaran pimpinan dan narasumber VIP: Map folio kulit A4, pena logam grafir nama, dan flash drive magnetik.
+                    Set hadiah formal jajaran pimpinan dan narasumber VIP: Map folio kulit A4, pena logam grafir nama,
+                    dan flash drive magnetik.
                   </p>
                   <ul class="cg-card-features">
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Folio map kulit A4 dengan slot kartu &amp; dokumen
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Executive rollerball pen bergrafir nama
                     </li>
                     <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                       Flash disk metal 64GB &amp; hardbox magnetik
                     </li>
                   </ul>
                   <div class="cg-card-footer">
-                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold" style="color: var(--cg-brown);"
-                      aria-label="Lihat detail Paket Executive Leadership Folio">Lihat Detail &rarr;</a>
+                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold"
+                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Executive Leadership Folio">Lihat
+                      Detail &rarr;</a>
                     <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Executive%20Leadership%20Folio."
                       class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
-                      data-wa-source="card_leadership_folio" aria-label="Tanya via WhatsApp seputar Executive Leadership Folio">
+                      data-wa-source="card_leadership_folio"
+                      aria-label="Tanya via WhatsApp seputar Executive Leadership Folio">
                       Tanya via WA
                     </a>
                   </div>
@@ -1375,13 +1426,15 @@
 
           <!-- Floating Side Navigation Arrow: Next -->
           <button type="button" class="cg-carousel-arrow cg-carousel-arrow-next" aria-label="Geser ke paket berikutnya">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
 
           <!-- Carousel Dots Indicator -->
-          <div class="cg-carousel-dots" id="hampersCarouselDots" role="tablist" aria-label="Indikator slide koleksi hampers"></div>
+          <div class="cg-carousel-dots" id="hampersCarouselDots" role="tablist"
+            aria-label="Indikator slide koleksi hampers"></div>
         </div>
 
         <div class="text-center mt-4 d-sm-none">
@@ -1633,7 +1686,7 @@
               <div class="col-sm-6">
                 <div class="bg-white p-4 rounded-3 border h-100">
                   <h3 class="h5 mb-2" style="color: var(--cg-brown-dark);">Executive Secretary &amp; Direksi</h3>
-                  <p class="small text-muted mb-0">Bingkisan hari raya keagamaan (Idul Fitri, Natal, Tahun Baru) dan
+                  <p class="small text-muted mb-0">Bingkisan hari raya keagamaan (Idul Fitri, corporate, Tahun Baru) dan
                     hadiah eksklusif akhir tahun untuk mitra strategis.</p>
                 </div>
               </div>
@@ -1886,6 +1939,7 @@
             <li><a href="/">Beranda</a></li>
             <li><a href="/tentang">Tentang Kami</a></li>
             <li><a href="/cara-pesan">Cara Pesan</a></li>
+            <li><a href="/faq/">FAQ Hampers</a></li>
             <li><a href="/penulis">Profil Penulis</a></li>
             <li><a href="/paket">Katalog Hampers</a></li>
             <li><a href="/portofolio">Portofolio Proyek</a></li>
