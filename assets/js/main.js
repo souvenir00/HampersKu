@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollHeader();
   initHeroAnimations();
+  initHampersCarousel();
 
   // Defer non-critical handlers in ultra-light microtasks
   const queueTasks = [
@@ -492,3 +493,145 @@ function initInteractiveMicroEffects() {
     });
   }
 }
+
+/**
+ * Hampers Collection Carousel (Mobile & Desktop)
+ */
+function initHampersCarousel() {
+  const track = document.getElementById('hampersCarouselTrack');
+  const prevBtn = document.getElementById('hampersCarouselPrev');
+  const nextBtn = document.getElementById('hampersCarouselNext');
+  const dotsContainer = document.getElementById('hampersCarouselDots');
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll('.cg-carousel-slide'));
+  if (!slides.length) return;
+
+  // Initialize navigation dots
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `cg-carousel-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Pilih paket ${idx + 1}`);
+      dot.addEventListener('click', () => {
+        slides[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  const getScrollStep = () => {
+    const slide = slides[0];
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 24;
+    return slide.offsetWidth + gap;
+  };
+
+  const updateControls = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+    const currentScroll = track.scrollLeft;
+
+    if (prevBtn) {
+      prevBtn.disabled = currentScroll <= 6;
+    }
+    if (nextBtn) {
+      nextBtn.disabled = currentScroll >= maxScroll - 6;
+    }
+
+    // Update active dot based on center/visible card
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('.cg-carousel-dot');
+      let activeIndex = 0;
+      let minDiff = Infinity;
+      slides.forEach((slide, idx) => {
+        const diff = Math.abs(slide.offsetLeft - track.offsetLeft - currentScroll);
+        if (diff < minDiff) {
+          minDiff = diff;
+          activeIndex = idx;
+        }
+      });
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIndex);
+        dot.setAttribute('aria-selected', idx === activeIndex ? 'true' : 'false');
+      });
+    }
+  };
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    });
+  }
+
+  // Keyboard navigation when track is focused
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    }
+  });
+
+  let scrollDebounce;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(updateControls, 35);
+  }, { passive: true });
+
+  // Mouse Drag-to-Scroll for desktop touch and feel
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let hasDragged = false;
+
+  track.addEventListener('mousedown', (e) => {
+    isDown = true;
+    hasDragged = false;
+    track.classList.add('is-dragging');
+    startX = e.pageX - track.offsetLeft;
+    scrollStart = track.scrollLeft;
+  });
+
+  const stopDragging = () => {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+    setTimeout(() => { hasDragged = false; }, 60);
+  };
+
+  window.addEventListener('mouseup', stopDragging);
+  track.addEventListener('mouseleave', stopDragging);
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 1.35;
+    if (Math.abs(walk) > 6) {
+      hasDragged = true;
+    }
+    track.scrollLeft = scrollStart - walk;
+  });
+
+  // Prevent link click if dragged
+  track.addEventListener('click', (e) => {
+    if (hasDragged) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
+
+  window.addEventListener('resize', updateControls, { passive: true });
+  updateControls();
+}
+

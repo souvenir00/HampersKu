@@ -826,6 +826,148 @@ p {
 }
 
 /* --------------------------------------------------------------------------
+   Hampers Collection Carousel (Mobile & Desktop)
+   -------------------------------------------------------------------------- */
+.cg-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.cg-carousel-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 6px 28px 6px;
+  margin: -6px -6px -12px -6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.cg-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cg-carousel-track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.cg-carousel-slide {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 320px;
+  max-width: 420px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  display: flex;
+}
+
+.cg-carousel-slide .cg-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .cg-carousel-slide {
+    flex: 0 0 calc((100% - 20px) / 2);
+    min-width: 290px;
+  }
+  .cg-carousel-track {
+    gap: 20px;
+    padding-bottom: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cg-carousel-slide {
+    flex: 0 0 84%;
+    min-width: 260px;
+    max-width: 340px;
+  }
+  .cg-carousel-track {
+    gap: 16px;
+    padding-bottom: 18px;
+  }
+}
+
+/* Carousel Header Nav Controls */
+.cg-carousel-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cg-carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cg-white);
+  border: 1.5px solid var(--cg-border);
+  color: var(--cg-brown-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(11, 25, 44, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.cg-carousel-btn:hover:not(:disabled) {
+  background: var(--cg-brown);
+  color: var(--cg-white);
+  border-color: var(--cg-brown);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(11, 25, 44, 0.15);
+}
+
+.cg-carousel-btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.96);
+}
+
+.cg-carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Dots Indicator */
+.cg-carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.cg-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: var(--cg-border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cg-carousel-dot.active {
+  width: 28px;
+  background: var(--cg-brown);
+  border-radius: 9999px;
+}
+
+.cg-carousel-dot:hover:not(.active) {
+  background: var(--cg-tan);
+}
+
+/* --------------------------------------------------------------------------
    Portfolio Cards & Filter
    -------------------------------------------------------------------------- */
 .cg-filter-bar {

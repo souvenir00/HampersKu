@@ -768,195 +768,379 @@
       </div>
     </section>
 
-    <!-- FEATURED PACKAGES -->
+    <!-- FEATURED PACKAGES (CAROUSEL) -->
     <section class="cg-section" aria-labelledby="section-packages-title">
       <div class="cg-container">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
           <div>
             <span class="cg-eyebrow">KOLEKSI HAMPERS</span>
             <h2 id="section-packages-title" class="mb-2">Paket Hampers Perusahaan Terpopuler</h2>
             <p class="text-muted mb-0">Dirancang khusus untuk bingkisan akhir tahun, perayaan hari raya, apresiasi VIP,
               dan event bisnis.</p>
           </div>
-          <div class="mt-3 mt-md-0">
-            <a href="/paket" class="cg-btn cg-btn-secondary">Lihat Semua Paket ➔</a>
+          <div class="d-flex align-items-center gap-3 mt-3 mt-md-0">
+            <a href="/paket" class="cg-btn cg-btn-secondary d-none d-sm-inline-flex">Lihat Semua Paket ➔</a>
+            <div class="cg-carousel-nav" aria-label="Navigasi Koleksi Hampers">
+              <button type="button" class="cg-carousel-btn cg-carousel-prev" id="hampersCarouselPrev" aria-label="Paket sebelumnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15 18l-6-6 6-6"/>
+                </svg>
+              </button>
+              <button type="button" class="cg-carousel-btn cg-carousel-next" id="hampersCarouselNext" aria-label="Paket berikutnya">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 18l6-6-6-6"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="row g-4">
-          <!-- Card 1: Executive Hampers Box -->
-          <div class="col-md-6 col-lg-4">
-            <article class="cg-card">
-              <div class="cg-card-media">
-                <img src="assets/images/hero-hampersku-md.webp"
-                  srcset="assets/images/hero-hampersku-sm.webp 380w, assets/images/hero-hampersku-md.webp 480w"
-                  sizes="(max-width: 576px) 380px, 400px"
-                  alt="Set Executive Hampers Box dengan buku agenda navy, vacuum tumbler, lilin wangi, dan toples kopi artisan"
-                  width="400" height="300" loading="lazy">
-                <div class="cg-card-tag">
-                  <span class="cg-badge cg-badge-tan">Executive / VIP</span>
+        <div class="cg-carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Koleksi Paket Hampers Perusahaan">
+          <div class="cg-carousel-track" id="hampersCarouselTrack" tabindex="0" aria-live="polite">
+            <!-- Slide 1: Executive Hampers Box -->
+            <div class="cg-carousel-slide">
+              <article class="cg-card">
+                <div class="cg-card-media">
+                  <img src="assets/images/hero-hampersku-md.webp"
+                    srcset="assets/images/hero-hampersku-sm.webp 380w, assets/images/hero-hampersku-md.webp 480w"
+                    sizes="(max-width: 576px) 380px, 400px"
+                    alt="Set Executive Hampers Box dengan buku agenda navy, vacuum tumbler, lilin wangi, dan toples kopi artisan"
+                    width="400" height="300" loading="lazy">
+                  <div class="cg-card-tag">
+                    <span class="cg-badge cg-badge-tan">Executive / VIP</span>
+                  </div>
                 </div>
-              </div>
-              <div class="cg-card-body">
-                <h3 class="cg-card-title">
-                  <a href="/paket/corporate-gift">Executive Hampers Box</a>
-                </h3>
-                <p class="cg-card-desc">
-                  Bingkisan mewah untuk direksi, pemangku kepentingan, dan mitra strategis dalam boks rigid navy berhias
-                  pita satin elegan.
-                </p>
-                <ul class="cg-card-features">
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Buku agenda kulit sintetis A5 (Deboss logo)
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Vacuum tumbler 500ml (Laser grafir)
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Artisan coffee, lilin aroma &amp; pena logam
-                  </li>
-                </ul>
-                <div class="cg-card-footer">
-                  <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold"
-                    style="color: var(--cg-brown);" aria-label="Lihat detail Paket Executive Hampers Box">Lihat Detail
-                    &rarr;</a>
-                  <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Executive%20Hampers%20Box."
-                    class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
-                    data-wa-source="card_executive_gift" aria-label="Tanya via WhatsApp seputar Executive Hampers Box">
-                    Tanya via WA
-                  </a>
+                <div class="cg-card-body">
+                  <h3 class="cg-card-title">
+                    <a href="/paket/corporate-gift">Executive Hampers Box</a>
+                  </h3>
+                  <p class="cg-card-desc">
+                    Bingkisan mewah untuk direksi, pemangku kepentingan, dan mitra strategis dalam boks rigid navy berhias
+                    pita satin elegan.
+                  </p>
+                  <ul class="cg-card-features">
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Buku agenda kulit sintetis A5 (Deboss logo)
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Vacuum tumbler 500ml (Laser grafir)
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Artisan coffee, lilin aroma &amp; pena logam
+                    </li>
+                  </ul>
+                  <div class="cg-card-footer">
+                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold"
+                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Executive Hampers Box">Lihat Detail
+                      &rarr;</a>
+                    <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Executive%20Hampers%20Box."
+                      class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
+                      data-wa-source="card_executive_gift" aria-label="Tanya via WhatsApp seputar Executive Hampers Box">
+                      Tanya via WA
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
+
+            <!-- Slide 2: Hampers Tahun Baru Corporate -->
+            <div class="cg-carousel-slide">
+              <article class="cg-card">
+                <div class="cg-card-media">
+                  <img src="assets/images/portfolio-holiday-hamper.webp"
+                    alt="Hampers Tahun Baru Corporate untuk perayaan tahun baru dan akhir tahun perusahaan"
+                    width="400" height="300" loading="lazy">
+                  <div class="cg-card-tag">
+                    <span class="cg-badge cg-badge-tan">Tahun Baru &amp; Holiday</span>
+                  </div>
+                </div>
+                <div class="cg-card-body">
+                  <h3 class="cg-card-title">
+                    <a href="/hampers-tahun-baru/">Hampers Tahun Baru Corporate</a>
+                  </h3>
+                  <p class="cg-card-desc">
+                    Hadiah akhir tahun apresiasi bagi karyawan, mitra &amp; klien. Desain kalender meja, agenda kerja, dan kemasan eksklusif.
+                  </p>
+                  <ul class="cg-card-features">
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Festive desk calendar &amp; executive planner
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Scented candle wangi &amp; artisan snacks
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Custom sleeve packaging &amp; greeting card
+                    </li>
+                  </ul>
+                  <div class="cg-card-footer">
+                    <a href="/hampers-tahun-baru/" class="text-decoration-none fw-semibold"
+                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Hampers Tahun Baru Corporate">Lihat Detail
+                      &rarr;</a>
+                    <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20ingin%20konsultasikan%20pilihan%20hampers%20tahun%20baru%20perusahaan."
+                      class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
+                      data-wa-source="card_new_year" aria-label="Tanya via WhatsApp seputar Hampers Tahun Baru">
+                      Tanya via WA
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 3: Seminar & Event Hamper -->
+            <div class="cg-carousel-slide">
+              <article class="cg-card">
+                <div class="cg-card-media">
+                  <img src="assets/images/paket-seminar-kit-md.webp"
+                    srcset="assets/images/paket-seminar-kit-sm.webp 380w, assets/images/paket-seminar-kit-md.webp 480w"
+                    sizes="(max-width: 576px) 380px, 400px"
+                    alt="Paket Seminar Kit berisi tote bag kanvas, buku catatan kraft, lanyard dan botol minum"
+                    width="400" height="300" loading="lazy">
+                  <div class="cg-card-tag">
+                    <span class="cg-badge">Event &amp; Konferensi</span>
+                  </div>
+                </div>
+                <div class="cg-card-body">
+                  <h3 class="cg-card-title">
+                    <a href="/paket/seminar-kit">Seminar &amp; Event Hamper</a>
+                  </h3>
+                  <p class="cg-card-desc">
+                    Solusi cenderamata fungsional untuk peserta konferensi, pelatihan kepemimpinan, dan simposium
+                    nasional.
+                  </p>
+                  <ul class="cg-card-features">
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Tote bag kanvas premium dengan cetak logo
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Buku catatan kraft A5 + Pulpen ramah lingkungan
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Tali lanyard custom + Card holder akrilik
+                    </li>
+                  </ul>
+                  <div class="cg-card-footer">
+                    <a href="/paket/seminar-kit" class="text-decoration-none fw-semibold"
+                      style="color: var(--cg-brown);" aria-label="Lihat detail Paket Seminar &amp; Event Hamper">Lihat
+                      Detail &rarr;</a>
+                    <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Seminar%20Kit%20Hamper."
+                      class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
+                      data-wa-source="card_seminar_kit" aria-label="Tanya via WhatsApp seputar Seminar & Event Hamper">
+                      Tanya via WA
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 4: Employee Onboarding Hamper -->
+            <div class="cg-carousel-slide">
+              <article class="cg-card">
+                <div class="cg-card-media">
+                  <img src="assets/images/paket-onboarding-md.webp"
+                    srcset="assets/images/paket-onboarding-sm.webp 380w, assets/images/paket-onboarding-md.webp 480w"
+                    sizes="(max-width: 576px) 380px, 400px"
+                    alt="Kotak onboarding hamper karyawan baru dengan mug keramik, kaos tim, notes dan welcome card"
+                    width="400" height="300" loading="lazy">
+                  <div class="cg-card-tag">
+                    <span class="cg-badge">HR &amp; New Hire</span>
+                  </div>
+                </div>
+                <div class="cg-card-body">
+                  <h3 class="cg-card-title">
+                    <a href="/paket/custom">Onboarding Welcome Hamper</a>
+                  </h3>
+                  <p class="cg-card-desc">
+                    Sambut talenta baru dengan kehangatan dan rasa bangga melalui welcome pack beridentitas brand kantor
+                    Anda.
+                  </p>
+                  <ul class="cg-card-features">
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Mug keramik doff dengan sablon presisi
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Notebook kerja hardcover + Wireless charger
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Kartu sambutan pimpinan + Mailer hamper box
+                    </li>
+                  </ul>
+                  <div class="cg-card-footer">
+                    <a href="/paket/custom" class="text-decoration-none fw-semibold" style="color: var(--cg-brown);"
+                      aria-label="Lihat detail Paket Onboarding Welcome Hamper">Lihat Detail &rarr;</a>
+                    <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Onboarding%20Welcome%20Hamper."
+                      class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
+                      data-wa-source="card_onboarding_kit"
+                      aria-label="Tanya via WhatsApp seputar Onboarding New Hire Pack">
+                      Tanya via WA
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 5: Bespoke Wooden VIP Hamper -->
+            <div class="cg-carousel-slide">
+              <article class="cg-card">
+                <div class="cg-card-media">
+                  <img src="assets/images/portfolio-vip-hamper.webp"
+                    alt="Bespoke Wooden VIP Hamper dalam kotak kayu solid berengsel kuningan"
+                    width="400" height="300" loading="lazy">
+                  <div class="cg-card-tag">
+                    <span class="cg-badge cg-badge-tan">Luxury Hamper</span>
+                  </div>
+                </div>
+                <div class="cg-card-body">
+                  <h3 class="cg-card-title">
+                    <a href="/paket/corporate-gift">Bespoke Wooden VIP Hamper</a>
+                  </h3>
+                  <p class="cg-card-desc">
+                    Bingkisan apresiasi kemitraan dalam kotak kayu pinus solid berpahat logo: cangkir keramik, cokelat artisan, lilin aroma.
+                  </p>
+                  <ul class="cg-card-features">
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Wooden box pinus berukir logo presisi
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Artisan chocolate bar &amp; cangkir keramik
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Scented candle &amp; personalized greeting card
+                    </li>
+                  </ul>
+                  <div class="cg-card-footer">
+                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold" style="color: var(--cg-brown);"
+                      aria-label="Lihat detail Paket Bespoke Wooden VIP Hamper">Lihat Detail &rarr;</a>
+                    <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Bespoke%20Wooden%20VIP%20Hamper."
+                      class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
+                      data-wa-source="card_wooden_vip" aria-label="Tanya via WhatsApp seputar Bespoke Wooden VIP Hamper">
+                      Tanya via WA
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Slide 6: Executive Leadership Folio Set -->
+            <div class="cg-carousel-slide">
+              <article class="cg-card">
+                <div class="cg-card-media">
+                  <img src="assets/images/hero-gift-set.webp"
+                    alt="Executive Leadership Folio Set map kulit dan pena logam eksklusif"
+                    width="400" height="300" loading="lazy">
+                  <div class="cg-card-tag">
+                    <span class="cg-badge">Executive VIP</span>
+                  </div>
+                </div>
+                <div class="cg-card-body">
+                  <h3 class="cg-card-title">
+                    <a href="/paket/corporate-gift">Executive Leadership Folio</a>
+                  </h3>
+                  <p class="cg-card-desc">
+                    Set hadiah formal jajaran pimpinan dan narasumber VIP: Map folio kulit A4, pena logam grafir nama, dan flash drive magnetik.
+                  </p>
+                  <ul class="cg-card-features">
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Folio map kulit A4 dengan slot kartu &amp; dokumen
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Executive rollerball pen bergrafir nama
+                    </li>
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Flash disk metal 64GB &amp; hardbox magnetik
+                    </li>
+                  </ul>
+                  <div class="cg-card-footer">
+                    <a href="/paket/corporate-gift" class="text-decoration-none fw-semibold" style="color: var(--cg-brown);"
+                      aria-label="Lihat detail Paket Executive Leadership Folio">Lihat Detail &rarr;</a>
+                    <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Executive%20Leadership%20Folio."
+                      class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
+                      data-wa-source="card_leadership_folio" aria-label="Tanya via WhatsApp seputar Executive Leadership Folio">
+                      Tanya via WA
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <!-- Card 2: Seminar & Event Hamper -->
-          <div class="col-md-6 col-lg-4">
-            <article class="cg-card">
-              <div class="cg-card-media">
-                <img src="assets/images/paket-seminar-kit-md.webp"
-                  srcset="assets/images/paket-seminar-kit-sm.webp 380w, assets/images/paket-seminar-kit-md.webp 480w"
-                  sizes="(max-width: 576px) 380px, 400px"
-                  alt="Paket Seminar Kit berisi tote bag kanvas, buku catatan kraft, lanyard dan botol minum"
-                  width="400" height="300" loading="lazy">
-                <div class="cg-card-tag">
-                  <span class="cg-badge">Event &amp; Konferensi</span>
-                </div>
-              </div>
-              <div class="cg-card-body">
-                <h3 class="cg-card-title">
-                  <a href="/paket/seminar-kit">Seminar &amp; Event Hamper</a>
-                </h3>
-                <p class="cg-card-desc">
-                  Solusi cenderamata fungsional untuk peserta konferensi, pelatihan kepemimpinan, dan simposium
-                  nasional.
-                </p>
-                <ul class="cg-card-features">
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Tote bag kanvas premium dengan cetak logo
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Buku catatan kraft A5 + Pulpen ramah lingkungan
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Tali lanyard custom + Card holder akrilik
-                  </li>
-                </ul>
-                <div class="cg-card-footer">
-                  <a href="/paket/seminar-kit" class="text-decoration-none fw-semibold"
-                    style="color: var(--cg-brown);" aria-label="Lihat detail Paket Seminar &amp; Event Hamper">Lihat
-                    Detail &rarr;</a>
-                  <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Seminar%20Kit%20Hamper."
-                    class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
-                    data-wa-source="card_seminar_kit" aria-label="Tanya via WhatsApp seputar Seminar & Event Hamper">
-                    Tanya via WA
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
+          <!-- Carousel Dots Indicator -->
+          <div class="cg-carousel-dots" id="hampersCarouselDots" role="tablist" aria-label="Indikator slide koleksi hampers"></div>
+        </div>
 
-          <!-- Card 3: Employee Onboarding Hamper -->
-          <div class="col-md-6 col-lg-4">
-            <article class="cg-card">
-              <div class="cg-card-media">
-                <img src="assets/images/paket-onboarding-md.webp"
-                  srcset="assets/images/paket-onboarding-sm.webp 380w, assets/images/paket-onboarding-md.webp 480w"
-                  sizes="(max-width: 576px) 380px, 400px"
-                  alt="Kotak onboarding hamper karyawan baru dengan mug keramik, kaos tim, notes dan welcome card"
-                  width="400" height="300" loading="lazy">
-                <div class="cg-card-tag">
-                  <span class="cg-badge">HR &amp; New Hire</span>
-                </div>
-              </div>
-              <div class="cg-card-body">
-                <h3 class="cg-card-title">
-                  <a href="/paket/custom">Onboarding Welcome Hamper</a>
-                </h3>
-                <p class="cg-card-desc">
-                  Sambut talenta baru dengan kehangatan dan rasa bangga melalui welcome pack beridentitas brand kantor
-                  Anda.
-                </p>
-                <ul class="cg-card-features">
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Mug keramik doff dengan sablon presisi
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Notebook kerja hardcover + Wireless charger
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Kartu sambutan pimpinan + Mailer hamper box
-                  </li>
-                </ul>
-                <div class="cg-card-footer">
-                  <a href="/paket/custom" class="text-decoration-none fw-semibold" style="color: var(--cg-brown);"
-                    aria-label="Lihat detail Paket Onboarding Welcome Hamper">Lihat Detail &rarr;</a>
-                  <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20tertarik%20dengan%20Onboarding%20Welcome%20Hamper."
-                    class="cg-btn cg-btn-primary cg-btn-sm" target="_blank" rel="noopener noreferrer"
-                    data-wa-source="card_onboarding_kit"
-                    aria-label="Tanya via WhatsApp seputar Onboarding New Hire Pack">
-                    Tanya via WA
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
+        <div class="text-center mt-4 d-sm-none">
+          <a href="/paket" class="cg-btn cg-btn-secondary w-100">Lihat Semua Paket ➔</a>
         </div>
       </div>
     </section>
