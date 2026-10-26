@@ -62,7 +62,175 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261026c">
+
+  <!-- Embedded Hampers Collection Carousel Styles (Guaranteed Instant Horizontal Layout) -->
+  <style id="hampers-carousel-inline-css">
+    .cg-carousel-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .cg-carousel-track {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 24px !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px 4px 28px 4px;
+      margin: -6px -4px -12px -4px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+      user-select: none;
+    }
+    .cg-carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+    .cg-carousel-track.is-dragging {
+      cursor: grabbing;
+      scroll-behavior: auto;
+      scroll-snap-type: none;
+    }
+    .cg-carousel-slide {
+      flex: 0 0 calc((100% - 48px) / 3) !important;
+      width: calc((100% - 48px) / 3) !important;
+      max-width: calc((100% - 48px) / 3) !important;
+      min-width: 0 !important;
+      scroll-snap-align: start;
+      scroll-snap-stop: normal;
+      display: flex !important;
+    }
+    .cg-carousel-slide .cg-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: 991px) {
+      .cg-carousel-slide {
+        flex: 0 0 calc((100% - 20px) / 2) !important;
+        width: calc((100% - 20px) / 2) !important;
+        max-width: calc((100% - 20px) / 2) !important;
+      }
+      .cg-carousel-track {
+        gap: 20px !important;
+        padding-bottom: 22px;
+      }
+    }
+    @media (max-width: 640px) {
+      .cg-carousel-slide {
+        flex: 0 0 86% !important;
+        width: 86% !important;
+        max-width: 360px !important;
+      }
+      .cg-carousel-track {
+        gap: 16px !important;
+        padding-bottom: 18px;
+      }
+    }
+    .cg-carousel-arrow {
+      position: absolute;
+      top: calc(50% - 16px);
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1.5px solid #E5DED4;
+      color: #1B365D;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(11, 25, 44, 0.16);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cg-carousel-arrow:hover:not(:disabled) {
+      background: #1B365D;
+      color: #FFFFFF;
+      border-color: #1B365D;
+      transform: translateY(-50%) scale(1.08);
+      box-shadow: 0 10px 26px rgba(11, 25, 44, 0.25);
+    }
+    .cg-carousel-arrow:active:not(:disabled) {
+      transform: translateY(-50%) scale(0.95);
+    }
+    .cg-carousel-arrow:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .cg-carousel-arrow-prev {
+      left: -22px;
+    }
+    .cg-carousel-arrow-next {
+      right: -22px;
+    }
+    @media (max-width: 1260px) {
+      .cg-carousel-arrow-prev { left: -10px; }
+      .cg-carousel-arrow-next { right: -10px; }
+    }
+    @media (max-width: 768px) {
+      .cg-carousel-arrow { display: none; }
+    }
+    .cg-carousel-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cg-carousel-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1.5px solid #E5DED4;
+      color: #0B192C;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(11, 25, 44, 0.05);
+      transition: all 0.2s ease;
+    }
+    .cg-carousel-btn:hover:not(:disabled) {
+      background: #1B365D;
+      color: #FFFFFF;
+      border-color: #1B365D;
+      transform: translateY(-2px);
+    }
+    .cg-carousel-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    .cg-carousel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .cg-carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: #E5DED4;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cg-carousel-dot.active {
+      width: 28px;
+      background: #1B365D;
+      border-radius: 9999px;
+    }
+    .cg-carousel-dot:hover:not(.active) {
+      background: #D4B996;
+    }
+  </style>
 
   <!-- 2026-2027 Structured Data JSON-LD (SEO, AEO, GEO) -->
   <script type="application/ld+json">
@@ -796,6 +964,13 @@
         </div>
 
         <div class="cg-carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Koleksi Paket Hampers Perusahaan">
+          <!-- Floating Side Navigation Arrow: Prev -->
+          <button type="button" class="cg-carousel-arrow cg-carousel-arrow-prev" aria-label="Geser ke paket sebelumnya">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
           <div class="cg-carousel-track" id="hampersCarouselTrack" tabindex="0" aria-live="polite">
             <!-- Slide 1: Executive Hampers Box -->
             <div class="cg-carousel-slide">
@@ -1134,6 +1309,13 @@
               </article>
             </div>
           </div>
+
+          <!-- Floating Side Navigation Arrow: Next -->
+          <button type="button" class="cg-carousel-arrow cg-carousel-arrow-next" aria-label="Geser ke paket berikutnya">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
 
           <!-- Carousel Dots Indicator -->
           <div class="cg-carousel-dots" id="hampersCarouselDots" role="tablist" aria-label="Indikator slide koleksi hampers"></div>
@@ -1709,7 +1891,7 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=20261026c"></script>
 </body>
 
 </html>

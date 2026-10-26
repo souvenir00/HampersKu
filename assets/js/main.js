@@ -529,16 +529,19 @@ function initHampersCarousel() {
     return slide.offsetWidth + gap;
   };
 
+  const prevBtns = Array.from(document.querySelectorAll('.cg-carousel-prev, .cg-carousel-arrow-prev'));
+  const nextBtns = Array.from(document.querySelectorAll('.cg-carousel-next, .cg-carousel-arrow-next'));
+
   const updateControls = () => {
     const maxScroll = track.scrollWidth - track.clientWidth;
     const currentScroll = track.scrollLeft;
 
-    if (prevBtn) {
-      prevBtn.disabled = currentScroll <= 6;
-    }
-    if (nextBtn) {
-      nextBtn.disabled = currentScroll >= maxScroll - 6;
-    }
+    prevBtns.forEach(btn => {
+      btn.disabled = currentScroll <= 6;
+    });
+    nextBtns.forEach(btn => {
+      btn.disabled = currentScroll >= maxScroll - 6;
+    });
 
     // Update active dot based on center/visible card
     if (dotsContainer) {
@@ -559,17 +562,17 @@ function initHampersCarousel() {
     }
   };
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+  prevBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
     });
-  }
+  });
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
+  nextBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
     });
-  }
+  });
 
   // Keyboard navigation when track is focused
   track.addEventListener('keydown', (e) => {
