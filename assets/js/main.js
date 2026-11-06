@@ -142,6 +142,8 @@ function initScrollHeader() {
     }
   };
 
+  // Run on mount to initialize transparent/scrolled state
+  handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
 }
 

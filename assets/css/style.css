@@ -1530,12 +1530,107 @@ p {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--cg-border);
   z-index: 1000;
-  transition: all 0.25s ease;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
 }
 
 .cg-header.scrolled {
   box-shadow: var(--cg-shadow-nav);
   background-color: rgba(255, 255, 255, 0.98);
+}
+
+/* ==========================================================================
+   Homepage Dynamic Header: Transparent on Top, Solid White on Scroll
+   ========================================================================== */
+body.cg-home-page {
+  padding-top: 0 !important;
+}
+
+body.cg-home-page .cg-hero {
+  padding-top: calc(var(--cg-nav-height, 80px) + clamp(20px, 3vh, 36px));
+  min-height: 100vh;
+}
+
+/* Un-scrolled State on Homepage (Pure Glass Transparent) */
+body.cg-home-page .cg-header:not(.scrolled) {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: none !important;
+}
+
+body.cg-home-page .cg-header:not(.scrolled) .cg-brand-name {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link:hover,
+body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link.active {
+  color: #F3D08A !important;
+  background-color: rgba(255, 255, 255, 0.14) !important;
+  backdrop-filter: blur(8px);
+}
+
+body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link svg {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+body.cg-home-page .cg-header:not(.scrolled) .cg-nav-toggle {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Scrolled State on Homepage (Solid White with Luxury Depth) */
+body.cg-home-page .cg-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid var(--cg-border) !important;
+  box-shadow: var(--cg-shadow-nav) !important;
+}
+
+body.cg-home-page .cg-header.scrolled .cg-brand-name {
+  color: var(--cg-brown-dark) !important;
+  text-shadow: none !important;
+}
+
+body.cg-home-page .cg-header.scrolled .cg-nav-link {
+  color: var(--cg-text) !important;
+  text-shadow: none !important;
+}
+
+body.cg-home-page .cg-header.scrolled .cg-nav-link:hover,
+body.cg-home-page .cg-header.scrolled .cg-nav-link.active {
+  color: var(--cg-brown) !important;
+  background-color: var(--cg-bg-soft) !important;
+}
+
+body.cg-home-page .cg-header.scrolled .cg-nav-toggle {
+  background: #FFFFFF !important;
+  border-color: var(--cg-border) !important;
+  color: var(--cg-brown-dark) !important;
+}
+
+/* Ensure mobile drawer always keeps dark text on its white sheet */
+@media (max-width: 991.98px) {
+  body.cg-home-page .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link {
+    color: var(--cg-text) !important;
+    text-shadow: none !important;
+  }
+  body.cg-home-page .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link:hover,
+  body.cg-home-page .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link.active {
+    color: var(--cg-brown) !important;
+    background-color: var(--cg-bg-soft) !important;
+  }
 }
 
 .cg-nav-inner {
@@ -1736,7 +1831,7 @@ p {
   }
 }
 
-/* Translucent Photo Backdrop using Authentic Widescreen Mandiri Taspen Set (hero-bg-mandiri.jpg) - Neutral Luxury Tint (Not Overly Blue) */
+/* Translucent Photo Backdrop using Authentic Widescreen Mandiri Taspen Set (hero-bg-mandiri.webp) - Neutral Luxury Tint (Not Overly Blue) */
 .cg-hero::before {
   content: "";
   position: absolute;
@@ -1746,7 +1841,7 @@ p {
   background-image:
     radial-gradient(ellipse 70% 75% at 75% 50%, rgba(243, 208, 138, 0.08) 0%, transparent 65%),
     linear-gradient(135deg, rgba(14, 17, 22, 0.76) 0%, rgba(22, 26, 32, 0.65) 50%, rgba(14, 17, 22, 0.80) 100%),
-    url('/ft%20produk/hero-bg-mandiri.jpg');
+    url('/ft%20produk/hero-bg-mandiri.webp');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
