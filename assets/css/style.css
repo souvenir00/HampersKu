@@ -1736,7 +1736,7 @@ p {
   }
 }
 
-/* Translucent Photo Backdrop using Authentic ft produk (50.webp) with Ambient Spotlight */
+/* Translucent Photo Backdrop using Authentic Widescreen Mandiri Taspen Set (hero-bg-mandiri.jpg) with Ambient Spotlight */
 .cg-hero::before {
   content: "";
   position: absolute;
@@ -1744,23 +1744,16 @@ p {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(ellipse 75% 85% at 50% 50%, transparent 35%, #0B192C 92%),
-    radial-gradient(ellipse 65% 75% at 75% 50%, rgba(30, 62, 98, 0.42) 0%, transparent 70%),
+    radial-gradient(ellipse 65% 75% at 75% 50%, rgba(30, 62, 98, 0.40) 0%, transparent 70%),
     linear-gradient(135deg, rgba(11, 25, 44, 0.85) 0%, rgba(15, 23, 42, 0.76) 50%, rgba(11, 25, 44, 0.88) 100%),
-    url('/ft%20produk/50.webp');
+    url('/ft%20produk/hero-bg-mandiri.jpg');
   background-position: center center;
-  background-size: 100% 100%, 100% 100%, 100% 100%, auto 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   pointer-events: none;
   z-index: 0;
-}
-
-@media (max-width: 767.98px) {
-  .cg-hero::before {
-    background-size: 100% 100%, 100% 100%, 100% 100%, cover;
-  }
 }
 
 .cg-hero::after {
