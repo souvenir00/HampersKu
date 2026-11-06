@@ -372,12 +372,13 @@ function initHeroAnimations() {
 }
 
 /**
- * Hero Photo Auto-Rotator (Slow-mo aesthetic cinematic crossfade)
+ * Hero Photo Auto-Rotator (Aesthetic crossfade transition, balanced pacing)
  */
 function initHeroPhotoRotator() {
   const photoActive = document.getElementById('heroPhotoActive');
   const photoBuffer = document.getElementById('heroPhotoBuffer');
   const box = document.getElementById('heroPhotoBox');
+  const visual = document.querySelector('.cg-hero-visual');
   if (!photoActive || !photoBuffer) return;
 
   const photos = [
@@ -396,7 +397,7 @@ function initHeroPhotoRotator() {
     img.src = item.src;
   });
 
-  const ROTATE_INTERVAL = 3500; // 3.5 detik (ritme tenang, estetik, dan elegan)
+  const ROTATE_INTERVAL = 2200; // 2.2 detik (ritme pas, tidak terlalu lama, tetap estetik)
   let currentIndex = 0;
   let currentEl = photoActive;
   let nextEl = photoBuffer;
@@ -415,12 +416,12 @@ function initHeroPhotoRotator() {
 
     // Reset posisi awal untuk efek zoom halus
     nextEl.style.transition = 'none';
-    nextEl.style.transform = 'scale(1.05)';
+    nextEl.style.transform = 'scale(1.03)';
     nextEl.style.opacity = '0';
     void nextEl.offsetWidth; // Force reflow agar CSS transition terpicu
 
-    // Transisi slow-mo estetik: 1.2 detik dissolve lembut + 3.8 detik cinematic scale
-    nextEl.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 3.8s cubic-bezier(0.16, 1, 0.3, 1)';
+    // Transisi dissolve halus & tidak terlalu lama: 0.65s dissolve + 2.2s scale anggun
+    nextEl.style.transition = 'opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1), transform 2.2s cubic-bezier(0.16, 1, 0.3, 1)';
     nextEl.style.zIndex = '2';
     currentEl.style.zIndex = '1';
 
@@ -428,7 +429,7 @@ function initHeroPhotoRotator() {
     nextEl.style.transform = 'scale(1)';
 
     // Foto lama memudar lembut
-    currentEl.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+    currentEl.style.transition = 'opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
     currentEl.style.opacity = '0';
 
     // Tukar referensi elemen aktif & buffer
@@ -451,10 +452,11 @@ function initHeroPhotoRotator() {
 
   start();
 
-  // Pause saat hover agar pengunjung bisa menikmati foto detail hampers
-  if (box) {
-    box.addEventListener('mouseenter', stop);
-    box.addEventListener('mouseleave', start);
+  // Pause saat hover pada visual area (foto maupun badge) agar tidak flicker
+  const hoverZone = visual || box;
+  if (hoverZone) {
+    hoverZone.addEventListener('mouseenter', stop);
+    hoverZone.addEventListener('mouseleave', start);
   }
 
   // Pause saat tab browser tidak aktif untuk menghemat daya
