@@ -17,15 +17,15 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261106_transparent_header">
   <style>
     .cg-404-hero {
-      min-height: calc(100vh - var(--cg-nav-height) - 100px);
+      min-height: calc(100vh - 100px);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 60px 20px;
+      padding: calc(var(--cg-nav-height, 80px) + 60px) 20px 60px 20px;
       background: linear-gradient(180deg, #F8F5F0 0%, #FFFFFF 100%);
     }
     .cg-404-badge {

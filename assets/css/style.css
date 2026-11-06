@@ -1181,7 +1181,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  padding-top: var(--cg-nav-height);
+  padding-top: 0 !important;
   font-family: var(--cg-font-sans);
   color: var(--cg-text);
   background-color: var(--cg-white);
@@ -1525,35 +1525,24 @@ p {
   left: 0;
   right: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--cg-border);
+  background-color: transparent;
   z-index: 1000;
   transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s ease;
 }
 
-.cg-header.scrolled {
-  box-shadow: var(--cg-shadow-nav);
-  background-color: rgba(255, 255, 255, 0.98);
-}
-
 /* ==========================================================================
-   Homepage Dynamic Header: Transparent on Top, Solid White on Scroll
+   Universal Dynamic Header: Transparent on Top, Solid White on Scroll
+   Applies across Homepage and all Inner Pages
    ========================================================================== */
-body.cg-home-page {
-  padding-top: 0 !important;
-}
-
 body.cg-home-page .cg-hero {
   padding-top: calc(var(--cg-nav-height, 80px) + clamp(20px, 3vh, 36px));
   min-height: 100vh;
 }
 
-/* Un-scrolled State on Homepage (Pure Glass Transparent) */
-body.cg-home-page .cg-header:not(.scrolled) {
+/* Un-scrolled State on All Pages (Pure Glass Transparent) */
+.cg-header:not(.scrolled) {
   background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -1561,36 +1550,36 @@ body.cg-home-page .cg-header:not(.scrolled) {
   box-shadow: none !important;
 }
 
-body.cg-home-page .cg-header:not(.scrolled) .cg-brand-name {
+.cg-header:not(.scrolled) .cg-brand-name {
   color: #FFFFFF !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link {
+.cg-header:not(.scrolled) .cg-nav-link {
   color: rgba(255, 255, 255, 0.92) !important;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
-body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link:hover,
-body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link.active {
+.cg-header:not(.scrolled) .cg-nav-link:hover,
+.cg-header:not(.scrolled) .cg-nav-link.active {
   color: #F3D08A !important;
   background-color: rgba(255, 255, 255, 0.14) !important;
   backdrop-filter: blur(8px);
 }
 
-body.cg-home-page .cg-header:not(.scrolled) .cg-nav-link svg {
+.cg-header:not(.scrolled) .cg-nav-link svg {
   color: rgba(255, 255, 255, 0.85) !important;
 }
 
-body.cg-home-page .cg-header:not(.scrolled) .cg-nav-toggle {
+.cg-header:not(.scrolled) .cg-nav-toggle {
   background: rgba(255, 255, 255, 0.14) !important;
   border-color: rgba(255, 255, 255, 0.28) !important;
   color: #FFFFFF !important;
   backdrop-filter: blur(8px);
 }
 
-/* Scrolled State on Homepage (Solid White with Luxury Depth) */
-body.cg-home-page .cg-header.scrolled {
+/* Scrolled State on All Pages (Solid White with Luxury Depth) */
+.cg-header.scrolled {
   background-color: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
@@ -1598,23 +1587,23 @@ body.cg-home-page .cg-header.scrolled {
   box-shadow: var(--cg-shadow-nav) !important;
 }
 
-body.cg-home-page .cg-header.scrolled .cg-brand-name {
+.cg-header.scrolled .cg-brand-name {
   color: var(--cg-brown-dark) !important;
   text-shadow: none !important;
 }
 
-body.cg-home-page .cg-header.scrolled .cg-nav-link {
+.cg-header.scrolled .cg-nav-link {
   color: var(--cg-text) !important;
   text-shadow: none !important;
 }
 
-body.cg-home-page .cg-header.scrolled .cg-nav-link:hover,
-body.cg-home-page .cg-header.scrolled .cg-nav-link.active {
+.cg-header.scrolled .cg-nav-link:hover,
+.cg-header.scrolled .cg-nav-link.active {
   color: var(--cg-brown) !important;
   background-color: var(--cg-bg-soft) !important;
 }
 
-body.cg-home-page .cg-header.scrolled .cg-nav-toggle {
+.cg-header.scrolled .cg-nav-toggle {
   background: #FFFFFF !important;
   border-color: var(--cg-border) !important;
   color: var(--cg-brown-dark) !important;
@@ -1622,12 +1611,12 @@ body.cg-home-page .cg-header.scrolled .cg-nav-toggle {
 
 /* Ensure mobile drawer always keeps dark text on its white sheet */
 @media (max-width: 991.98px) {
-  body.cg-home-page .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link {
+  .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link {
     color: var(--cg-text) !important;
     text-shadow: none !important;
   }
-  body.cg-home-page .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link:hover,
-  body.cg-home-page .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link.active {
+  .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link:hover,
+  .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link.active {
     color: var(--cg-brown) !important;
     background-color: var(--cg-bg-soft) !important;
   }
@@ -2085,8 +2074,8 @@ section.cg-section-sm.cg-bg-soft.border-bottom {
   position: relative;
   background-color: #121417 !important;
   overflow: hidden;
-  padding-top: clamp(40px, 5vh, 60px) !important;
-  padding-bottom: clamp(44px, 5.5vh, 64px) !important;
+  padding-top: calc(var(--cg-nav-height, 80px) + clamp(22px, 3vh, 34px)) !important;
+  padding-bottom: clamp(38px, 4.5vh, 52px) !important;
   color: #FFFFFF !important;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -3377,10 +3366,16 @@ textarea.cg-form-control {
   }
 
   /* Remove backdrop-filter on mobile so fixed drawer is never trapped in header containing block */
-  .cg-header {
+  .cg-header.scrolled {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background-color: #FFFFFF !important;
+  }
+
+  .cg-header:not(.scrolled) {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 
   .cg-nav-toggle {
