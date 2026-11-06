@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollHeader();
   initHeroAnimations();
+  initHeroPhotoSlider();
   initHampersCarousel();
 
   // Defer non-critical handlers in ultra-light microtasks
@@ -367,6 +368,95 @@ function initHeroAnimations() {
     if (eyebrow) eyebrow.classList.add('hero-anim-eyebrow');
     if (h1) h1.classList.add('hero-anim-title');
     if (lead) lead.classList.add('hero-anim-lead');
+  }
+}
+
+/**
+ * Hero Photo Animation (Cycles photo every 1.5 seconds)
+ */
+function initHeroPhotoSlider() {
+  const slider = document.getElementById('heroPhotoSlider');
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.cg-hero-slide');
+  const dots = slider.querySelectorAll('.cg-hero-slide-dot');
+  const clientEl = document.getElementById('heroSlideClient');
+  const catEl = document.getElementById('heroSlideCategory');
+
+  if (slides.length <= 1) return;
+
+  let currentIndex = 0;
+  let intervalId = null;
+  const INTERVAL_TIME = 1500; // 1.5 detik per rotasi
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add('is-active');
+      } else {
+        slide.classList.remove('is-active');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === index);
+    });
+
+    const activeSlide = slides[index];
+    if (clientEl && activeSlide.dataset.client) {
+      clientEl.textContent = activeSlide.dataset.client;
+    }
+    if (catEl && activeSlide.dataset.tag) {
+      catEl.textContent = activeSlide.dataset.tag;
+    }
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    const next = (currentIndex + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function startAutoplay() {
+    if (intervalId) clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, INTERVAL_TIME);
+  }
+
+  function stopAutoplay() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }
+
+  // Click pada dot indikator
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      showSlide(i);
+      startAutoplay();
+    });
+  });
+
+  // Jeda saat hover kursor mouse agar pengguna bisa mengamati detail foto
+  slider.addEventListener('mouseenter', stopAutoplay);
+  slider.addEventListener('mouseleave', startAutoplay);
+  slider.addEventListener('focusin', stopAutoplay);
+  slider.addEventListener('focusout', startAutoplay);
+
+  // Jeda saat tab browser tidak aktif untuk efisiensi CPU & memori
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  // Jalankan autoplay jika pengguna tidak memilih reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    startAutoplay();
   }
 }
 
