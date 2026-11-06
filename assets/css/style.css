@@ -1583,18 +1583,19 @@ margin-top: clamp(40px, 5vw, 60px);
   margin-right: auto;
 }
 
-/* Controlled Article Image Sizing (Not too tall or wide) */
+/* Controlled Article Image Sizing (Full Product Visibility & Optimal Scale) */
 .cg-article-container figure {
-  max-width: 580px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .cg-article-container figure > div {
-  max-height: 350px;
-  aspect-ratio: 16 / 10;
+  width: 100%;
+  max-height: 480px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: 14px !important;
+  border-radius: 16px !important;
   background-color: var(--cg-bg-soft);
   margin-left: auto;
   margin-right: auto;
@@ -1603,17 +1604,17 @@ margin-top: clamp(40px, 5vw, 60px);
 .cg-article-container figure img {
   width: 100% !important;
   height: 100% !important;
-  max-height: 350px !important;
+  max-height: 480px !important;
   object-fit: cover !important;
-  object-position: center 38% !important;
+  object-position: center 56% !important;
   display: block !important;
 }
 
 .cg-article-container figcaption {
-  max-width: 580px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   line-height: 1.5;
 }
 
