@@ -2076,6 +2076,157 @@ body.cg-home-page .cg-header.scrolled .cg-nav-toggle {
   font-size: 0.8rem !important;
 }
 
+/* ==========================================================================
+   Inner Page Header Banner (Translucent Photo Backdrop, Compact Height)
+   Matches Luxury Corporate Aesthetic: ~320px-360px Height (Not Full Screen)
+   ========================================================================== */
+.cg-page-header,
+section.cg-section-sm.cg-bg-soft.border-bottom {
+  position: relative;
+  background-color: #121417 !important;
+  overflow: hidden;
+  padding-top: clamp(40px, 5vh, 60px) !important;
+  padding-bottom: clamp(44px, 5.5vh, 64px) !important;
+  color: #FFFFFF !important;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.cg-page-header::before,
+section.cg-section-sm.cg-bg-soft.border-bottom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(243, 208, 138, 0.08) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(14, 17, 22, 0.82) 0%, rgba(20, 24, 30, 0.72) 50%, rgba(14, 17, 22, 0.86) 100%),
+    url('/ft%20produk/hero-bg-mandiri.webp');
+  background-position: center 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cg-page-header::after,
+section.cg-section-sm.cg-bg-soft.border-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+
+.cg-page-header .cg-container,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Breadcrumb in Page Header */
+.cg-page-header .cg-breadcrumb,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.cg-page-header .cg-breadcrumb li,
+.cg-page-header .cg-breadcrumb a,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-breadcrumb li,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-breadcrumb a {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cg-page-header .cg-breadcrumb a:hover,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-breadcrumb a:hover {
+  color: #F3D08A !important;
+  text-decoration: underline;
+}
+
+.cg-page-header .cg-breadcrumb-separator,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.cg-page-header .cg-breadcrumb-current,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-breadcrumb-current {
+  color: rgba(255, 255, 255, 0.98) !important;
+  font-weight: 600;
+}
+
+/* Eyebrow Pill in Page Header */
+.cg-page-header .cg-eyebrow,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(243, 208, 138, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #F3D08A !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Page Header Title */
+.cg-page-header h1,
+section.cg-section-sm.cg-bg-soft.border-bottom h1 {
+  color: #FFFFFF !important;
+  font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Page Header Lead Subtitle */
+.cg-page-header .cg-lead,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-lead {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.62;
+  max-width: 760px;
+  margin-bottom: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.cg-page-header .cg-btn-secondary,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-btn-secondary {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(8px);
+}
+
+.cg-page-header .cg-btn-secondary:hover,
+section.cg-section-sm.cg-bg-soft.border-bottom .cg-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.24) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
 /* --------------------------------------------------------------------------
    Value Proposition / Feature Highlights
    -------------------------------------------------------------------------- */
