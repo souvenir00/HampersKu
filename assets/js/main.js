@@ -382,13 +382,9 @@ function initHeroPhotoRotator() {
   if (!photoActive || !photoBuffer) return;
 
   const photos = [
-    { src: '/ft%20produk/mandiri-taspen.webp', alt: 'Corporate Gift Set Bank Mandiri Taspen Hampersku', pos: 'center 65%' },
-    { src: '/ft%20produk/4fe789f8-a28a-48b2-996c-95faa37c27bf.webp', alt: 'Executive VIP Corporate Gift Set ASTON Sentul Lake', pos: 'center 30%' },
-    { src: '/ft%20produk/20.webp', alt: 'Paket Seminar Kit & Souvenir SMK Telkom Malang', pos: 'center 30%' },
-    { src: '/ft%20produk/7.webp', alt: 'Welcome Pack Souvenir Eksklusif Bank Indonesia', pos: 'center 30%' },
-    { src: '/ft%20produk/3e5e74df-7624-4184-9f13-dbf1dc32d409.webp', alt: 'Festive Red Luxury Gift Set KIDECO Indika Energy', pos: 'center 30%' },
-    { src: '/ft%20produk/11.webp', alt: 'Onboarding Gift Set Bina Bangsa School', pos: 'center 30%' },
-    { src: '/ft%20produk/unibos.webp', alt: 'Executive Leather Pouch Bag Universitas Bosowa UNIBOS', pos: 'center 40%' }
+    { src: '/ft%20produk/50.webp', alt: 'Corporate Gift Set Bank Mandiri Taspen Hampersku — Jam Dinding Kayu, Mug Tumbler, Leather Pouch', pos: 'center 60%' },
+    { src: '/ft%20produk/14.webp', alt: 'Bespoke Award Plakat Akrilik LED & Hardbox Custom Bina Bangsa School', pos: 'center 50%' },
+    { src: '/ft%20produk/3.webp', alt: 'Executive Custom Illustrated Hardbox & Laptop Sleeve UMM Malang', pos: 'center 50%' }
   ];
 
   // Preload all photos so changing src is instantaneous with zero flicker
@@ -397,7 +393,7 @@ function initHeroPhotoRotator() {
     img.src = item.src;
   });
 
-  const ROTATE_INTERVAL = 2200; // 2.2 detik (ritme pas, tidak terlalu lama, tetap estetik)
+  const ROTATE_INTERVAL = 2400; // 2.4 detik (ritme pas, tidak terlalu lama, tetap estetik)
   let currentIndex = 0;
   let currentEl = photoActive;
   let nextEl = photoBuffer;

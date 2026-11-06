@@ -1717,7 +1717,7 @@ p {
   position: relative;
   padding-top: clamp(36px, 5vh, 60px);
   padding-bottom: clamp(44px, 6vh, 72px);
-  background-color: #0B192C;
+  background-color: #121417;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -1736,7 +1736,7 @@ p {
   }
 }
 
-/* Translucent Photo Backdrop using Authentic Widescreen Mandiri Taspen Set (hero-bg-mandiri.jpg) with Ambient Spotlight */
+/* Translucent Photo Backdrop using Authentic Widescreen Mandiri Taspen Set (hero-bg-mandiri.jpg) - Neutral Luxury Tint (Not Overly Blue) */
 .cg-hero::before {
   content: "";
   position: absolute;
@@ -1744,14 +1744,14 @@ p {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(ellipse 65% 75% at 75% 50%, rgba(30, 62, 98, 0.40) 0%, transparent 70%),
-    linear-gradient(135deg, rgba(11, 25, 44, 0.85) 0%, rgba(15, 23, 42, 0.76) 50%, rgba(11, 25, 44, 0.88) 100%),
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(243, 208, 138, 0.08) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(14, 17, 22, 0.76) 0%, rgba(22, 26, 32, 0.65) 50%, rgba(14, 17, 22, 0.80) 100%),
     url('/ft%20produk/hero-bg-mandiri.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   pointer-events: none;
   z-index: 0;
 }
