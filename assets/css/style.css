@@ -1583,6 +1583,40 @@ margin-top: clamp(40px, 5vw, 60px);
   margin-right: auto;
 }
 
+/* Controlled Article Image Sizing (Not too tall or wide) */
+.cg-article-container figure {
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cg-article-container figure > div {
+  max-height: 350px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 14px !important;
+  background-color: var(--cg-bg-soft);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cg-article-container figure img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 350px !important;
+  object-fit: cover !important;
+  object-position: center 38% !important;
+  display: block !important;
+}
+
+.cg-article-container figcaption {
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .cg-article-toc {
   background-color: var(--cg-bg-soft);
   border: 1px solid var(--cg-border);
