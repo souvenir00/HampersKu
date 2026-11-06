@@ -387,8 +387,7 @@ function initHeroPhotoRotator() {
     { src: '/ft%20produk/7.webp', alt: 'Welcome Pack Souvenir Eksklusif Bank Indonesia', pos: 'center 30%' },
     { src: '/ft%20produk/3e5e74df-7624-4184-9f13-dbf1dc32d409.webp', alt: 'Festive Red Luxury Gift Set KIDECO Indika Energy', pos: 'center 30%' },
     { src: '/ft%20produk/11.webp', alt: 'Onboarding Gift Set Bina Bangsa School', pos: 'center 30%' },
-    { src: '/ft%20produk/1.webp', alt: 'Premium Hardbox Gift Set Hampersku', pos: 'center 30%' },
-    { src: '/ft%20produk/40.webp', alt: 'Koleksi Souvenir Eksklusif Hampersku', pos: 'center 30%' }
+    { src: '/ft%20produk/unibos.webp', alt: 'Executive Leather Pouch Bag Universitas Bosowa UNIBOS', pos: 'center 40%' }
   ];
 
   // Preload all photos so changing src is instantaneous with zero flicker
