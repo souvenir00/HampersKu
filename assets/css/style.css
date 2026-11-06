@@ -2750,39 +2750,41 @@ textarea.cg-form-control {
   margin-right: auto;
 }
 
-/* Controlled Article Image Sizing (Full Product Visibility & Optimal Scale) */
+/* Blog & Article Detail Figures (Full Image, 100% Uncropped, Natural Aspect Ratio) */
 .cg-article-container figure {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  margin: 2rem auto;
+  text-align: center;
 }
 
-.cg-article-container figure>div {
-  width: 100%;
-  max-height: 480px;
-  aspect-ratio: 4 / 3;
+.cg-article-container figure > div {
+  display: inline-block;
+  max-width: 100%;
+  background: transparent !important;
+  border-radius: 16px;
   overflow: hidden;
-  border-radius: 16px !important;
-  background-color: var(--cg-bg-soft);
-  margin-left: auto;
-  margin-right: auto;
+  box-shadow: 0 10px 28px rgba(11, 25, 44, 0.08);
+  border: 1px solid var(--cg-border);
 }
 
-.cg-article-container figure img {
-  width: 100% !important;
-  height: 100% !important;
-  max-height: 480px !important;
-  object-fit: cover !important;
-  object-position: center 56% !important;
+.cg-article-container figure img,
+.cg-article-img {
+  max-width: 100% !important;
+  max-height: 520px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
   display: block !important;
+  margin: 0 auto !important;
+  border-radius: 16px !important;
 }
 
 .cg-article-container figcaption {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.85rem;
+  max-width: 680px;
+  margin: 10px auto 0;
+  font-size: 0.86rem;
   line-height: 1.5;
+  color: var(--cg-text-muted);
 }
 
 .cg-article-toc {
