@@ -202,6 +202,7 @@ function initPortfolioFilter() {
         if (filterValue === 'all' || itemCat === filterValue) {
           item.style.display = '';
           item.removeAttribute('aria-hidden');
+          item.style.animation = 'cgFadeIn 0.35s ease forwards';
         } else {
           item.style.display = 'none';
           item.setAttribute('aria-hidden', 'true');
