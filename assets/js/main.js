@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollHeader();
   initHeroAnimations();
-  initHeroPhotoSlider();
+  initHeroPhotoRotator();
   initHampersCarousel();
 
   // Defer non-critical handlers in ultra-light microtasks
@@ -372,92 +372,88 @@ function initHeroAnimations() {
 }
 
 /**
- * Hero Photo Animation (Cycles photo every 1.5 seconds)
+ * Hero Photo Auto-Rotator (Changes photo every 1 second)
  */
-function initHeroPhotoSlider() {
-  const slider = document.getElementById('heroPhotoSlider');
-  if (!slider) return;
+function initHeroPhotoRotator() {
+  const photoActive = document.getElementById('heroPhotoActive');
+  const photoBuffer = document.getElementById('heroPhotoBuffer');
+  const box = document.getElementById('heroPhotoBox');
+  if (!photoActive || !photoBuffer) return;
 
-  const slides = slider.querySelectorAll('.cg-hero-slide');
-  const dots = slider.querySelectorAll('.cg-hero-slide-dot');
-  const clientEl = document.getElementById('heroSlideClient');
-  const catEl = document.getElementById('heroSlideCategory');
+  const photos = [
+    { src: '/ft%20produk/mandiri-taspen.webp', alt: 'Corporate Gift Set Bank Mandiri Taspen Hampersku', pos: 'center 65%' },
+    { src: '/ft%20produk/4fe789f8-a28a-48b2-996c-95faa37c27bf.webp', alt: 'Executive VIP Corporate Gift Set ASTON Sentul Lake', pos: 'center 30%' },
+    { src: '/ft%20produk/20.webp', alt: 'Paket Seminar Kit & Souvenir SMK Telkom Malang', pos: 'center 30%' },
+    { src: '/ft%20produk/7.webp', alt: 'Welcome Pack Souvenir Eksklusif Bank Indonesia', pos: 'center 30%' },
+    { src: '/ft%20produk/3e5e74df-7624-4184-9f13-dbf1dc32d409.webp', alt: 'Festive Red Luxury Gift Set KIDECO Indika Energy', pos: 'center 30%' },
+    { src: '/ft%20produk/11.webp', alt: 'Onboarding Gift Set Bina Bangsa School', pos: 'center 30%' },
+    { src: '/ft%20produk/1.webp', alt: 'Premium Hardbox Gift Set Hampersku', pos: 'center 30%' },
+    { src: '/ft%20produk/40.webp', alt: 'Koleksi Souvenir Eksklusif Hampersku', pos: 'center 30%' }
+  ];
 
-  if (slides.length <= 1) return;
+  // Preload all photos so changing src is instantaneous with zero flicker
+  photos.forEach((item) => {
+    const img = new Image();
+    img.src = item.src;
+  });
 
   let currentIndex = 0;
-  let intervalId = null;
-  const INTERVAL_TIME = 1500; // 1.5 detik per rotasi
+  let currentEl = photoActive;
+  let nextEl = photoBuffer;
+  let timerId = null;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      if (i === index) {
-        slide.classList.add('is-active');
-      } else {
-        slide.classList.remove('is-active');
-      }
-    });
+  function step() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    const target = photos[currentIndex];
 
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('is-active', i === index);
-    });
-
-    const activeSlide = slides[index];
-    if (clientEl && activeSlide.dataset.client) {
-      clientEl.textContent = activeSlide.dataset.client;
+    // Prepare next image on the hidden buffer element
+    nextEl.src = target.src;
+    nextEl.alt = target.alt;
+    if (target.pos) {
+      nextEl.style.objectPosition = target.pos;
     }
-    if (catEl && activeSlide.dataset.tag) {
-      catEl.textContent = activeSlide.dataset.tag;
-    }
-    currentIndex = index;
+
+    // Crossfade: promote nextEl to top layer and fade in
+    nextEl.style.zIndex = '2';
+    currentEl.style.zIndex = '1';
+
+    nextEl.style.opacity = '1';
+    currentEl.style.opacity = '0';
+
+    // Swap active and buffer references
+    const temp = currentEl;
+    currentEl = nextEl;
+    nextEl = temp;
   }
 
-  function nextSlide() {
-    const next = (currentIndex + 1) % slides.length;
-    showSlide(next);
+  function start() {
+    if (timerId) clearInterval(timerId);
+    timerId = setInterval(step, 1000); // Tepat 1 detik
   }
 
-  function startAutoplay() {
-    if (intervalId) clearInterval(intervalId);
-    intervalId = setInterval(nextSlide, INTERVAL_TIME);
-  }
-
-  function stopAutoplay() {
-    if (intervalId) {
-      clearInterval(intervalId);
-      intervalId = null;
+  function stop() {
+    if (timerId) {
+      clearInterval(timerId);
+      timerId = null;
     }
   }
 
-  // Click pada dot indikator
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', (e) => {
-      e.preventDefault();
-      showSlide(i);
-      startAutoplay();
-    });
-  });
+  start();
 
-  // Jeda saat hover kursor mouse agar pengguna bisa mengamati detail foto
-  slider.addEventListener('mouseenter', stopAutoplay);
-  slider.addEventListener('mouseleave', startAutoplay);
-  slider.addEventListener('focusin', stopAutoplay);
-  slider.addEventListener('focusout', startAutoplay);
+  // Pause when hovering over the photo box
+  if (box) {
+    box.addEventListener('mouseenter', stop);
+    box.addEventListener('mouseleave', start);
+  }
 
-  // Jeda saat tab browser tidak aktif untuk efisiensi CPU & memori
+  // Pause when browser tab is inactive to preserve resources
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      stopAutoplay();
+      stop();
     } else {
-      startAutoplay();
+      start();
     }
   });
-
-  // Jalankan autoplay jika pengguna tidak memilih reduced-motion
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!prefersReducedMotion) {
-    startAutoplay();
-  }
 }
 
 /**
