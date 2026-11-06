@@ -372,7 +372,7 @@ function initHeroAnimations() {
 }
 
 /**
- * Hero Photo Auto-Rotator (Changes photo every 1 second)
+ * Hero Photo Auto-Rotator (Slow-mo aesthetic cinematic crossfade)
  */
 function initHeroPhotoRotator() {
   const photoActive = document.getElementById('heroPhotoActive');
@@ -397,6 +397,7 @@ function initHeroPhotoRotator() {
     img.src = item.src;
   });
 
+  const ROTATE_INTERVAL = 3500; // 3.5 detik (ritme tenang, estetik, dan elegan)
   let currentIndex = 0;
   let currentEl = photoActive;
   let nextEl = photoBuffer;
@@ -406,21 +407,32 @@ function initHeroPhotoRotator() {
     currentIndex = (currentIndex + 1) % photos.length;
     const target = photos[currentIndex];
 
-    // Prepare next image on the hidden buffer element
+    // Setup foto berikutnya pada buffer
     nextEl.src = target.src;
     nextEl.alt = target.alt;
     if (target.pos) {
       nextEl.style.objectPosition = target.pos;
     }
 
-    // Crossfade: promote nextEl to top layer and fade in
+    // Reset posisi awal untuk efek zoom halus
+    nextEl.style.transition = 'none';
+    nextEl.style.transform = 'scale(1.05)';
+    nextEl.style.opacity = '0';
+    void nextEl.offsetWidth; // Force reflow agar CSS transition terpicu
+
+    // Transisi slow-mo estetik: 1.2 detik dissolve lembut + 3.8 detik cinematic scale
+    nextEl.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 3.8s cubic-bezier(0.16, 1, 0.3, 1)';
     nextEl.style.zIndex = '2';
     currentEl.style.zIndex = '1';
 
     nextEl.style.opacity = '1';
+    nextEl.style.transform = 'scale(1)';
+
+    // Foto lama memudar lembut
+    currentEl.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
     currentEl.style.opacity = '0';
 
-    // Swap active and buffer references
+    // Tukar referensi elemen aktif & buffer
     const temp = currentEl;
     currentEl = nextEl;
     nextEl = temp;
@@ -428,7 +440,7 @@ function initHeroPhotoRotator() {
 
   function start() {
     if (timerId) clearInterval(timerId);
-    timerId = setInterval(step, 1000); // Tepat 1 detik
+    timerId = setInterval(step, ROTATE_INTERVAL);
   }
 
   function stop() {
@@ -440,13 +452,13 @@ function initHeroPhotoRotator() {
 
   start();
 
-  // Pause when hovering over the photo box
+  // Pause saat hover agar pengunjung bisa menikmati foto detail hampers
   if (box) {
     box.addEventListener('mouseenter', stop);
     box.addEventListener('mouseleave', start);
   }
 
-  // Pause when browser tab is inactive to preserve resources
+  // Pause saat tab browser tidak aktif untuk menghemat daya
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       stop();

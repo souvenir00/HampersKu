@@ -619,6 +619,7 @@ p {
   aspect-ratio: 4 / 3.6;
   object-fit: cover;
   display: block;
+  will-change: opacity, transform;
 }
 
 .cg-hero-badge-float {
