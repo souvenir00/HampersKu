@@ -1715,10 +1715,26 @@ p {
    -------------------------------------------------------------------------- */
 .cg-hero {
   position: relative;
-  padding-top: clamp(52px, 7vw, 92px);
-  padding-bottom: clamp(64px, 8vw, 108px);
+  padding-top: clamp(20px, 3.5vh, 36px);
+  padding-bottom: clamp(28px, 4.5vh, 48px);
   background-color: #0B192C;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+  .cg-hero {
+    min-height: calc(100vh - var(--cg-nav-height, 78px));
+    max-height: calc(100vh - var(--cg-nav-height, 78px));
+    display: flex;
+    align-items: center;
+    padding-top: clamp(14px, 2vh, 26px);
+    padding-bottom: clamp(18px, 2.8vh, 32px);
+  }
+
+  .cg-hero .cg-container {
+    width: 100%;
+  }
 }
 
 /* Translucent Photo Backdrop using Authentic ft produk */
@@ -1760,54 +1776,72 @@ p {
   display: grid;
   grid-template-columns: 52% 48%;
   align-items: center;
-  gap: clamp(32px, 5vw, 64px);
+  gap: clamp(24px, 3.5vw, 48px);
 }
 
 .cg-hero-content {
-  max-width: 600px;
+  max-width: 580px;
 }
 
 /* Eyebrow Pill in Hero */
 .cg-hero .cg-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
+  gap: 6px;
+  padding: 4px 14px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(243, 208, 138, 0.38);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: #F3D08A;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 18px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
 }
 
 .cg-hero h1,
 .cg-hero #hero-title {
   color: #FFFFFF;
+  font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .cg-hero .cg-lead {
   color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(0.86rem, 1vw, 0.96rem);
+  line-height: 1.48;
+  margin-bottom: 10px;
+  max-width: 520px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
 /* Hero CTA Buttons */
+.cg-hero .cg-btn {
+  padding: 9px 18px;
+  font-size: 0.9rem;
+}
+
+.cg-hero .cg-btn-lg {
+  padding: 10px 20px;
+  font-size: 0.92rem;
+}
+
 .cg-hero .cg-btn-primary {
   background: linear-gradient(135deg, #1E3E62 0%, #0B192C 100%);
   border: 1.5px solid rgba(243, 208, 138, 0.65);
   color: #FFFFFF !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .cg-hero .cg-btn-primary:hover {
   background: linear-gradient(135deg, #254d7b 0%, #0B192C 100%);
   border-color: #F3D08A;
-  box-shadow: 0 10px 28px rgba(243, 208, 138, 0.35);
+  box-shadow: 0 8px 22px rgba(243, 208, 138, 0.35);
 }
 
 .cg-hero .cg-btn-secondary {
@@ -1816,7 +1850,7 @@ p {
   color: #FFFFFF !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   transition: all 0.25s ease;
 }
 
@@ -1825,24 +1859,37 @@ p {
   border-color: #FFFFFF;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .cg-hero-content .text-muted,
 .cg-hero-content p.small {
   color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.78rem;
+  line-height: 1.35;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin-top: 6px;
 }
 
 .cg-hero-content p.small svg {
   stroke: #52C485 !important;
 }
 
+/* Right Column Visual Box - Constrained to fit viewport */
+.cg-hero-visual {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .cg-hero-img-box {
   position: relative;
-  border-radius: var(--cg-radius-lg);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  aspect-ratio: 4 / 3.1;
+  max-height: clamp(250px, 36vh, 340px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: var(--cg-white);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -1861,34 +1908,34 @@ p {
 }
 
 .cg-hero-img-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 56px rgba(11, 25, 44, 0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
 }
 
 .cg-hero-img-box img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 4 / 3.6;
   object-fit: cover;
   display: block;
   will-change: opacity, transform;
 }
 
+/* Floating Badge - Scaled and position balanced */
 .cg-hero-badge-float {
   position: absolute;
-  bottom: -18px;
-  left: 24px;
+  bottom: -12px;
+  left: 18px;
   z-index: 20;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 12px 20px;
-  border-radius: 14px;
-  box-shadow: 0 14px 34px rgba(11, 25, 44, 0.14);
-  border: 1px solid var(--cg-border);
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   pointer-events: auto;
   animation: cgFloatGentle 5s ease-in-out infinite;
   transition: box-shadow 0.3s ease, background 0.3s ease;
@@ -1896,19 +1943,28 @@ p {
 
 .cg-hero-badge-float:hover {
   background: #FFFFFF;
-  box-shadow: 0 18px 40px rgba(11, 25, 44, 0.22);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
 .cg-hero-badge-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
   background-color: var(--cg-bg-soft);
   color: var(--cg-brown);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.cg-hero-badge-float .fw-bold {
+  font-size: 0.85rem !important;
+}
+
+.cg-hero-badge-float .small {
+  font-size: 0.72rem !important;
 }
 
 /* --------------------------------------------------------------------------
