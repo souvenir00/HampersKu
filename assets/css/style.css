@@ -1736,7 +1736,7 @@ p {
   }
 }
 
-/* Translucent Photo Backdrop using Authentic ft produk with Ambient Spotlight */
+/* Translucent Photo Backdrop using Authentic ft produk (50.webp) with Ambient Spotlight */
 .cg-hero::before {
   content: "";
   position: absolute;
@@ -1746,8 +1746,8 @@ p {
   background-image:
     radial-gradient(ellipse 65% 75% at 75% 50%, rgba(30, 62, 98, 0.42) 0%, transparent 70%),
     linear-gradient(135deg, rgba(11, 25, 44, 0.86) 0%, rgba(15, 23, 42, 0.78) 50%, rgba(11, 25, 44, 0.90) 100%),
-    url('/ft%20produk/4fe789f8-a28a-48b2-996c-95faa37c27bf.webp');
-  background-position: center 32%;
+    url('/ft%20produk/50.webp');
+  background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
   backdrop-filter: blur(4px);
