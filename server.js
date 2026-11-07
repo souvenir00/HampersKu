@@ -49,6 +49,10 @@ const server = http.createServer((req, res) => {
     reqUrl = '/hampers-250-ribuan.html';
   } else if (reqUrl === '/paket/hampers-250-ribuan/' || reqUrl === '/paket/hampers-250-ribuan') {
     reqUrl = '/hampers-250-ribuan.html';
+  } else if (reqUrl === '/hampers-500-ribuan/' || reqUrl === '/hampers-500-ribuan') {
+    reqUrl = '/hampers-500-ribuan.html';
+  } else if (reqUrl === '/paket/hampers-500-ribuan/' || reqUrl === '/paket/hampers-500-ribuan') {
+    reqUrl = '/hampers-500-ribuan.html';
   } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan') {
     reqUrl = '/cara-pesan.html';
   } else if (reqUrl === '/faq/' || reqUrl === '/faq') {
