@@ -120,7 +120,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
-  <url>
+    <url>
+    <loc>https://www.hamperscorporate.web.id/blog/hitung-budget-hampers-100-karyawan/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+<url>
     <loc>https://www.hamperscorporate.web.id/blog/hampers-corporate-100-ribuan</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
