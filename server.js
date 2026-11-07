@@ -57,6 +57,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/hampers-premium.html';
   } else if (reqUrl === '/paket/hampers-premium/' || reqUrl === '/paket/hampers-premium') {
     reqUrl = '/hampers-premium.html';
+  } else if (reqUrl === '/hampers-corporate-malang/' || reqUrl === '/hampers-corporate-malang') {
+    reqUrl = '/hampers-corporate-malang.html';
   } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan') {
     reqUrl = '/cara-pesan.html';
   } else if (reqUrl === '/faq/' || reqUrl === '/faq') {
