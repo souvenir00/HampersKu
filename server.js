@@ -53,6 +53,10 @@ const server = http.createServer((req, res) => {
     reqUrl = '/hampers-500-ribuan.html';
   } else if (reqUrl === '/paket/hampers-500-ribuan/' || reqUrl === '/paket/hampers-500-ribuan') {
     reqUrl = '/hampers-500-ribuan.html';
+  } else if (reqUrl === '/hampers-premium/' || reqUrl === '/hampers-premium') {
+    reqUrl = '/hampers-premium.html';
+  } else if (reqUrl === '/paket/hampers-premium/' || reqUrl === '/paket/hampers-premium') {
+    reqUrl = '/hampers-premium.html';
   } else if (reqUrl === '/cara-pesan/' || reqUrl === '/cara-pesan') {
     reqUrl = '/cara-pesan.html';
   } else if (reqUrl === '/faq/' || reqUrl === '/faq') {
