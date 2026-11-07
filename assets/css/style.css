@@ -1535,7 +1535,7 @@ p {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: none !important;
   transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1544,10 +1544,10 @@ p {
 }
 
 .cg-header .cg-container {
-  max-width: 1200px;
-  width: 100%;
-  padding-left: clamp(20px, 3vw, 36px);
-  padding-right: clamp(36px, 5.5vw, 72px);
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: clamp(16px, 3vw, 40px);
+  padding-right: clamp(16px, 3vw, 40px);
 }
 
 .cg-nav-inner {
@@ -1558,7 +1558,7 @@ p {
   height: auto;
 }
 
-/* Brand Logo (Left) */
+/* Brand Logo (Left - Pushed nicely to the far left) */
 .cg-brand {
   display: inline-flex;
   align-items: center;
@@ -1578,8 +1578,8 @@ p {
 
 .cg-brand img,
 .cg-brand-logo {
-  height: 34px;
-  width: 34px;
+  height: 36px;
+  width: 36px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -1588,7 +1588,7 @@ p {
 
 .cg-brand-name {
   font-family: var(--cg-font-sans);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #FFFFFF !important;
@@ -1598,12 +1598,12 @@ p {
   transition: color 0.25s ease;
 }
 
-/* Nav Menu Wrap (Right - Shifted in to the left for breathing room) */
+/* Nav Menu Wrap (Right - Pushed cleanly to the far right) */
 .cg-nav-menu-wrap {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: clamp(16px, 3vw, 44px);
+  margin-right: 0;
 }
 
 .cg-nav-menu {
@@ -1612,7 +1612,7 @@ p {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 4px;
+  gap: 5px;
 }
 
 .cg-nav-item {
@@ -1623,13 +1623,13 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 6px 12px;
-  font-size: 0.79rem;
+  padding: 6px 13px;
+  font-size: 0.81rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.92) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.94) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
   text-decoration: none;
   border-radius: 9999px;
   background: transparent !important;
@@ -1754,14 +1754,14 @@ p {
 /* Medium Desktop compacting for 992px - 1199px */
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .cg-header .cg-container {
-    padding-left: 20px;
-    padding-right: 32px;
+    padding-left: clamp(16px, 2.5vw, 32px);
+    padding-right: clamp(16px, 2.5vw, 32px);
   }
   .cg-nav-menu-wrap {
-    margin-right: 16px;
+    margin-right: 0;
   }
   .cg-nav-menu {
-    gap: 2px;
+    gap: 4px;
   }
   .cg-nav-link {
     padding: 5px 9px;
@@ -1771,21 +1771,20 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   Hero Section - Full 1 Screen (100vh / 100dvh)
+   Hero Section - Full 1 Screen (100vh / 100dvh) with ftheader.webp
    -------------------------------------------------------------------------- */
 body.cg-home-page .cg-hero,
 .cg-hero {
   position: relative;
   min-height: 100vh !important;
   min-height: 100dvh !important;
-  background-color: #121417;
+  background-color: #0B192C;
   overflow: hidden;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: clamp(80px, 12vh, 100px) !important;
-  padding-bottom: clamp(24px, 4vh, 48px) !important;
+  padding-top: clamp(88px, 12vh, 116px) !important;
+  padding-bottom: clamp(32px, 5vh, 56px) !important;
 }
 
 @media (min-width: 992px) {
@@ -1795,9 +1794,8 @@ body.cg-home-page .cg-hero,
     min-height: 100dvh !important;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: clamp(84px, 12vh, 104px) !important;
-    padding-bottom: clamp(28px, 4vh, 48px) !important;
+    padding-top: clamp(92px, 12vh, 120px) !important;
+    padding-bottom: clamp(36px, 5vh, 56px) !important;
   }
 
   .cg-hero .cg-container {
@@ -1805,7 +1803,7 @@ body.cg-home-page .cg-hero,
   }
 }
 
-/* Translucent Photo Backdrop using Authentic Widescreen Mandiri Taspen Set (hero-bg-mandiri.webp) - Neutral Luxury Tint (Not Overly Blue) */
+/* Translucent Photo Backdrop using Authentic HampersKu Header (ftheader.webp) */
 .cg-hero::before {
   content: "";
   position: absolute;
@@ -1813,16 +1811,23 @@ body.cg-home-page .cg-hero,
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(243, 208, 138, 0.08) 0%, transparent 65%),
-    linear-gradient(135deg, rgba(14, 17, 22, 0.76) 0%, rgba(22, 26, 32, 0.65) 50%, rgba(14, 17, 22, 0.80) 100%),
-    url('/ft%20produk/hero-bg-mandiri.webp');
-  background-position: center center;
+    linear-gradient(180deg, rgba(11, 25, 44, 0.45) 0%, transparent 100px),
+    linear-gradient(90deg, rgba(11, 25, 44, 0.92) 0%, rgba(11, 25, 44, 0.80) 42%, rgba(11, 25, 44, 0.22) 74%, transparent 100%),
+    url('/assets/images/ftheader.webp');
+  background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
   pointer-events: none;
   z-index: 0;
+}
+
+@media (max-width: 991.98px) {
+  .cg-hero::before {
+    background-image:
+      linear-gradient(180deg, rgba(11, 25, 44, 0.82) 0%, rgba(11, 25, 44, 0.92) 100%),
+      url('/assets/images/ftheader.webp');
+    background-position: center center;
+  }
 }
 
 .cg-hero::after {
@@ -1842,14 +1847,13 @@ body.cg-home-page .cg-hero,
 }
 
 .cg-hero-grid {
-  display: grid;
-  grid-template-columns: 52% 48%;
-  align-items: center;
-  gap: clamp(32px, 4.5vw, 64px);
+  display: block;
+  max-width: 680px;
+  width: 100%;
 }
 
 .cg-hero-content {
-  max-width: 610px;
+  max-width: 640px;
 }
 
 /* Eyebrow Pill in Hero */
