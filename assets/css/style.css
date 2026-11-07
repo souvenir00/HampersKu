@@ -1812,7 +1812,7 @@ body.cg-home-page .cg-hero,
   }
 }
 
-/* Translucent Photo Backdrop using Authentic HamperKu Header (ftheader.webp) */
+/* Translucent Photo Backdrop using Authentic HampersKu Header (ftheader.webp) */
 .cg-hero::before {
   content: "";
   position: absolute;
