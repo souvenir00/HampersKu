@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" width="240" height="50" fill="none">
-  <!-- Monogram Icon in Champagne with Deep Espresso details -->
-  <rect x="2" y="5" width="40" height="40" rx="10" fill="#E9DCC9"/>
-  <rect x="3.2" y="6.2" width="37.6" height="37.6" rx="8.8" stroke="#302722" stroke-width="0.8" stroke-opacity="0.25"/>
-  <path d="M15 15V35M29 15V35M15 25H29" stroke="#302722" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="22" cy="15" r="2.2" fill="#302722"/>
-  <path d="M19 13C20.5 11 23.5 11 25 13" stroke="#302722" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Deep Espresso Luxury Squircle Badge with Champagne Border -->
+  <rect x="2" y="5" width="40" height="40" rx="9" fill="#241D19"/>
+  <rect x="2.5" y="5.5" width="39" height="39" rx="8.5" stroke="#E9DCC9" stroke-width="1.2" stroke-opacity="0.95"/>
+  <path d="M12 15H17.5V22.5H26.5V15H32V35H26.5V27.5H17.5V35H12V15Z" fill="#E9DCC9"/>
+  <path d="M20 22.5L24 27.5" stroke="#241D19" stroke-width="1.6" stroke-linecap="round"/>
   
-  <!-- Typography: Champagne -->
-  <text x="52" y="24" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" letter-spacing="0.08em" fill="#FFFFFF">HAMPERSKU</text>
+  <!-- Typography: White & Champagne -->
+  <text x="52" y="24" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" letter-spacing="0.06em" fill="#FFFFFF">HAMPERSKU</text>
   <text x="52" y="38" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.16em" fill="#E9DCC9">CORPORATE HAMPERS &amp; GIFT</text>
 </svg>

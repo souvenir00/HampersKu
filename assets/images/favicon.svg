@@ -1,12 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
-  <!-- Deep Espresso Luxury Badge -->
-  <rect width="48" height="48" rx="11" fill="#302722"/>
-  <rect x="1.5" y="1.5" width="45" height="45" rx="9.5" stroke="#E9DCC9" stroke-width="1" stroke-opacity="0.35"/>
+  <!-- Deep Espresso Luxury Squircle Badge -->
+  <rect x="2" y="2" width="44" height="44" rx="10" fill="#241D19"/>
+  <rect x="2" y="2" width="44" height="44" rx="10" stroke="#E9DCC9" stroke-width="1.4" stroke-opacity="0.9"/>
   
-  <!-- Monogram 'H' in Champagne -->
-  <path d="M14 15V33M34 15V33M14 24H34" stroke="#E9DCC9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Luxury Gift Ribbon Knot & Bow in Champagne -->
-  <circle cx="24" cy="15" r="2.8" fill="#E9DCC9"/>
-  <path d="M19.5 12.5C21 9.8 27 9.8 28.5 12.5" stroke="#E9DCC9" stroke-width="2" stroke-linecap="round"/>
+  <!-- Champagne Monogram H with Ribbon Notch Crossbar -->
+  <path d="M13 13H19.2V21.4H28.8V13H35V35H28.8V26.6H19.2V35H13V13Z" fill="#E9DCC9"/>
+  <path d="M22 21.4L26 26.6" stroke="#241D19" stroke-width="1.8" stroke-linecap="round"/>
 </svg>
