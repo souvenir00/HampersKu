@@ -1517,129 +1517,68 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   Header & Navbar
+   Modern Floating Split-Capsule Island Navbar
+   Reference: Floating squircle brand island (left) + Unified capsule (right)
    -------------------------------------------------------------------------- */
 .cg-header {
   position: fixed;
-  top: 0;
+  top: 16px;
   left: 0;
   right: 0;
   width: 100%;
-  background-color: transparent;
-  z-index: 1000;
-  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease;
-}
-
-/* ==========================================================================
-   Universal Dynamic Header: Transparent on Top, Solid White on Scroll
-   Applies across Homepage and all Inner Pages
-   ========================================================================== */
-body.cg-home-page .cg-hero {
-  padding-top: calc(var(--cg-nav-height, 80px) + clamp(20px, 3vh, 36px));
-  min-height: 100vh;
-}
-
-/* Un-scrolled State on All Pages (Pure Glass Transparent) */
-.cg-header:not(.scrolled) {
   background-color: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border: none !important;
   box-shadow: none !important;
+  z-index: 1050;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cg-header:not(.scrolled) .cg-brand-name {
-  color: #FFFFFF !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.cg-header:not(.scrolled) .cg-nav-link {
-  color: rgba(255, 255, 255, 0.92) !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-}
-
-.cg-header:not(.scrolled) .cg-nav-link:hover,
-.cg-header:not(.scrolled) .cg-nav-link.active {
-  color: #F3D08A !important;
-  background-color: transparent !important;
-}
-
-.cg-header:not(.scrolled) .cg-nav-link svg {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-.cg-header:not(.scrolled) .cg-nav-toggle {
-  background: rgba(255, 255, 255, 0.14) !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: #FFFFFF !important;
-  backdrop-filter: blur(8px);
-}
-
-/* Scrolled State on All Pages (Solid White with Luxury Depth) */
-.cg-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.98) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid var(--cg-border) !important;
-  box-shadow: var(--cg-shadow-nav) !important;
-}
-
-.cg-header.scrolled .cg-brand-name {
-  color: var(--cg-brown-dark) !important;
-  text-shadow: none !important;
-}
-
-.cg-header.scrolled .cg-nav-link {
-  color: var(--cg-text) !important;
-  text-shadow: none !important;
-}
-
-.cg-header.scrolled .cg-nav-link:hover,
-.cg-header.scrolled .cg-nav-link.active {
-  color: var(--cg-brown) !important;
-  background-color: transparent !important;
-}
-
-.cg-header.scrolled .cg-nav-toggle {
-  background: #FFFFFF !important;
-  border-color: var(--cg-border) !important;
-  color: var(--cg-brown-dark) !important;
-}
-
-/* Ensure mobile drawer always keeps dark text on its white sheet */
-@media (max-width: 991.98px) {
-  .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link {
-    color: var(--cg-text) !important;
-    text-shadow: none !important;
-  }
-  .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link:hover,
-  .cg-header:not(.scrolled) .cg-nav-menu-wrap .cg-nav-link.active {
-    color: var(--cg-brown) !important;
-    background-color: var(--cg-bg-soft) !important;
-  }
+.cg-header .cg-container {
+  max-width: 1320px;
+  padding: 0 24px;
 }
 
 .cg-nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: var(--cg-nav-height);
+  gap: 16px;
+  height: auto;
+  pointer-events: none;
 }
 
+/* Left Island: Brand Squircle Card */
 .cg-brand {
-  display: flex;
+  pointer-events: auto;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
+  height: 52px;
+  padding: 6px 18px 6px 12px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(234, 228, 220, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(11, 25, 44, 0.06);
   text-decoration: none;
   user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cg-brand:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(11, 25, 44, 0.1);
+  border-color: rgba(212, 163, 89, 0.6);
 }
 
 .cg-brand img,
 .cg-brand-logo {
-  height: 42px;
-  width: 42px;
+  height: 34px;
+  width: 34px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -1648,61 +1587,169 @@ body.cg-home-page .cg-hero {
 
 .cg-brand-name {
   font-family: var(--cg-font-sans);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--cg-brown-dark);
+  color: var(--cg-brown-dark, #0B192C) !important;
   line-height: 1;
   white-space: nowrap;
+  text-shadow: none !important;
   transition: color 0.2s ease;
 }
 
 .cg-brand:hover .cg-brand-name {
-  color: var(--cg-brown-light);
+  color: var(--cg-brown, #1B365D) !important;
 }
 
-@media (max-width: 480px) {
-  .cg-brand-name {
-    font-size: 1.15rem;
-  }
-
-  .cg-brand img,
-  .cg-brand-logo {
-    height: 38px;
-    width: 38px;
-  }
-}
-
-.cg-nav-menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 8px;
-}
-
-.cg-nav-item {
-  position: relative;
-}
-
-.cg-nav-link {
+/* Right Island: Unified Floating Nav Capsule */
+.cg-nav-capsule {
+  pointer-events: auto;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 10px 16px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--cg-text);
-  text-decoration: none;
-  border-radius: var(--cg-radius-sm);
-  transition: all 0.18s ease;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(234, 228, 220, 0.9);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(11, 25, 44, 0.06);
+  padding: 5px 6px 5px 22px;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.cg-nav-link:hover,
-.cg-nav-link.active {
-  color: var(--cg-brown);
-  background-color: transparent;
+.cg-nav-capsule:hover {
+  border-color: rgba(212, 163, 89, 0.5);
+}
+
+/* Scrolled Floating State */
+.cg-header.scrolled .cg-brand,
+.cg-header.scrolled .cg-nav-capsule {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 28px rgba(11, 25, 44, 0.1);
+  border-color: rgba(212, 163, 89, 0.45);
+}
+
+@media (min-width: 992px) {
+  .cg-nav-capsule .cg-nav-menu-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .cg-nav-capsule .cg-nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+  }
+
+  .cg-nav-capsule .cg-nav-item {
+    position: relative;
+  }
+
+  .cg-nav-capsule .cg-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cg-brown-dark, #1B365D) !important;
+    text-shadow: none !important;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: all 0.18s ease;
+  }
+
+  .cg-nav-capsule .cg-nav-link:hover,
+  .cg-nav-capsule .cg-nav-link.active {
+    color: #8C6226 !important;
+    background-color: rgba(212, 163, 89, 0.14) !important;
+  }
+
+  .cg-nav-capsule .cg-nav-link svg {
+    color: var(--cg-brown-dark, #1B365D) !important;
+    transition: transform 0.2s ease;
+  }
+
+  .cg-nav-capsule .cg-nav-actions {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 2px;
+  }
+
+  /* Right-end CTA Pill Button inside Capsule */
+  .cg-nav-cta-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 9999px !important;
+    background: var(--cg-brown, #1B365D) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    box-shadow: 0 2px 10px rgba(27, 54, 93, 0.25) !important;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all 0.22s ease;
+  }
+
+  .cg-nav-cta-pill:hover {
+    background: #0B192C !important;
+    color: #FFFFFF !important;
+    transform: scale(1.02);
+    box-shadow: 0 4px 14px rgba(27, 54, 93, 0.35) !important;
+  }
+
+  /* Floating Dropdown Panels */
+  .cg-dropdown-panel {
+    top: calc(100% + 14px) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(234, 228, 220, 0.95) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 14px 40px rgba(11, 25, 44, 0.12) !important;
+    padding: 10px !important;
+  }
+
+  .cg-dropdown-panel::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: 0;
+    height: 14px;
+  }
+}
+
+/* Medium Desktop compacting for 992px - 1199px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .cg-header .cg-container {
+    padding: 0 16px;
+  }
+  .cg-nav-capsule {
+    padding: 4px 5px 4px 14px;
+    gap: 8px;
+  }
+  .cg-nav-capsule .cg-nav-link {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+  }
+  .cg-nav-cta-pill {
+    padding: 0 14px;
+    font-size: 0.78rem;
+  }
 }
 
 .cg-nav-link svg {
@@ -3752,61 +3799,99 @@ textarea.cg-form-control {
     --cg-nav-height: 72px;
   }
 
-  /* Remove backdrop-filter on mobile so fixed drawer is never trapped in header containing block */
-  .cg-header.scrolled {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background-color: #FFFFFF !important;
+  /* Floating Header on Mobile */
+  .cg-header {
+    top: 12px !important;
   }
 
+  .cg-header.scrolled,
   .cg-header:not(.scrolled) {
     background-color: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .cg-brand {
+    height: 46px;
+    padding: 4px 14px 4px 10px;
+    border-radius: 14px;
+  }
+
+  .cg-brand img,
+  .cg-brand-logo {
+    height: 28px;
+    width: 28px;
+  }
+
+  .cg-brand-name {
+    font-size: 1.15rem;
+  }
+
+  .cg-nav-capsule {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  .cg-nav-capsule .cg-nav-actions {
+    display: inline-flex;
+    align-items: center;
   }
 
   .cg-nav-toggle {
-    display: inline-flex;
+    pointer-events: auto;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
-    border: 1px solid var(--cg-border);
-    padding: 8px 10px;
-    border-radius: 8px;
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(234, 228, 220, 0.9) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 16px rgba(11, 25, 44, 0.08) !important;
+    color: var(--cg-brown-dark, #0B192C) !important;
+    padding: 0 !important;
     cursor: pointer;
-    color: var(--cg-brown-dark);
-    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-    user-select: none;
+    transition: all 0.2s ease;
   }
 
-  .cg-nav-toggle:hover {
-    background: var(--cg-bg-soft);
-    border-color: var(--cg-tan);
-  }
-
+  .cg-nav-toggle:hover,
   .cg-nav-toggle[aria-expanded="true"] {
-    background: var(--cg-bg-soft);
-    color: var(--cg-brown-dark);
-    border-color: var(--cg-brown);
+    background: #FFFFFF !important;
+    border-color: var(--cg-tan) !important;
+    box-shadow: 0 6px 20px rgba(11, 25, 44, 0.12) !important;
   }
 
+  /* Floating Card Mobile Drawer */
   .cg-nav-menu-wrap {
+    pointer-events: auto;
     position: fixed;
-    top: var(--cg-nav-height, 72px);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: calc(100vh - var(--cg-nav-height, 72px));
-    height: calc(100dvh - var(--cg-nav-height, 72px));
-    background: #FFFFFF;
-    padding: 24px 20px 48px;
+    top: 68px;
+    left: 16px;
+    right: 16px;
+    bottom: auto;
+    width: auto;
+    max-height: calc(100vh - 84px);
+    max-height: calc(100dvh - 84px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(234, 228, 220, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(11, 25, 44, 0.18);
+    padding: 20px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     display: none;
-    border-top: 1px solid var(--cg-border);
-    box-shadow: 0 20px 40px rgba(11, 25, 44, 0.16);
-    z-index: 99999;
+    z-index: 1060;
   }
 
   .cg-nav-menu-wrap.active {
