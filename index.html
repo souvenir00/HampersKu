@@ -58,7 +58,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261107_clients_marquee">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261107_logos_compact">
 
   <!-- Embedded Hampers Collection Carousel Styles (Guaranteed Instant Horizontal Layout) -->
   <style id="hampers-carousel-inline-css">
@@ -292,6 +292,109 @@
 
     .cg-carousel-dot:hover:not(.active) {
       background: #D4B996;
+    }
+
+    /* Compact Client Logo Marquee (Lokasoka Style) */
+    .cg-marquee-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+      padding: 8px 0;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    .cg-marquee-track {
+      display: flex;
+      gap: 14px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .cg-client-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 130px;
+      max-width: 155px;
+      height: 48px;
+      padding: 6px 18px;
+      background: #FFFFFF;
+      border: 1px solid #EAE4DC;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      user-select: none;
+      cursor: default;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+
+    .cg-client-pill:hover {
+      border-color: var(--cg-gold, #D4A359);
+      background: #FFFDF9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(27, 54, 93, 0.08);
+    }
+
+    .cg-client-logo-img {
+      max-height: 22px;
+      max-width: 95px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: grayscale(8%);
+      transition: all 0.22s ease;
+    }
+
+    .cg-client-pill:hover .cg-client-logo-img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    .cg-logo-btn,
+    .cg-logo-ifg {
+      max-height: 19px !important;
+    }
+
+    .cg-logo-pama {
+      max-height: 25px !important;
+    }
+
+    .cg-logo-pegadaian {
+      max-width: 105px !important;
+      max-height: 20px !important;
+    }
+
+    @media (max-width: 768px) {
+      .cg-marquee-left {
+        animation-duration: 25s;
+      }
+      .cg-marquee-right {
+        animation-duration: 28s;
+      }
+      .cg-client-pill {
+        min-width: 110px;
+        max-width: 130px;
+        height: 40px;
+        padding: 4px 12px;
+        border-radius: 10px;
+      }
+      .cg-client-logo-img {
+        max-height: 18px;
+        max-width: 78px;
+      }
+      .cg-logo-btn,
+      .cg-logo-ifg {
+        max-height: 16px !important;
+      }
+      .cg-logo-pama {
+        max-height: 21px !important;
+      }
     }
   </style>
 
@@ -917,96 +1020,96 @@
           </div>
 
           <!-- Dynamic Dual-Track Marquee Showcase -->
-                    <div class="cg-marquee-wrapper py-2">
+                              <div class="cg-marquee-wrapper py-2">
             <!-- Row 1: Sliding Left (Mitra Perbankan & BUMN Nasional) -->
             <div class="cg-marquee-track cg-marquee-left" aria-label="Mitra Bisnis Hampersku Baris 1">
               <div class="cg-client-pill" title="Bank Indonesia">
-                <img src="/logoperusahaan/bank-indonesia.webp" alt="Logo Bank Indonesia" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bank-indonesia.webp" alt="Logo Bank Indonesia" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Bank Mandiri">
-                <img src="/logoperusahaan/mandiri.webp" alt="Logo Bank Mandiri" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/mandiri.webp" alt="Logo Bank Mandiri" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="BCA (Bank Central Asia)">
-                <img src="/logoperusahaan/bca.webp" alt="Logo BCA (Bank Central Asia)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bca.webp" alt="Logo BCA (Bank Central Asia)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT Pertamina (Persero)">
-                <img src="/logoperusahaan/pertamina.webp" alt="Logo PT Pertamina (Persero)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pertamina.webp" alt="Logo PT Pertamina (Persero)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT PLN (Persero)">
-                <img src="/logoperusahaan/pln.webp" alt="Logo PT PLN (Persero)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pln.webp" alt="Logo PT PLN (Persero)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT Kereta Api Indonesia (KAI)">
-                <img src="/logoperusahaan/kai.webp" alt="Logo PT Kereta Api Indonesia (KAI)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/kai.webp" alt="Logo PT Kereta Api Indonesia (KAI)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Kementerian BUMN">
-                <img src="/logoperusahaan/bumn.webp" alt="Logo Kementerian BUMN" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bumn.webp" alt="Logo Kementerian BUMN" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Bank Indonesia">
-                <img src="/logoperusahaan/bank-indonesia.webp" alt="Logo Bank Indonesia" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bank-indonesia.webp" alt="Logo Bank Indonesia" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Bank Mandiri">
-                <img src="/logoperusahaan/mandiri.webp" alt="Logo Bank Mandiri" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/mandiri.webp" alt="Logo Bank Mandiri" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="BCA (Bank Central Asia)">
-                <img src="/logoperusahaan/bca.webp" alt="Logo BCA (Bank Central Asia)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bca.webp" alt="Logo BCA (Bank Central Asia)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT Pertamina (Persero)">
-                <img src="/logoperusahaan/pertamina.webp" alt="Logo PT Pertamina (Persero)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pertamina.webp" alt="Logo PT Pertamina (Persero)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT PLN (Persero)">
-                <img src="/logoperusahaan/pln.webp" alt="Logo PT PLN (Persero)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pln.webp" alt="Logo PT PLN (Persero)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT Kereta Api Indonesia (KAI)">
-                <img src="/logoperusahaan/kai.webp" alt="Logo PT Kereta Api Indonesia (KAI)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/kai.webp" alt="Logo PT Kereta Api Indonesia (KAI)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Kementerian BUMN">
-                <img src="/logoperusahaan/bumn.webp" alt="Logo Kementerian BUMN" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bumn.webp" alt="Logo Kementerian BUMN" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
             </div>
 
             <!-- Row 2: Sliding Right (Mitra Korporasi, Tech & Institusi Finansial) -->
             <div class="cg-marquee-track cg-marquee-right" aria-label="Mitra Bisnis Hampersku Baris 2">
               <div class="cg-client-pill" title="Bank Negara Indonesia (BNI)">
-                <img src="/logoperusahaan/bni.webp" alt="Logo Bank Negara Indonesia (BNI)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bni.webp" alt="Logo Bank Negara Indonesia (BNI)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Gojek Indonesia">
-                <img src="/logoperusahaan/gojek.webp" alt="Logo Gojek Indonesia" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/gojek.webp" alt="Logo Gojek Indonesia" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PAMA Member of Astra">
-                <img src="/logoperusahaan/pama-astra.webp" alt="Logo PAMA Member of Astra" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pama-astra.webp" alt="Logo PAMA Member of Astra" class="cg-client-logo-img cg-logo-pama" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT Pegadaian">
-                <img src="/logoperusahaan/pegadaian.webp" alt="Logo PT Pegadaian" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pegadaian.webp" alt="Logo PT Pegadaian" class="cg-client-logo-img cg-logo-pegadaian" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Bank BTN">
-                <img src="/logoperusahaan/btn.webp" alt="Logo Bank BTN" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/btn.webp" alt="Logo Bank BTN" class="cg-client-logo-img cg-logo-btn" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Perum BULOG">
-                <img src="/logoperusahaan/bulog.webp" alt="Logo Perum BULOG" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bulog.webp" alt="Logo Perum BULOG" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="IFG (Indonesia Financial Group)">
-                <img src="/logoperusahaan/ifg.webp" alt="Logo IFG (Indonesia Financial Group)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/ifg.webp" alt="Logo IFG (Indonesia Financial Group)" class="cg-client-logo-img cg-logo-ifg" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Bank Negara Indonesia (BNI)">
-                <img src="/logoperusahaan/bni.webp" alt="Logo Bank Negara Indonesia (BNI)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bni.webp" alt="Logo Bank Negara Indonesia (BNI)" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Gojek Indonesia">
-                <img src="/logoperusahaan/gojek.webp" alt="Logo Gojek Indonesia" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/gojek.webp" alt="Logo Gojek Indonesia" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PAMA Member of Astra">
-                <img src="/logoperusahaan/pama-astra.webp" alt="Logo PAMA Member of Astra" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pama-astra.webp" alt="Logo PAMA Member of Astra" class="cg-client-logo-img cg-logo-pama" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="PT Pegadaian">
-                <img src="/logoperusahaan/pegadaian.webp" alt="Logo PT Pegadaian" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/pegadaian.webp" alt="Logo PT Pegadaian" class="cg-client-logo-img cg-logo-pegadaian" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Bank BTN">
-                <img src="/logoperusahaan/btn.webp" alt="Logo Bank BTN" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/btn.webp" alt="Logo Bank BTN" class="cg-client-logo-img cg-logo-btn" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="Perum BULOG">
-                <img src="/logoperusahaan/bulog.webp" alt="Logo Perum BULOG" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/bulog.webp" alt="Logo Perum BULOG" class="cg-client-logo-img" width="100" height="24" loading="lazy">
               </div>
               <div class="cg-client-pill" title="IFG (Indonesia Financial Group)">
-                <img src="/logoperusahaan/ifg.webp" alt="Logo IFG (Indonesia Financial Group)" class="cg-client-logo-img" width="140" height="42" loading="lazy">
+                <img src="/logoperusahaan/ifg.webp" alt="Logo IFG (Indonesia Financial Group)" class="cg-client-logo-img cg-logo-ifg" width="100" height="24" loading="lazy">
               </div>
             </div>
           </div>

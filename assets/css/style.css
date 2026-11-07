@@ -4263,17 +4263,17 @@ textarea.cg-form-control {
 .cg-marquee-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   position: relative;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 8px 0;
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .cg-marquee-track {
   display: flex;
-  gap: 18px;
+  gap: 14px;
   width: max-content;
   will-change: transform;
 }
@@ -4304,41 +4304,58 @@ textarea.cg-form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 160px;
-  height: 66px;
-  padding: 10px 22px;
+  min-width: 130px;
+  max-width: 155px;
+  height: 48px;
+  padding: 6px 18px;
   background: #FFFFFF;
-  border: 1.5px solid #EAE4DC;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #EAE4DC;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
   user-select: none;
   cursor: default;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .cg-client-pill:hover {
   border-color: var(--cg-gold, #D4A359);
   background: #FFFDF9;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(27, 54, 93, 0.09);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(27, 54, 93, 0.08);
 }
 
 .cg-client-logo-img {
-  max-height: 40px;
-  max-width: 130px;
+  max-height: 22px;
+  max-width: 95px;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
-  filter: grayscale(12%);
-  transition: all 0.25s ease;
+  filter: grayscale(8%);
+  transition: all 0.22s ease;
 }
 
 .cg-client-pill:hover .cg-client-logo-img {
   filter: grayscale(0%);
-  transform: scale(1.04);
+  transform: scale(1.05);
+}
+
+/* Optical alignment for specific logo glyph weights */
+.cg-logo-btn,
+.cg-logo-ifg {
+  max-height: 19px !important;
+}
+
+.cg-logo-pama {
+  max-height: 25px !important;
+}
+
+.cg-logo-pegadaian {
+  max-width: 105px !important;
+  max-height: 20px !important;
 }
 
 .cg-client-pill-logo {
@@ -4376,14 +4393,22 @@ textarea.cg-form-control {
     animation-duration: 28s;
   }
   .cg-client-pill {
-    min-width: 130px;
-    height: 56px;
-    padding: 8px 16px;
-    border-radius: 12px;
+    min-width: 110px;
+    max-width: 130px;
+    height: 40px;
+    padding: 4px 12px;
+    border-radius: 10px;
   }
   .cg-client-logo-img {
-    max-height: 32px;
-    max-width: 105px;
+    max-height: 18px;
+    max-width: 78px;
+  }
+  .cg-logo-btn,
+  .cg-logo-ifg {
+    max-height: 16px !important;
+  }
+  .cg-logo-pama {
+    max-height: 21px !important;
   }
   .cg-client-pill-name {
     font-size: 0.9rem;
