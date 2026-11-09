@@ -821,106 +821,160 @@ function initHeroVideo() {
 }
 
 /**
- * Homepage 2026 Redesign Interactive Controls (Mitra Carousel with Dots & Favorit Cards)
+ * Homepage 2026 Redesign Interactive Controls (Mitra & Favorit Carousels)
  */
 function initHomepageRedesignInteractions() {
   const mitraTrack = document.getElementById('mitraLogosTrack');
   const mitraPrev = document.getElementById('mitraPrev');
   const mitraNext = document.getElementById('mitraNext');
-  const mitraDots = document.querySelectorAll('.cg-mitra-dots .cg-dot');
-
-  if (mitraTrack && (mitraPrev || mitraNext || mitraDots.length > 0)) {
-    const pages = mitraTrack.querySelectorAll('.cg-mitra-page');
-    const totalPages = pages.length || (mitraDots.length || 3);
-    let currentPage = 0;
-
-    function goToPage(index) {
-      if (index < 0) index = totalPages - 1;
-      if (index >= totalPages) index = 0;
-      currentPage = index;
-
-      if (pages[currentPage]) {
-        pages[currentPage].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-      } else {
-        const pageW = mitraTrack.clientWidth;
-        mitraTrack.scrollTo({ left: currentPage * pageW, behavior: 'smooth' });
-      }
-
-      mitraDots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentPage);
-      });
-    }
-
-    if (mitraPrev) {
-      mitraPrev.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToPage(currentPage - 1);
-      });
-    }
-
-    if (mitraNext) {
-      mitraNext.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToPage(currentPage + 1);
-      });
-    }
-
-    mitraDots.forEach((dot, idx) => {
-      dot.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToPage(idx);
-      });
+  if (mitraTrack && mitraPrev && mitraNext) {
+    mitraPrev.addEventListener('click', () => {
+      mitraTrack.scrollBy({ left: -140, behavior: 'smooth' });
     });
-
-    // Update active dot when user scrolls/swipes horizontally
-    let isScrollingTimeout;
-    mitraTrack.addEventListener('scroll', () => {
-      clearTimeout(isScrollingTimeout);
-      isScrollingTimeout = setTimeout(() => {
-        const trackLeft = mitraTrack.scrollLeft;
-        const pageW = mitraTrack.clientWidth;
-        if (pageW > 0) {
-          const calcPage = Math.min(Math.max(Math.round(trackLeft / pageW), 0), totalPages - 1);
-          if (calcPage !== currentPage) {
-            currentPage = calcPage;
-            mitraDots.forEach((dot, idx) => {
-              dot.classList.toggle('active', idx === currentPage);
-            });
-          }
-        }
-      }, 70);
-    }, { passive: true });
-
-    // Auto-advance carousel every 5s with pause on hover
-    let autoPlayTimer = setInterval(() => {
-      goToPage(currentPage + 1);
-    }, 5000);
-
-    const strip = document.querySelector('.cg-mitra-strip');
-    if (strip) {
-      strip.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
-      strip.addEventListener('mouseleave', () => {
-        clearInterval(autoPlayTimer);
-        autoPlayTimer = setInterval(() => {
-          goToPage(currentPage + 1);
-        }, 5000);
-      });
-    }
+    mitraNext.addEventListener('click', () => {
+      mitraTrack.scrollBy({ left: 140, behavior: 'smooth' });
+    });
   }
 
-  // Favorit row navigation
   const favPrev = document.getElementById('favPrev');
   const favNext = document.getElementById('favNext');
   const favRow = document.querySelector('.cg-favorit-cards-row');
   if (favRow && favPrev && favNext) {
     favPrev.addEventListener('click', () => {
-      favRow.scrollBy({ left: -280, behavior: 'smooth' });
+      favRow.scrollBy({ left: -260, behavior: 'smooth' });
     });
     favNext.addEventListener('click', () => {
-      favRow.scrollBy({ left: 280, behavior: 'smooth' });
+      favRow.scrollBy({ left: 260, behavior: 'smooth' });
     });
   }
 }
 
 
 
+// HOMEPAGE REDESIGN INTERACTION SCRIPT
+function initHomepageRedesignInteractions() {
+  // 1. Koleksi Tabs & Thumbnails Switcher (Separuh Foto Separuh Teks)
+  const tabs = document.querySelectorAll('.cg-koleksi-tab');
+  const slides = document.querySelectorAll('.cg-koleksi-split-card');
+  const thumbs = document.querySelectorAll('.cg-koleksi-thumb-item');
+
+  function switchTab(idx) {
+    tabs.forEach((t, i) => {
+      const isActive = i === idx;
+      t.classList.toggle('active', isActive);
+      t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    slides.forEach((s, i) => {
+      if (i === idx) {
+        s.removeAttribute('hidden');
+        s.style.display = 'grid';
+        s.style.opacity = '0';
+        s.style.transform = 'translateY(8px)';
+        requestAnimationFrame(() => {
+          s.style.opacity = '1';
+          s.style.transform = 'translateY(0)';
+        });
+      } else {
+        s.setAttribute('hidden', '');
+        s.style.display = 'none';
+      }
+    });
+
+    thumbs.forEach((th, i) => {
+      th.classList.toggle('active', i === idx);
+    });
+  }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => switchTab(i));
+  });
+
+  thumbs.forEach((th, i) => {
+    th.addEventListener('click', () => switchTab(i));
+  });
+
+  // 2. FAQ Accordion Toggle
+  const faqBtns = document.querySelectorAll('.cg-faq-btn');
+  faqBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.cg-faq-item');
+      const ans = item.querySelector('.cg-faq-ans');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close other accordions
+      document.querySelectorAll('.cg-faq-item').forEach((other) => {
+        if (other !== item) {
+          other.classList.remove('active');
+          const otherBtn = other.querySelector('.cg-faq-btn');
+          const otherAns = other.querySelector('.cg-faq-ans');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          if (otherAns) otherAns.hidden = true;
+        }
+      });
+
+      // Toggle current accordion
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        ans.hidden = true;
+        item.classList.remove('active');
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        ans.hidden = false;
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // 3. Mitra Logo Slider Controls
+  const mitraTrack = document.getElementById('mitraLogosTrack');
+  const mitraPrev = document.getElementById('mitraPrev');
+  const mitraNext = document.getElementById('mitraNext');
+  const mitraDots = document.querySelectorAll('.cg-mitra-dots .cg-dot');
+
+  if (mitraTrack && mitraPrev && mitraNext) {
+    let mitraIndex = 0;
+    const maxMitra = mitraDots.length;
+
+    function updateMitra(dir) {
+      if (dir === 'next') {
+        mitraIndex = (mitraIndex + 1) % maxMitra;
+        mitraTrack.scrollBy({ left: 140, behavior: 'smooth' });
+      } else {
+        mitraIndex = (mitraIndex - 1 + maxMitra) % maxMitra;
+        mitraTrack.scrollBy({ left: -140, behavior: 'smooth' });
+      }
+      mitraDots.forEach((d, i) => d.classList.toggle('active', i === mitraIndex));
+    }
+
+    mitraPrev.addEventListener('click', () => updateMitra('prev'));
+    mitraNext.addEventListener('click', () => updateMitra('next'));
+  }
+
+  // 4. Paket Favorit Slider Controls
+  const favTrack = document.getElementById('favoritTrack');
+  const favPrev = document.getElementById('favoritPrev');
+  const favNext = document.getElementById('favoritNext');
+  const favDots = document.querySelectorAll('.cg-favorit-dots .cg-fav-dot');
+
+  if (favTrack && favPrev && favNext) {
+    let favIndex = 1;
+    function updateFav(dir) {
+      if (dir === 'next') {
+        favIndex = (favIndex + 1) % 3;
+        favTrack.scrollBy({ left: 240, behavior: 'smooth' });
+      } else {
+        favIndex = (favIndex - 1 + 3) % 3;
+        favTrack.scrollBy({ left: -240, behavior: 'smooth' });
+      }
+      favDots.forEach((d, i) => d.classList.toggle('active', i === favIndex));
+    }
+    favPrev.addEventListener('click', () => updateFav('prev'));
+    favNext.addEventListener('click', () => updateFav('next'));
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initHomepageRedesignInteractions);
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+  initHomepageRedesignInteractions();
+}
