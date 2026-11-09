@@ -1705,16 +1705,15 @@ p {
 }
 
 @media (min-width: 992px) {
-  .cg-nav-item.dropdown:hover .cg-nav-link svg,
   .cg-nav-item.dropdown.show .cg-nav-link svg {
     transform: rotate(180deg);
   }
 
-  .cg-nav-item.dropdown:hover .cg-dropdown-panel,
-  .cg-nav-item.dropdown.show .cg-dropdown-panel {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+  .cg-nav-item.dropdown.show > .cg-dropdown-panel {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
   }
 }
 
@@ -1748,7 +1747,7 @@ p {
 }
 
 /* ==========================================================================
-   Mega Menu Base Reset (Prevents unstyled display / layout explosion)
+   Mega Menu Base Reset (CLICK TO OPEN ONLY - Prevents unstyled display / hover flash)
    ========================================================================== */
 .cg-megamenu-panel {
   display: none !important;
@@ -1782,10 +1781,12 @@ p {
   color: #4A3E38;
 }
 
-.cg-nav-item.dropdown.has-megamenu:hover > .cg-megamenu-panel,
-.cg-nav-item.dropdown.has-megamenu.show > .cg-megamenu-panel,
-.cg-megamenu-panel:hover {
+/* Mega Menu is strictly CLICK-ACTIVATED via .show class */
+.cg-nav-item.dropdown.has-megamenu.show > .cg-megamenu-panel {
   display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
 }
 
 /* ==========================================================================
@@ -1846,13 +1847,17 @@ p {
     background: transparent;
   }
 
-  .cg-nav-item.dropdown.has-megamenu:hover > .cg-megamenu-panel,
-  .cg-nav-item.dropdown.has-megamenu.show > .cg-megamenu-panel,
-  .cg-megamenu-panel:hover {
+  .cg-nav-item.dropdown.has-megamenu.show > .cg-megamenu-panel {
     display: block !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
     pointer-events: auto !important;
+  }
+
+  .cg-header:has(.cg-nav-item.dropdown.show),
+  .cg-header.has-open-dropdown {
+    background-color: #241A14 !important;
+    border-bottom: 1px solid rgba(233, 220, 201, 0.18) !important;
   }
 
   .cg-header:has(.cg-megamenu-panel:hover),

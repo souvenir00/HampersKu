@@ -105,46 +105,71 @@ function initNavbar() {
     });
   }
 
-  // Dropdown toggle on mobile & touch: supports both opening and closing on tap
+  // Dropdown toggle on CLICK (Both Desktop & Mobile):
+  // Menus only open when user clicks the nav link trigger.
   const headerEl = document.querySelector('.cg-header');
+
+  const closeAllDropdowns = () => {
+    dropdownItems.forEach(d => {
+      d.classList.remove('show');
+      const tr = d.querySelector('.cg-nav-link-dropdown');
+      if (tr) tr.setAttribute('aria-expanded', 'false');
+    });
+    if (headerEl) headerEl.classList.remove('has-open-dropdown');
+  };
+
+  // Close when clicking anywhere outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.cg-nav-item.dropdown')) {
+      closeAllDropdowns();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllDropdowns();
+    }
+  });
+
   dropdownItems.forEach(item => {
     const trigger = item.querySelector('.cg-nav-link-dropdown');
-
-    // Desktop hover state helper for header background
-    if (headerEl) {
-      item.addEventListener('mouseenter', () => {
-        if (window.innerWidth >= 992) {
-          headerEl.classList.add('has-open-dropdown');
-        }
-      });
-      item.addEventListener('mouseleave', () => {
-        if (window.innerWidth >= 992) {
-          headerEl.classList.remove('has-open-dropdown');
-        }
-      });
-    }
-
     if (trigger) {
       trigger.addEventListener('click', (e) => {
-        if (window.innerWidth < 992 || window.matchMedia('(hover: none)').matches) {
-          e.preventDefault();
-          e.stopPropagation();
-          const isOpen = item.classList.contains('show');
-          dropdownItems.forEach(d => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isOpen = item.classList.contains('show');
+
+        // Close other dropdowns first
+        dropdownItems.forEach(d => {
+          if (d !== item) {
             d.classList.remove('show');
             const otherTrigger = d.querySelector('.cg-nav-link-dropdown');
             if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-          });
-          if (!isOpen) {
-            item.classList.add('show');
-            trigger.setAttribute('aria-expanded', 'true');
-          } else {
-            item.classList.remove('show');
-            trigger.setAttribute('aria-expanded', 'false');
           }
+        });
+
+        // Toggle current dropdown
+        if (!isOpen) {
+          item.classList.add('show');
+          trigger.setAttribute('aria-expanded', 'true');
+          if (headerEl) headerEl.classList.add('has-open-dropdown');
+        } else {
+          item.classList.remove('show');
+          trigger.setAttribute('aria-expanded', 'false');
+          if (headerEl) headerEl.classList.remove('has-open-dropdown');
         }
       });
     }
+
+    // When clicking any link inside the dropdown, close the dropdown
+    const panelLinks = item.querySelectorAll('.cg-megamenu-panel a, .cg-dropdown-panel a');
+    panelLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeAllDropdowns();
+      });
+    });
   });
 }
 
