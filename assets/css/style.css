@@ -1568,7 +1568,7 @@ p {
 .cg-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   user-select: none;
   background: transparent !important;
@@ -1582,14 +1582,24 @@ p {
   opacity: 0.9;
 }
 
-.cg-brand img,
-.cg-brand-logo,
 .cg-brand-icon {
-  height: 34px;
-  width: 34px;
+  height: 32px;
+  width: 32px;
   display: block;
   flex-shrink: 0;
-  color: #FFFFFF;
+  color: #F5E6D3;
+}
+
+.cg-brand img,
+.cg-brand-logo,
+.cg-brand-logo-img {
+  height: 36px;
+  width: auto;
+  max-width: 175px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
 .cg-brand-name {
@@ -4066,9 +4076,15 @@ textarea.cg-form-control {
   }
 
   .cg-brand img,
-  .cg-brand-logo {
-    height: 32px;
-    width: 32px;
+  .cg-brand-logo,
+  .cg-brand-logo-img {
+    height: 30px;
+    width: auto;
+    max-width: 140px;
+  }
+  .cg-brand-icon {
+    height: 28px;
+    width: 28px;
   }
 
   .cg-brand-name {
