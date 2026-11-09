@@ -1,9 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
   <!-- Deep Espresso Luxury Squircle Badge -->
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="#241D19"/>
-  <rect x="2" y="2" width="44" height="44" rx="10" stroke="#E9DCC9" stroke-width="1.4" stroke-opacity="0.9"/>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="#302722"/>
+  <rect x="2" y="2" width="44" height="44" rx="11" stroke="#E9DCC9" stroke-width="1.2" stroke-opacity="0.8"/>
   
-  <!-- Champagne Monogram H with Ribbon Notch Crossbar -->
-  <path d="M13 13H19.2V21.4H28.8V13H35V35H28.8V26.6H19.2V35H13V13Z" fill="#E9DCC9"/>
-  <path d="M22 21.4L26 26.6" stroke="#241D19" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Line-art Gift Box with Ribbon in Champagne Cream -->
+  <g transform="translate(8, 7)">
+    <!-- Lid -->
+    <rect x="2" y="10" width="28" height="4.5" rx="1.2" stroke="#E9DCC9" stroke-width="1.8" />
+    <!-- Box Body -->
+    <rect x="4" y="14.5" width="24" height="14" rx="1.5" stroke="#E9DCC9" stroke-width="1.8" />
+    <!-- Vertical Ribbon -->
+    <line x1="16" y1="10" x2="16" y2="28.5" stroke="#E9DCC9" stroke-width="1.8" />
+    <!-- Bow Left Loop -->
+    <path d="M16 10 C13.5 4, 7.5 3.5, 7.5 7 C7.5 10.5, 13.5 10, 16 10 Z" stroke="#E9DCC9" stroke-width="1.8" stroke-linejoin="round" />
+    <!-- Bow Right Loop -->
+    <path d="M16 10 C18.5 4, 24.5 3.5, 24.5 7 C24.5 10.5, 18.5 10, 16 10 Z" stroke="#E9DCC9" stroke-width="1.8" stroke-linejoin="round" />
+    <!-- Ribbon knot center -->
+    <circle cx="16" cy="10" r="1.5" fill="#E9DCC9" />
+  </g>
 </svg>

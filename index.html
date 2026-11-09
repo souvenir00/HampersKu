@@ -63,7 +63,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261107_brand_v2">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_hero_mockup">
 
   <!-- Embedded Hampers Collection Carousel Styles (Guaranteed Instant Horizontal Layout) -->
   <style id="hampersku-marquee-inline-css">
@@ -617,7 +617,20 @@
       <div class="cg-nav-inner">
         <!-- Brand Logo (Left) -->
         <a href="/" class="cg-brand" aria-label="HampersKu Beranda">
-          <img src="/assets/images/favicon.svg?v=20261107_v2" alt="HampersKu Logo" class="cg-brand-logo" width="38" height="38">
+          <svg class="cg-brand-icon" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Lid -->
+            <rect x="2.5" y="10.5" width="29" height="5" rx="1.5" stroke="#FFFFFF" stroke-width="1.8" />
+            <!-- Box Body -->
+            <rect x="4.5" y="15.5" width="25" height="15" rx="1.5" stroke="#FFFFFF" stroke-width="1.8" />
+            <!-- Vertical Ribbon -->
+            <line x1="17" y1="10.5" x2="17" y2="30.5" stroke="#FFFFFF" stroke-width="1.8" />
+            <!-- Bow Left Loop -->
+            <path d="M17 10.5 C14.5 4, 8 3.5, 8 7.5 C8 11, 14.5 10.5, 17 10.5 Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round" />
+            <!-- Bow Right Loop -->
+            <path d="M17 10.5 C19.5 4, 26 3.5, 26 7.5 C26 11, 19.5 10.5, 17 10.5 Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linejoin="round" />
+            <!-- Ribbon knot center -->
+            <circle cx="17" cy="10.5" r="1.5" fill="#FFFFFF" />
+          </svg>
           <span class="cg-brand-name">HampersKu</span>
         </a>
 
@@ -626,12 +639,12 @@
             <nav aria-label="Navigasi Utama">
               <ul class="cg-nav-menu">
                 <li class="cg-nav-item">
-                  <a href="/" class="cg-nav-link active" aria-current="page">Beranda</a>
+                  <a href="/" class="cg-nav-link cg-nav-link-pill active" aria-current="page">Beranda</a>
                 </li>
                 <li class="cg-nav-item dropdown">
                   <a href="/tentang" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
                     Tentang
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                       <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </a>
@@ -641,13 +654,26 @@
                     <li class="cg-dropdown-item"><a href="/faq"><span class="cg-dropdown-title">FAQ Hampers</span><span class="cg-dropdown-desc">Tanya jawab pengadaan B2B corporate</span></a></li>
                     <li class="cg-dropdown-item"><a href="/hampers-corporate-malang/"><span class="cg-dropdown-title">Hampers Malang</span><span class="cg-dropdown-desc">Layanan kota &amp; workshop resmi Malang</span></a></li>
                     <li class="cg-dropdown-item"><a href="/penulis"><span class="cg-dropdown-title">Profil Penulis</span><span class="cg-dropdown-desc">Tim kurator hampers &amp; dewan redaksi</span></a></li>
-                  <li class="cg-dropdown-item"><a href="/kontak"><span class="cg-dropdown-title">Kontak Kami</span><span class="cg-dropdown-desc">Konsultasi langsung tim sales B2B</span></a></li>
+                  </ul>
+                </li>
+                <li class="cg-nav-item dropdown">
+                  <a href="/custom-hampers/" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
+                    Layanan
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                      <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <ul class="cg-dropdown-panel" aria-label="Submenu Layanan">
+                    <li class="cg-dropdown-item"><a href="/custom-hampers/"><span class="cg-dropdown-title">Custom Hampers Corporate</span><span class="cg-dropdown-desc">Personalisasi logo, warna kemasan &amp; budget</span></a></li>
+                    <li class="cg-dropdown-item"><a href="/hampers-premium"><span class="cg-dropdown-title">Executive VIP Gift Set</span><span class="cg-dropdown-desc">Kurasi eksklusif direksi, klien &amp; stakeholder</span></a></li>
+                    <li class="cg-dropdown-item"><a href="/paket/seminar-kit"><span class="cg-dropdown-title">Event &amp; Seminar Kit</span><span class="cg-dropdown-desc">Merchandise kantor, tote bag &amp; tumbler custom</span></a></li>
+                    <li class="cg-dropdown-item"><a href="/paket/custom"><span class="cg-dropdown-title">Onboarding Employee Kit</span><span class="cg-dropdown-desc">Paket welcome gift staf baru &amp; apresiasi karyawan</span></a></li>
                   </ul>
                 </li>
                 <li class="cg-nav-item dropdown">
                   <a href="/paket" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
                     Paket Hampers
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                       <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                   </a>
@@ -657,12 +683,12 @@
                     <li class="cg-dropdown-item"><a href="/hampers-250-ribuan/"><span class="cg-dropdown-title">Hampers Rp250 Ribuan</span><span class="cg-dropdown-desc">Kombinasi personal &amp; box eksklusif</span></a></li>
                     <li class="cg-dropdown-item"><a href="/hampers-500-ribuan"><span class="cg-dropdown-title">Hampers Rp500 Ribuan</span><span class="cg-dropdown-desc">Presentasi premium relasi &amp; VIP</span></a></li>
                     <li class="cg-dropdown-item"><a href="/hampers-premium"><span class="cg-dropdown-title">Hampers Corporate Premium</span><span class="cg-dropdown-desc">Mutu isi tinggi, sampel fisik &amp; QC</span></a></li>
-                    <li class="cg-dropdown-item"><a href="/paket/seminar-kit"><span class="cg-dropdown-title">Event &amp; Seminar Hampers</span><span class="cg-dropdown-desc">Tote bag, tumbler, notebook & lanyard</span></a></li>
+                    <li class="cg-dropdown-item"><a href="/paket/seminar-kit"><span class="cg-dropdown-title">Event &amp; Seminar Hampers</span><span class="cg-dropdown-desc">Tote bag, tumbler, notebook &amp; lanyard</span></a></li>
                   </ul>
                 </li>
                 <li class="cg-nav-item"><a href="/portofolio" class="cg-nav-link">Portofolio</a></li>
                 <li class="cg-nav-item"><a href="/blog" class="cg-nav-link">Blog</a></li>
-                <li class="cg-nav-item"><a href="/custom-hampers/" class="cg-nav-link">Layanan</a></li>
+                <li class="cg-nav-item"><a href="/kontak" class="cg-nav-link">Kontak</a></li>
               </ul>
             </nav>
 
@@ -696,29 +722,84 @@
       <div class="cg-container">
         <div class="cg-hero-grid">
           <div class="cg-hero-content">
-            <span class="cg-hero-eyebrow">PREMIUM CORPORATE HAMPERS</span>
+            <!-- Eyebrow with decorative champagne rule -->
+            <div class="cg-hero-eyebrow-wrap">
+              <span class="cg-hero-eyebrow">PREMIUM CORPORATE HAMPERS</span>
+              <span class="cg-hero-eyebrow-line"></span>
+            </div>
+
+            <!-- Luxury Headline in Serif Playfair Display -->
             <h1 id="hero-title">
               Hadiah Berkesan,<br>
               <span class="cg-hero-title-italic">Ciptakan Hubungan</span><br>
               yang Lebih Bermakna
             </h1>
+
+            <!-- Subtitle / Short Description -->
             <p class="cg-hero-desc">
-              Hadirkan kesan istimewa melalui hampers premium yang dirancang dengan detail, dikemas secara elegan, dan dapat dipersonalisasi sesuai identitas perusahaan Anda.
-            </p>
-            <p class="cg-hero-desc">
-              Dari corporate hampers, gift box eksklusif hingga premium merchandise, kami membantu setiap hadiah menjadi representasi apresiasi dan profesionalisme bisnis Anda.
+              Hadirkan kesan istimewa melalui hampers premium yang dirancang dengan detail, elegan, dan penuh makna.
             </p>
 
+            <!-- CTA Buttons (Side-by-side Rounded Pills) -->
             <div class="cg-hero-actions">
               <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20ingin%20konsultasi%20corporate%20hampers."
-                class="cg-btn cg-hero-btn-gold" target="_blank" rel="noopener noreferrer"
+                class="cg-hero-pill-btn cg-hero-pill-cream" target="_blank" rel="noopener noreferrer"
                 data-wa-source="hero_primary">
-                KONSULTASI VIA WHATSAPP
+                <span>Konsultasi via WhatsApp</span>
+                <span class="cg-arrow">&rarr;</span>
               </a>
-              <a href="/paket" class="cg-btn cg-hero-btn-outline">
-                LIHAT KOLEKSI &rarr;
+              <a href="/paket" class="cg-hero-pill-btn cg-hero-pill-translucent">
+                <span>Lihat Koleksi</span>
+                <span class="cg-arrow">&rarr;</span>
               </a>
             </div>
+
+            <!-- Value Propositions (3 Horizontal Feature Badges) -->
+            <div class="cg-hero-features">
+              <div class="cg-hero-feature-item">
+                <svg class="cg-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 3h12l4 6-10 12L2 9l4-6z" />
+                  <path d="M11 3L8 9l4 12 4-12-3-6" />
+                  <path d="M2 9h20" />
+                </svg>
+                <div class="cg-feature-text">
+                  <span>Premium</span>
+                  <span>Quality</span>
+                </div>
+              </div>
+
+              <div class="cg-feature-divider" aria-hidden="true"></div>
+
+              <div class="cg-hero-feature-item">
+                <svg class="cg-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="8" width="18" height="13" rx="1.5" />
+                  <path d="M12 8v13" />
+                  <path d="M19 8H5a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2z" />
+                  <path d="M7.5 4a2.5 2.5 0 0 1 4.5 1.5V8H7.5A2.5 2.5 0 0 1 7.5 4z" />
+                  <path d="M16.5 4a2.5 2.5 0 0 0-4.5 1.5V8h4.5A2.5 2.5 0 0 0 16.5 4z" />
+                </svg>
+                <div class="cg-feature-text">
+                  <span>Desain</span>
+                  <span>Elegan</span>
+                </div>
+              </div>
+
+              <div class="cg-feature-divider" aria-hidden="true"></div>
+
+              <div class="cg-hero-feature-item">
+                <svg class="cg-feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="4" width="13" height="12" rx="1" />
+                  <path d="M14 9h4l3 3v4h-7V9z" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="17.5" cy="18.5" r="2.5" />
+                </svg>
+                <div class="cg-feature-text">
+                  <span>Pengiriman</span>
+                  <span>Seluruh Indonesia</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -1854,13 +1935,11 @@
   <!-- Floating WhatsApp Action -->
   <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20ingin%20konsultasi%20corporate%20hampers."
     class="cg-float-wa" target="_blank" rel="noopener noreferrer"
-    aria-label="Konsultasi corporate hampers melalui WhatsApp" data-wa-source="floating_button">
-    <div class="cg-float-wa-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"
-        aria-hidden="true">
-        <path
-          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2ZM12.04 20.16C10.56 20.16 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.04 20.16ZM16.56 14.43C16.31 14.31 15.09 13.71 14.86 13.62C14.63 13.54 14.47 13.5 14.3 13.75C14.14 14 13.67 14.55 13.53 14.71C13.38 14.88 13.24 14.9 12.99 14.77C12.74 14.65 11.94 14.39 10.99 13.54C10.25 12.88 9.75 12.06 9.6 11.81C9.46 11.56 9.59 11.43 9.71 11.31C9.82 11.2 9.96 11.02 10.08 10.88C10.21 10.73 10.25 10.63 10.33 10.46C10.41 10.3 10.37 10.15 10.31 10.03C10.25 9.9 9.76 8.7 9.56 8.2C9.36 7.72 9.16 7.78 9 7.78C8.86 7.77 8.69 7.77 8.52 7.77C8.36 7.77 8.09 7.83 7.86 8.08C7.64 8.33 7 8.92 7 10.14C7 11.36 7.89 12.53 8.01 12.7C8.13 12.86 9.75 15.36 12.23 16.43C12.82 16.69 13.28 16.84 13.64 16.95C14.23 17.14 14.77 17.11 15.2 17.05C15.68 16.98 16.68 16.45 16.89 15.86C17.1 15.27 17.1 14.77 17.04 14.67C16.98 14.56 16.81 14.5 16.56 14.43Z" />
-      </svg></div>
-    <span>Konsultasi WhatsApp</span>
+    aria-label="Chat WhatsApp Sekarang" data-wa-source="floating_button">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+    <span>Chat Sekarang</span>
   </a>
 
   <!-- Back to top button -->
