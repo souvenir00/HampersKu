@@ -1748,6 +1748,47 @@ p {
 }
 
 /* ==========================================================================
+   Mega Menu Base Reset (Prevents unstyled display / layout explosion)
+   ========================================================================== */
+.cg-megamenu-panel {
+  display: none !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.cg-megamenu-container {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.cg-megamenu-list {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cg-megamenu-list li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cg-megamenu-list a {
+  text-decoration: none !important;
+  color: #4A3E38;
+}
+
+.cg-nav-item.dropdown.has-megamenu:hover > .cg-megamenu-panel,
+.cg-nav-item.dropdown.has-megamenu.show > .cg-megamenu-panel,
+.cg-megamenu-panel:hover {
+  display: block !important;
+}
+
+/* ==========================================================================
    Mega Menu Dropdown (Sekata-Inspired Warm Ivory 4-Column Layout)
    ========================================================================== */
 @media (min-width: 992px) {
@@ -1777,22 +1818,22 @@ p {
 
   .cg-megamenu-panel {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
     background-color: #FAF7F2 !important;
-    border-top: 1px solid rgba(36, 26, 20, 0.08);
-    border-bottom: 1px solid #EAE3D9;
-    box-shadow: 0 24px 48px -12px rgba(36, 26, 20, 0.16);
-    padding: 46px 0 52px 0;
-    z-index: 1060;
+    border-top: 1px solid rgba(36, 26, 20, 0.08) !important;
+    border-bottom: 1px solid #EAE3D9 !important;
+    box-shadow: 0 24px 48px -12px rgba(36, 26, 20, 0.16) !important;
+    padding: 46px 0 52px 0 !important;
+    z-index: 1060 !important;
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
   }
 
   .cg-megamenu-panel::before {
@@ -1805,13 +1846,13 @@ p {
     background: transparent;
   }
 
-  .cg-nav-item.dropdown.has-megamenu:hover .cg-megamenu-panel,
-  .cg-nav-item.dropdown.has-megamenu.show .cg-megamenu-panel,
+  .cg-nav-item.dropdown.has-megamenu:hover > .cg-megamenu-panel,
+  .cg-nav-item.dropdown.has-megamenu.show > .cg-megamenu-panel,
   .cg-megamenu-panel:hover {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
   }
 
   .cg-header:has(.cg-megamenu-panel:hover),
