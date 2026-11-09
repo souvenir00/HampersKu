@@ -63,7 +63,856 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_home_redesign_v2">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_v4_ref2_complete">
+
+  <style id="cg-ref2-styles">
+/* ==========================================================================
+   HOMEPAGE REDESIGN — REFERENSI TAMPILAN, TATA LETAK & BORDER FOTO KE-2
+   (Minimalist Luxury, Clean Hairline Borders, Balanced Spacing & AI Photography)
+   ========================================================================== */
+
+/* Base Section Utilities */
+.cg-ref2-sec {
+  padding: 72px 0;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.cg-ref2-sec.bg-warm {
+  background: #FAF8F5;
+}
+
+.cg-ref2-sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+
+.cg-ref2-sec-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A7B56;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.cg-ref2-sec-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.15rem;
+  color: #1F1915;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.cg-ref2-sec-desc {
+  font-size: 0.94rem;
+  color: #6E645A;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0;
+}
+
+.cg-ref2-text-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #9A7B56;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cg-ref2-text-link:hover {
+  color: #241A14;
+}
+
+.cg-ref2-pill-btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #C59B27;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 11px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.22);
+  border: 1px solid #B88E20;
+}
+
+.cg-ref2-pill-btn-solid:hover {
+  background: #A8811A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.32);
+}
+
+/* ========================================================
+   1. SECTION: MITRA KAMI (HAIRLINE DIVIDERS, CLEAN B2B)
+   ======================================================== */
+.cg-ref2-mitra-sec {
+  padding: 24px 0 26px;
+  background: #FFFFFF;
+  border-top: 1px solid #ECE7E1;
+  border-bottom: 1px solid #ECE7E1;
+}
+
+.cg-ref2-mitra-subtitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8F8275;
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.cg-ref2-mitra-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cg-ref2-mitra-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 980px;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.cg-ref2-mitra-logo {
+  height: 26px;
+  max-width: 95px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1.15);
+  opacity: 0.82;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.cg-ref2-mitra-logo:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* ========================================================
+   2. SECTION: KATEGORI PILIHAN (3 HERO FEATURE CARDS)
+   ======================================================== */
+.cg-ref2-kategori-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cg-ref2-kategori-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #EAE4DC;
+  display: block;
+  text-decoration: none;
+  background: #FAF8F5;
+}
+
+.cg-ref2-kategori-img-wrap {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-ref2-kategori-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cg-ref2-kategori-card:hover .cg-ref2-kategori-img {
+  transform: scale(1.05);
+}
+
+.cg-ref2-kategori-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 10, 0.84) 0%, rgba(20, 14, 10, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #FFFFFF;
+}
+
+.cg-ref2-kategori-pill {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cg-ref2-kategori-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+
+.cg-ref2-kategori-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #E5C365;
+  transition: transform 0.2s ease;
+}
+
+.cg-ref2-kategori-card:hover .cg-ref2-kategori-link {
+  transform: translateX(3px);
+}
+
+/* ========================================================
+   3. SECTION: KOLEKSI UNGGULAN (4-COLUMN CLEAN PRODUCT GRID)
+   ======================================================== */
+.cg-ref2-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.cg-ref2-filter-btn {
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid #D8CFC4;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5C5045;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cg-ref2-filter-btn:hover {
+  border-color: #241A14;
+  color: #241A14;
+}
+
+.cg-ref2-filter-btn.active {
+  background: #241A14;
+  color: #FFFFFF;
+  border-color: #241A14;
+}
+
+.cg-ref2-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cg-ref2-product-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.cg-ref2-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(36, 26, 20, 0.08);
+  border-color: #C59B27;
+}
+
+.cg-ref2-product-img-wrap {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #F5EFEB;
+}
+
+.cg-ref2-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cg-ref2-product-card:hover .cg-ref2-product-img {
+  transform: scale(1.05);
+}
+
+.cg-ref2-badge-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 2px;
+  color: #241A14;
+  border: 1px solid #E2D9CE;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
+
+.cg-ref2-badge-tag.best-seller {
+  background: #F4C46A;
+  color: #241A14;
+  border-color: #E2B050;
+}
+
+.cg-ref2-badge-tag.custom-badge {
+  background: #241A14;
+  color: #FFFFFF;
+  border-color: #241A14;
+}
+
+.cg-ref2-product-info {
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cg-ref2-product-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A7B56;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cg-ref2-product-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #1F1915;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  min-height: 2.7em;
+}
+
+.cg-ref2-product-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #F0EAE2;
+  margin-bottom: 12px;
+}
+
+.cg-ref2-product-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #9A5A35;
+}
+
+.cg-ref2-product-moq {
+  font-size: 0.72rem;
+  color: #8F8275;
+}
+
+.cg-ref2-product-btn {
+  display: block;
+  text-align: center;
+  padding: 8px 14px;
+  background: #FAF7F2;
+  border: 1px solid #D8CFC4;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #241A14;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cg-ref2-product-btn:hover {
+  background: #241A14;
+  color: #FFFFFF !important;
+  border-color: #241A14;
+}
+
+/* ========================================================
+   4. SECTION: CARA PEMESANAN (4 STEPS WITH HAIRLINE DIVIDERS)
+   ======================================================== */
+.cg-ref2-steps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+
+.cg-ref2-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #EAE4DC;
+  border-radius: 4px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.cg-ref2-step-item {
+  padding: 32px 24px;
+  position: relative;
+  border-right: 1px solid #EAE4DC;
+  transition: background 0.2s ease;
+}
+
+.cg-ref2-step-item:last-child {
+  border-right: none;
+}
+
+.cg-ref2-step-item:hover {
+  background: #FAF8F5;
+}
+
+.cg-ref2-step-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #C59B27;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.cg-ref2-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1F1915;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.cg-ref2-step-desc {
+  font-size: 0.86rem;
+  color: #6E645A;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ========================================================
+   5. SECTION: SPLIT FEATURE BANNER (SEPARUH FT SEPARUH TEKS)
+   EXACT MATCH TO IMAGE 1 & FOTO KE 2 SLICE 3
+   ======================================================== */
+.cg-ref2-split-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #EAE4DC;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FAF7F2;
+  box-shadow: 0 6px 20px rgba(36, 26, 20, 0.04);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.cg-ref2-split-img-side {
+  height: 340px;
+  overflow: hidden;
+  background: #EAE5DE;
+}
+
+.cg-ref2-split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cg-ref2-split-banner:hover .cg-ref2-split-img {
+  transform: scale(1.03);
+}
+
+.cg-ref2-split-text-side {
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cg-ref2-split-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1F1915;
+  margin: 8px 0 14px;
+  line-height: 1.25;
+}
+
+.cg-ref2-split-body {
+  font-size: 0.94rem;
+  color: #5C5045;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.cg-ref2-split-action {
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================================
+   6. SECTION: TESTIMONI & APRESIASI KLIEN
+   ======================================================== */
+.cg-ref2-quote-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.cg-ref2-stars {
+  color: #C59B27;
+  font-size: 1.35rem;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.cg-ref2-quote-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  color: #1F1915;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+
+.cg-ref2-quote-author {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1F1915;
+  margin: 0 0 2px;
+}
+
+.cg-ref2-quote-client {
+  font-size: 0.8rem;
+  color: #8F8275;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ========================================================
+   7. SECTION: PORTOFOLIO / DOKUMENTASI NYATA PENGADAAN
+   ======================================================== */
+.cg-ref2-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cg-ref2-gallery-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.cg-ref2-gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(36, 26, 20, 0.07);
+}
+
+.cg-ref2-gallery-img-wrap {
+  height: 220px;
+  overflow: hidden;
+  background: #F0ECE6;
+}
+
+.cg-ref2-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cg-ref2-gallery-card:hover .cg-ref2-gallery-img {
+  transform: scale(1.05);
+}
+
+.cg-ref2-gallery-meta {
+  padding: 16px;
+}
+
+.cg-ref2-gallery-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #9A7B56;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.cg-ref2-gallery-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1F1915;
+  margin: 0 0 6px;
+}
+
+.cg-ref2-gallery-desc {
+  font-size: 0.84rem;
+  color: #6E645A;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ========================================================
+   8. SECTION: FAQ (CLEAN ACCORDION WITH HAIRLINE BORDERS)
+   ======================================================== */
+.cg-ref2-faq-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.cg-ref2-faq-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.cg-ref2-faq-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.cg-ref2-faq-row {
+  border-bottom: 1px solid #EAE4DC;
+  padding: 18px 0;
+}
+
+.cg-ref2-faq-row:first-child {
+  border-top: 1px solid #EAE4DC;
+}
+
+.cg-ref2-faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  color: #1F1915;
+}
+
+.cg-ref2-faq-question {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1F1915;
+  line-height: 1.4;
+}
+
+.cg-ref2-faq-toggle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #9A7B56;
+  margin-left: 16px;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.cg-ref2-faq-row.active .cg-ref2-faq-toggle {
+  transform: rotate(45deg);
+  color: #C59B27;
+}
+
+.cg-ref2-faq-content {
+  padding-top: 12px;
+  font-size: 0.88rem;
+  color: #5C5045;
+  line-height: 1.6;
+}
+
+.cg-ref2-faq-content p {
+  margin: 0;
+}
+
+/* ========================================================
+   9. SECTION: PRE-FOOTER BANNER (WARM COPPER / TERRACOTTA)
+   EXACT MATCH TO FOTO KE 2 BOTTOM CTA
+   ======================================================== */
+.cg-ref2-cta-banner {
+  background: #9E5839;
+  color: #FFFFFF;
+  padding: 68px 0;
+  position: relative;
+}
+
+.cg-ref2-cta-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #F5D3B8;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.cg-ref2-cta-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  max-width: 680px;
+  margin: 0 auto 12px;
+  line-height: 1.25;
+}
+
+.cg-ref2-cta-sub {
+  font-size: 0.95rem;
+  color: #F5EAE2;
+  max-width: 580px;
+  margin: 0 auto 28px;
+  line-height: 1.55;
+}
+
+.cg-ref2-cta-action {
+  display: flex;
+  justify-content: center;
+}
+
+.cg-ref2-cta-btn {
+  background: #FFFFFF;
+  color: #9E5839 !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.cg-ref2-cta-btn:hover {
+  background: #FDF9F5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN (FOTO KE 2 ADAPTATION)
+   ======================================================== */
+@media (max-width: 1199.98px) {
+  .cg-ref2-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cg-ref2-sec {
+    padding: 56px 0;
+  }
+  .cg-ref2-sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cg-ref2-kategori-grid {
+    grid-template-columns: 1fr;
+  }
+  .cg-ref2-kategori-img-wrap {
+    height: 240px;
+  }
+  .cg-ref2-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cg-ref2-steps-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cg-ref2-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cg-ref2-step-item:nth-child(2) {
+    border-right: none;
+  }
+  .cg-ref2-step-item:nth-child(1),
+  .cg-ref2-step-item:nth-child(2) {
+    border-bottom: 1px solid #EAE4DC;
+  }
+  .cg-ref2-split-banner {
+    grid-template-columns: 1fr;
+  }
+  .cg-ref2-split-img-side {
+    height: 260px;
+  }
+  .cg-ref2-split-text-side {
+    padding: 32px 24px;
+  }
+  .cg-ref2-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .cg-ref2-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cg-ref2-sec {
+    padding: 44px 0;
+  }
+  .cg-ref2-sec-title {
+    font-size: 1.65rem;
+  }
+  .cg-ref2-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .cg-ref2-step-item {
+    border-right: none;
+    border-bottom: 1px solid #EAE4DC;
+  }
+  .cg-ref2-step-item:last-child {
+    border-bottom: none;
+  }
+  .cg-ref2-product-grid {
+    grid-template-columns: 1fr;
+  }
+  .cg-ref2-cta-heading {
+    font-size: 1.65rem;
+  }
+  .cg-ref2-quote-text {
+    font-size: 1.15rem;
+  }
+}
+
+</style>
 
   <!-- Embedded Hampers Collection Carousel Styles (Guaranteed Instant Horizontal Layout) -->
   <style id="hampersku-marquee-inline-css">
@@ -1519,7 +2368,65 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/js/main.js?v=20261109_home_redesign_v2"></script>
+  <script src="/assets/js/main.js?v=20261109_v4_ref2_complete"></script>
+
+  <script id="cg-ref2-inline-js">
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Catalog Category Filter Tabs
+      const filterBtns = document.querySelectorAll('.cg-ref2-filter-btn');
+      const productCards = document.querySelectorAll('.cg-ref2-product-card');
+
+      filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          const filter = btn.getAttribute('data-filter');
+          productCards.forEach(function(card) {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.style.display = 'flex';
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 2. FAQ Accordion
+      const faqTriggers = document.querySelectorAll('.cg-ref2-faq-trigger');
+      faqTriggers.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const row = btn.closest('.cg-ref2-faq-row');
+          const content = row.querySelector('.cg-ref2-faq-content');
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+          document.querySelectorAll('.cg-ref2-faq-row').forEach(function(other) {
+            if (other !== row) {
+              other.classList.remove('active');
+              const otherBtn = other.querySelector('.cg-ref2-faq-trigger');
+              const otherContent = other.querySelector('.cg-ref2-faq-content');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+              if (otherContent) otherContent.hidden = true;
+            }
+          });
+
+          if (isExpanded) {
+            btn.setAttribute('aria-expanded', 'false');
+            content.hidden = true;
+            row.classList.remove('active');
+          } else {
+            btn.setAttribute('aria-expanded', 'true');
+            content.hidden = false;
+            row.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
 </body>
 
 </html>
