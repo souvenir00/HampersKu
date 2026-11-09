@@ -5262,3 +5262,815 @@ textarea.cg-form-control {
 .border-white-10 {
   border-color: rgba(255, 255, 255, 0.18) !important;
 }
+
+/* ==========================================================================
+   HOMEPAGE REDESIGN (MATCHING LUXURY SECTION MOCKUP 2026)
+   Clean, Warm Linen, Serif Headings, High-End Card Visuals
+   ========================================================================== */
+.cg-home-sec {
+  padding: clamp(38px, 5.5vw, 68px) 0;
+  position: relative;
+}
+
+.cg-pill-badge {
+  display: inline-block;
+  background-color: #EBDBCB;
+  color: #6C4E34;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.cg-sec-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #241A14;
+  font-size: clamp(1.8rem, 2.6vw, 2.35rem);
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.cg-sec-subtext {
+  color: #7A6F68;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 34px;
+}
+
+/* Rounded Pill Action Buttons */
+.cg-pill-btn-tan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #C8A279;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  border: 1px solid rgba(200, 162, 121, 0.5);
+  box-shadow: 0 4px 14px rgba(200, 162, 121, 0.25);
+  transition: all 0.25s ease;
+}
+
+.cg-pill-btn-tan:hover {
+  background-color: #B58F67;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(181, 143, 103, 0.35);
+  color: #FFFFFF !important;
+}
+
+.cg-pill-btn-cream {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #E8DACB;
+  color: #241A14 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none !important;
+  border: 1px solid rgba(220, 205, 190, 0.6);
+  transition: all 0.25s ease;
+}
+
+.cg-pill-btn-cream:hover {
+  background-color: #DDD0C0;
+  transform: translateY(-2px);
+  color: #241A14 !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. SECTION: MITRA KAMI STRIP
+   -------------------------------------------------------------------------- */
+.cg-mitra-strip {
+  background: #FFFFFF;
+  border: 1px solid rgba(220, 205, 190, 0.55);
+  border-radius: 16px;
+  padding: 14px 22px;
+  box-shadow: 0 4px 18px rgba(36, 26, 20, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cg-mitra-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cg-mitra-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.cg-mitra-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #241A14;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cg-mitra-sub {
+  font-size: 0.78rem;
+  color: #7A6F68;
+  margin: 0;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.cg-mitra-divider {
+  width: 1px;
+  height: 38px;
+  background: rgba(220, 205, 190, 0.6);
+  flex-shrink: 0;
+  margin: 0 6px;
+}
+
+.cg-mitra-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+  gap: 12px;
+}
+
+.cg-mitra-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.cg-mitra-logo-item {
+  height: 24px;
+  max-width: 90px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.82;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.cg-mitra-logo-item:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.cg-mitra-arrow-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 205, 190, 0.8);
+  background: #FAF7F2;
+  color: #241A14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.cg-mitra-arrow-btn:hover {
+  background: #E8DACB;
+  border-color: #C8A279;
+}
+
+.cg-mitra-dots {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.cg-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #A8988A;
+}
+
+.cg-dot.active {
+  background: #241A14;
+  border-color: #241A14;
+}
+
+@media (max-width: 991.98px) {
+  .cg-mitra-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cg-mitra-divider {
+    display: none;
+  }
+  .cg-mitra-right {
+    width: 100%;
+  }
+  .cg-mitra-logos {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+  }
+  .cg-mitra-sub {
+    white-space: normal;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SECTION: KOLEKSI PILIHAN (4-COLUMN CARDS)
+   -------------------------------------------------------------------------- */
+.cg-koleksi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.cg-koleksi-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(220, 205, 190, 0.55);
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 4px 18px rgba(36, 26, 20, 0.03);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cg-koleksi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(36, 26, 20, 0.08);
+  border-color: rgba(200, 162, 121, 0.7);
+}
+
+.cg-koleksi-img-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  margin-bottom: 12px;
+  background: #FAF7F2;
+}
+
+.cg-koleksi-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.cg-koleksi-card:hover .cg-koleksi-img {
+  transform: scale(1.03);
+}
+
+.cg-koleksi-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #241A14;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.cg-koleksi-desc {
+  font-size: 0.82rem;
+  color: #7A6F68;
+  line-height: 1.45;
+  margin: 0 0 12px 0;
+  flex: 1;
+}
+
+.cg-circle-arrow-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(220, 205, 190, 0.85);
+  background: #FAF7F2;
+  color: #241A14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  margin-left: auto;
+  transition: all 0.2s ease;
+}
+
+.cg-koleksi-card:hover .cg-circle-arrow-btn {
+  background: #C8A279;
+  border-color: #C8A279;
+  color: #FFFFFF;
+}
+
+@media (max-width: 991.98px) {
+  .cg-koleksi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cg-koleksi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. SECTION: TENTANG KAMI FEATURE BANNER
+   -------------------------------------------------------------------------- */
+.cg-about-banner {
+  background: linear-gradient(135deg, #FAF4EC 0%, #F5ECE0 100%);
+  border: 1px solid rgba(220, 205, 190, 0.55);
+  border-radius: 22px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(36, 26, 20, 0.04);
+}
+
+.cg-about-banner-media {
+  height: 100%;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-about-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.cg-about-banner-body {
+  padding: clamp(26px, 4.5vw, 54px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.cg-about-banner-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+  color: #241A14;
+  line-height: 1.25;
+  margin: 12px 0 14px;
+}
+
+.cg-about-banner-desc {
+  font-size: 0.95rem;
+  color: #6A5D54;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 440px;
+}
+
+@media (max-width: 767.98px) {
+  .cg-about-banner {
+    grid-template-columns: 1fr;
+  }
+  .cg-about-banner-media {
+    min-height: 220px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. SECTION: PILIHAN BERDASARKAN ACARA (7 EVENTS GRID)
+   -------------------------------------------------------------------------- */
+.cg-acara-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.cg-acara-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(220, 205, 190, 0.5);
+  border-radius: 16px;
+  padding: 20px 8px 16px;
+  text-align: center;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(36, 26, 20, 0.03);
+}
+
+.cg-acara-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(36, 26, 20, 0.08);
+  border-color: rgba(200, 162, 121, 0.7);
+}
+
+.cg-acara-icon-wrap {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #997253;
+}
+
+.cg-acara-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #241A14;
+  line-height: 1.3;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .cg-acara-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cg-acara-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. SECTION: PAKET HAMPERS FAVORIT (DARK ESPRESSO BOX)
+   -------------------------------------------------------------------------- */
+.cg-favorit-box {
+  background: #3B261D;
+  border-radius: 24px;
+  padding: clamp(28px, 4vw, 44px);
+  box-shadow: 0 14px 40px rgba(24, 16, 12, 0.25);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-favorit-grid {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.cg-favorit-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cg-favorit-eyebrow {
+  color: #D8BF9E;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cg-favorit-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+}
+
+.cg-favorit-sub {
+  color: #D2C4B8;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 270px;
+}
+
+.cg-favorit-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.cg-favorit-arrow-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cg-favorit-arrow-btn:hover {
+  background: #E8DACB;
+  color: #241A14;
+  border-color: #E8DACB;
+}
+
+.cg-favorit-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.cg-favorit-card {
+  background: #FAF7F2;
+  border-radius: 18px;
+  padding: 12px;
+  color: #241A14 !important;
+  text-decoration: none !important;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.cg-favorit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.cg-favorit-card.featured {
+  border: 2px solid #D4A359;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(-6px);
+}
+
+.cg-favorit-card.featured:hover {
+  transform: translateY(-10px);
+}
+
+.cg-bestseller-badge {
+  position: absolute;
+  top: -14px;
+  right: 18px;
+  background: #F4C463;
+  color: #3B261D;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 3px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+.cg-favorit-card-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  margin-bottom: 10px;
+  background: #EDE6DF;
+}
+
+.cg-favorit-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cg-favorit-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: #241A14;
+  margin: 0 0 4px 0;
+}
+
+.cg-favorit-card-desc {
+  font-size: 0.76rem;
+  color: #7A6F68;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.cg-favorit-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.cg-favorit-dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 24px;
+}
+
+.cg-favorit-dots .cg-dot {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cg-favorit-dots .cg-dot.active {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+@media (max-width: 991.98px) {
+  .cg-favorit-grid {
+    grid-template-columns: 1fr;
+  }
+  .cg-favorit-cards-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cg-favorit-card.featured {
+    transform: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. SECTION: PORTOFOLIO KAMI
+   -------------------------------------------------------------------------- */
+.cg-portofolio-box {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.cg-portofolio-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cg-portofolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.cg-portofolio-thumb-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16/11;
+  box-shadow: 0 4px 14px rgba(36, 26, 20, 0.05);
+  background: #FAF7F2;
+}
+
+.cg-portofolio-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.cg-portofolio-thumb-wrap:hover .cg-portofolio-thumb {
+  transform: scale(1.05);
+}
+
+@media (max-width: 991.98px) {
+  .cg-portofolio-box {
+    grid-template-columns: 1fr;
+  }
+  .cg-portofolio-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. SECTION: PERTANYAAN YANG SERING DIAJUKAN (FAQ)
+   -------------------------------------------------------------------------- */
+.cg-faq-card {
+  background: #FAF7F2;
+  border: 1px solid rgba(220, 205, 190, 0.55);
+  border-radius: 22px;
+  padding: clamp(28px, 4vw, 44px);
+  box-shadow: 0 6px 24px rgba(36, 26, 20, 0.03);
+}
+
+.cg-faq-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.cg-faq-left {
+  position: relative;
+  padding-right: 20px;
+}
+
+.cg-faq-divider-v {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(220, 205, 190, 0.65);
+}
+
+.cg-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cg-faq-item {
+  background: #FFFFFF;
+  border: 1px solid rgba(220, 205, 190, 0.6);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cg-faq-item.is-open {
+  border-color: #C8A279;
+  box-shadow: 0 4px 14px rgba(200, 162, 121, 0.15);
+}
+
+.cg-faq-btn {
+  width: 100%;
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #241A14;
+  cursor: pointer;
+}
+
+.cg-faq-chevron {
+  transition: transform 0.3s ease;
+  stroke: #241A14;
+  flex-shrink: 0;
+}
+
+.cg-faq-item.is-open .cg-faq-chevron,
+.cg-faq-item.active .cg-faq-chevron {
+  transform: rotate(180deg);
+}
+
+.cg-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 20px;
+  font-size: 0.88rem;
+  color: #6A5D54;
+  line-height: 1.6;
+}
+
+.cg-faq-item.is-open .cg-faq-answer,
+.cg-faq-item.active .cg-faq-answer {
+  max-height: 250px;
+  padding: 0 20px 16px;
+}
+
+@media (max-width: 991.98px) {
+  .cg-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .cg-faq-divider-v {
+    display: none;
+  }
+  .cg-faq-left {
+    padding-right: 0;
+  }
+}
+

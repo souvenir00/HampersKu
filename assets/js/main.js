@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVideo();
   initHeroPhotoRotator();
   initHampersCarousel();
+  initHomepageRedesignInteractions();
 
   // Defer non-critical handlers in ultra-light microtasks
   const queueTasks = [
@@ -202,27 +203,27 @@ function initFaqAccordion() {
   if (!faqItems.length) return;
 
   faqItems.forEach(item => {
-    const btn = item.querySelector('.cg-faq-question');
+    const btn = item.querySelector('.cg-faq-question, .cg-faq-btn');
     if (!btn) return;
 
     btn.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
+      const isActive = item.classList.contains('active') || item.classList.contains('is-open');
       
       // Close other items
       faqItems.forEach(other => {
         if (other !== item) {
-          other.classList.remove('active');
-          const otherBtn = other.querySelector('.cg-faq-question');
+          other.classList.remove('active', 'is-open');
+          const otherBtn = other.querySelector('.cg-faq-question, .cg-faq-btn');
           if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
         }
       });
 
       // Toggle current
       if (isActive) {
-        item.classList.remove('active');
+        item.classList.remove('active', 'is-open');
         btn.setAttribute('aria-expanded', 'false');
       } else {
-        item.classList.add('active');
+        item.classList.add('active', 'is-open');
         btn.setAttribute('aria-expanded', 'true');
       }
     });
@@ -818,5 +819,35 @@ function initHeroVideo() {
     });
   }
 }
+
+/**
+ * Homepage 2026 Redesign Interactive Controls (Mitra & Favorit Carousels)
+ */
+function initHomepageRedesignInteractions() {
+  const mitraTrack = document.getElementById('mitraLogosTrack');
+  const mitraPrev = document.getElementById('mitraPrev');
+  const mitraNext = document.getElementById('mitraNext');
+  if (mitraTrack && mitraPrev && mitraNext) {
+    mitraPrev.addEventListener('click', () => {
+      mitraTrack.scrollBy({ left: -140, behavior: 'smooth' });
+    });
+    mitraNext.addEventListener('click', () => {
+      mitraTrack.scrollBy({ left: 140, behavior: 'smooth' });
+    });
+  }
+
+  const favPrev = document.getElementById('favPrev');
+  const favNext = document.getElementById('favNext');
+  const favRow = document.querySelector('.cg-favorit-cards-row');
+  if (favRow && favPrev && favNext) {
+    favPrev.addEventListener('click', () => {
+      favRow.scrollBy({ left: -260, behavior: 'smooth' });
+    });
+    favNext.addEventListener('click', () => {
+      favRow.scrollBy({ left: 260, behavior: 'smooth' });
+    });
+  }
+}
+
 
 
