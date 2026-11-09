@@ -69,6 +69,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/blog/hampers-corporate-100-ribuan.html';
   } else if (reqUrl === '/blog/hitung-budget-hampers-100-karyawan/' || reqUrl === '/blog/hitung-budget-hampers-100-karyawan') {
     reqUrl = '/blog/hitung-budget-hampers-100-karyawan.html';
+  } else if (reqUrl === '/blog/kapan-pesan-hampers-perusahaan/' || reqUrl === '/blog/kapan-pesan-hampers-perusahaan') {
+    reqUrl = '/blog/kapan-pesan-hampers-perusahaan.html';
   } else if (reqUrl === '/') {
     reqUrl = '/index.html';
   } else if (reqUrl.endsWith('/')) {
