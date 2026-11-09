@@ -2101,9 +2101,10 @@ body.cg-home-page .cg-hero,
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
-    padding-top: clamp(72px, 9.5vh, 92px) !important;
-    padding-bottom: 24px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 76px !important;
+    padding-bottom: 30px !important;
     background-color: transparent;
     box-sizing: border-box;
     position: relative !important;
@@ -2111,9 +2112,9 @@ body.cg-home-page .cg-hero,
 
   .cg-hero::before {
     background-image:
-      linear-gradient(180deg, rgba(20, 16, 13, 0.40) 0%, rgba(20, 16, 13, 0.16) 20%, rgba(20, 16, 13, 0.44) 45%, rgba(20, 16, 13, 0.65) 70%, rgba(20, 16, 13, 0.82) 100%),
+      linear-gradient(180deg, rgba(20, 16, 13, 0.48) 0%, rgba(20, 16, 13, 0.28) 25%, rgba(20, 16, 13, 0.38) 50%, rgba(20, 16, 13, 0.52) 75%, rgba(20, 16, 13, 0.68) 100%),
       url('/assets/images/ftheader-mobile.webp?v=20261109_full_portrait_v1');
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -2121,15 +2122,18 @@ body.cg-home-page .cg-hero,
   .cg-hero .cg-container {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    margin: 0 auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: auto 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 
   .cg-hero-grid {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
     min-height: auto !important;
@@ -2141,7 +2145,7 @@ body.cg-home-page .cg-hero,
     align-items: center !important;
     text-align: center !important;
     width: 100% !important;
-    max-width: 360px !important;
+    max-width: 380px !important;
     margin: 0 auto !important;
     padding: 0 !important;
   }
@@ -2150,7 +2154,7 @@ body.cg-home-page .cg-hero,
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 12px !important;
   }
 
   .cg-hero-eyebrow-line {
@@ -2158,69 +2162,69 @@ body.cg-home-page .cg-hero,
   }
 
   .cg-hero-eyebrow {
-    background: rgba(233, 220, 201, 0.25) !important;
-    border: 1px solid rgba(233, 220, 201, 0.42) !important;
+    background: rgba(48, 39, 34, 0.70) !important;
+    border: 1px solid rgba(233, 220, 201, 0.40) !important;
     color: #F5EDE2 !important;
-    padding: 3px 12px !important;
-    border-radius: 20px !important;
-    font-size: 0.66rem !important;
-    letter-spacing: 0.08em !important;
-    backdrop-filter: blur(6px) !important;
-    -webkit-backdrop-filter: blur(6px) !important;
+    padding: 5px 16px !important;
+    border-radius: 50px !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.09em !important;
+    text-transform: uppercase !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
   }
 
   .cg-hero h1,
   .cg-hero #hero-title {
     text-align: center !important;
-    font-size: clamp(1.50rem, 5.8vw, 1.95rem) !important;
-    line-height: 1.20 !important;
-    margin-bottom: 8px !important;
+    font-size: clamp(1.68rem, 6.8vw, 2.15rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 12px !important;
     letter-spacing: -0.015em !important;
     color: #FFFFFF !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65) !important;
   }
 
   .cg-hero .cg-hero-title-italic {
     display: inline-block !important;
     font-style: italic !important;
     color: #E9DCC9 !important;
+    font-weight: 500 !important;
   }
 
   .cg-hero-desc {
     text-align: center !important;
-    font-size: 0.82rem !important;
-    line-height: 1.45 !important;
-    max-width: 320px !important;
-    margin: 0 auto 14px !important;
-    color: #EDE6DF !important;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+    font-size: 0.86rem !important;
+    line-height: 1.54 !important;
+    max-width: 330px !important;
+    margin: 0 auto 20px !important;
+    color: #F0E8DF !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7) !important;
   }
 
   .cg-hero-actions {
     display: flex !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 8px !important;
-    margin: 0 auto 16px !important;
+    gap: 10px !important;
+    margin: 0 auto 24px !important;
     padding-bottom: 0 !important;
     width: 100% !important;
-    max-width: 350px !important;
+    max-width: 360px !important;
   }
 
   .cg-hero-pill-btn {
-    padding: 8px 12px !important;
-    font-size: 0.76rem !important;
-    white-space: nowrap !important;
-    flex: 1 1 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    letter-spacing: 0.01em !important;
-  }
-
-  .cg-hero-pill-btn .cg-arrow {
-    margin-left: 4px !important;
+    padding: 10px 18px !important;
     font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    white-space: nowrap !important;
   }
 
   .cg-hero-features {
@@ -2228,54 +2232,58 @@ body.cg-home-page .cg-hero,
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 4px !important;
+    gap: 5px !important;
     margin: 0 auto !important;
-    padding: 7px 8px !important;
+    padding: 10px 14px !important;
     background: rgba(30, 24, 20, 0.82) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border: 1px solid rgba(233, 220, 201, 0.30) !important;
-    border-radius: 12px !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(233, 220, 201, 0.28) !important;
+    border-radius: 16px !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 350px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
   }
 
   .cg-feature-divider {
     display: block !important;
     width: 1px !important;
-    height: 16px !important;
-    background-color: rgba(233, 220, 201, 0.25) !important;
+    height: 18px !important;
+    background-color: rgba(233, 220, 201, 0.28) !important;
     margin: 0 !important;
     flex-shrink: 0 !important;
   }
 
   .cg-hero-feature-item {
-    gap: 4px !important;
-    flex: 1 1 auto !important;
+    gap: 5px !important;
+    flex: 1 1 0 !important;
     justify-content: center !important;
   }
 
   .cg-hero-feature-svg,
   .cg-hero-feature-item svg,
   .cg-hero-feature-item .cg-hero-feature-svg {
-    width: 13px !important;
-    min-width: 13px !important;
-    max-width: 13px !important;
-    height: 13px !important;
-    min-height: 13px !important;
-    max-height: 13px !important;
+    width: 15px !important;
+    min-width: 15px !important;
+    max-width: 15px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+    max-height: 15px !important;
+    flex-shrink: 0 !important;
   }
 
   .cg-hero-feature-item .cg-feature-text {
-    font-size: 0.54rem !important;
-    line-height: 1.12 !important;
+    font-size: 0.58rem !important;
+    line-height: 1.15 !important;
+    text-align: left !important;
   }
 
   .cg-hero-feature-item .cg-feature-text span {
-    font-size: 0.54rem !important;
-    line-height: 1.12 !important;
+    font-size: 0.58rem !important;
+    line-height: 1.15 !important;
     white-space: nowrap !important;
+    color: #FFFFFF !important;
   }
 }
 
