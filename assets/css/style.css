@@ -1858,13 +1858,6 @@ p {
     border-bottom: 1px solid rgba(233, 220, 201, 0.18) !important;
   }
 
-  .cg-header:has(.cg-megamenu-panel:hover),
-  .cg-header:has(.cg-nav-item.dropdown:hover),
-  .cg-header.has-open-dropdown {
-    background-color: #241A14 !important;
-    border-bottom: 1px solid rgba(233, 220, 201, 0.18) !important;
-  }
-
   .cg-megamenu-container {
     max-width: 1200px !important;
     margin: 0 auto !important;
@@ -1960,8 +1953,6 @@ p {
     color: #A35D38 !important;
     transform: translateX(4px) !important;
     font-weight: 600 !important;
-  }
-    font-weight: 600;
   }
 }
 
