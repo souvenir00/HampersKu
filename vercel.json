@@ -14,6 +14,8 @@
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/kebijakan-privasi", "destination": "/kebijakan-privasi.html" },
     { "source": "/paket/corporate-gift", "destination": "/paket/corporate-gift.html" },
+    { "source": "/hampers-lebaran", "destination": "/hampers-lebaran.html" },
+    { "source": "/paket/hampers-lebaran", "destination": "/hampers-lebaran.html" },
     { "source": "/hampers-tahun-baru", "destination": "/hampers-tahun-baru.html" },
     { "source": "/paket/hampers-tahun-baru", "destination": "/paket/hampers-tahun-baru.html" },
     { "source": "/hampers-100-ribuan", "destination": "/paket/hampers-100-ribuan.html" },

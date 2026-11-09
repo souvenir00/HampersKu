@@ -37,6 +37,10 @@ const server = http.createServer((req, res) => {
     reqUrl = '/blog.html';
   } else if (reqUrl === '/penulis/' || reqUrl === '/penulis/index.html' || reqUrl === '/penulis') {
     reqUrl = '/penulis.html';
+  } else if (reqUrl === '/hampers-lebaran/' || reqUrl === '/hampers-lebaran/index.html' || reqUrl === '/hampers-lebaran') {
+    reqUrl = '/hampers-lebaran.html';
+  } else if (reqUrl === '/paket/hampers-lebaran/' || reqUrl === '/paket/hampers-lebaran/index.html' || reqUrl === '/paket/hampers-lebaran') {
+    reqUrl = '/hampers-lebaran.html';
   } else if (reqUrl === '/hampers-tahun-baru/' || reqUrl === '/hampers-tahun-baru/index.html' || reqUrl === '/hampers-tahun-baru') {
     reqUrl = '/hampers-tahun-baru.html';
   } else if (reqUrl === '/paket/hampers-tahun-baru/' || reqUrl === '/paket/hampers-tahun-baru/index.html' || reqUrl === '/paket/hampers-tahun-baru') {
