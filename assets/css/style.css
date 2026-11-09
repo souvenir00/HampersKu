@@ -5414,30 +5414,47 @@ textarea.cg-form-control {
 .cg-mitra-logos {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex: 1;
-  gap: 18px;
-  overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cg-mitra-logos::-webkit-scrollbar {
+  display: none;
+}
+
+.cg-mitra-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 0 0 100%;
+  width: 100%;
+  gap: 14px;
+  scroll-snap-align: start;
 }
 
 .cg-mitra-logo-item {
-  height: 24px;
-  max-width: 90px;
+  height: 28px;
+  max-width: 95px;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1.1);
+  filter: grayscale(100%) contrast(1.15);
   opacity: 0.82;
-  transition: opacity 0.2s ease, filter 0.2s ease;
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
 }
 
 .cg-mitra-logo-item:hover {
   opacity: 1;
   filter: none;
+  transform: scale(1.05);
 }
 
 .cg-mitra-arrow-btn {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 1px solid rgba(220, 205, 190, 0.8);
   background: #FAF7F2;
@@ -5453,28 +5470,35 @@ textarea.cg-form-control {
 .cg-mitra-arrow-btn:hover {
   background: #E8DACB;
   border-color: #C8A279;
+  transform: scale(1.06);
 }
 
 .cg-mitra-dots {
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 4px;
+  gap: 6px;
+  align-items: center;
 }
 
 .cg-dot {
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: transparent;
-  border: 1px solid #A8988A;
+  border: 1.5px solid #A8988A;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .cg-dot.active {
   background: #241A14;
   border-color: #241A14;
+  width: 9px;
+  height: 9px;
 }
 
 @media (max-width: 991.98px) {
@@ -5598,24 +5622,30 @@ textarea.cg-form-control {
 }
 
 /* --------------------------------------------------------------------------
-   3. SECTION: TENTANG KAMI FEATURE BANNER
+   3. SECTION: TENTANG KAMI FEATURE BANNER (FULL BLEED / EDGE-TO-EDGE)
    -------------------------------------------------------------------------- */
-.cg-about-banner {
-  background: linear-gradient(135deg, #FAF4EC 0%, #F5ECE0 100%);
-  border: 1px solid rgba(220, 205, 190, 0.55);
-  border-radius: 22px;
+.cg-about-banner-section {
+  width: 100%;
+  padding: 38px 0;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cg-about-banner-full {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  box-shadow: 0 8px 30px rgba(36, 26, 20, 0.04);
+  align-items: stretch;
+  background: #FAF7F2;
+  border-top: 1px solid rgba(220, 205, 190, 0.6);
+  border-bottom: 1px solid rgba(220, 205, 190, 0.6);
+  box-shadow: 0 4px 20px rgba(36, 26, 20, 0.03);
 }
 
 .cg-about-banner-media {
-  height: 100%;
-  min-height: 300px;
   position: relative;
   overflow: hidden;
+  min-height: 420px;
 }
 
 .cg-about-banner-img {
@@ -5627,36 +5657,47 @@ textarea.cg-form-control {
 }
 
 .cg-about-banner-body {
-  padding: clamp(26px, 4.5vw, 54px);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 80px 60px 64px;
+  background: #FAF7F2;
+  box-sizing: border-box;
+}
+
+.cg-about-banner-content {
+  max-width: 520px;
 }
 
 .cg-about-banner-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
-  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
   color: #241A14;
   line-height: 1.25;
   margin: 12px 0 14px;
 }
 
 .cg-about-banner-desc {
-  font-size: 0.95rem;
+  font-size: clamp(0.92rem, 1.1vw, 1rem);
   color: #6A5D54;
   line-height: 1.65;
   margin-bottom: 24px;
-  max-width: 440px;
 }
 
-@media (max-width: 767.98px) {
-  .cg-about-banner {
+@media (max-width: 991.98px) {
+  .cg-about-banner-section {
+    padding: 24px 0;
+  }
+  .cg-about-banner-full {
     grid-template-columns: 1fr;
   }
   .cg-about-banner-media {
-    min-height: 220px;
+    min-height: 280px;
+    max-height: 380px;
+  }
+  .cg-about-banner-body {
+    padding: 36px 24px 44px;
   }
 }
 

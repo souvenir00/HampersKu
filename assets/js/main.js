@@ -821,30 +821,103 @@ function initHeroVideo() {
 }
 
 /**
- * Homepage 2026 Redesign Interactive Controls (Mitra & Favorit Carousels)
+ * Homepage 2026 Redesign Interactive Controls (Mitra Carousel with Dots & Favorit Cards)
  */
 function initHomepageRedesignInteractions() {
   const mitraTrack = document.getElementById('mitraLogosTrack');
   const mitraPrev = document.getElementById('mitraPrev');
   const mitraNext = document.getElementById('mitraNext');
-  if (mitraTrack && mitraPrev && mitraNext) {
-    mitraPrev.addEventListener('click', () => {
-      mitraTrack.scrollBy({ left: -140, behavior: 'smooth' });
+  const mitraDots = document.querySelectorAll('.cg-mitra-dots .cg-dot');
+
+  if (mitraTrack && (mitraPrev || mitraNext || mitraDots.length > 0)) {
+    const pages = mitraTrack.querySelectorAll('.cg-mitra-page');
+    const totalPages = pages.length || (mitraDots.length || 3);
+    let currentPage = 0;
+
+    function goToPage(index) {
+      if (index < 0) index = totalPages - 1;
+      if (index >= totalPages) index = 0;
+      currentPage = index;
+
+      if (pages[currentPage]) {
+        pages[currentPage].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      } else {
+        const pageW = mitraTrack.clientWidth;
+        mitraTrack.scrollTo({ left: currentPage * pageW, behavior: 'smooth' });
+      }
+
+      mitraDots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentPage);
+      });
+    }
+
+    if (mitraPrev) {
+      mitraPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToPage(currentPage - 1);
+      });
+    }
+
+    if (mitraNext) {
+      mitraNext.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToPage(currentPage + 1);
+      });
+    }
+
+    mitraDots.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToPage(idx);
+      });
     });
-    mitraNext.addEventListener('click', () => {
-      mitraTrack.scrollBy({ left: 140, behavior: 'smooth' });
-    });
+
+    // Update active dot when user scrolls/swipes horizontally
+    let isScrollingTimeout;
+    mitraTrack.addEventListener('scroll', () => {
+      clearTimeout(isScrollingTimeout);
+      isScrollingTimeout = setTimeout(() => {
+        const trackLeft = mitraTrack.scrollLeft;
+        const pageW = mitraTrack.clientWidth;
+        if (pageW > 0) {
+          const calcPage = Math.min(Math.max(Math.round(trackLeft / pageW), 0), totalPages - 1);
+          if (calcPage !== currentPage) {
+            currentPage = calcPage;
+            mitraDots.forEach((dot, idx) => {
+              dot.classList.toggle('active', idx === currentPage);
+            });
+          }
+        }
+      }, 70);
+    }, { passive: true });
+
+    // Auto-advance carousel every 5s with pause on hover
+    let autoPlayTimer = setInterval(() => {
+      goToPage(currentPage + 1);
+    }, 5000);
+
+    const strip = document.querySelector('.cg-mitra-strip');
+    if (strip) {
+      strip.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+      strip.addEventListener('mouseleave', () => {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(() => {
+          goToPage(currentPage + 1);
+        }, 5000);
+      });
+    }
   }
 
+  // Favorit row navigation
   const favPrev = document.getElementById('favPrev');
   const favNext = document.getElementById('favNext');
   const favRow = document.querySelector('.cg-favorit-cards-row');
   if (favRow && favPrev && favNext) {
     favPrev.addEventListener('click', () => {
-      favRow.scrollBy({ left: -260, behavior: 'smooth' });
+      favRow.scrollBy({ left: -280, behavior: 'smooth' });
     });
     favNext.addEventListener('click', () => {
-      favRow.scrollBy({ left: 260, behavior: 'smooth' });
+      favRow.scrollBy({ left: 280, behavior: 'smooth' });
     });
   }
 }
