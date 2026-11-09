@@ -41,6 +41,10 @@ const server = http.createServer((req, res) => {
     reqUrl = '/hampers-lebaran.html';
   } else if (reqUrl === '/paket/hampers-lebaran/' || reqUrl === '/paket/hampers-lebaran/index.html' || reqUrl === '/paket/hampers-lebaran') {
     reqUrl = '/hampers-lebaran.html';
+  } else if (reqUrl === '/hampers-kue-kering/' || reqUrl === '/hampers-kue-kering/index.html' || reqUrl === '/hampers-kue-kering') {
+    reqUrl = '/hampers-kue-kering.html';
+  } else if (reqUrl === '/paket/hampers-kue-kering/' || reqUrl === '/paket/hampers-kue-kering/index.html' || reqUrl === '/paket/hampers-kue-kering') {
+    reqUrl = '/hampers-kue-kering.html';
   } else if (reqUrl === '/hampers-tahun-baru/' || reqUrl === '/hampers-tahun-baru/index.html' || reqUrl === '/hampers-tahun-baru') {
     reqUrl = '/hampers-tahun-baru.html';
   } else if (reqUrl === '/paket/hampers-tahun-baru/' || reqUrl === '/paket/hampers-tahun-baru/index.html' || reqUrl === '/paket/hampers-tahun-baru') {
