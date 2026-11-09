@@ -1800,34 +1800,38 @@ p {
 body.cg-home-page .cg-hero,
 .cg-hero {
   position: relative;
-  min-height: 520px !important;
-  max-height: 590px !important;
-  height: 576px;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-height: 100vh !important;
   background-color: #302722;
   overflow: hidden;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding-top: 86px !important;
-  padding-bottom: 34px !important;
+  padding-top: clamp(80px, 11vh, 100px) !important;
+  padding-bottom: clamp(24px, 4vh, 36px) !important;
 }
 
 @media (min-width: 992px) {
   body.cg-home-page .cg-hero,
   .cg-hero {
-    min-height: 520px !important;
-    max-height: 590px !important;
-    height: 576px;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100vh !important;
     display: flex;
     align-items: center;
-    padding-top: 88px !important;
-    padding-bottom: 34px !important;
+    padding-top: clamp(82px, 11vh, 102px) !important;
+    padding-bottom: clamp(24px, 4vh, 36px) !important;
   }
 
   .cg-hero .cg-container {
     width: 100%;
-    padding-left: clamp(24px, 5.5vw, 68px);
-    padding-right: clamp(24px, 5.5vw, 68px);
+    padding-left: clamp(28px, 6vw, 75px);
+    padding-right: clamp(28px, 6vw, 75px);
   }
 }
 
@@ -1839,7 +1843,7 @@ body.cg-home-page .cg-hero,
   width: 100%;
   height: 100%;
   background-color: #302722;
-  background-image: url('/assets/images/ftheader.webp?v=20261109_flawless_perfect');
+  background-image: url('/assets/images/ftheader.webp?v=20261109_photo2_laptop');
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1860,7 +1864,7 @@ body.cg-home-page .cg-hero,
   .cg-hero::before {
     background-image:
       linear-gradient(180deg, rgba(48, 39, 34, 0.85) 0%, rgba(48, 39, 34, 0.95) 100%),
-      url('/assets/images/ftheader.webp?v=20261109_flawless_perfect');
+      url('/assets/images/ftheader.webp?v=20261109_photo2_laptop');
     background-position: center center;
   }
 }
