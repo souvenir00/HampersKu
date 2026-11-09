@@ -1843,7 +1843,9 @@ body.cg-home-page .cg-hero,
   width: 100%;
   height: 100%;
   background-color: #302722;
-  background-image: url('/assets/images/ftheader.webp?v=20261109_photo2_laptop');
+  background-image: 
+    linear-gradient(90deg, rgba(48, 39, 34, 0.45) 0%, rgba(48, 39, 34, 0.25) 42%, rgba(48, 39, 34, 0) 60%),
+    url('/assets/images/ftheader.webp?v=20261109_dark_espresso_mockup');
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1863,8 +1865,8 @@ body.cg-home-page .cg-hero,
 
   .cg-hero::before {
     background-image:
-      linear-gradient(180deg, rgba(48, 39, 34, 0.85) 0%, rgba(48, 39, 34, 0.95) 100%),
-      url('/assets/images/ftheader.webp?v=20261109_photo2_laptop');
+      linear-gradient(180deg, rgba(48, 39, 34, 0.88) 0%, rgba(48, 39, 34, 0.96) 100%),
+      url('/assets/images/ftheader.webp?v=20261109_dark_espresso_mockup');
     background-position: center center;
   }
 }
@@ -2016,43 +2018,80 @@ body.cg-home-page .cg-hero,
   transform: translateX(3px);
 }
 
-/* Value Propositions Features Strip */
+/* Value Propositions Features Strip - Clean White Line-Art Icons (No Square Card / Box) */
 .cg-hero-features {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+  flex-wrap: wrap !important;
+  margin-top: clamp(20px, 3vh, 32px) !important;
 }
 
 .cg-hero-feature-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  all: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.cg-feature-icon {
-  width: 26px;
-  height: 26px;
-  color: #FFFFFF;
-  flex-shrink: 0;
+.cg-hero-feature-svg,
+.cg-hero-feature-item svg,
+.cg-hero-feature-item .cg-hero-feature-svg {
+  all: unset !important;
+  display: block !important;
+  width: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
+  height: 28px !important;
+  min-height: 28px !important;
+  max-height: 28px !important;
+  stroke: #FFFFFF !important;
+  fill: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
 }
 
-.cg-feature-text {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--cg-font-sans);
-  font-size: 0.78rem;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #FFFFFF;
-  letter-spacing: 0.01em;
+.cg-hero-feature-item .cg-feature-text {
+  all: unset !important;
+  display: flex !important;
+  flex-direction: column !important;
+  font-family: var(--cg-font-sans, "Plus Jakarta Sans", sans-serif) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  line-height: 1.25 !important;
+  color: #FFFFFF !important;
+  letter-spacing: 0.01em !important;
+  white-space: nowrap !important;
+}
+
+.cg-hero-feature-item .cg-feature-text span {
+  display: block !important;
+  color: #FFFFFF !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
 }
 
 .cg-feature-divider {
-  width: 1px;
-  height: 28px;
-  background-color: rgba(255, 255, 255, 0.25);
-  flex-shrink: 0;
+  all: unset !important;
+  display: block !important;
+  width: 1px !important;
+  height: 28px !important;
+  background-color: rgba(255, 255, 255, 0.28) !important;
+  margin: 0 4px !important;
+  flex-shrink: 0 !important;
 }
 
 .cg-hero-content .text-muted,
