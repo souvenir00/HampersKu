@@ -106,8 +106,24 @@ function initNavbar() {
   }
 
   // Dropdown toggle on mobile & touch: supports both opening and closing on tap
+  const headerEl = document.querySelector('.cg-header');
   dropdownItems.forEach(item => {
     const trigger = item.querySelector('.cg-nav-link-dropdown');
+
+    // Desktop hover state helper for header background
+    if (headerEl) {
+      item.addEventListener('mouseenter', () => {
+        if (window.innerWidth >= 992) {
+          headerEl.classList.add('has-open-dropdown');
+        }
+      });
+      item.addEventListener('mouseleave', () => {
+        if (window.innerWidth >= 992) {
+          headerEl.classList.remove('has-open-dropdown');
+        }
+      });
+    }
+
     if (trigger) {
       trigger.addEventListener('click', (e) => {
         if (window.innerWidth < 992 || window.matchMedia('(hover: none)').matches) {
