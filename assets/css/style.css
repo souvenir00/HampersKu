@@ -1568,7 +1568,6 @@ p {
 .cg-brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
   user-select: none;
   background: transparent !important;
@@ -1582,23 +1581,15 @@ p {
   opacity: 0.9;
 }
 
-.cg-brand-icon {
-  height: 32px;
-  width: 32px;
-  display: block;
-  flex-shrink: 0;
-  color: #F5E6D3;
-}
-
 .cg-brand img,
 .cg-brand-logo,
 .cg-brand-logo-img {
-  height: 36px;
-  width: auto;
-  max-width: 175px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
+  height: 38px !important;
+  width: auto !important;
+  max-width: 175px !important;
+  object-fit: contain !important;
+  display: block !important;
+  flex-shrink: 0 !important;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
