@@ -2104,12 +2104,14 @@ body.cg-home-page .cg-hero,
     justify-content: space-between !important;
     padding-top: 76px !important;
     padding-bottom: 20px !important;
-    background-color: #302722;
+    background-color: transparent;
     box-sizing: border-box;
   }
 
   .cg-hero::before {
-    background-image: url('/assets/images/ftheader-mobile.webp?v=20261109_mobile_v4');
+    background-image:
+      linear-gradient(180deg, rgba(20, 16, 13, 0.58) 0%, rgba(20, 16, 13, 0.22) 32%, rgba(20, 16, 13, 0.10) 65%, rgba(20, 16, 13, 0.45) 100%),
+      url('/assets/images/ftheader-mobile.webp?v=20261109_full_portrait_v1');
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2156,8 +2158,8 @@ body.cg-home-page .cg-hero,
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin-bottom: auto !important;
-    padding-bottom: clamp(130px, 22vh, 180px);
+    margin-bottom: 24px;
+    padding-bottom: 0 !important;
     max-width: 100%;
   }
 
