@@ -65,6 +65,8 @@ const server = http.createServer((req, res) => {
     reqUrl = '/faq.html';
   } else if (reqUrl === '/portofolio/' || reqUrl === '/portofolio') {
     reqUrl = '/portofolio.html';
+  } else if (reqUrl === '/custom-hampers/' || reqUrl === '/custom-hampers') {
+    reqUrl = '/custom-hampers.html';
   } else if (reqUrl === '/blog/hampers-corporate-100-ribuan/' || reqUrl === '/blog/hampers-corporate-100-ribuan') {
     reqUrl = '/blog/hampers-corporate-100-ribuan.html';
   } else if (reqUrl === '/blog/hitung-budget-hampers-100-karyawan/' || reqUrl === '/blog/hitung-budget-hampers-100-karyawan') {
