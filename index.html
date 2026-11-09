@@ -63,7 +63,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_v4_ref2_complete">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_v5_split_full_mitra_slide">
 
   <style id="cg-ref2-styles">
 /* ==========================================================================
@@ -157,54 +157,93 @@
 }
 
 /* ========================================================
-   1. SECTION: MITRA KAMI (HAIRLINE DIVIDERS, CLEAN B2B)
+   1. SECTION: MITRA KAMI (CAROUSEL SLIDE OTOMATIS)
    ======================================================== */
 .cg-ref2-mitra-sec {
-  padding: 24px 0 26px;
+  padding: 26px 0 28px;
   background: #FFFFFF;
   border-top: 1px solid #ECE7E1;
   border-bottom: 1px solid #ECE7E1;
+  overflow: hidden;
+}
+
+.cg-ref2-mitra-container {
+  width: 100%;
 }
 
 .cg-ref2-mitra-subtitle {
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #8F8275;
   text-align: center;
   margin-bottom: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.cg-ref2-mitra-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cg-ref2-mitra-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
 .cg-ref2-mitra-track {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 980px;
-  gap: 28px;
-  flex-wrap: wrap;
+  width: max-content;
+  animation: cg-mitra-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.cg-ref2-mitra-carousel:hover .cg-ref2-mitra-track {
+  animation-play-state: paused;
+}
+
+@keyframes cg-mitra-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.cg-ref2-mitra-item {
+  flex: 0 0 160px;
+  width: 160px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
 }
 
 .cg-ref2-mitra-logo {
-  height: 26px;
-  max-width: 95px;
+  max-width: 115px;
+  max-height: 30px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1.15);
-  opacity: 0.82;
-  transition: opacity 0.25s ease, filter 0.25s ease;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.78;
+  transition: all 0.25s ease;
 }
 
-.cg-ref2-mitra-logo:hover {
+.cg-ref2-mitra-logo[src*="telkomsel"],
+.cg-ref2-mitra-logo[src*="bri"],
+.cg-ref2-mitra-logo[src*="kai"],
+.cg-ref2-mitra-logo[src*="btn"] {
+  max-height: 32px;
+  transform: scale(1.12);
+}
+
+.cg-ref2-mitra-item:hover .cg-ref2-mitra-logo {
   filter: none;
   opacity: 1;
+  transform: scale(1.08);
 }
 
 /* ========================================================
@@ -518,23 +557,31 @@
 }
 
 /* ========================================================
-   5. SECTION: SPLIT FEATURE BANNER (SEPARUH FT SEPARUH TEKS)
-   EXACT MATCH TO IMAGE 1 & FOTO KE 2 SLICE 3
+   5. SECTION: SPLIT FEATURE BANNER (FULL BLEED, 50/50)
    ======================================================== */
-.cg-ref2-split-banner {
+.cg-ref2-split-fullsec {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #FAF7F2;
+  border-top: 1px solid #ECE7E1;
+  border-bottom: 1px solid #ECE7E1;
+  overflow: hidden;
+}
+
+.cg-ref2-split-fullwrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid #EAE4DC;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #FAF7F2;
-  box-shadow: 0 6px 20px rgba(36, 26, 20, 0.04);
-  max-width: 1080px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
 }
 
 .cg-ref2-split-img-side {
-  height: 340px;
+  position: relative;
+  min-height: 540px;
+  height: 100%;
   overflow: hidden;
   background: #EAE5DE;
 }
@@ -543,40 +590,98 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  object-position: 38% center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.cg-ref2-split-banner:hover .cg-ref2-split-img {
+.cg-ref2-split-fullwrap:hover .cg-ref2-split-img {
   transform: scale(1.03);
 }
 
 .cg-ref2-split-text-side {
-  padding: 40px 48px;
+  padding: 64px 80px 64px 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  background: #FAF7F2;
+}
+
+.cg-ref2-split-content-inner {
+  max-width: 600px;
 }
 
 .cg-ref2-split-heading {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
+  font-size: 2.15rem;
   font-weight: 700;
   color: #1F1915;
-  margin: 8px 0 14px;
+  margin: 8px 0 16px;
   line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.cg-ref2-split-lead {
+  font-size: 1rem;
+  color: #241A14;
+  font-weight: 500;
+  line-height: 1.65;
+  margin-bottom: 12px;
 }
 
 .cg-ref2-split-body {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: #5C5045;
   line-height: 1.65;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+}
+
+.cg-ref2-split-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding-top: 18px;
+  border-top: 1px solid #ECE7E1;
+}
+
+.cg-ref2-split-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.cg-ref2-split-feat-icon {
+  flex: 0 0 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #C59B27;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.cg-ref2-split-feat-item strong {
+  display: block;
+  color: #1F1915;
+  font-size: 0.9rem;
+}
+
+.cg-ref2-split-feat-item span {
+  color: #6E645A;
 }
 
 .cg-ref2-split-action {
   display: flex;
   align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 /* ========================================================
@@ -866,15 +971,9 @@
   .cg-ref2-step-item:nth-child(2) {
     border-bottom: 1px solid #EAE4DC;
   }
-  .cg-ref2-split-banner {
-    grid-template-columns: 1fr;
-  }
-  .cg-ref2-split-img-side {
-    height: 260px;
-  }
-  .cg-ref2-split-text-side {
-    padding: 32px 24px;
-  }
+  .cg-ref2-split-fullwrap { grid-template-columns: 1fr; }
+  .cg-ref2-split-img-side { min-height: 340px; height: 340px; }
+  .cg-ref2-split-text-side { padding: 40px 24px; }
   .cg-ref2-gallery-grid {
     grid-template-columns: 1fr;
   }
@@ -1790,17 +1889,38 @@
     <!-- ======================================================== -->
     <!-- 1. SECTION: MITRA KAMI (HAIRLINE DIVIDERS, CLEAN B2B)    -->
     <!-- ======================================================== -->
-    <section class="cg-ref2-mitra-sec" id="mitra-kami" aria-label="Mitra Kerja Korporat">
-      <div class="cg-container">
+        <section class="cg-ref2-mitra-sec" id="mitra-kami" aria-label="Mitra Kerja Korporat">
+      <div class="cg-ref2-mitra-container">
         <p class="cg-ref2-mitra-subtitle">DIPERCAYA OLEH 500+ PERUSAHAAN &amp; INSTANSI NASIONAL</p>
-        <div class="cg-ref2-mitra-row">
+        <div class="cg-ref2-mitra-carousel" aria-label="Logo Mitra Korporat">
           <div class="cg-ref2-mitra-track">
-            <img src="/logoperusahaan/bca.webp" alt="Logo BCA" class="cg-ref2-mitra-logo" width="90" height="26" loading="lazy">
-            <img src="/logoperusahaan/telkomsel.png" alt="Logo Telkomsel" class="cg-ref2-mitra-logo" width="80" height="26" loading="lazy">
-            <img src="/logoperusahaan/mandiri.webp" alt="Logo Bank Mandiri" class="cg-ref2-mitra-logo" width="95" height="26" loading="lazy">
-            <img src="/logoperusahaan/pertamina.webp" alt="Logo Pertamina" class="cg-ref2-mitra-logo" width="95" height="26" loading="lazy">
-            <img src="/logoperusahaan/bni.webp" alt="Logo BNI" class="cg-ref2-mitra-logo" width="85" height="26" loading="lazy">
-            <img src="/logoperusahaan/bri.png" alt="Logo BRI" class="cg-ref2-mitra-logo" width="75" height="26" loading="lazy">
+            <!-- Set 1 -->
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/bca.webp" alt="Logo Bank BCA" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/mandiri.webp" alt="Logo Bank Mandiri" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/bni.webp" alt="Logo Bank BNI" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/bri.png" alt="Logo Bank BRI" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/pertamina.webp" alt="Logo Pertamina" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/telkomsel.png" alt="Logo Telkomsel" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/pln.webp" alt="Logo PLN" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/bumn.webp" alt="Logo Kementerian BUMN" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/kai.webp" alt="Logo KAI" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/pegadaian.webp" alt="Logo Pegadaian" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/bank-indonesia.webp" alt="Logo Bank Indonesia" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item"><img src="/logoperusahaan/btn.webp" alt="Logo Bank BTN" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+
+            <!-- Set 2 (Duplicate for Seamless Infinite Marquee Loop) -->
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/bca.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/mandiri.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/bni.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/bri.png" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/pertamina.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/telkomsel.png" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/pln.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/bumn.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/kai.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/pegadaian.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/bank-indonesia.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
+            <div class="cg-ref2-mitra-item" aria-hidden="true"><img src="/logoperusahaan/btn.webp" alt="" class="cg-ref2-mitra-logo" width="110" height="28" loading="lazy"></div>
           </div>
         </div>
       </div>
@@ -2076,19 +2196,49 @@
     <!-- 5. SECTION: SPLIT FEATURE BANNER (SEPARUH FT SEPARUH TEKS)-->
     <!-- EXACT MATCH TO IMAGE 1 & FOTO KE 2 SLICE 3                -->
     <!-- ======================================================== -->
-    <section class="cg-ref2-sec bg-warm" id="tentang-kami-banner" aria-labelledby="about-banner-title">
-      <div class="cg-container">
-        <div class="cg-ref2-split-banner">
-          <div class="cg-ref2-split-img-side">
-            <img src="/assets/images/about-box-hampersku.png" alt="Hampers Premium dengan Nilai Lebih HampersKu Luxury Gift Box Pita Burgundy" class="cg-ref2-split-img" width="560" height="340" loading="lazy">
-          </div>
-          <div class="cg-ref2-split-text-side">
+        <section class="cg-ref2-split-fullsec" id="tentang-kami-banner" aria-labelledby="about-banner-title">
+      <div class="cg-ref2-split-fullwrap">
+        <div class="cg-ref2-split-img-side">
+          <img src="/assets/images/about-box-hampersku.png" alt="Hampers Premium dengan Nilai Lebih HampersKu Luxury Gift Box Pita Burgundy" class="cg-ref2-split-img" width="1376" height="768" loading="lazy">
+        </div>
+        <div class="cg-ref2-split-text-side">
+          <div class="cg-ref2-split-content-inner">
             <span class="cg-ref2-sec-tag">TENTANG KAMI</span>
-            <h2 id="about-banner-title" class="cg-ref2-split-heading">Hampers Premium dengan Nilai Lebih</h2>
-            <p class="cg-ref2-split-body">Kami menghadirkan hampers corporate yang dirancang dengan detail, kualitas terbaik, dan dapat disesuaikan dengan kebutuhan perusahaan Anda.</p>
+            <h2 id="about-banner-title" class="cg-ref2-split-heading">Hampers Premium dengan Nilai Lebih untuk Citra Bisnis Anda</h2>
+            <p class="cg-ref2-split-lead">Kami menghadirkan kurasi hampers dan cinderamata korporat eksklusif yang dirancang dengan ketelitian tinggi, material berkelas, dan kemasan elegan yang siap mempererat relasi bisnis Anda.</p>
+            <p class="cg-ref2-split-body">Di HampersKu, setiap bingkisan bukan sekadar hadiah seremonial, melainkan jembatan komunikasi yang menyampaikan apresiasi tulus serta memperkuat citra profesional brand Anda. Mulai dari pemilihan produk fungsional berkualitas, artisan treats, hingga kemasan rigid hardbox kokoh dengan grafir logo presisi—semua kami persiapkan sesuai visi institusi Anda.</p>
+            
+            <div class="cg-ref2-split-features">
+              <div class="cg-ref2-split-feat-item">
+                <div class="cg-ref2-split-feat-icon" aria-hidden="true">&#10003;</div>
+                <div>
+                  <strong>Custom Branding &amp; Personalisasi Presisi</strong>
+                  <span>Grafir laser, hotprint foil emas, &amp; greeting card resmi korporat.</span>
+                </div>
+              </div>
+              <div class="cg-ref2-split-feat-item">
+                <div class="cg-ref2-split-feat-icon" aria-hidden="true">&#10003;</div>
+                <div>
+                  <strong>Material Rigid Box Eksklusif &amp; Pita Satin</strong>
+                  <span>Struktur kemasan kokoh, mewah, dan memberikan impresi unboxing istimewa.</span>
+                </div>
+              </div>
+              <div class="cg-ref2-split-feat-item">
+                <div class="cg-ref2-split-feat-icon" aria-hidden="true">&#10003;</div>
+                <div>
+                  <strong>Layanan B2B Legal &amp; Pengiriman Terproteksi</strong>
+                  <span>Faktur pajak PPN resmi, fleksibilitas TOP, serta asuransi ekspedisi ke seluruh Indonesia.</span>
+                </div>
+              </div>
+            </div>
+
             <div class="cg-ref2-split-action">
               <a href="/tentang" class="cg-ref2-pill-btn-solid">
                 <span>Kenal Lebih Dekat</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+              <a href="https://wa.me/6281234567890?text=Halo%20HampersKu%2C%20saya%20ingin%20konsultasi%20pengadaan%20hampers%20perusahaan" class="cg-ref2-text-link" target="_blank" rel="noopener noreferrer">
+                <span>Konsultasi Pengadaan B2B</span>
                 <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
@@ -2368,7 +2518,7 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/js/main.js?v=20261109_v4_ref2_complete"></script>
+  <script src="/assets/js/main.js?v=20261109_v5_split_full_mitra_slide"></script>
 
   <script id="cg-ref2-inline-js">
     document.addEventListener('DOMContentLoaded', function() {

@@ -5354,54 +5354,93 @@ textarea.cg-form-control {
 }
 
 /* ========================================================
-   1. SECTION: MITRA KAMI (HAIRLINE DIVIDERS, CLEAN B2B)
+   1. SECTION: MITRA KAMI (CAROUSEL SLIDE OTOMATIS)
    ======================================================== */
 .cg-ref2-mitra-sec {
-  padding: 24px 0 26px;
+  padding: 26px 0 28px;
   background: #FFFFFF;
   border-top: 1px solid #ECE7E1;
   border-bottom: 1px solid #ECE7E1;
+  overflow: hidden;
+}
+
+.cg-ref2-mitra-container {
+  width: 100%;
 }
 
 .cg-ref2-mitra-subtitle {
   font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #8F8275;
   text-align: center;
   margin-bottom: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-.cg-ref2-mitra-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cg-ref2-mitra-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
 .cg-ref2-mitra-track {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 980px;
-  gap: 28px;
-  flex-wrap: wrap;
+  width: max-content;
+  animation: cg-mitra-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.cg-ref2-mitra-carousel:hover .cg-ref2-mitra-track {
+  animation-play-state: paused;
+}
+
+@keyframes cg-mitra-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.cg-ref2-mitra-item {
+  flex: 0 0 160px;
+  width: 160px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
 }
 
 .cg-ref2-mitra-logo {
-  height: 26px;
-  max-width: 95px;
+  max-width: 115px;
+  max-height: 30px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1.15);
-  opacity: 0.82;
-  transition: opacity 0.25s ease, filter 0.25s ease;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.78;
+  transition: all 0.25s ease;
 }
 
-.cg-ref2-mitra-logo:hover {
+.cg-ref2-mitra-logo[src*="telkomsel"],
+.cg-ref2-mitra-logo[src*="bri"],
+.cg-ref2-mitra-logo[src*="kai"],
+.cg-ref2-mitra-logo[src*="btn"] {
+  max-height: 32px;
+  transform: scale(1.12);
+}
+
+.cg-ref2-mitra-item:hover .cg-ref2-mitra-logo {
   filter: none;
   opacity: 1;
+  transform: scale(1.08);
 }
 
 /* ========================================================
@@ -5715,23 +5754,31 @@ textarea.cg-form-control {
 }
 
 /* ========================================================
-   5. SECTION: SPLIT FEATURE BANNER (SEPARUH FT SEPARUH TEKS)
-   EXACT MATCH TO IMAGE 1 & FOTO KE 2 SLICE 3
+   5. SECTION: SPLIT FEATURE BANNER (FULL BLEED, 50/50)
    ======================================================== */
-.cg-ref2-split-banner {
+.cg-ref2-split-fullsec {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #FAF7F2;
+  border-top: 1px solid #ECE7E1;
+  border-bottom: 1px solid #ECE7E1;
+  overflow: hidden;
+}
+
+.cg-ref2-split-fullwrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid #EAE4DC;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #FAF7F2;
-  box-shadow: 0 6px 20px rgba(36, 26, 20, 0.04);
-  max-width: 1080px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
 }
 
 .cg-ref2-split-img-side {
-  height: 340px;
+  position: relative;
+  min-height: 540px;
+  height: 100%;
   overflow: hidden;
   background: #EAE5DE;
 }
@@ -5740,40 +5787,98 @@ textarea.cg-form-control {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  object-position: 38% center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.cg-ref2-split-banner:hover .cg-ref2-split-img {
+.cg-ref2-split-fullwrap:hover .cg-ref2-split-img {
   transform: scale(1.03);
 }
 
 .cg-ref2-split-text-side {
-  padding: 40px 48px;
+  padding: 64px 80px 64px 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  background: #FAF7F2;
+}
+
+.cg-ref2-split-content-inner {
+  max-width: 600px;
 }
 
 .cg-ref2-split-heading {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
+  font-size: 2.15rem;
   font-weight: 700;
   color: #1F1915;
-  margin: 8px 0 14px;
+  margin: 8px 0 16px;
   line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.cg-ref2-split-lead {
+  font-size: 1rem;
+  color: #241A14;
+  font-weight: 500;
+  line-height: 1.65;
+  margin-bottom: 12px;
 }
 
 .cg-ref2-split-body {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   color: #5C5045;
   line-height: 1.65;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+}
+
+.cg-ref2-split-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+  padding-top: 18px;
+  border-top: 1px solid #ECE7E1;
+}
+
+.cg-ref2-split-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.cg-ref2-split-feat-icon {
+  flex: 0 0 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #C59B27;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.cg-ref2-split-feat-item strong {
+  display: block;
+  color: #1F1915;
+  font-size: 0.9rem;
+}
+
+.cg-ref2-split-feat-item span {
+  color: #6E645A;
 }
 
 .cg-ref2-split-action {
   display: flex;
   align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 /* ========================================================
@@ -6063,15 +6168,9 @@ textarea.cg-form-control {
   .cg-ref2-step-item:nth-child(2) {
     border-bottom: 1px solid #EAE4DC;
   }
-  .cg-ref2-split-banner {
-    grid-template-columns: 1fr;
-  }
-  .cg-ref2-split-img-side {
-    height: 260px;
-  }
-  .cg-ref2-split-text-side {
-    padding: 32px 24px;
-  }
+  .cg-ref2-split-fullwrap { grid-template-columns: 1fr; }
+  .cg-ref2-split-img-side { min-height: 340px; height: 340px; }
+  .cg-ref2-split-text-side { padding: 40px 24px; }
   .cg-ref2-gallery-grid {
     grid-template-columns: 1fr;
   }
