@@ -63,7 +63,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_header_behavior_v3">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261109_video_hero_v1">
 
   <!-- Embedded Hampers Collection Carousel Styles (Guaranteed Instant Horizontal Layout) -->
   <style id="hampersku-marquee-inline-css">
@@ -840,6 +840,14 @@
 
     <!-- HERO SECTION -->
     <section class="cg-hero" aria-labelledby="hero-title">
+      <!-- Background Video Backdrop -->
+      <div class="cg-hero-video-wrap" aria-hidden="true">
+        <video class="cg-hero-video" autoplay muted loop playsinline preload="auto" poster="/assets/images/vidioproduk-poster.png">
+          <source src="/vidioproduk.mp4" type="video/mp4">
+        </video>
+        <div class="cg-hero-video-overlay"></div>
+      </div>
+
       <div class="cg-container">
         <div class="cg-hero-grid">
           <div class="cg-hero-content">
@@ -2074,7 +2082,7 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/js/main.js?v=20261109_click_v3"></script>
+  <script src="/assets/js/main.js?v=20261109_video_hero_v1"></script>
 </body>
 
 </html>

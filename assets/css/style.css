@@ -2053,23 +2053,64 @@ body.cg-home-page .cg-hero,
   }
 }
 
-/* Photo Backdrop using Authentic HampersKu Header (ftheader.webp) - Translucent Shadow Overlay matching Mockup */
-.cg-hero::before {
-  content: "";
+/* Video Backdrop Container & Styling (Authentic HampersKu Hero Video: vidioproduk.mp4) */
+.cg-hero-video-wrap {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
-  background-image: url('/assets/images/ftheader.webp?v=20261109_translucent_v4');
-  background-position: right center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  pointer-events: none;
+  overflow: hidden;
   z-index: 0;
+  pointer-events: none;
+  background-color: #302722;
 }
 
+.cg-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  display: block;
+}
 
+.cg-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Cinematic espresso gradient: strong on left for crisp readability of headlines and buttons, gentle on right to showcase video */
+  background: linear-gradient(
+    90deg,
+    rgba(36, 26, 20, 0.90) 0%,
+    rgba(36, 26, 20, 0.80) 38%,
+    rgba(36, 26, 20, 0.45) 68%,
+    rgba(36, 26, 20, 0.22) 100%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 991.98px) {
+  .cg-hero-video-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(36, 26, 20, 0.88) 0%,
+      rgba(36, 26, 20, 0.74) 45%,
+      rgba(36, 26, 20, 0.90) 100%
+    );
+  }
+}
+
+.cg-hero::before {
+  display: none !important;
+}
 
 .cg-hero::after {
   content: "";
@@ -2079,12 +2120,12 @@ body.cg-home-page .cg-hero,
   right: 0;
   height: 1px;
   background: rgba(233, 220, 201, 0.2);
-  z-index: 1;
+  z-index: 2;
 }
 
 .cg-hero .cg-container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .cg-hero-grid {
@@ -2327,12 +2368,7 @@ body.cg-home-page .cg-hero,
   }
 
   .cg-hero::before {
-    background-image:
-      linear-gradient(180deg, rgba(20, 16, 13, 0.48) 0%, rgba(20, 16, 13, 0.28) 25%, rgba(20, 16, 13, 0.38) 50%, rgba(20, 16, 13, 0.52) 75%, rgba(20, 16, 13, 0.68) 100%),
-      url('/assets/images/ftheader-mobile.webp?v=20261109_full_portrait_v1');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: none !important;
   }
 
   .cg-hero .cg-container {

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollHeader();
   initHeroAnimations();
+  initHeroVideo();
   initHeroPhotoRotator();
   initHampersCarousel();
 
@@ -789,4 +790,33 @@ function initHampersCarousel() {
   window.addEventListener('resize', updateControls, { passive: true });
   updateControls();
 }
+
+/**
+ * Hero Background Video Handler (Autoplay, Loop, Muted, Mobile Resilience)
+ */
+function initHeroVideo() {
+  const video = document.querySelector('.cg-hero-video');
+  if (!video) return;
+
+  video.muted = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      const playOnInteraction = () => {
+        video.play().catch(() => {});
+        window.removeEventListener('click', playOnInteraction);
+        window.removeEventListener('touchstart', playOnInteraction);
+        window.removeEventListener('scroll', playOnInteraction);
+      };
+      window.addEventListener('click', playOnInteraction, { once: true, passive: true });
+      window.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
+      window.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
+    });
+  }
+}
+
 

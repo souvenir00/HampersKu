@@ -14,6 +14,7 @@ const MIME_TYPES = {
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
   '.webp': 'image/webp',
+  '.mp4': 'video/mp4',
   '.xml': 'application/xml; charset=UTF-8',
   '.txt': 'text/plain; charset=UTF-8'
 };
@@ -89,6 +90,10 @@ const server = http.createServer((req, res) => {
     reqUrl = '/blog/hitung-budget-hampers-100-karyawan.html';
   } else if (reqUrl === '/blog/kapan-pesan-hampers-perusahaan/' || reqUrl === '/blog/kapan-pesan-hampers-perusahaan') {
     reqUrl = '/blog/kapan-pesan-hampers-perusahaan.html';
+  } else if (reqUrl === '/blog/cara-memilih-vendor-hampers/' || reqUrl === '/blog/cara-memilih-vendor-hampers') {
+    reqUrl = '/blog/cara-memilih-vendor-hampers.html';
+  } else if (reqUrl === '/assets/videos/vidioproduk.mp4') {
+    reqUrl = '/vidioproduk.mp4';
   } else if (reqUrl === '/') {
     reqUrl = '/index.html';
   } else if (reqUrl.endsWith('/')) {
@@ -125,9 +130,30 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
+    // Support HTTP Range requests for video streaming (mp4)
+    if (ext === '.mp4' && req.headers.range) {
+      const range = req.headers.range;
+      const parts = range.replace(/bytes=/, "").split("-");
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] ? parseInt(parts[1], 10) : stats.size - 1;
+      const chunksize = (end - start) + 1;
+      const fileStream = fs.createReadStream(filePath, { start, end });
+      res.writeHead(206, {
+        'Content-Range': `bytes ${start}-${end}/${stats.size}`,
+        'Accept-Ranges': 'bytes',
+        'Content-Length': chunksize,
+        'Content-Type': contentType,
+        'Cache-Control': 'no-cache'
+      });
+      fileStream.pipe(res);
+      return;
+    }
+
     // Disable caching in dev server to prevent stale CSS / JS issues
     res.writeHead(200, {
       'Content-Type': contentType,
+      'Accept-Ranges': 'bytes',
+      'Content-Length': stats.size,
       'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
       'Pragma': 'no-cache',
       'Expires': '0'
