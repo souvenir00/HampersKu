@@ -5264,56 +5264,76 @@ textarea.cg-form-control {
 }
 
 /* ==========================================================================
-   HOMEPAGE REDESIGN — SIMPLE, ELEGANT, LUXURY CORPORATE AESTHETIC
+   HOMEPAGE REDESIGN — REFERENSI TAMPILAN, TATA LETAK & BORDER FOTO KE-2
+   (Minimalist Luxury, Clean Hairline Borders, Balanced Spacing & AI Photography)
    ========================================================================== */
 
-/* Shared Component Utilities */
-.cg-home-sec {
-  padding: 68px 0;
-  background: #FDFBF7;
+/* Base Section Utilities */
+.cg-ref2-sec {
+  padding: 72px 0;
+  background: #FFFFFF;
   position: relative;
 }
 
-.cg-home-sec:nth-of-type(even) {
-  background: #FAF7F2;
+.cg-ref2-sec.bg-warm {
+  background: #FAF8F5;
 }
 
-.cg-pill-badge {
-  display: inline-block;
-  background: #EFE7DB;
-  color: #8C6A3E;
+.cg-ref2-sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+
+.cg-ref2-sec-tag {
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-  border: 1px solid rgba(197, 155, 39, 0.2);
+  color: #9A7B56;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: inline-block;
 }
 
-.cg-sec-heading {
+.cg-ref2-sec-title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.15rem;
-  font-weight: 700;
-  color: #241A14;
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
+  color: #1F1915;
+  font-weight: 600;
   line-height: 1.25;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
-.cg-sec-subtext {
-  font-size: 0.98rem;
-  color: #6E6259;
-  max-width: 620px;
-  margin: 0 auto 36px;
+.cg-ref2-sec-desc {
+  font-size: 0.94rem;
+  color: #6E645A;
   line-height: 1.6;
+  max-width: 540px;
+  margin: 0;
 }
 
-.cg-pill-btn-tan {
+.cg-ref2-text-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #9A7B56;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+}
+
+.cg-ref2-text-link:hover {
+  color: #241A14;
+}
+
+.cg-ref2-pill-btn-solid {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
   background: #C59B27;
   color: #FFFFFF !important;
@@ -5323,1000 +5343,768 @@ textarea.cg-form-control {
   border-radius: 999px;
   text-decoration: none;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.25);
+  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.22);
   border: 1px solid #B88E20;
 }
 
-.cg-pill-btn-tan:hover {
+.cg-ref2-pill-btn-solid:hover {
   background: #A8811A;
-  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.35);
-}
-
-.cg-pill-btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: transparent;
-  color: #241A14 !important;
-  font-weight: 600;
-  font-size: 0.88rem;
-  padding: 10px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  border: 1.5px solid rgba(197, 155, 39, 0.4);
-  transition: all 0.25s ease;
-}
-
-.cg-pill-btn-outline:hover {
-  border-color: #C59B27;
-  background: rgba(197, 155, 39, 0.08);
-  color: #140E0A !important;
-  transform: translateY(-2px);
-}
-
-.cg-circle-arrow-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid rgba(220, 205, 190, 0.8);
-  background: #FFFFFF;
-  color: #241A14;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.32);
 }
 
 /* ========================================================
-   1. SECTION: MITRA KAMI
+   1. SECTION: MITRA KAMI (HAIRLINE DIVIDERS, CLEAN B2B)
    ======================================================== */
-.cg-mitra-strip {
+.cg-ref2-mitra-sec {
+  padding: 24px 0 26px;
+  background: #FFFFFF;
+  border-top: 1px solid #ECE7E1;
+  border-bottom: 1px solid #ECE7E1;
+}
+
+.cg-ref2-mitra-subtitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8F8275;
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.cg-ref2-mitra-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cg-ref2-mitra-track {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  max-width: 980px;
   gap: 28px;
-  padding: 14px 24px;
-  background: #FAF7F2;
-  border: 1px solid rgba(220, 205, 190, 0.55);
-  border-radius: 16px;
+  flex-wrap: wrap;
 }
 
-.cg-mitra-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-
-.cg-mitra-icon {
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-}
-
-.cg-mitra-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #241A14;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.cg-mitra-sub {
-  font-size: 0.76rem;
-  color: #7A6D63;
-  margin: 2px 0 0;
-  line-height: 1.35;
-}
-
-.cg-mitra-divider {
-  width: 1px;
-  height: 40px;
-  background: rgba(220, 205, 190, 0.7);
-  flex-shrink: 0;
-}
-
-.cg-mitra-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex: 1;
-  justify-content: flex-end;
-}
-
-.cg-mitra-logos {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-  gap: 20px;
-  overflow: hidden;
-}
-
-.cg-mitra-logo-item {
-  height: 24px;
-  max-width: 90px;
+.cg-ref2-mitra-logo {
+  height: 26px;
+  max-width: 95px;
   object-fit: contain;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1.15);
   opacity: 0.82;
-  transition: opacity 0.2s ease, filter 0.2s ease;
+  transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
-.cg-mitra-logo-item:hover {
-  opacity: 1;
+.cg-ref2-mitra-logo:hover {
   filter: none;
-}
-
-.cg-mitra-arrow-btn {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid rgba(220, 205, 190, 0.8);
-  background: #FAF7F2;
-  color: #241A14;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.cg-mitra-arrow-btn:hover {
-  background: #C59B27;
-  color: #FFFFFF;
-  border-color: #C59B27;
-}
-
-.cg-mitra-dots {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  flex-shrink: 0;
-}
-
-.cg-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #D9CEBF;
-  transition: all 0.2s ease;
-}
-
-.cg-dot.active {
-  width: 16px;
-  border-radius: 999px;
-  background: #C59B27;
+  opacity: 1;
 }
 
 /* ========================================================
-   2. SECTION: KOLEKSI PILIHAN (SEPARUH FT SEPARUH TEKS)
+   2. SECTION: KATEGORI PILIHAN (3 HERO FEATURE CARDS)
    ======================================================== */
-.cg-koleksi-tabs-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 28px;
-  overflow-x: auto;
-  padding-bottom: 6px;
-}
-
-.cg-koleksi-tabs {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #FAF7F2;
-  padding: 6px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(220, 205, 190, 0.7);
-  box-shadow: 0 2px 8px rgba(36, 26, 20, 0.03);
-}
-
-.cg-koleksi-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 20px;
-  border-radius: 999px;
-  background: transparent;
-  border: none;
-  font-family: inherit;
-  font-size: 0.86rem;
-  font-weight: 600;
-  color: #6E6259;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-}
-
-.cg-koleksi-tab .cg-tab-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #D4AF37;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.cg-koleksi-tab:hover {
-  color: #241A14;
-}
-
-.cg-koleksi-tab.active {
-  background: #241A14;
-  color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(36, 26, 20, 0.2);
-}
-
-.cg-koleksi-tab.active .cg-tab-dot {
-  opacity: 1;
-}
-
-.cg-koleksi-showcase-container {
-  position: relative;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-/* The 50/50 Split Card matching user screenshot */
-.cg-koleksi-split-card {
+.cg-ref2-kategori-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: #FAF7F2;
-  border: 1.5px solid rgba(220, 205, 190, 0.65);
-  border-radius: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cg-ref2-kategori-card {
+  position: relative;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 14px 36px rgba(36, 26, 20, 0.06);
-  min-height: 440px;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  border: 1px solid #EAE4DC;
+  display: block;
+  text-decoration: none;
+  background: #FAF8F5;
 }
 
-.cg-koleksi-split-card[hidden] {
-  display: none;
-}
-
-.cg-koleksi-split-img-wrap {
+.cg-ref2-kategori-img-wrap {
+  height: 320px;
   position: relative;
   overflow: hidden;
-  height: 100%;
-  background: #EDE6DC;
 }
 
-.cg-koleksi-split-img {
+.cg-ref2-kategori-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 68%;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
-.cg-koleksi-split-card[data-slide="0"] .cg-koleksi-split-img {
-  object-position: center 72%;
-}
-.cg-koleksi-split-card[data-slide="1"] .cg-koleksi-split-img {
-  object-position: center 74%;
-}
-.cg-koleksi-split-card[data-slide="2"] .cg-koleksi-split-img {
-  object-position: center 76%;
-}
-.cg-koleksi-split-card[data-slide="3"] .cg-koleksi-split-img {
-  object-position: center 55%;
+.cg-ref2-kategori-card:hover .cg-ref2-kategori-img {
+  transform: scale(1.05);
 }
 
-.cg-koleksi-split-card:hover .cg-koleksi-split-img {
-  transform: scale(1.03);
-}
-
-.cg-koleksi-img-badge {
+.cg-ref2-kategori-overlay {
   position: absolute;
-  top: 18px;
-  left: 18px;
-  background: rgba(36, 26, 20, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 2;
-}
-
-.cg-koleksi-split-content {
-  padding: 40px 44px;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 14, 10, 0.84) 0%, rgba(20, 14, 10, 0.2) 60%, transparent 100%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #FFFFFF;
 }
 
-.cg-koleksi-split-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.85rem;
+.cg-ref2-kategori-pill {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-size: 0.68rem;
   font-weight: 700;
-  color: #241A14;
-  margin: 10px 0 12px;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cg-ref2-kategori-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 6px;
   line-height: 1.25;
 }
 
-.cg-koleksi-split-desc {
-  font-size: 0.94rem;
-  color: #5C493E;
-  line-height: 1.65;
-  margin-bottom: 20px;
-}
-
-.cg-koleksi-features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.cg-koleksi-features-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.88rem;
-  color: #4A3C32;
-  line-height: 1.5;
-}
-
-.cg-koleksi-features-list svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.cg-koleksi-split-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* Quick Thumbnail Switcher Strip below Split Card */
-.cg-koleksi-thumbnails-strip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 22px;
-}
-
-.cg-koleksi-thumb-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 5px 14px 5px 6px;
-  background: #FFFFFF;
-  border: 1.5px solid rgba(220, 205, 190, 0.6);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.8rem;
+.cg-ref2-kategori-link {
+  font-size: 0.82rem;
   font-weight: 600;
-  color: #6E6259;
+  color: #E5C365;
+  transition: transform 0.2s ease;
 }
 
-.cg-koleksi-thumb-item img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.cg-koleksi-thumb-item:hover {
-  border-color: #C59B27;
-  color: #241A14;
-}
-
-.cg-koleksi-thumb-item.active {
-  background: #FAF7F2;
-  border-color: #C59B27;
-  color: #C59B27;
-  box-shadow: 0 2px 8px rgba(197, 155, 39, 0.18);
+.cg-ref2-kategori-card:hover .cg-ref2-kategori-link {
+  transform: translateX(3px);
 }
 
 /* ========================================================
-   3. SECTION: TENTANG KAMI FEATURE BANNER
+   3. SECTION: KOLEKSI UNGGULAN (4-COLUMN CLEAN PRODUCT GRID)
    ======================================================== */
-.cg-about-banner {
+.cg-ref2-filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.cg-ref2-filter-btn {
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid #D8CFC4;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5C5045;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cg-ref2-filter-btn:hover {
+  border-color: #241A14;
+  color: #241A14;
+}
+
+.cg-ref2-filter-btn.active {
+  background: #241A14;
+  color: #FFFFFF;
+  border-color: #241A14;
+}
+
+.cg-ref2-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cg-ref2-product-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.cg-ref2-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(36, 26, 20, 0.08);
+  border-color: #C59B27;
+}
+
+.cg-ref2-product-img-wrap {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #F5EFEB;
+}
+
+.cg-ref2-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cg-ref2-product-card:hover .cg-ref2-product-img {
+  transform: scale(1.05);
+}
+
+.cg-ref2-badge-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 2px;
+  color: #241A14;
+  border: 1px solid #E2D9CE;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
+
+.cg-ref2-badge-tag.best-seller {
+  background: #F4C46A;
+  color: #241A14;
+  border-color: #E2B050;
+}
+
+.cg-ref2-badge-tag.custom-badge {
+  background: #241A14;
+  color: #FFFFFF;
+  border-color: #241A14;
+}
+
+.cg-ref2-product-info {
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cg-ref2-product-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9A7B56;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cg-ref2-product-title {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #1F1915;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  min-height: 2.7em;
+}
+
+.cg-ref2-product-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #F0EAE2;
+  margin-bottom: 12px;
+}
+
+.cg-ref2-product-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #9A5A35;
+}
+
+.cg-ref2-product-moq {
+  font-size: 0.72rem;
+  color: #8F8275;
+}
+
+.cg-ref2-product-btn {
+  display: block;
+  text-align: center;
+  padding: 8px 14px;
+  background: #FAF7F2;
+  border: 1px solid #D8CFC4;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #241A14;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cg-ref2-product-btn:hover {
+  background: #241A14;
+  color: #FFFFFF !important;
+  border-color: #241A14;
+}
+
+/* ========================================================
+   4. SECTION: CARA PEMESANAN (4 STEPS WITH HAIRLINE DIVIDERS)
+   ======================================================== */
+.cg-ref2-steps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+
+.cg-ref2-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #EAE4DC;
+  border-radius: 4px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.cg-ref2-step-item {
+  padding: 32px 24px;
+  position: relative;
+  border-right: 1px solid #EAE4DC;
+  transition: background 0.2s ease;
+}
+
+.cg-ref2-step-item:last-child {
+  border-right: none;
+}
+
+.cg-ref2-step-item:hover {
+  background: #FAF8F5;
+}
+
+.cg-ref2-step-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #C59B27;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.cg-ref2-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1F1915;
+  line-height: 1.35;
+  margin: 0 0 8px;
+}
+
+.cg-ref2-step-desc {
+  font-size: 0.86rem;
+  color: #6E645A;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ========================================================
+   5. SECTION: SPLIT FEATURE BANNER (SEPARUH FT SEPARUH TEKS)
+   EXACT MATCH TO IMAGE 1 & FOTO KE 2 SLICE 3
+   ======================================================== */
+.cg-ref2-split-banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: #FAF7F2;
-  border: 1.5px solid rgba(220, 205, 190, 0.65);
-  border-radius: 20px;
+  border: 1px solid #EAE4DC;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 14px 36px rgba(36, 26, 20, 0.05);
+  background: #FAF7F2;
+  box-shadow: 0 6px 20px rgba(36, 26, 20, 0.04);
   max-width: 1080px;
   margin: 0 auto;
 }
 
-.cg-about-banner-img-wrap {
-  position: relative;
+.cg-ref2-split-img-side {
+  height: 340px;
   overflow: hidden;
-  height: 100%;
-  min-height: 320px;
-  background: #EFE7DB;
+  background: #EAE5DE;
 }
 
-.cg-about-banner-img {
+.cg-ref2-split-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   transition: transform 0.5s ease;
 }
 
-.cg-about-banner:hover .cg-about-banner-img {
+.cg-ref2-split-banner:hover .cg-ref2-split-img {
   transform: scale(1.03);
 }
 
-.cg-about-banner-content {
-  padding: 44px 48px;
+.cg-ref2-split-text-side {
+  padding: 40px 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
 
-.cg-about-banner-title {
+.cg-ref2-split-heading {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #241A14;
+  color: #1F1915;
   margin: 8px 0 14px;
   line-height: 1.25;
 }
 
-.cg-about-banner-desc {
-  font-size: 0.95rem;
-  color: #6E6259;
+.cg-ref2-split-body {
+  font-size: 0.94rem;
+  color: #5C5045;
   line-height: 1.65;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
+}
+
+.cg-ref2-split-action {
+  display: flex;
+  align-items: center;
 }
 
 /* ========================================================
-   4. SECTION: PILIHAN BERDASARKAN ACARA
+   6. SECTION: TESTIMONI & APRESIASI KLIEN
    ======================================================== */
-.cg-acara-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 14px;
-  margin-top: 32px;
-}
-
-.cg-acara-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.cg-ref2-quote-wrap {
+  max-width: 760px;
+  margin: 0 auto;
   text-align: center;
-  background: #FAF7F2;
-  border: 1px solid rgba(220, 205, 190, 0.65);
-  border-radius: 14px;
-  padding: 22px 10px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  min-height: 125px;
+  padding: 20px 0;
 }
 
-.cg-acara-card:hover {
-  background: #FFFFFF;
-  border-color: #C59B27;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(197, 155, 39, 0.12);
+.cg-ref2-stars {
+  color: #C59B27;
+  font-size: 1.35rem;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
 }
 
-.cg-acara-icon-wrap {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(197, 155, 39, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-  transition: all 0.2s ease;
+.cg-ref2-quote-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.45rem;
+  color: #1F1915;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  font-weight: 500;
 }
 
-.cg-acara-card:hover .cg-acara-icon-wrap {
-  background: #C59B27;
-}
-
-.cg-acara-card:hover .cg-acara-icon-wrap svg {
-  stroke: #FFFFFF;
-}
-
-.cg-acara-name {
-  font-size: 0.8rem;
+.cg-ref2-quote-author {
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #241A14;
-  line-height: 1.35;
+  color: #1F1915;
+  margin: 0 0 2px;
+}
+
+.cg-ref2-quote-client {
+  font-size: 0.8rem;
+  color: #8F8275;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ========================================================
+   7. SECTION: PORTOFOLIO / DOKUMENTASI NYATA PENGADAAN
+   ======================================================== */
+.cg-ref2-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cg-ref2-gallery-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE4DC;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.cg-ref2-gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(36, 26, 20, 0.07);
+}
+
+.cg-ref2-gallery-img-wrap {
+  height: 220px;
+  overflow: hidden;
+  background: #F0ECE6;
+}
+
+.cg-ref2-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cg-ref2-gallery-card:hover .cg-ref2-gallery-img {
+  transform: scale(1.05);
+}
+
+.cg-ref2-gallery-meta {
+  padding: 16px;
+}
+
+.cg-ref2-gallery-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #9A7B56;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.cg-ref2-gallery-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #1F1915;
+  margin: 0 0 6px;
+}
+
+.cg-ref2-gallery-desc {
+  font-size: 0.84rem;
+  color: #6E645A;
+  line-height: 1.5;
   margin: 0;
 }
 
 /* ========================================================
-   5. SECTION: PAKET HAMPERS FAVORIT (DARK ESPRESSO LUXURY)
+   8. SECTION: FAQ (CLEAN ACCORDION WITH HAIRLINE BORDERS)
    ======================================================== */
-.cg-favorit-container {
-  background: #1E1611;
-  border-radius: 24px;
-  padding: 50px 48px;
-  color: #FFFFFF;
+.cg-ref2-faq-layout {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 36px;
-  align-items: center;
-  box-shadow: 0 16px 42px rgba(16, 11, 8, 0.25);
-  border: 1px solid rgba(197, 155, 39, 0.18);
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: flex-start;
 }
 
-.cg-favorit-left {
+.cg-ref2-faq-left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.cg-favorit-badge {
-  display: inline-block;
-  background: rgba(197, 155, 39, 0.18);
-  color: #E5C365;
+.cg-ref2-faq-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.cg-ref2-faq-row {
+  border-bottom: 1px solid #EAE4DC;
+  padding: 18px 0;
+}
+
+.cg-ref2-faq-row:first-child {
+  border-top: 1px solid #EAE4DC;
+}
+
+.cg-ref2-faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  color: #1F1915;
+}
+
+.cg-ref2-faq-question {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #1F1915;
+  line-height: 1.4;
+}
+
+.cg-ref2-faq-toggle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #9A7B56;
+  margin-left: 16px;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.cg-ref2-faq-row.active .cg-ref2-faq-toggle {
+  transform: rotate(45deg);
+  color: #C59B27;
+}
+
+.cg-ref2-faq-content {
+  padding-top: 12px;
+  font-size: 0.88rem;
+  color: #5C5045;
+  line-height: 1.6;
+}
+
+.cg-ref2-faq-content p {
+  margin: 0;
+}
+
+/* ========================================================
+   9. SECTION: PRE-FOOTER BANNER (WARM COPPER / TERRACOTTA)
+   EXACT MATCH TO FOTO KE 2 BOTTOM CTA
+   ======================================================== */
+.cg-ref2-cta-banner {
+  background: #9E5839;
+  color: #FFFFFF;
+  padding: 68px 0;
+  position: relative;
+}
+
+.cg-ref2-cta-label {
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 999px;
-  margin-bottom: 12px;
-  width: fit-content;
-  border: 1px solid rgba(197, 155, 39, 0.35);
+  color: #F5D3B8;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
-.cg-favorit-title {
+.cg-ref2-cta-heading {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.2rem;
   font-weight: 700;
   color: #FFFFFF;
-  margin: 0 0 12px;
-  line-height: 1.2;
-}
-
-.cg-favorit-desc {
-  font-size: 0.92rem;
-  color: #D6CBC1;
-  line-height: 1.6;
-  margin-bottom: 28px;
-}
-
-.cg-favorit-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.cg-favorit-arrows {
-  display: flex;
-  gap: 8px;
-}
-
-.cg-favorit-arrow-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.2s ease;
-}
-
-.cg-favorit-arrow-btn:hover {
-  background: #C59B27;
-  border-color: #C59B27;
-  color: #FFFFFF;
-}
-
-.cg-favorit-right {
-  position: relative;
-}
-
-.cg-favorit-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  align-items: center;
-}
-
-.cg-favorit-card {
-  background: #FFFFFF;
-  border-radius: 16px;
-  padding: 16px;
-  text-decoration: none;
-  color: #241A14;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-  position: relative;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.cg-favorit-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
-}
-
-.cg-favorit-card.featured {
-  transform: scale(1.04);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-  border: 1.5px solid #C59B27;
-  z-index: 2;
-}
-
-.cg-favorit-card.featured:hover {
-  transform: scale(1.05) translateY(-4px);
-}
-
-.cg-bestseller-badge {
-  position: absolute;
-  top: -12px;
-  right: 14px;
-  background: #F4C46A;
-  color: #3B261D;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  z-index: 3;
-}
-
-.cg-favorit-card-img-wrap {
-  width: 100%;
-  height: 165px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #EDE6DC;
-  margin-bottom: 12px;
-}
-
-.cg-favorit-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.cg-favorit-card:hover .cg-favorit-card-img {
-  transform: scale(1.05);
-}
-
-.cg-favorit-card-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #241A14;
-  margin: 0 0 4px;
-}
-
-.cg-favorit-card-desc {
-  font-size: 0.78rem;
-  color: #6E6259;
-  line-height: 1.45;
-  margin: 0 0 10px;
-  flex: 1;
-}
-
-.cg-favorit-card-footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.cg-favorit-dots {
-  display: none;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 16px;
-}
-
-.cg-fav-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.cg-fav-dot.active {
-  width: 18px;
-  border-radius: 999px;
-  background: #C59B27;
-}
-
-/* ========================================================
-   6. SECTION: PORTOFOLIO KAMI
-   ======================================================== */
-.cg-portofolio-wrap {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 36px;
-  align-items: center;
-}
-
-.cg-portofolio-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.cg-portofolio-gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.cg-portofolio-item {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  height: 180px;
-  background: #EFE7DB;
-  box-shadow: 0 4px 14px rgba(36, 26, 20, 0.06);
-}
-
-.cg-portofolio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.cg-portofolio-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(30, 22, 17, 0.85) 0%, rgba(30, 22, 17, 0.1) 60%, transparent 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: 12px;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.cg-portofolio-overlay span {
-  color: #FFFFFF;
-  font-size: 0.76rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.cg-portofolio-item:hover .cg-portofolio-overlay {
-  opacity: 1;
-}
-
-.cg-portofolio-item:hover .cg-portofolio-img {
-  transform: scale(1.06);
-}
-
-/* ========================================================
-   7. SECTION: FAQ
-   ======================================================== */
-.cg-faq-box {
-  background: #FAF7F2;
-  border: 1.5px solid rgba(220, 205, 190, 0.65);
-  border-radius: 20px;
-  padding: 44px 48px;
-  display: grid;
-  grid-template-columns: 320px 1px 1fr;
-  gap: 36px;
-  align-items: flex-start;
-  box-shadow: 0 10px 30px rgba(36, 26, 20, 0.04);
-}
-
-.cg-faq-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.cg-faq-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #241A14;
-  margin: 10px 0 12px;
+  max-width: 680px;
+  margin: 0 auto 12px;
   line-height: 1.25;
 }
 
-.cg-faq-desc {
-  font-size: 0.92rem;
-  color: #6E6259;
-  line-height: 1.6;
+.cg-ref2-cta-sub {
+  font-size: 0.95rem;
+  color: #F5EAE2;
+  max-width: 580px;
+  margin: 0 auto 28px;
+  line-height: 1.55;
 }
 
-.cg-faq-divider {
-  width: 1px;
-  height: 100%;
-  background: rgba(220, 205, 190, 0.7);
-}
-
-.cg-faq-right {
+.cg-ref2-cta-action {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.cg-faq-item {
-  background: #FFFFFF;
-  border: 1px solid rgba(220, 205, 190, 0.65);
-  border-radius: 999px;
-  overflow: hidden;
-  transition: all 0.25s ease;
-}
-
-.cg-faq-item.active {
-  border-radius: 16px;
-  border-color: #C59B27;
-  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.1);
-}
-
-.cg-faq-btn {
-  width: 100%;
-  padding: 13px 22px;
-  background: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  cursor: pointer;
-  color: #241A14;
-  font-weight: 600;
-  font-size: 0.88rem;
-  gap: 12px;
-}
-
-.cg-faq-icon {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-  color: #C59B27;
 }
 
-.cg-faq-item.active .cg-faq-icon {
-  transform: rotate(180deg);
+.cg-ref2-cta-btn {
+  background: #FFFFFF;
+  color: #9E5839 !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
-.cg-faq-ans {
-  padding: 0 22px 14px;
-}
-
-.cg-faq-ans-inner {
-  font-size: 0.86rem;
-  color: #5C493E;
-  line-height: 1.6;
-  border-top: 1px solid rgba(220, 205, 190, 0.45);
-  padding-top: 10px;
-}
-
-.cg-faq-ans-inner p {
-  margin: 0;
+.cg-ref2-cta-btn:hover {
+  background: #FDF9F5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 /* ========================================================
-   RESPONSIVE DESIGN (DESKTOP / TABLET / MOBILE)
+   RESPONSIVE DESIGN (FOTO KE 2 ADAPTATION)
    ======================================================== */
 @media (max-width: 1199.98px) {
-  .cg-koleksi-split-card {
-    min-height: 400px;
-  }
-  .cg-koleksi-split-content {
-    padding: 32px 36px;
-  }
-  .cg-acara-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .cg-portofolio-gallery {
-    grid-template-columns: repeat(2, 1fr);
+  .cg-ref2-product-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 991.98px) {
-  .cg-mitra-strip {
+  .cg-ref2-sec {
+    padding: 56px 0;
+  }
+  .cg-ref2-sec-head {
     flex-direction: column;
     align-items: flex-start;
   }
-  .cg-mitra-divider {
-    display: none;
-  }
-  .cg-mitra-right {
-    width: 100%;
-    justify-content: space-between;
-  }
-  .cg-koleksi-split-card {
+  .cg-ref2-kategori-grid {
     grid-template-columns: 1fr;
   }
-  .cg-koleksi-split-img-wrap {
-    height: 280px;
-    min-height: 280px;
+  .cg-ref2-kategori-img-wrap {
+    height: 240px;
   }
-  .cg-about-banner {
+  .cg-ref2-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cg-ref2-steps-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cg-ref2-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cg-ref2-step-item:nth-child(2) {
+    border-right: none;
+  }
+  .cg-ref2-step-item:nth-child(1),
+  .cg-ref2-step-item:nth-child(2) {
+    border-bottom: 1px solid #EAE4DC;
+  }
+  .cg-ref2-split-banner {
     grid-template-columns: 1fr;
   }
-  .cg-about-banner-img-wrap {
+  .cg-ref2-split-img-side {
     height: 260px;
-    min-height: 260px;
   }
-  .cg-favorit-container {
-    grid-template-columns: 1fr;
-    padding: 36px 24px;
-  }
-  .cg-portofolio-wrap {
-    grid-template-columns: 1fr;
-  }
-  .cg-faq-box {
-    grid-template-columns: 1fr;
+  .cg-ref2-split-text-side {
     padding: 32px 24px;
   }
-  .cg-faq-divider {
-    display: none;
+  .cg-ref2-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .cg-ref2-faq-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
 @media (max-width: 767.98px) {
-  .cg-home-sec {
+  .cg-ref2-sec {
     padding: 44px 0;
   }
-  .cg-sec-heading {
+  .cg-ref2-sec-title {
     font-size: 1.65rem;
   }
-  .cg-koleksi-split-title {
-    font-size: 1.45rem;
-  }
-  .cg-koleksi-split-content {
-    padding: 24px 20px;
-  }
-  .cg-about-banner-content {
-    padding: 28px 20px;
-  }
-  .cg-about-banner-title {
-    font-size: 1.55rem;
-  }
-  .cg-acara-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  .cg-favorit-cards {
+  .cg-ref2-steps-grid {
     grid-template-columns: 1fr;
   }
-  .cg-favorit-card.featured {
-    transform: none;
+  .cg-ref2-step-item {
+    border-right: none;
+    border-bottom: 1px solid #EAE4DC;
   }
-  .cg-portofolio-gallery {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  .cg-ref2-step-item:last-child {
+    border-bottom: none;
   }
-  .cg-portofolio-item {
-    height: 140px;
+  .cg-ref2-product-grid {
+    grid-template-columns: 1fr;
   }
-  .cg-koleksi-thumbnails-strip {
-    display: none;
+  .cg-ref2-cta-heading {
+    font-size: 1.65rem;
+  }
+  .cg-ref2-quote-text {
+    font-size: 1.15rem;
   }
 }

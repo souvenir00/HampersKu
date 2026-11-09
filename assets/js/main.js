@@ -978,3 +978,70 @@ document.addEventListener('DOMContentLoaded', initHomepageRedesignInteractions);
 if (document.readyState === 'interactive' || document.readyState === 'complete') {
   initHomepageRedesignInteractions();
 }
+// HOMEPAGE REDESIGN INTERACTION SCRIPT (FOTO KE-2 REFERENCE)
+function initFotoKe2Interactions() {
+  // 1. Catalog Category Filter Tabs
+  const filterBtns = document.querySelectorAll('.cg-ref2-filter-btn');
+  const productCards = document.querySelectorAll('.cg-ref2-product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+      productCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.97)';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          });
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // 2. FAQ Accordion (Clean Hairline Underlines with + / -)
+  const faqTriggers = document.querySelectorAll('.cg-ref2-faq-trigger');
+  faqTriggers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const row = btn.closest('.cg-ref2-faq-row');
+      const content = row.querySelector('.cg-ref2-faq-content');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all other rows
+      document.querySelectorAll('.cg-ref2-faq-row').forEach(other => {
+        if (other !== row) {
+          other.classList.remove('active');
+          const otherBtn = other.querySelector('.cg-ref2-faq-trigger');
+          const otherContent = other.querySelector('.cg-ref2-faq-content');
+          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          if (otherContent) otherContent.hidden = true;
+        }
+      });
+
+      // Toggle clicked row
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        content.hidden = true;
+        row.classList.remove('active');
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        content.hidden = false;
+        row.classList.add('active');
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initFotoKe2Interactions);
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+  initFotoKe2Interactions();
+}
