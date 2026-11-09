@@ -67,12 +67,17 @@ function initNavbar() {
       toggleBtn.setAttribute('aria-expanded', expanded);
       toggleBtn.setAttribute('aria-label', expanded ? 'Tutup Menu Navigasi' : 'Buka Menu Navigasi');
       toggleBtn.innerHTML = expanded ? closeSvg : hamburgerSvg;
+      const header = toggleBtn.closest('.cg-header');
       if (expanded) {
         navMenuWrap.classList.add('active');
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('cg-menu-open');
+        if (header) header.classList.add('menu-open');
       } else {
         navMenuWrap.classList.remove('active');
         document.body.style.overflow = '';
+        document.body.classList.remove('cg-menu-open');
+        if (header) header.classList.remove('menu-open');
       }
     };
 
