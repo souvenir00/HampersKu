@@ -64,6 +64,14 @@
       "destination": "/hampers-kue-kering.html"
     },
     {
+      "source": "/hampers-kopi-teh",
+      "destination": "/hampers-kopi-teh.html"
+    },
+    {
+      "source": "/paket/hampers-kopi-teh",
+      "destination": "/hampers-kopi-teh.html"
+    },
+    {
       "source": "/hampers-tahun-baru",
       "destination": "/hampers-tahun-baru.html"
     },
