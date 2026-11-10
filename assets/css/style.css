@@ -4128,17 +4128,17 @@ textarea.cg-form-control {
    Blog & Article Details
    -------------------------------------------------------------------------- */
 .cg-article-container {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
 /* Blog & Article Detail Figures (Wider, Taller, Prominent with Perfect Framing) */
 .cg-article-container figure {
-  max-width: 760px;
-  width: 100%;
-  margin: 2.25rem auto;
-  text-align: center;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 1.5rem 0 2rem !important;
+  text-align: center !important;
 }
 
 .cg-article-container figure>div {
@@ -6643,65 +6643,96 @@ section[style*="var(--cg-brown)"] a[href*="/kontak"]:hover,
 }
 
 /* ==========================================================================
-   BLOG ARTICLE 2-COLUMN RESPONSIVE LAYOUT WITH RIGHT SIDEBAR
+   BLOG ARTICLE 2-COLUMN RESPONSIVE LAYOUT WITH BALANCED WIDTH & GAP
    ========================================================================== */
+article.cg-section > .cg-container,
+.cg-article-layout-container {
+  max-width: 1240px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(16px, 2.5vw, 32px) !important;
+  padding-right: clamp(16px, 2.5vw, 32px) !important;
+}
+
 .cg-article-layout-row {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  align-items: stretch;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+  align-items: stretch !important;
 }
 
 .cg-article-main-col {
-  width: 100%;
-  min-width: 0;
+  width: 100% !important;
+  min-width: 0 !important;
 }
 
-.cg-article-main-col .cg-article-container {
+.cg-article-main-col .cg-article-container,
+.cg-article-container {
   max-width: 100% !important;
+  width: 100% !important;
   margin: 0 !important;
+}
+
+.cg-article-container figure,
+.cg-article-main-col .cg-article-container figure {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 1.5rem 0 2rem !important;
+  text-align: center !important;
+}
+
+.cg-article-container figure > div,
+.cg-article-main-col .cg-article-container figure > div {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.cg-article-container figure img,
+.cg-article-img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 540px !important;
+  object-fit: cover !important;
+}
+
+.cg-article-container figcaption,
+.cg-article-main-col .cg-article-container figcaption {
+  max-width: 100% !important;
+  margin: 10px auto 0 !important;
 }
 
 aside.col-lg-4,
 .cg-article-sidebar-col {
-  width: 100%;
-  min-width: 0;
+  width: 100% !important;
+  min-width: 0 !important;
 }
 
 @media (min-width: 992px) {
   .cg-article-layout-row {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 350px !important;
-    gap: 48px !important;
-    align-items: start !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 28px !important;
+    align-items: flex-start !important;
   }
 
   .cg-article-main-col {
-    width: 100% !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
     max-width: 100% !important;
   }
 
   aside.col-lg-4,
   .cg-article-sidebar-col {
-    width: 350px !important;
-    max-width: 350px !important;
-  }
-
-  .cg-article-sidebar {
+    flex: 0 0 340px !important;
+    width: 340px !important;
+    min-width: 340px !important;
+    max-width: 340px !important;
     position: sticky !important;
     top: 96px !important;
     z-index: 10 !important;
-  }
-
-  /* Bootstrap grid fallback */
-  .col-lg-8 {
-    flex: 0 0 auto !important;
-    width: 66.66666667% !important;
-  }
-
-  .col-lg-4 {
-    flex: 0 0 auto !important;
-    width: 33.33333333% !important;
   }
 }
 
@@ -6808,7 +6839,6 @@ aside.col-lg-4,
   color: var(--cg-primary) !important;
 }
 
-/* Ensure no blue links or underlines inside the sidebar */
 .cg-sidebar-widget a,
 .cg-sidebar-widget a:hover,
 .cg-sidebar-widget a:focus,
