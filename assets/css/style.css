@@ -6359,6 +6359,71 @@ section[style*="#1F1915"] h2,
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45) !important;
 }
 
+/* Google Maps Embed Frame & Ratio Utilities */
+.cg-map-frame {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 214, 196, 0.85);
+  box-shadow: 0 4px 20px rgba(48, 39, 34, 0.06);
+  background: #F8F5F0;
+}
+
+.cg-map-frame iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 440px !important;
+  border: 0 !important;
+  display: block;
+}
+
+/* Bootstrap ratio utility compatibility */
+.ratio {
+  position: relative;
+  width: 100%;
+}
+
+.ratio::before {
+  display: block;
+  padding-top: var(--bs-aspect-ratio, 56.25%);
+  content: "";
+}
+
+.ratio > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ratio-21x9 {
+  --bs-aspect-ratio: 42.857%;
+}
+
+.ratio-16x9 {
+  --bs-aspect-ratio: 56.25%;
+}
+
+.ratio-4x3 {
+  --bs-aspect-ratio: 75%;
+}
+
+.ratio-1x1 {
+  --bs-aspect-ratio: 100%;
+}
+
+@media (max-width: 768px) {
+  .cg-map-frame {
+    height: 350px;
+  }
+  .cg-map-frame iframe {
+    min-height: 350px !important;
+  }
+}
+
 /* Eyebrows on subpages */
 .cg-page-header .cg-eyebrow {
   display: inline-block !important;
