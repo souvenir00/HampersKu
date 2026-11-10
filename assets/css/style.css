@@ -7179,3 +7179,355 @@ aside.col-lg-4,
     margin-top: 36px !important;
   }
 }
+
+
+/* ==========================================================================
+   PORTFOLIO REDESIGN: FEATURED PROJECT & KOLEKSI PROYEK
+   ========================================================================== */
+.cg-featured-section {
+  padding: 50px 0 30px;
+  background: #FAF7F2;
+}
+
+.cg-featured-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 214, 196, 0.85);
+  border-radius: 28px;
+  padding: 44px 48px;
+  box-shadow: 0 10px 36px rgba(48, 39, 34, 0.05);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.cg-featured-card:hover {
+  box-shadow: 0 16px 44px rgba(48, 39, 34, 0.08);
+}
+
+.cg-featured-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9C7A28;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.cg-featured-title {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: #241C17;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.cg-featured-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #5C4E44;
+  margin-bottom: 26px;
+  max-width: 480px;
+}
+
+.cg-featured-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #B88E23 0%, #9C7416 100%);
+  color: #FFFFFF !important;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(166, 124, 26, 0.28);
+  transition: all 0.3s ease;
+}
+
+.cg-featured-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(166, 124, 26, 0.4);
+  background: linear-gradient(135deg, #C59B27 0%, #A67C1A 100%);
+  color: #FFFFFF !important;
+}
+
+.cg-featured-img-wrap {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #F4EFEA;
+  box-shadow: 0 8px 24px rgba(48, 39, 34, 0.08);
+  cursor: pointer;
+}
+
+.cg-featured-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cg-featured-card:hover .cg-featured-img {
+  transform: scale(1.03);
+}
+
+.cg-featured-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.cg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E2D6C4;
+  transition: all 0.3s ease;
+}
+
+.cg-dot.active {
+  width: 24px;
+  border-radius: 999px;
+  background: #C59B27;
+}
+
+/* SECTION: KOLEKSI PROYEK */
+.cg-koleksi-section {
+  padding: 40px 0 80px;
+  background: #FAF7F2;
+}
+
+.cg-koleksi-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9C7A28;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cg-koleksi-title {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #241C17;
+  margin: 0 0 12px;
+}
+
+.cg-koleksi-desc {
+  font-size: 0.98rem;
+  color: #6E5F54;
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Filter Pills */
+.cg-koleksi-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.cg-koleksi-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4A3E36;
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 214, 196, 0.85);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cg-koleksi-filter-btn:hover {
+  border-color: #C59B27;
+  color: #241C17;
+}
+
+.cg-koleksi-filter-btn.active {
+  background: #241C17;
+  color: #FFFFFF;
+  border-color: #241C17;
+  box-shadow: 0 4px 14px rgba(36, 28, 23, 0.25);
+}
+
+.cg-koleksi-filter-btn svg {
+  opacity: 0.85;
+}
+
+.cg-koleksi-filter-btn.active svg {
+  opacity: 1;
+  color: #DFC090;
+}
+
+/* 9 Koleksi Cards */
+.cg-koleksi-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 214, 196, 0.85);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(48, 39, 34, 0.04);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+}
+
+.cg-koleksi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(48, 39, 34, 0.1);
+  border-color: #C59B27;
+}
+
+.cg-koleksi-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 0.95;
+  background: #F4EFEA;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cg-koleksi-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cg-koleksi-card:hover .cg-koleksi-img-wrap img {
+  transform: scale(1.045);
+}
+
+.cg-koleksi-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.cg-koleksi-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #241C17;
+  margin: 0 0 14px;
+  line-height: 1.35;
+  font-family: var(--cg-font-sans);
+}
+
+.cg-koleksi-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.cg-koleksi-card-tag {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #8C6D23;
+  background: #FAF7F2;
+  border: 1px solid #ECE3D5;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.cg-koleksi-arrow-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(226, 214, 196, 0.9);
+  background: #FFFFFF;
+  color: #4A3E36;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cg-koleksi-card:hover .cg-koleksi-arrow-btn {
+  background: #C59B27;
+  color: #FFFFFF;
+  border-color: #C59B27;
+  transform: translateX(2px);
+}
+
+.cg-koleksi-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 32px;
+  background: #FFFFFF;
+  border: 1.5px solid #C59B27;
+  color: #241C17;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.12);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.cg-koleksi-more-btn:hover {
+  background: #C59B27;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 155, 39, 0.25);
+}
+
+@media (max-width: 991.98px) {
+  .cg-featured-card {
+    padding: 32px 28px;
+    border-radius: 22px;
+  }
+  .cg-featured-title {
+    font-size: 1.9rem;
+  }
+  .cg-koleksi-title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cg-featured-card {
+    padding: 24px 20px;
+  }
+  .cg-featured-title {
+    font-size: 1.55rem;
+  }
+  .cg-featured-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .cg-koleksi-title {
+    font-size: 1.6rem;
+  }
+  .cg-koleksi-filter-bar {
+    gap: 8px;
+  }
+  .cg-koleksi-filter-btn {
+    font-size: 0.78rem;
+    padding: 7px 14px;
+  }
+}
