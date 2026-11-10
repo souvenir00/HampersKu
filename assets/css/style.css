@@ -2101,10 +2101,16 @@ body.cg-home-page .cg-hero,
   .cg-hero-video-overlay {
     background: linear-gradient(
       180deg,
-      rgba(36, 26, 20, 0.88) 0%,
-      rgba(36, 26, 20, 0.74) 45%,
-      rgba(36, 26, 20, 0.90) 100%
-    );
+      rgba(18, 12, 8, 0.42) 0%,
+      rgba(18, 12, 8, 0.18) 40%,
+      rgba(18, 12, 8, 0.60) 100%
+    ) !important;
+  }
+  .cg-hero-video {
+    object-position: center 30% !important;
+    -webkit-transform: translate(-50%, -50%) translateZ(0) !important;
+    transform: translate(-50%, -50%) translateZ(0) !important;
+    image-rendering: -webkit-optimize-contrast;
   }
 }
 
@@ -6196,4 +6202,243 @@ textarea.cg-form-control {
   .cg-ref2-quote-text {
     font-size: 1.15rem;
   }
+}
+
+
+/* Authentic Brand Colors for BRI & Telkom/Telkomsel */
+.cg-ref2-mitra-logo[src*="bri"],
+.cg-ref2-mitra-logo[src*="telkomsel"] {
+  filter: none !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}
+.cg-ref2-mitra-logo[src*="bri"] {
+  max-height: 28px !important;
+  transform: scale(1.05) !important;
+}
+.cg-ref2-mitra-logo[src*="telkomsel"] {
+  max-height: 30px !important;
+  transform: scale(1.08) !important;
+}
+
+
+/* ==========================================================================
+   SUBPAGE THEME & DIVERSE HEADERS (MATCH HOMEPAGE ELEGANCE & LUXURY PALETTE)
+   ========================================================================== */
+
+/* Subpage Typography Harmonization */
+.cg-page-header h1,
+body:not(.cg-home-page) h1:not(.cg-hero-title) {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(2rem, 3.4vw, 2.75rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  color: #FFFFFF !important;
+  line-height: 1.25 !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45) !important;
+}
+
+body:not(.cg-home-page) h2,
+body:not(.cg-home-page) .h2 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 600 !important;
+  color: #1F1915 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Eyebrows on subpages */
+.cg-page-header .cg-eyebrow {
+  display: inline-block !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #C59B27 !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 10px !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Breadcrumbs on subpages */
+.cg-breadcrumb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.82rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-bottom: 12px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.cg-breadcrumb a {
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.cg-breadcrumb a:hover {
+  color: #E2CFBB !important;
+}
+
+.cg-breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Card Harmonization to match Homepage Hairline Luxury */
+body:not(.cg-home-page) .card,
+body:not(.cg-home-page) .cg-card {
+  border: 1px solid #ECE7E1 !important;
+  border-radius: 6px !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(36, 26, 20, 0.04) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body:not(.cg-home-page) .card:hover,
+body:not(.cg-home-page) .cg-card:hover {
+  border-color: #D6CBC0 !important;
+  box-shadow: 0 10px 26px rgba(36, 26, 20, 0.08) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Button & Pill Harmonization */
+body:not(.cg-home-page) .btn-primary,
+body:not(.cg-home-page) .cg-btn-primary {
+  background-color: #C59B27 !important;
+  border-color: #B88E20 !important;
+  color: #FFFFFF !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
+  box-shadow: 0 4px 14px rgba(197, 155, 39, 0.22) !important;
+  transition: all 0.25s ease !important;
+}
+
+body:not(.cg-home-page) .btn-primary:hover,
+body:not(.cg-home-page) .cg-btn-primary:hover {
+  background-color: #A8811A !important;
+  border-color: #967215 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(197, 155, 39, 0.32) !important;
+}
+
+/* Diverse Header Backgrounds for Every Page */
+.cg-page-header-paket::before,
+body.page-paket .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-koleksi-executive.jpg') !important;
+  background-position: center 30% !important;
+}
+
+.cg-page-header-tentang::before,
+body.page-tentang .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-about-luxury-hamper.jpg') !important;
+  background-position: center 40% !important;
+}
+
+.cg-page-header-portofolio::before,
+body.page-portofolio .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/ft%20produk/50.webp') !important;
+  background-position: center 35% !important;
+}
+
+.cg-page-header-blog::before,
+body.page-blog .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-koleksi-event.jpg') !important;
+  background-position: center 30% !important;
+}
+
+.cg-page-header-kontak::before,
+body.page-kontak .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-koleksi-wellness.jpg') !important;
+  background-position: center 35% !important;
+}
+
+.cg-page-header-custom::before,
+body.page-custom .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/ft%20produk/custom-hampers-logo-perusahaan.webp') !important;
+  background-position: center 40% !important;
+}
+
+.cg-page-header-cara-pesan::before,
+body.page-cara-pesan .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-catalog-tumbler-led.jpg') !important;
+  background-position: center 30% !important;
+}
+
+.cg-page-header-faq::before,
+body.page-faq .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-about-luxury-hamper.jpg') !important;
+  background-position: center 40% !important;
+}
+
+.cg-page-header-lebaran::before,
+body.page-lebaran .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/ft%20produk/hampers-lebaran-corporate.webp') !important;
+  background-position: center 40% !important;
+}
+
+.cg-page-header-kue-kering::before,
+body.page-kue-kering .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-catalog-cookies-box.jpg') !important;
+  background-position: center 35% !important;
+}
+
+.cg-page-header-kopi-teh::before,
+body.page-kopi-teh .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/ft%20produk/hampers-kopi-teh-corporate.webp') !important;
+  background-position: center 35% !important;
+}
+
+.cg-page-header-sehat::before,
+body.page-sehat .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/ft%20produk/hampers-sehat-karyawan-corporate.webp') !important;
+  background-position: center 40% !important;
+}
+
+.cg-page-header-premium::before,
+body.page-premium .cg-page-header::before {
+  background-image:
+    radial-gradient(ellipse 70% 75% at 75% 50%, rgba(233, 220, 201, 0.1) 0%, transparent 65%),
+    linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
+    url('/assets/images/ai-catalog-tumbler-led.jpg') !important;
+  background-position: center 30% !important;
 }
