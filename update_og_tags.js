@@ -466,3 +466,4 @@ for (const sync of DIR_SYNCS) {
     console.log(`Synced: ${sync.dir}/index.html from ${sync.src}`);
   }
 }
+

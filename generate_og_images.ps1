@@ -92,3 +92,4 @@ foreach ($item in $imagesMap) {
 }
 
 Write-Host "ALL OG IMAGES GENERATED SUCCESSFULLY!"
+
