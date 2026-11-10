@@ -120,10 +120,12 @@ function initNavbar() {
     if (headerEl) headerEl.classList.remove('has-open-dropdown');
   };
 
-  // Close when clicking anywhere outside
+  // Close when clicking anywhere outside (Desktop only; on mobile, drawer scrolling shouldn't collapse accordion)
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.cg-nav-item.dropdown')) {
-      closeAllDropdowns();
+    if (window.innerWidth >= 992) {
+      if (!e.target.closest('.cg-nav-item.dropdown')) {
+        closeAllDropdowns();
+      }
     }
   });
 
