@@ -92,6 +92,14 @@ const server = http.createServer((req, res) => {
     reqUrl = '/blog/kapan-pesan-hampers-perusahaan.html';
   } else if (reqUrl === '/blog/cara-memilih-vendor-hampers/' || reqUrl === '/blog/cara-memilih-vendor-hampers') {
     reqUrl = '/blog/cara-memilih-vendor-hampers.html';
+  } else if (reqUrl === '/blog/mengapa-corporate-gift-penting-untuk-loyalitas-klien/' || reqUrl === '/blog/mengapa-corporate-gift-penting-untuk-loyalitas-klien') {
+    reqUrl = '/blog/mengapa-corporate-gift-penting-untuk-loyalitas-klien.html';
+  } else if (reqUrl === '/blog/ide-hampers-corporate-gift-eksklusif/' || reqUrl === '/blog/ide-hampers-corporate-gift-eksklusif') {
+    reqUrl = '/blog/ide-hampers-corporate-gift-eksklusif.html';
+  } else if (reqUrl === '/blog/panduan-memilih-hampers-corporate-karyawan/' || reqUrl === '/blog/panduan-memilih-hampers-corporate-karyawan') {
+    reqUrl = '/blog/panduan-memilih-hampers-corporate-karyawan.html';
+  } else if (reqUrl === '/blog/corporate-gift-custom-branding-perusahaan/' || reqUrl === '/blog/corporate-gift-custom-branding-perusahaan') {
+    reqUrl = '/blog/corporate-gift-custom-branding-perusahaan.html';
   } else if (reqUrl === '/assets/videos/vidioproduk.mp4') {
     reqUrl = '/vidioproduk.mp4';
   } else if (reqUrl === '/') {
