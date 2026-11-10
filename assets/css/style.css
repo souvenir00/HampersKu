@@ -6240,10 +6240,10 @@ body:not(.cg-home-page) h1:not(.cg-hero-title) {
 
 body:not(.cg-home-page) h2,
 body:not(.cg-home-page) .h2 {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-weight: 600 !important;
-  color: #1F1915 !important;
-  letter-spacing: -0.01em !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  color: #1F1915;
+  letter-spacing: -0.01em;
 }
 
 /* Eyebrows on subpages */
@@ -6441,4 +6441,131 @@ body.page-premium .cg-page-header::before {
     linear-gradient(135deg, rgba(36, 26, 20, 0.88) 0%, rgba(26, 18, 14, 0.80) 50%, rgba(36, 26, 20, 0.92) 100%),
     url('/assets/images/ai-catalog-tumbler-led.jpg') !important;
   background-position: center 30% !important;
+}
+
+
+/* ========================================================
+   FIX: GUARANTEED HIGH-CONTRAST TEXT & BEAUTIFUL PRE-FOOTER CTA
+   ======================================================== */
+.text-white,
+.text-light,
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.cg-page-header h1,
+.cg-ref2-cta-banner h2,
+.cg-subpage-cta-banner h2,
+section[style*="var(--cg-brown)"] h2,
+section[style*="background-color: var(--cg-brown)"] h2,
+section[style*="background: #9E5839"] h2,
+.cg-bg-dark h2,
+.bg-dark h2 {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Unified Pre-Footer CTA Consultation Banner across Subpages */
+section[style*="background-color: var(--cg-brown)"],
+section[style*="var(--cg-brown)"],
+.cg-subpage-cta-banner {
+  background: #9E5839 !important; /* Elegant warm terracotta matching homepage ref2 */
+  color: #FFFFFF !important;
+  padding: 68px 0 76px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+section[style*="background-color: var(--cg-brown)"] .cg-eyebrow,
+section[style*="var(--cg-brown)"] .cg-eyebrow,
+.cg-subpage-cta-banner .cg-eyebrow {
+  color: #F8E2D6 !important;
+  font-size: 0.74rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  margin-bottom: 12px !important;
+  display: inline-block !important;
+  text-shadow: none !important;
+}
+
+section[style*="background-color: var(--cg-brown)"] h2,
+section[style*="var(--cg-brown)"] h2,
+.cg-subpage-cta-banner h2 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(1.9rem, 3.2vw, 2.5rem) !important;
+  font-weight: 600 !important;
+  color: #FFFFFF !important;
+  line-height: 1.25 !important;
+  margin-bottom: 14px !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+section[style*="background-color: var(--cg-brown)"] p,
+section[style*="var(--cg-brown)"] p,
+.cg-subpage-cta-banner p {
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Beautiful Rounded Pill Buttons inside CTA Banner */
+section[style*="background-color: var(--cg-brown)"] a[href*="wa.me"],
+section[style*="var(--cg-brown)"] a[href*="wa.me"],
+.cg-subpage-cta-banner a[href*="wa.me"] {
+  background: #FFFFFF !important;
+  color: #241A14 !important;
+  border: 1px solid #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 0.94rem !important;
+  padding: 12px 30px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+}
+
+section[style*="background-color: var(--cg-brown)"] a[href*="wa.me"]:hover,
+section[style*="var(--cg-brown)"] a[href*="wa.me"]:hover,
+.cg-subpage-cta-banner a[href*="wa.me"]:hover {
+  background: #FDF9F5 !important;
+  color: #140D09 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25) !important;
+}
+
+section[style*="background-color: var(--cg-brown)"] a[href*="/kontak"],
+section[style*="var(--cg-brown)"] a[href*="/kontak"],
+.cg-subpage-cta-banner a[href*="/kontak"] {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  padding: 11px 28px !important;
+  border-radius: 9999px !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-decoration: none !important;
+}
+
+section[style*="background-color: var(--cg-brown)"] a[href*="/kontak"]:hover,
+section[style*="var(--cg-brown)"] a[href*="/kontak"]:hover,
+.cg-subpage-cta-banner a[href*="/kontak"]:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
 }
