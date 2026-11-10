@@ -151,20 +151,24 @@ const server = http.createServer((req, res) => {
         'Accept-Ranges': 'bytes',
         'Content-Length': chunksize,
         'Content-Type': contentType,
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'public, max-age=604800, immutable'
       });
       fileStream.pipe(res);
       return;
     }
 
-    // Disable caching in dev server to prevent stale CSS / JS issues
+    const isMedia = ['.mp4', '.jpg', '.jpeg', '.webp', '.png', '.svg', '.woff2'].includes(ext);
+    const cacheHeader = isMedia 
+      ? 'public, max-age=604800, immutable' 
+      : 'no-cache, no-store, must-revalidate, max-age=0';
+
     res.writeHead(200, {
       'Content-Type': contentType,
       'Accept-Ranges': 'bytes',
       'Content-Length': stats.size,
-      'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
-      'Pragma': 'no-cache',
-      'Expires': '0'
+      'Cache-Control': cacheHeader,
+      'Pragma': isMedia ? 'public' : 'no-cache',
+      'Expires': isMedia ? '604800' : '0'
     });
     fs.createReadStream(filePath).pipe(res);
   });

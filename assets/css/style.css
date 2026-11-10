@@ -2085,22 +2085,29 @@ body.cg-home-page .cg-hero,
   overflow: hidden;
   z-index: 0;
   pointer-events: none;
-  background-color: #302722;
+  background-color: #1F1712;
 }
 
 .cg-hero-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
   object-fit: cover;
-  object-position: center;
+  object-position: center 32%;
   z-index: 0;
   display: block;
+  pointer-events: none;
+  /* Enhance clarity, brightness, and warm richness without being washed out */
+  filter: brightness(1.10) contrast(1.05) saturate(1.06);
+  -webkit-filter: brightness(1.10) contrast(1.05) saturate(1.06);
+  /* 100% GPU hardware acceleration for smooth 60fps playback without lag or stutter */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .cg-hero-video-overlay {
@@ -2109,28 +2116,27 @@ body.cg-home-page .cg-hero,
   width: 100%;
   height: 100%;
   z-index: 1;
-  /* Cinematic espresso gradient: strong on left for crisp readability of headlines and buttons, gentle on right to showcase video */
+  /* Luminous, crystal-clear subtle ambient overlay: leaves the video bright, warm and vibrant */
   background: linear-gradient(90deg,
-      rgba(36, 26, 20, 0.90) 0%,
-      rgba(36, 26, 20, 0.80) 38%,
-      rgba(36, 26, 20, 0.45) 68%,
-      rgba(36, 26, 20, 0.22) 100%);
+      rgba(18, 12, 8, 0.44) 0%,
+      rgba(18, 12, 8, 0.26) 40%,
+      rgba(18, 12, 8, 0.05) 70%,
+      rgba(18, 12, 8, 0.0) 100%) !important;
   pointer-events: none;
 }
 
 @media (max-width: 991.98px) {
   .cg-hero-video-overlay {
     background: linear-gradient(180deg,
-        rgba(18, 12, 8, 0.42) 0%,
-        rgba(18, 12, 8, 0.18) 40%,
-        rgba(18, 12, 8, 0.60) 100%) !important;
+        rgba(15, 10, 7, 0.32) 0%,
+        rgba(15, 10, 7, 0.08) 35%,
+        rgba(15, 10, 7, 0.38) 100%) !important;
   }
 
   .cg-hero-video {
-    object-position: center 30% !important;
-    -webkit-transform: translate(-50%, -50%) translateZ(0) !important;
-    transform: translate(-50%, -50%) translateZ(0) !important;
-    image-rendering: -webkit-optimize-contrast;
+    object-position: center 28% !important;
+    transform: translateZ(0) !important;
+    -webkit-transform: translateZ(0) !important;
   }
 }
 

@@ -793,31 +793,59 @@ function initHampersCarousel() {
 }
 
 /**
- * Hero Background Video Handler (Autoplay, Loop, Muted, Mobile Resilience)
+ * Hero Background Video Handler (Autoplay, Loop, Muted, Mobile Resilience & Zero-Stutter Playback)
  */
 function initHeroVideo() {
   const video = document.querySelector('.cg-hero-video');
   if (!video) return;
 
   video.muted = true;
+  video.defaultMuted = true;
   video.setAttribute('muted', '');
   video.setAttribute('playsinline', '');
   video.setAttribute('webkit-playsinline', '');
 
-  const playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      const playOnInteraction = () => {
-        video.play().catch(() => {});
-        window.removeEventListener('click', playOnInteraction);
-        window.removeEventListener('touchstart', playOnInteraction);
-        window.removeEventListener('scroll', playOnInteraction);
-      };
-      window.addEventListener('click', playOnInteraction, { once: true, passive: true });
-      window.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
-      window.addEventListener('scroll', playOnInteraction, { once: true, passive: true });
-    });
+  // Safely trigger playback without stutter or interrupted promises
+  const safePlay = () => {
+    if (video.paused) {
+      const p = video.play();
+      if (p !== undefined) {
+        p.catch(() => {});
+      }
+    }
+  };
+
+  // Immediate start when frame data is available
+  if (video.readyState >= 2) {
+    safePlay();
+  } else {
+    video.addEventListener('loadeddata', safePlay, { once: true });
+    video.addEventListener('canplay', safePlay, { once: true });
   }
+
+  // Seamless gapless loop: rewinds 0.1s before end to eliminate freeze at loop point
+  video.addEventListener('timeupdate', () => {
+    if (video.duration && video.currentTime >= video.duration - 0.12) {
+      video.currentTime = 0;
+      safePlay();
+    }
+  });
+
+  // Handle visibility change: instantly resume when switching back to tab
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+      safePlay();
+    }
+  });
+
+  // Fallback on first user touch / click if mobile OS blocked autoplay
+  const playOnInteraction = () => {
+    safePlay();
+    window.removeEventListener('click', playOnInteraction);
+    window.removeEventListener('touchstart', playOnInteraction);
+  };
+  window.addEventListener('click', playOnInteraction, { once: true, passive: true });
+  window.addEventListener('touchstart', playOnInteraction, { once: true, passive: true });
 }
 
 /**
