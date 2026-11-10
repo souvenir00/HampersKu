@@ -61,7 +61,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Core Stylesheet (Bootstrap Grid + Custom Design System, Minified) -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261110_v7_mobile_video_brand_icons">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261110_mitra_grayscale_click">
 
   <style id="cg-ref2-styles">
 /* ==========================================================================
@@ -216,6 +216,9 @@
   align-items: center;
   justify-content: center;
   padding: 0 14px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .cg-ref2-mitra-logo {
@@ -225,23 +228,24 @@
   height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: grayscale(100%) contrast(1.1);
-  opacity: 0.78;
-  transition: all 0.25s ease;
+  filter: grayscale(100%) contrast(1.05) !important;
+  opacity: 0.65 !important;
+  transition: filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.cg-ref2-mitra-logo[src*="telkomsel"],
-.cg-ref2-mitra-logo[src*="bri"],
-.cg-ref2-mitra-logo[src*="kai"],
-.cg-ref2-mitra-logo[src*="btn"] {
-  max-height: 32px;
-  transform: scale(1.12);
-}
-
-.cg-ref2-mitra-item:hover .cg-ref2-mitra-logo {
-  filter: none;
-  opacity: 1;
-  transform: scale(1.08);
+/* Revealed Original Colors: On Click (.is-active) and on Hover/Active */
+.cg-ref2-mitra-item:hover .cg-ref2-mitra-logo,
+.cg-ref2-mitra-item:active .cg-ref2-mitra-logo,
+.cg-ref2-mitra-item.is-active .cg-ref2-mitra-logo,
+.cg-ref2-mitra-logo:hover,
+.cg-ref2-mitra-logo:active,
+.cg-ref2-mitra-logo.is-active {
+  filter: grayscale(0%) contrast(1) !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  transform: scale(1.14) !important;
 }
 
 /* ========================================================
@@ -1000,21 +1004,7 @@
 }
 
 
-/* Authentic Brand Colors for BRI & Telkom/Telkomsel */
-.cg-ref2-mitra-logo[src*="bri"],
-.cg-ref2-mitra-logo[src*="telkomsel"] {
-  filter: none !important;
-  opacity: 1 !important;
-  mix-blend-mode: normal !important;
-}
-.cg-ref2-mitra-logo[src*="bri"] {
-  max-height: 28px !important;
-  transform: scale(1.05) !important;
-}
-.cg-ref2-mitra-logo[src*="telkomsel"] {
-  max-height: 30px !important;
-  transform: scale(1.08) !important;
-}
+
 
 /* Mobile Hero Video Clear & Luminous View */
 @media (max-width: 991.98px) {
@@ -2555,6 +2545,25 @@
             }
           });
         });
+      });
+
+      // 3. Mitra Logo Interactive Click / Tap to Reveal Original Color
+      const mitraItems = document.querySelectorAll('.cg-ref2-mitra-item');
+      mitraItems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isActive = item.classList.contains('is-active');
+          mitraItems.forEach(function(m) { m.classList.remove('is-active'); });
+          if (!isActive) {
+            item.classList.add('is-active');
+          }
+        });
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.cg-ref2-mitra-item')) {
+          mitraItems.forEach(function(m) { m.classList.remove('is-active'); });
+        }
       });
 
       // 2. FAQ Accordion
