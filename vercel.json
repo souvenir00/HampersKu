@@ -96,6 +96,14 @@
       "destination": "/paket/custom.html"
     },
     {
+      "source": "/paket/hampers-gathering",
+      "destination": "/paket/hampers-gathering.html"
+    },
+    {
+      "source": "/paket/hampers-gathering/",
+      "destination": "/paket/hampers-gathering.html"
+    },
+    {
       "source": "/blog/panduan-memilih-corporate-gift",
       "destination": "/blog/panduan-memilih-corporate-gift.html"
     },
