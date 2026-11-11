@@ -1242,6 +1242,7 @@ figcaption {
 
 /* Accessibility: Skip Link & Screen Reader Utilities */
 .skip-link,
+.cg-skip-link,
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
@@ -1258,6 +1259,7 @@ figcaption {
 }
 
 .skip-link:focus,
+.cg-skip-link:focus,
 .visually-hidden-focusable:focus,
 .visually-hidden-focusable:focus-within {
   position: absolute !important;
