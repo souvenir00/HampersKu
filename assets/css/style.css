@@ -4741,6 +4741,14 @@ textarea.cg-form-control {
     font-weight: 600 !important;
     border: 1px solid rgba(197, 155, 39, 0.35) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    /* Force full-width flush-left layout (override desktop inline-flex pill) */
+    display: flex !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 10px !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding: 12px 14px !important;
   }
 
   .cg-nav-menu-wrap .cg-nav-link::after {
