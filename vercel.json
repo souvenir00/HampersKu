@@ -130,6 +130,22 @@
     {
       "source": "/blog/hampers-corporate-100-ribuan",
       "destination": "/blog/hampers-corporate-100-ribuan.html"
+    },
+    {
+      "source": "/blog/panduan-memilih-hampers-lebaran-untuk-perusahaan",
+      "destination": "/blog/panduan-memilih-hampers-lebaran-untuk-perusahaan.html"
+    },
+    {
+      "source": "/blog/rekomendasi-hampers-lebaran-untuk-relasi-bisnis-dan-klien-perusahaan",
+      "destination": "/blog/rekomendasi-hampers-lebaran-untuk-relasi-bisnis-dan-klien-perusahaan.html"
+    },
+    {
+      "source": "/blog/cara-memilih-hampers-lebaran-untuk-karyawan-perusahaan",
+      "destination": "/blog/cara-memilih-hampers-lebaran-untuk-karyawan-perusahaan.html"
+    },
+    {
+      "source": "/blog/panduan-memesan-hampers-lebaran-custom-corporate-gifting",
+      "destination": "/blog/panduan-memesan-hampers-lebaran-custom-corporate-gifting.html"
     }
   ],
   "headers": [
