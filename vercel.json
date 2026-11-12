@@ -12,18 +12,6 @@
       "destination": "/tentang-kami.html"
     },
     {
-      "source": "/legalitas",
-      "destination": "/legalitas.html"
-    },
-    {
-      "source": "/workshop-produksi",
-      "destination": "/workshop-produksi.html"
-    },
-    {
-      "source": "/workshop",
-      "destination": "/workshop-produksi.html"
-    },
-    {
       "source": "/penulis",
       "destination": "/penulis.html"
     },
