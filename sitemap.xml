@@ -8,7 +8,13 @@
   </url>
   <url>
     <loc>https://www.hamperscorporate.web.id/tentang-kami/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.hamperscorporate.web.id/legalitas/</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
