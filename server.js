@@ -32,6 +32,10 @@ const server = http.createServer((req, res) => {
 
   if (reqUrl === '/tentang-kami/' || reqUrl === '/tentang-kami/index.html' || reqUrl === '/tentang-kami' || reqUrl === '/tentang/' || reqUrl === '/tentang/index.html' || reqUrl === '/tentang') {
     reqUrl = '/tentang-kami.html';
+  } else if (reqUrl === '/workshop-produksi/' || reqUrl === '/workshop-produksi/index.html' || reqUrl === '/workshop-produksi' || reqUrl === '/workshop/' || reqUrl === '/workshop/index.html' || reqUrl === '/workshop') {
+    reqUrl = '/workshop-produksi.html';
+  } else if (reqUrl === '/standar-mutu/' || reqUrl === '/standar-mutu/index.html' || reqUrl === '/standar-mutu') {
+    reqUrl = '/standar-mutu.html';
   } else if (reqUrl === '/paket/' || reqUrl === '/paket/index.html' || reqUrl === '/paket') {
     reqUrl = '/paket.html';
   } else if (reqUrl === '/blog/' || reqUrl === '/blog/index.html' || reqUrl === '/blog') {
