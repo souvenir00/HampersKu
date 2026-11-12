@@ -49,11 +49,19 @@
     },
     {
       "source": "/hampers-lebaran",
-      "destination": "/hampers-lebaran.html"
+      "destination": "/paket/hampers-lebaran.html"
+    },
+    {
+      "source": "/hampers-lebaran/",
+      "destination": "/paket/hampers-lebaran.html"
     },
     {
       "source": "/paket/hampers-lebaran",
-      "destination": "/hampers-lebaran.html"
+      "destination": "/paket/hampers-lebaran.html"
+    },
+    {
+      "source": "/paket/hampers-lebaran/",
+      "destination": "/paket/hampers-lebaran.html"
     },
     {
       "source": "/hampers-kue-kering",

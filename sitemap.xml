@@ -50,7 +50,13 @@
   </url>
   <url>
     <loc>https://www.hamperscorporate.web.id/hampers-lebaran/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.hamperscorporate.web.id/paket/hampers-lebaran</loc>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
