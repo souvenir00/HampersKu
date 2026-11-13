@@ -60,6 +60,22 @@
       "destination": "/paket/corporate-gift.html"
     },
     {
+      "source": "/paket/hampers-perlengkapan-ibadah",
+      "destination": "/paket/hampers-perlengkapan-ibadah.html"
+    },
+    {
+      "source": "/paket/hampers-perlengkapan-ibadah/",
+      "destination": "/paket/hampers-perlengkapan-ibadah.html"
+    },
+    {
+      "source": "/hampers-perlengkapan-ibadah",
+      "destination": "/paket/hampers-perlengkapan-ibadah.html"
+    },
+    {
+      "source": "/hampers-perlengkapan-ibadah/",
+      "destination": "/paket/hampers-perlengkapan-ibadah.html"
+    },
+    {
       "source": "/hampers-lebaran",
       "destination": "/paket/hampers-lebaran.html"
     },
