@@ -318,4 +318,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/hampers-perlengkapan-ibadah-ramadan</loc>
+      <lastmod>2026-11-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.85</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/hampers-mukena-dan-sajadah-rekan-kerja-keluarga</loc>
+      <lastmod>2026-11-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.85</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/souvenir-perlengkapan-ibadah-pengajian-syukuran-kantor</loc>
+      <lastmod>2026-11-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.85</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/panduan-memilih-hampers-ibadah-custom-corporate-gift</loc>
+      <lastmod>2026-11-13</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.85</priority>
+    </url>
 </urlset>
