@@ -190,6 +190,30 @@
     {
       "source": "/blog/panduan-memilih-hampers-ibadah-custom-corporate-gift",
       "destination": "/blog/panduan-memilih-hampers-ibadah-custom-corporate-gift.html"
+    },
+    {
+      "source": "/paket/hampers-pernikahan",
+      "destination": "/paket/hampers-pernikahan.html"
+    },
+    {
+      "source": "/hampers-pernikahan",
+      "destination": "/hampers-pernikahan.html"
+    },
+    {
+      "source": "/blog/hampers-pernikahan-malang",
+      "destination": "/blog/hampers-pernikahan-malang.html"
+    },
+    {
+      "source": "/blog/ide-isi-hampers-pernikahan",
+      "destination": "/blog/ide-isi-hampers-pernikahan.html"
+    },
+    {
+      "source": "/blog/hampers-pernikahan-custom-malang",
+      "destination": "/blog/hampers-pernikahan-custom-malang.html"
+    },
+    {
+      "source": "/blog/harga-hampers-pernikahan-malang",
+      "destination": "/blog/harga-hampers-pernikahan-malang.html"
     }
   ],
   "headers": [
