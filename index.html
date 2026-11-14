@@ -2532,79 +2532,97 @@
   <script src="/assets/js/main.js?v=20261110_v11_flush_nav"></script>
 
   <script id="cg-ref2-inline-js">
-    document.addEventListener('DOMContentLoaded', function() {
-      // 1. Catalog Category Filter Tabs
-      const filterBtns = document.querySelectorAll('.cg-ref2-filter-btn');
-      const productCards = document.querySelectorAll('.cg-ref2-product-card');
+    (function initRef2() {
+      function setupInteractions() {
+        // 1. Catalog Category Filter Tabs
+        const filterBtns = document.querySelectorAll('.cg-ref2-filter-btn');
+        const productCards = document.querySelectorAll('.cg-ref2-product-card');
 
-      filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          filterBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
+        filterBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
 
-          const filter = btn.getAttribute('data-filter');
-          productCards.forEach(function(card) {
-            const cat = card.getAttribute('data-category');
-            if (filter === 'all' || cat === filter) {
-              card.style.display = 'flex';
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
-            } else {
-              card.style.display = 'none';
+            const filter = btn.getAttribute('data-filter');
+            productCards.forEach(function(card) {
+              const cat = card.getAttribute('data-category');
+              if (filter === 'all' || cat === filter) {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+
+        // 2. Mitra Logo Interactive Click / Tap
+        const mitraItems = document.querySelectorAll('.cg-ref2-mitra-item');
+        mitraItems.forEach(function(item) {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isActive = item.classList.contains('is-active');
+            mitraItems.forEach(function(m) { m.classList.remove('is-active'); });
+            if (!isActive) {
+              item.classList.add('is-active');
             }
           });
         });
-      });
 
-      // 3. Mitra Logo Interactive Click / Tap to Reveal Original Color
-      const mitraItems = document.querySelectorAll('.cg-ref2-mitra-item');
-      mitraItems.forEach(function(item) {
-        item.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const isActive = item.classList.contains('is-active');
-          mitraItems.forEach(function(m) { m.classList.remove('is-active'); });
-          if (!isActive) {
-            item.classList.add('is-active');
+        document.addEventListener('click', function(e) {
+          if (!e.target.closest('.cg-ref2-mitra-item')) {
+            mitraItems.forEach(function(m) { m.classList.remove('is-active'); });
           }
         });
-      });
 
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.cg-ref2-mitra-item')) {
-          mitraItems.forEach(function(m) { m.classList.remove('is-active'); });
-        }
-      });
+        // 3. FAQ Accordion Click (Delegated & Direct for 100% Reliability)
+        const faqContainer = document.querySelector('.cg-ref2-faq-right') || document;
+        faqContainer.addEventListener('click', function(e) {
+          const btn = e.target.closest('.cg-ref2-faq-trigger');
+          if (!btn) return;
+          e.preventDefault();
 
-      // 2. FAQ Accordion
-      const faqTriggers = document.querySelectorAll('.cg-ref2-faq-trigger');
-      faqTriggers.forEach(function(btn) {
-        btn.addEventListener('click', function() {
           const row = btn.closest('.cg-ref2-faq-row');
+          if (!row) return;
           const content = row.querySelector('.cg-ref2-faq-content');
-          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+          if (!content) return;
 
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
+
+          // Close all rows
           document.querySelectorAll('.cg-ref2-faq-row').forEach(function(other) {
-            if (other !== row) {
-              other.classList.remove('active');
-              const otherBtn = other.querySelector('.cg-ref2-faq-trigger');
-              const otherContent = other.querySelector('.cg-ref2-faq-content');
-              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-              if (otherContent) otherContent.hidden = true;
+            other.classList.remove('active');
+            const otherBtn = other.querySelector('.cg-ref2-faq-trigger');
+            const otherContent = other.querySelector('.cg-ref2-faq-content');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherContent) {
+              otherContent.hidden = true;
+              otherContent.style.display = 'none';
             }
           });
 
+          // Toggle current row
           if (isExpanded) {
             btn.setAttribute('aria-expanded', 'false');
             content.hidden = true;
+            content.style.display = 'none';
             row.classList.remove('active');
           } else {
             btn.setAttribute('aria-expanded', 'true');
             content.hidden = false;
+            content.style.display = 'block';
             row.classList.add('active');
           }
         });
-      });
-    });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupInteractions);
+      } else {
+        setupInteractions();
+      }
+    })();
   </script>
 
 </body>

@@ -6343,6 +6343,18 @@ textarea.cg-form-control {
 }
 
 .cg-ref2-faq-content {
+  display: none;
+}
+
+.cg-ref2-faq-content:not([hidden]) {
+  display: block;
+}
+
+.cg-ref2-faq-row.active .cg-ref2-faq-content {
+  display: block;
+}
+
+.cg-ref2-faq-content {
   padding-top: 12px;
   font-size: 0.88rem;
   color: #5C5045;
