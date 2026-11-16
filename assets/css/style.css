@@ -4297,11 +4297,12 @@ textarea.cg-form-control {
 
 /* Back to Top */
 .cg-back-to-top {
-  position: fixed;
-  bottom: 84px;
-  right: 28px;
-  width: 44px;
-  height: 44px;
+  position: fixed !important;
+  bottom: 84px !important;
+  right: 28px !important;
+  left: auto !important;
+  width: 44px !important;
+  height: 44px !important;
   background-color: var(--cg-white);
   color: var(--cg-brown);
   border: 1px solid var(--cg-border);
@@ -5090,10 +5091,11 @@ textarea.cg-form-control {
   }
 
   .cg-back-to-top {
-    bottom: 74px;
-    right: 18px;
-    width: 40px;
-    height: 40px;
+    bottom: 74px !important;
+    right: 18px !important;
+    left: auto !important;
+    width: 40px !important;
+    height: 40px !important;
   }
 }
 
