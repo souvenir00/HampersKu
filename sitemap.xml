@@ -378,4 +378,34 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/hampers-malang/</loc>
+      <lastmod>2026-11-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.95</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/rekomendasi-hampers-malang</loc>
+      <lastmod>2026-11-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/harga-hampers-malang</loc>
+      <lastmod>2026-11-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/hampers-eksklusif-malang</loc>
+      <lastmod>2026-11-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+    </url>
+    <url>
+      <loc>https://www.hamperscorporate.web.id/blog/hampers-makanan-malang</loc>
+      <lastmod>2026-11-16</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.85</priority>
+    </url>
 </urlset>
