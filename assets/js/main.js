@@ -201,6 +201,24 @@ function initScrollHeader() {
  * FAQ Accordion with Accessibility
  */
 function initFaqAccordion() {
+  // Handle HTML5 details accordion: close siblings when one is opened
+  const detailsElements = document.querySelectorAll('details.cg-faq-details');
+  if (detailsElements.length) {
+    detailsElements.forEach(detail => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) {
+          const parent = detail.parentElement;
+          const siblings = parent ? parent.querySelectorAll('details.cg-faq-details') : detailsElements;
+          siblings.forEach(other => {
+            if (other !== detail && other.open) {
+              other.open = false;
+            }
+          });
+        }
+      });
+    });
+  }
+
   const faqItems = document.querySelectorAll('.cg-faq-item');
   if (!faqItems.length) return;
 
