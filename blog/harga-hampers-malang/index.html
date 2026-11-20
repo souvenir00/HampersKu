@@ -174,88 +174,170 @@
 </head>
 
 <body>
-  <!-- Header & Navigation -->
-  <header class="cg-header" id="header">
-    <div class="cg-header-top">
-      <div class="cg-container d-flex justify-content-between align-items-center">
-        <div class="cg-header-contact">
-          <span>Sentra Kurasi &amp; Pengadaan Hadiah Korporat &middot; Spesialis Malang Raya</span>
-        </div>
-        <div class="cg-header-social">
-          <a href="https://wa.me/6282131087971" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Kami">
-            <span>Konsultasi Cepat: 0821-3108-7971</span>
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <div class="cg-header-main">
-      <div class="cg-container d-flex justify-content-between align-items-center">
-        <a href="/" class="cg-logo" aria-label="Kembali ke Beranda Hampersku">
-          <img src="/assets/images/logo-hampersku.webp" alt="HampersKu Logo" class="cg-logo-img" width="160" height="38" style="height: 38px; width: auto; object-fit: contain;">
+<header class="cg-header" id="header">
+    <div class="cg-container">
+      <div class="cg-nav-inner">
+        <!-- Brand Logo (Left) -->
+        <a href="/" class="cg-brand" aria-label="HampersKu Beranda">
+          <img src="/assets/images/logo-hampersku.webp?v=20261109_v3" alt="HampersKu" class="cg-brand-logo-img" width="165" height="38" style="height: 38px; width: auto; max-width: 175px; object-fit: contain; display: block;" loading="eager">
         </a>
 
-        <div class="cg-nav-wrap" id="navMenu">
-          <nav class="cg-nav" aria-label="Navigasi Utama">
-            <ul class="cg-nav-list">
-              <li class="cg-nav-item"><a href="/" class="cg-nav-link">Beranda</a></li>
-              <li class="cg-nav-item cg-has-dropdown">
-                <a href="/tentang-kami" class="cg-nav-link">Tentang Kami <span class="cg-dropdown-arrow" aria-hidden="true">&#9662;</span></a>
-                <ul class="cg-dropdown-menu">
-                  <li><a href="/tentang-kami">Profil Perusahaan</a></li>
-                  <li><a href="/cara-pesan">Cara Pesan</a></li>
-                  <li><a href="/faq/">FAQ Pertanyaan</a></li>
-                  <li><a href="/penulis">Profil Penulis</a></li>
-                </ul>
-              </li>
-              <li class="cg-nav-item cg-has-mega">
-                <a href="/paket" class="cg-nav-link">Layanan &amp; Katalog <span class="cg-dropdown-arrow" aria-hidden="true">&#9662;</span></a>
-                <div class="cg-mega-menu">
-                  <div class="cg-mega-grid">
-                    <div class="cg-mega-col">
-                      <div class="cg-mega-title">Kategori Utama</div>
-                      <ul class="cg-mega-links">
-                        <li><a href="/hampers-malang/">Hampers Malang (Sentra Utama)</a></li>
-                        <li><a href="/hampers-corporate-malang/">Hampers Corporate Malang</a></li>
-                        <li><a href="/hampers-lebaran">Hampers Lebaran Malang</a></li>
-                        <li><a href="/paket/corporate-gift">Corporate Gift Box</a></li>
-                        <li><a href="/paket/seminar-kit">Seminar &amp; Event Kit</a></li>
-                        <li><a href="/paket/custom">Custom Exclusive Box</a></li>
-                      </ul>
-                    </div>
-                    <div class="cg-mega-col">
-                      <div class="cg-mega-title">Pilihan Anggaran</div>
-                      <ul class="cg-mega-links">
-                        <li><a href="/hampers-100-ribuan/">Paket Rp100 Ribuan</a></li>
-                        <li><a href="/hampers-250-ribuan/">Paket Rp250 Ribuan</a></li>
-                        <li><a href="/hampers-500-ribuan/">Paket Rp500 Ribuan</a></li>
-                      </ul>
+        <!-- Navigation Menu & Mobile Drawer (Right) -->
+        <div class="cg-nav-menu-wrap" id="navMenu">
+          <nav aria-label="Navigasi Utama">
+              <ul class="cg-nav-menu">
+                <li class="cg-nav-item">
+                  <a href="/" class="cg-nav-link">Beranda</a>
+                </li>
+                <li class="cg-nav-item dropdown has-megamenu">
+                  <a href="/tentang" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tentang
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                      <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <div class="cg-megamenu-panel" aria-label="Submenu Tentang HampersKu" style="display: none;">
+                    <div class="cg-megamenu-container">
+                      <!-- Col 1: Brand Story / Promo Callout -->
+                      <div class="cg-megamenu-col cg-megamenu-callout">
+                        <span class="cg-megamenu-eyebrow">DEDIKASI &amp; STANDAR MUTU</span>
+                        <h3 class="cg-megamenu-title">Mengenal Lebih Dekat<br>HampersKu.</h3>
+                        <a href="/tentang-kami" class="cg-megamenu-cta">
+                          <span>Pelajari Profil Lengkap</span>
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                          </svg>
+                        </a>
+                      </div>
+
+                      <!-- Col 2: Profil & Fasilitas -->
+                      <div class="cg-megamenu-col">
+                        <h4 class="cg-megamenu-heading">Profil &amp; Fasilitas</h4>
+                        <ul class="cg-megamenu-list">
+                          <li><a href="/tentang-kami">Tentang Kami</a></li>
+                          <li><a href="/workshop-produksi/">Produksi</a></li>
+                          <li><a href="/penulis">Profil Tim Kurator</a></li>
+                          <li><a href="/standar-mutu/">Standar Mutu Layanan</a></li>
+                        </ul>
+                      </div>
+
+                      <!-- Col 3: Panduan Pengadaan -->
+                      <div class="cg-megamenu-col">
+                        <h4 class="cg-megamenu-heading">Panduan Pengadaan</h4>
+                        <ul class="cg-megamenu-list">
+                          <li><a href="/cara-pesan">Cara Pemesanan B2B</a></li>
+                          <li><a href="/cara-pesan#garansi">Garansi Pengiriman</a></li>
+                          <li><a href="/cara-pesan">Syarat Term of Payment</a></li>
+                          <li><a href="/faq">FAQ Corporate Hampers</a></li>
+                        </ul>
+                      </div>
+
+                      <!-- Col 4: Wilayah & Bantuan -->
+                      <div class="cg-megamenu-col">
+                        <h4 class="cg-megamenu-heading">Wilayah &amp; Bantuan</h4>
+                        <ul class="cg-megamenu-list">
+                          <li><a href="/hampers-corporate-malang/">Hampers Malang Hub</a></li>
+                          <li><a href="/kontak">Pengiriman Seluruh Indonesia</a></li>
+                          <li><a href="/kontak">Konsultasi Resmi Kantor</a></li>
+                          <li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-              <li class="cg-nav-item"><a href="/portofolio" class="cg-nav-link">Portofolio</a></li>
-              <li class="cg-nav-item"><a href="/blog" class="cg-nav-link">Blog</a></li>
-              <li class="cg-nav-item"><a href="/kontak" class="cg-nav-link">Kontak</a></li>
-            </ul>
-          </nav>
+                </li>
+                <li class="cg-nav-item dropdown has-megamenu">
+                  <a href="/custom-hampers/" class="cg-nav-link cg-nav-link-dropdown" aria-haspopup="true" aria-expanded="false">
+                    Layanan
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                      <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                  <div class="cg-megamenu-panel" aria-label="Submenu Layanan Corporate" style="display: none;">
+                    <div class="cg-megamenu-container">
+                      <!-- Col 1: Promo Callout -->
+                      <div class="cg-megamenu-col cg-megamenu-callout">
+                        <span class="cg-megamenu-eyebrow">A LITTLE SOMETHING, A LOT OF MEANING.</span>
+                        <h3 class="cg-megamenu-title">Untuk setiap cerita berharga.</h3>
+                        <a href="/paket" class="cg-megamenu-cta">
+                          <span>Jelajahi semua gift</span>
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                          </svg>
+                        </a>
+                      </div>
+
+                      <!-- Col 2: Hampers -->
+                      <div class="cg-megamenu-col">
+                        <h4 class="cg-megamenu-heading">Hampers</h4>
+                        <ul class="cg-megamenu-list">
+                          <li><a href="/hampers-lebaran">Hampers Lebaran</a></li>
+                          <li><a href="/paket/hampers-perlengkapan-ibadah">Hampers Perlengkapan Ibadah</a></li>
+                          <li><a href="/hampers-kue-kering/">Hampers Kue Kering</a></li>
+                          <li><a href="/hampers-kopi-teh/">Hampers Kopi dan Teh</a></li>
+                          <li><a href="/hampers-sehat/">Hampers Sehat Karyawan</a></li>
+                          <li><a href="/hampers-premium">Hampers Premium VIP</a></li>
+                          <li><a href="/hampers-corporate-malang/">Hampers UMKM Malang</a></li>
+                        </ul>
+                      </div>
+
+                      <!-- Col 3: Souvenir -->
+                      <div class="cg-megamenu-col">
+                        <h4 class="cg-megamenu-heading">Souvenir</h4>
+                        <ul class="cg-megamenu-list">
+                          <li><a href="/custom-hampers/">Souvenir Kantor</a></li>
+                          <li><a href="/custom-hampers/">Souvenir Perusahaan</a></li>
+                          <li><a href="/custom-hampers/">Souvenir BUMN</a></li>
+                          <li><a href="/paket/seminar-kit">Souvenir Seminar Workshop</a></li>
+                          <li><a href="/paket/custom">Souvenir Onboarding Kit</a></li>
+                          <li><a href="/hampers-premium">Souvenir Premium VIP</a></li>
+                        </ul>
+                      </div>
+
+                      <!-- Col 4: Untuk acara & perusahaan -->
+                      <div class="cg-megamenu-col">
+                        <h4 class="cg-megamenu-heading">Untuk acara &amp; perusahaan</h4>
+                        <ul class="cg-megamenu-list">
+                          <li><a href="/custom-hampers/">Hampers Kantor</a></li>
+                          <li><a href="/custom-hampers/">Hampers Perusahaan</a></li>
+                          <li><a href="/paket/hampers-gathering">Hampers Gathering</a></li>
+                          <li><a href="/paket/hampers-pernikahan">Hampers Pernikahan</a></li>
+                          <li><a href="/hampers-100-ribuan/">Paket Rp100 Ribuan</a></li>
+                          <li><a href="/hampers-250-ribuan/">Paket Rp250 Ribuan</a></li>
+                          <li><a href="/hampers-500-ribuan/">Paket Rp500 Ribuan</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="cg-nav-item"><a href="/portofolio" class="cg-nav-link">Portofolio</a></li>
+                <li class="cg-nav-item"><a href="/blog" class="cg-nav-link">Blog</a></li>
+                <li class="cg-nav-item"><a href="/kontak" class="cg-nav-link">Kontak</a></li>
+              </ul>
+            </nav>
           <div class="cg-mobile-nav-cta d-lg-none">
-            <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20ingin%20konsultasi%20hampers%20malang." class="cg-btn cg-btn-primary w-100" target="_blank" rel="noopener noreferrer">Konsultasi WhatsApp</a>
+            <a href="https://wa.me/6282131087971?text=Halo%20Hampersku,%20saya%20ingin%20konsultasi%20hampers%20malang."
+              class="cg-btn cg-btn-primary w-100" target="_blank" rel="noopener noreferrer">Konsultasi WhatsApp</a>
           </div>
         </div>
 
+        <!-- Mobile Hamburger Toggle -->
         <button class="cg-nav-toggle d-lg-none" aria-label="Buka Menu Navigasi" aria-controls="navMenu" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
       </div>
     </div>
   </header>
 
   <main id="main-content">
+
     <!-- Breadcrumb & Header Section -->
     <section class="cg-page-header" style="background: linear-gradient(135deg, #302722 0%, #1e1916 100%); padding: clamp(48px, 6vw, 76px) 0 40px; color: #FFFFFF;">
       <div class="cg-container" style="max-width: 1240px; margin: 0 auto; width: 100%;">
@@ -300,7 +382,10 @@
               <!-- Hero Featured Image -->
               <figure class="mb-4 text-center">
                 <div class="rounded-4 overflow-hidden border shadow-sm" style="width: 100%; max-height: 520px; aspect-ratio: 16 / 9; background-color: var(--cg-bg-soft);">
-                  <img src="/ft%20produk/harga-hampers-malang.jpg" alt="Berbagai pilihan paket hampers Malang dengan kisaran anggaran berbeda" class="w-100 h-100 d-block" width="1200" height="675" loading="eager" style="object-fit: cover; object-position: center; max-height: 520px;">
+                  <img src="/ft%20produk/harga-hampers-malang.jpg"
+                    alt="Berbagai pilihan paket hampers Malang dengan kisaran anggaran berbeda"
+                    class="w-100 h-100 d-block" width="1200" height="675" loading="eager"
+                    style="object-fit: cover; object-position: center; max-height: 520px;">
                 </div>
                 <figcaption class="text-center text-muted small mt-2 fst-italic">
                   💰 Harga Hampers Malang — Panduan estimasi biaya paket hadiah mulai dari kelas ekonomis hingga premium.
@@ -619,15 +704,19 @@
 
 
                 <!-- AUTHOR BIO CARD -->
-                <div class="border rounded-4 p-4 mb-5" style="background: var(--cg-bg-soft); border-color: var(--cg-border) !important;">
+                <div class="border rounded-4 p-4 mb-5"
+                  style="background: var(--cg-bg-soft); border-color: var(--cg-border) !important;">
                   <div class="d-flex gap-4 align-items-start flex-column flex-sm-row">
                     <div class="flex-shrink-0">
                       <a href="/penulis" aria-label="Profil Mochammad Evan Pratama">
-                        <img src="/assets/images/mochammad-evan-pratama.webp" alt="Mochammad Evan Pratama" class="rounded-circle object-fit-cover shadow-sm border" width="80" height="80" style="border-color: #FFFFFF !important; border-width: 3px !important; display: block;">
+                        <img src="/assets/images/mochammad-evan-pratama.webp" alt="Mochammad Evan Pratama"
+                          class="rounded-circle object-fit-cover shadow-sm border" width="80" height="80"
+                          style="border-color: #FFFFFF !important; border-width: 3px !important; display: block;">
                       </a>
                     </div>
                     <div class="flex-grow-1">
-                      <div class="small text-muted mb-1" style="letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;">Tentang Penulis</div>
+                      <div class="small text-muted mb-1"
+                        style="letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;">Tentang Penulis</div>
                       <div class="fw-bold fs-6 mb-1">
                         <a href="/penulis" class="text-decoration-none" style="color: var(--cg-primary-dark);">Mochammad Evan Pratama</a>
                       </div>
@@ -650,6 +739,7 @@
                 </div>
 
               </div><!-- end .cg-prose -->
+
             </div><!-- end .cg-article-container -->
           </div>
 
@@ -724,12 +814,13 @@
               </div>
             </div>
           </aside>
+
         </div>
       </div>
     </article>
   </main>
 
-  <footer class="cg-footer">
+<footer class="cg-footer">
     <div class="cg-container">
       <div class="row g-4 g-lg-5">
         <div class="col-lg-4 col-md-6">
@@ -737,7 +828,8 @@
             <img src="/assets/images/logo-hampersku.webp" alt="HampersKu Logo" class="cg-footer-logo-img" width="180" height="42" style="height: 42px; width: auto; object-fit: contain;">
           </a>
           <p style="color: #EDE6DF; font-size: 0.95rem; max-width: 340px;">
-            Partner terpercaya pengadaan corporate gift box, luxury hampers, seminar kit, dan suvenir apresiasi perusahaan di Indonesia.
+            Partner terpercaya pengadaan corporate gift box, luxury hampers, seminar kit, dan suvenir apresiasi
+            perusahaan di Indonesia.
           </p>
           <div class="mt-4">
             <div class="small text-uppercase tracking-wider" style="color: #F0D9C0; font-weight: 600;">Layanan Konsultasi WhatsApp</div>
@@ -750,7 +842,8 @@
             <p style="color: #EDE6DF; font-size: 0.9rem; line-height: 1.5; margin-top: 0.25rem; margin-bottom: 0;">
               Jl. Band. Palmerah No. D3-35B, Cemorokandang, Kec. Kedungkandang, Kota Malang, Jawa Timur 65138
             </p>
-            <a href="https://maps.app.goo.gl/WRQ4crzgWhWx9cge8" target="_blank" rel="noopener noreferrer" class="d-inline-flex align-items-center gap-1 mt-1 small" style="color: #F0D9C0; text-decoration: underline;">
+            <a href="https://maps.app.goo.gl/WRQ4crzgWhWx9cge8" target="_blank" rel="noopener noreferrer"
+              class="d-inline-flex align-items-center gap-1 mt-1 small" style="color: #F0D9C0; text-decoration: underline;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               <span>Buka di Google Maps &rarr;</span>
             </a>
@@ -788,12 +881,13 @@
         <div class="col-lg-3 col-md-6">
           <h3 class="cg-footer-title">Area Layanan</h3>
           <p style="color: #EDE6DF; font-size: 0.92rem; line-height: 1.6;">
-            Melayani pengadaan dan pengiriman hampers ke seluruh kota di Indonesia (Jabodetabek, Surabaya, Bandung, Medan, Bali, Semarang, Makassar, dan lainnya).
+            Melayani pengadaan dan pengiriman hampers ke seluruh kota di Indonesia (Jabodetabek, Surabaya, Bandung,
+            Medan, Bali, Semarang, Makassar, dan lainnya).
           </p>
+        
           <ul class="cg-footer-links mt-2">
             <li><a href="/hampers-corporate-malang/" style="color: #F0D9C0; font-weight: 600;">➔ Layanan Kota: Hampers Corporate Malang</a></li>
-          </ul>
-        </div>
+          </ul></div>
       </div>
       <div class="cg-footer-bottom">
         <div>&copy; 2026 Hampersku. Seluruh hak cipta dilindungi.</div>
@@ -817,3 +911,5 @@
 </body>
 
 </html>
+
+
