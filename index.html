@@ -855,10 +855,19 @@
 }
 
 .cg-ref2-faq-content {
+  display: none;
   padding-top: 12px;
   font-size: 0.88rem;
   color: #5C5045;
   line-height: 1.6;
+}
+
+.cg-ref2-faq-content:not([hidden]) {
+  display: block !important;
+}
+
+.cg-ref2-faq-row.active .cg-ref2-faq-content {
+  display: block !important;
 }
 
 .cg-ref2-faq-content p {
@@ -2529,7 +2538,7 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/js/main.js?v=20261110_v11_flush_nav"></script>
+  <script src="/assets/js/main.js?v=20261121_v12_faq_fixed"></script>
 
   <script id="cg-ref2-inline-js">
     (function initRef2() {
