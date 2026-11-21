@@ -253,39 +253,7 @@ function initFaqAccordion() {
     });
   });
 
-  // Handle .cg-ref2-faq-row (Homepage Foto Ke-2 FAQ)
-  const ref2Rows = document.querySelectorAll('.cg-ref2-faq-row');
-  ref2Rows.forEach(row => {
-    const btn = row.querySelector('.cg-ref2-faq-trigger');
-    const content = row.querySelector('.cg-ref2-faq-content');
-    if (!btn || btn.dataset.boundFaq) return;
-    btn.dataset.boundFaq = 'true';
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
-
-      ref2Rows.forEach(other => {
-        if (other !== row) {
-          other.classList.remove('active');
-          const ob = other.querySelector('.cg-ref2-faq-trigger');
-          const oc = other.querySelector('.cg-ref2-faq-content');
-          if (ob) ob.setAttribute('aria-expanded', 'false');
-          if (oc) oc.hidden = true;
-        }
-      });
-
-      if (isExpanded) {
-        btn.setAttribute('aria-expanded', 'false');
-        row.classList.remove('active');
-        if (content) content.hidden = true;
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        row.classList.add('active');
-        if (content) content.hidden = false;
-      }
-    });
-  });
+  // Homepage .cg-ref2-faq-row and blog .cg-faq-item are handled uniformly by the global delegated listener below
 }
 
 // Global Event Delegation for 100% reliable click response across all pages
@@ -1161,37 +1129,7 @@ function initFotoKe2Interactions() {
     });
   });
 
-  // 2. FAQ Accordion (Clean Hairline Underlines with + / -)
-  const faqTriggers = document.querySelectorAll('.cg-ref2-faq-trigger');
-  faqTriggers.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const row = btn.closest('.cg-ref2-faq-row');
-      const content = row.querySelector('.cg-ref2-faq-content');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
-      // Close all other rows
-      document.querySelectorAll('.cg-ref2-faq-row').forEach(other => {
-        if (other !== row) {
-          other.classList.remove('active');
-          const otherBtn = other.querySelector('.cg-ref2-faq-trigger');
-          const otherContent = other.querySelector('.cg-ref2-faq-content');
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          if (otherContent) otherContent.hidden = true;
-        }
-      });
-
-      // Toggle clicked row
-      if (isExpanded) {
-        btn.setAttribute('aria-expanded', 'false');
-        content.hidden = true;
-        row.classList.remove('active');
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        content.hidden = false;
-        row.classList.add('active');
-      }
-    });
-  });
+  // 2. FAQ Accordion handled exclusively by global event delegation
 }
 
 document.addEventListener('DOMContentLoaded', initFotoKe2Interactions);

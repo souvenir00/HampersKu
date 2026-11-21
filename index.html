@@ -2345,44 +2345,6 @@
 
     <!-- ======================================================== -->
     <!-- 8. SECTION: FAQ (CLEAN ACCORDION WITH HAIRLINE BORDERS)  -->
-    <script>
-function toggleFaqRef2(btn) {
-  var row = btn.closest('.cg-ref2-faq-row');
-  if (!row) return;
-  var content = row.querySelector('.cg-ref2-faq-content');
-  if (!content) return;
-  var isExpanded = btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
-
-  // Close all other rows
-  var allRows = document.querySelectorAll('.cg-ref2-faq-row');
-  for (var i = 0; i < allRows.length; i++) {
-    var other = allRows[i];
-    if (other !== row) {
-      other.classList.remove('active');
-      var ob = other.querySelector('.cg-ref2-faq-trigger');
-      var oc = other.querySelector('.cg-ref2-faq-content');
-      if (ob) ob.setAttribute('aria-expanded', 'false');
-      if (oc) {
-        oc.hidden = true;
-        oc.style.display = 'none';
-      }
-    }
-  }
-
-  // Toggle clicked row
-  if (isExpanded) {
-    btn.setAttribute('aria-expanded', 'false');
-    row.classList.remove('active');
-    content.hidden = true;
-    content.style.display = 'none';
-  } else {
-    btn.setAttribute('aria-expanded', 'true');
-    row.classList.add('active');
-    content.hidden = false;
-    content.style.display = 'block';
-  }
-}
-</script>
     <!-- ======================================================== -->
     <section class="cg-ref2-sec" id="faq-section" aria-labelledby="faq-title">
       <div class="cg-container">
@@ -2403,7 +2365,7 @@ function toggleFaqRef2(btn) {
           <div class="cg-ref2-faq-right">
             <!-- FAQ 1 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-1" id="ref2-q-1" onclick="toggleFaqRef2(this)">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-1" id="ref2-q-1">
                 <span class="cg-ref2-faq-question">Apakah bisa custom isi dan desain kemasan hampers?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2414,7 +2376,7 @@ function toggleFaqRef2(btn) {
 
             <!-- FAQ 2 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-2" id="ref2-q-2" onclick="toggleFaqRef2(this)">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-2" id="ref2-q-2">
                 <span class="cg-ref2-faq-question">Berapa minimum jumlah pemesanan (MOQ)?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2425,7 +2387,7 @@ function toggleFaqRef2(btn) {
 
             <!-- FAQ 3 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-3" id="ref2-q-3" onclick="toggleFaqRef2(this)">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-3" id="ref2-q-3">
                 <span class="cg-ref2-faq-question">Berapa lama estimasi proses pengerjaan dan produksi?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2436,7 +2398,7 @@ function toggleFaqRef2(btn) {
 
             <!-- FAQ 4 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-4" id="ref2-q-4" onclick="toggleFaqRef2(this)">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-4" id="ref2-q-4">
                 <span class="cg-ref2-faq-question">Apakah melayani pengiriman langsung ke alamat masing-masing penerima?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2581,7 +2543,7 @@ function toggleFaqRef2(btn) {
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/js/main.js?v=20261121_v12_faq_fixed"></script>
+  <script src="/assets/js/main.js?v=1795252049481"></script>
 
   <script id="cg-ref2-inline-js">
     (function initRef2() {
@@ -2628,45 +2590,7 @@ function toggleFaqRef2(btn) {
           }
         });
 
-        // 3. FAQ Accordion Click (Delegated & Direct for 100% Reliability)
-        const faqContainer = document.querySelector('.cg-ref2-faq-right') || document;
-        faqContainer.addEventListener('click', function(e) {
-          const btn = e.target.closest('.cg-ref2-faq-trigger');
-          if (!btn) return;
-          e.preventDefault();
-
-          const row = btn.closest('.cg-ref2-faq-row');
-          if (!row) return;
-          const content = row.querySelector('.cg-ref2-faq-content');
-          if (!content) return;
-
-          const isExpanded = btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
-
-          // Close all rows
-          document.querySelectorAll('.cg-ref2-faq-row').forEach(function(other) {
-            other.classList.remove('active');
-            const otherBtn = other.querySelector('.cg-ref2-faq-trigger');
-            const otherContent = other.querySelector('.cg-ref2-faq-content');
-            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-            if (otherContent) {
-              otherContent.hidden = true;
-              otherContent.style.display = 'none';
-            }
-          });
-
-          // Toggle current row
-          if (isExpanded) {
-            btn.setAttribute('aria-expanded', 'false');
-            content.hidden = true;
-            content.style.display = 'none';
-            row.classList.remove('active');
-          } else {
-            btn.setAttribute('aria-expanded', 'true');
-            content.hidden = false;
-            content.style.display = 'block';
-            row.classList.add('active');
-          }
-        });
+        // 3. FAQ Accordion handled exclusively by main.js
       }
 
       if (document.readyState === 'loading') {
