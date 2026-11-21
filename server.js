@@ -108,6 +108,14 @@ const server = http.createServer((req, res) => {
     reqUrl = '/blog/corporate-gift-custom-branding-perusahaan.html';
   } else if (reqUrl === '/blog/hampers-relasi-bisnis-dan-strategi-pengadaan-b2b/' || reqUrl === '/blog/hampers-relasi-bisnis-dan-strategi-pengadaan-b2b') {
     reqUrl = '/blog/hampers-relasi-bisnis-dan-strategi-pengadaan-b2b.html';
+  } else if (reqUrl === '/blog/hampers-merchandise-malang/' || reqUrl === '/blog/hampers-merchandise-malang') {
+    reqUrl = '/blog/hampers-merchandise-malang.html';
+  } else if (reqUrl === '/blog/ide-hampers-merchandise-perusahaan-di-malang/' || reqUrl === '/blog/ide-hampers-merchandise-perusahaan-di-malang') {
+    reqUrl = '/blog/ide-hampers-merchandise-perusahaan-di-malang.html';
+  } else if (reqUrl === '/blog/harga-hampers-merchandise-malang/' || reqUrl === '/blog/harga-hampers-merchandise-malang') {
+    reqUrl = '/blog/harga-hampers-merchandise-malang.html';
+  } else if (reqUrl === '/blog/hampers-merchandise-custom-malang/' || reqUrl === '/blog/hampers-merchandise-custom-malang') {
+    reqUrl = '/blog/hampers-merchandise-custom-malang.html';
   } else if (reqUrl === '/assets/videos/vidioproduk.mp4') {
     reqUrl = '/vidioproduk.mp4';
   } else if (reqUrl === '/') {
