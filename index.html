@@ -870,6 +870,11 @@
   display: block !important;
 }
 
+.cg-ref2-faq-row.active .cg-ref2-faq-toggle {
+  transform: rotate(45deg) !important;
+  color: #C59B27 !important;
+}
+
 .cg-ref2-faq-content p {
   margin: 0;
 }
@@ -2340,6 +2345,44 @@
 
     <!-- ======================================================== -->
     <!-- 8. SECTION: FAQ (CLEAN ACCORDION WITH HAIRLINE BORDERS)  -->
+    <script>
+function toggleFaqRef2(btn) {
+  var row = btn.closest('.cg-ref2-faq-row');
+  if (!row) return;
+  var content = row.querySelector('.cg-ref2-faq-content');
+  if (!content) return;
+  var isExpanded = btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
+
+  // Close all other rows
+  var allRows = document.querySelectorAll('.cg-ref2-faq-row');
+  for (var i = 0; i < allRows.length; i++) {
+    var other = allRows[i];
+    if (other !== row) {
+      other.classList.remove('active');
+      var ob = other.querySelector('.cg-ref2-faq-trigger');
+      var oc = other.querySelector('.cg-ref2-faq-content');
+      if (ob) ob.setAttribute('aria-expanded', 'false');
+      if (oc) {
+        oc.hidden = true;
+        oc.style.display = 'none';
+      }
+    }
+  }
+
+  // Toggle clicked row
+  if (isExpanded) {
+    btn.setAttribute('aria-expanded', 'false');
+    row.classList.remove('active');
+    content.hidden = true;
+    content.style.display = 'none';
+  } else {
+    btn.setAttribute('aria-expanded', 'true');
+    row.classList.add('active');
+    content.hidden = false;
+    content.style.display = 'block';
+  }
+}
+</script>
     <!-- ======================================================== -->
     <section class="cg-ref2-sec" id="faq-section" aria-labelledby="faq-title">
       <div class="cg-container">
@@ -2360,7 +2403,7 @@
           <div class="cg-ref2-faq-right">
             <!-- FAQ 1 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-1" id="ref2-q-1">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-1" id="ref2-q-1" onclick="toggleFaqRef2(this)">
                 <span class="cg-ref2-faq-question">Apakah bisa custom isi dan desain kemasan hampers?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2371,7 +2414,7 @@
 
             <!-- FAQ 2 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-2" id="ref2-q-2">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-2" id="ref2-q-2" onclick="toggleFaqRef2(this)">
                 <span class="cg-ref2-faq-question">Berapa minimum jumlah pemesanan (MOQ)?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2382,7 +2425,7 @@
 
             <!-- FAQ 3 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-3" id="ref2-q-3">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-3" id="ref2-q-3" onclick="toggleFaqRef2(this)">
                 <span class="cg-ref2-faq-question">Berapa lama estimasi proses pengerjaan dan produksi?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2393,7 +2436,7 @@
 
             <!-- FAQ 4 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-4" id="ref2-q-4">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-4" id="ref2-q-4" onclick="toggleFaqRef2(this)">
                 <span class="cg-ref2-faq-question">Apakah melayani pengiriman langsung ke alamat masing-masing penerima?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
