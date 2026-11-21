@@ -6353,7 +6353,7 @@ textarea.cg-form-control {
 }
 
 .cg-ref2-faq-row.active .cg-ref2-faq-content {
-  display: block;
+  display: block !important;
 }
 
 .cg-ref2-faq-content {

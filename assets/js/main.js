@@ -198,10 +198,10 @@ function initScrollHeader() {
 }
 
 /**
- * FAQ Accordion with Accessibility
+ * FAQ Accordion with Accessibility & Universal Support
  */
 function initFaqAccordion() {
-  // Handle HTML5 details accordion: close siblings when one is opened
+  // Handle HTML5 details accordion
   const detailsElements = document.querySelectorAll('details.cg-faq-details');
   if (detailsElements.length) {
     detailsElements.forEach(detail => {
@@ -219,36 +219,140 @@ function initFaqAccordion() {
     });
   }
 
+  // Handle .cg-faq-item (Articles & Blog)
   const faqItems = document.querySelectorAll('.cg-faq-item');
-  if (!faqItems.length) return;
-
   faqItems.forEach(item => {
     const btn = item.querySelector('.cg-faq-question, .cg-faq-btn');
-    if (!btn) return;
+    if (!btn || btn.dataset.boundFaq) return;
+    btn.dataset.boundFaq = 'true';
 
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const isActive = item.classList.contains('active') || item.classList.contains('is-open');
-      
-      // Close other items
+      const ans = item.querySelector('.cg-faq-answer, .cg-faq-ans');
+
       faqItems.forEach(other => {
         if (other !== item) {
           other.classList.remove('active', 'is-open');
-          const otherBtn = other.querySelector('.cg-faq-question, .cg-faq-btn');
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          const ob = other.querySelector('.cg-faq-question, .cg-faq-btn');
+          const oa = other.querySelector('.cg-faq-answer, .cg-faq-ans');
+          if (ob) ob.setAttribute('aria-expanded', 'false');
+          if (oa && oa.hasAttribute('hidden')) oa.hidden = true;
         }
       });
 
-      // Toggle current
       if (isActive) {
         item.classList.remove('active', 'is-open');
         btn.setAttribute('aria-expanded', 'false');
+        if (ans && ans.hasAttribute('hidden')) ans.hidden = true;
       } else {
         item.classList.add('active', 'is-open');
         btn.setAttribute('aria-expanded', 'true');
+        if (ans && ans.hasAttribute('hidden')) ans.hidden = false;
+      }
+    });
+  });
+
+  // Handle .cg-ref2-faq-row (Homepage Foto Ke-2 FAQ)
+  const ref2Rows = document.querySelectorAll('.cg-ref2-faq-row');
+  ref2Rows.forEach(row => {
+    const btn = row.querySelector('.cg-ref2-faq-trigger');
+    const content = row.querySelector('.cg-ref2-faq-content');
+    if (!btn || btn.dataset.boundFaq) return;
+    btn.dataset.boundFaq = 'true';
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
+
+      ref2Rows.forEach(other => {
+        if (other !== row) {
+          other.classList.remove('active');
+          const ob = other.querySelector('.cg-ref2-faq-trigger');
+          const oc = other.querySelector('.cg-ref2-faq-content');
+          if (ob) ob.setAttribute('aria-expanded', 'false');
+          if (oc) oc.hidden = true;
+        }
+      });
+
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        row.classList.remove('active');
+        if (content) content.hidden = true;
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        row.classList.add('active');
+        if (content) content.hidden = false;
       }
     });
   });
 }
+
+// Global Event Delegation for 100% reliable click response across all pages
+document.addEventListener('click', (e) => {
+  // 1. Homepage FAQ (.cg-ref2-faq-trigger)
+  const ref2Btn = e.target.closest('.cg-ref2-faq-trigger');
+  if (ref2Btn) {
+    e.preventDefault();
+    const row = ref2Btn.closest('.cg-ref2-faq-row');
+    if (!row) return;
+    const content = row.querySelector('.cg-ref2-faq-content');
+    const isExpanded = ref2Btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
+
+    const allRows = document.querySelectorAll('.cg-ref2-faq-row');
+    allRows.forEach(other => {
+      if (other !== row) {
+        other.classList.remove('active');
+        const ob = other.querySelector('.cg-ref2-faq-trigger');
+        const oc = other.querySelector('.cg-ref2-faq-content');
+        if (ob) ob.setAttribute('aria-expanded', 'false');
+        if (oc) oc.hidden = true;
+      }
+    });
+
+    if (isExpanded) {
+      ref2Btn.setAttribute('aria-expanded', 'false');
+      row.classList.remove('active');
+      if (content) content.hidden = true;
+    } else {
+      ref2Btn.setAttribute('aria-expanded', 'true');
+      row.classList.add('active');
+      if (content) content.hidden = false;
+    }
+    return;
+  }
+
+  // 2. Blog & Article FAQ (.cg-faq-question, .cg-faq-btn)
+  const faqBtn = e.target.closest('.cg-faq-question, .cg-faq-btn');
+  if (faqBtn) {
+    e.preventDefault();
+    const item = faqBtn.closest('.cg-faq-item');
+    if (!item) return;
+    const ans = item.querySelector('.cg-faq-answer, .cg-faq-ans');
+    const isActive = item.classList.contains('active') || item.classList.contains('is-open');
+
+    const container = item.closest('.cg-faq-list') || document;
+    container.querySelectorAll('.cg-faq-item').forEach(other => {
+      if (other !== item) {
+        other.classList.remove('active', 'is-open');
+        const ob = other.querySelector('.cg-faq-question, .cg-faq-btn');
+        const oa = other.querySelector('.cg-faq-answer, .cg-faq-ans');
+        if (ob) ob.setAttribute('aria-expanded', 'false');
+        if (oa && oa.hasAttribute('hidden')) oa.hidden = true;
+      }
+    });
+
+    if (isActive) {
+      item.classList.remove('active', 'is-open');
+      faqBtn.setAttribute('aria-expanded', 'false');
+      if (ans && ans.hasAttribute('hidden')) ans.hidden = true;
+    } else {
+      item.classList.add('active', 'is-open');
+      faqBtn.setAttribute('aria-expanded', 'true');
+      if (ans && ans.hasAttribute('hidden')) ans.hidden = false;
+    }
+  }
+});
 
 /**
  * Portfolio Filter Bar
@@ -871,7 +975,7 @@ function initHeroVideo() {
 /**
  * Homepage 2026 Redesign Interactive Controls (Mitra & Favorit Carousels)
  */
-function initHomepageRedesignInteractions() {
+function initHomepageCarouselControls() {
   const mitraTrack = document.getElementById('mitraLogosTrack');
   const mitraPrev = document.getElementById('mitraPrev');
   const mitraNext = document.getElementById('mitraNext');
@@ -901,6 +1005,7 @@ function initHomepageRedesignInteractions() {
 
 // HOMEPAGE REDESIGN INTERACTION SCRIPT
 function initHomepageRedesignInteractions() {
+  initHomepageCarouselControls();
   // 1. Koleksi Tabs & Thumbnails Switcher (Separuh Foto Separuh Teks)
   const tabs = document.querySelectorAll('.cg-koleksi-tab');
   const slides = document.querySelectorAll('.cg-koleksi-split-card');
