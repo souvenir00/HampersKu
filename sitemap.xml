@@ -474,4 +474,28 @@
       <changefreq>weekly</changefreq>
       <priority>0.85</priority>
     </url>
+  <url>
+    <loc>https://www.hamperscorporate.web.id/blog/hampers-wisuda-malang.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hamperscorporate.web.id/blog/rekomendasi-hampers-wisuda-malang.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hamperscorporate.web.id/blog/hampers-wisuda-custom-malang.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.hamperscorporate.web.id/blog/vendor-hampers-wisuda-malang.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
