@@ -218,54 +218,18 @@ function initFaqAccordion() {
       });
     });
   }
-
-  // Handle .cg-faq-item (Articles & Blog)
-  const faqItems = document.querySelectorAll('.cg-faq-item');
-  faqItems.forEach(item => {
-    const btn = item.querySelector('.cg-faq-question, .cg-faq-btn');
-    if (!btn || btn.dataset.boundFaq) return;
-    btn.dataset.boundFaq = 'true';
-
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isActive = item.classList.contains('active') || item.classList.contains('is-open');
-      const ans = item.querySelector('.cg-faq-answer, .cg-faq-ans');
-
-      faqItems.forEach(other => {
-        if (other !== item) {
-          other.classList.remove('active', 'is-open');
-          const ob = other.querySelector('.cg-faq-question, .cg-faq-btn');
-          const oa = other.querySelector('.cg-faq-answer, .cg-faq-ans');
-          if (ob) ob.setAttribute('aria-expanded', 'false');
-          if (oa && oa.hasAttribute('hidden')) oa.hidden = true;
-        }
-      });
-
-      if (isActive) {
-        item.classList.remove('active', 'is-open');
-        btn.setAttribute('aria-expanded', 'false');
-        if (ans && ans.hasAttribute('hidden')) ans.hidden = true;
-      } else {
-        item.classList.add('active', 'is-open');
-        btn.setAttribute('aria-expanded', 'true');
-        if (ans && ans.hasAttribute('hidden')) ans.hidden = false;
-      }
-    });
-  });
-
-  // Homepage .cg-ref2-faq-row and blog .cg-faq-item are handled uniformly by the global delegated listener below
 }
 
-// Global Event Delegation for 100% reliable click response across all pages
+// Global Single Source of Truth Event Delegation for 100% Reliable FAQ Dropdown
 document.addEventListener('click', (e) => {
-  // 1. Homepage FAQ (.cg-ref2-faq-trigger)
+  // 1. Homepage Section FAQ (.cg-ref2-faq-trigger)
   const ref2Btn = e.target.closest('.cg-ref2-faq-trigger');
   if (ref2Btn) {
     e.preventDefault();
     const row = ref2Btn.closest('.cg-ref2-faq-row');
     if (!row) return;
     const content = row.querySelector('.cg-ref2-faq-content');
-    const isExpanded = ref2Btn.getAttribute('aria-expanded') === 'true' || row.classList.contains('active');
+    const isExpanded = row.classList.contains('active') || ref2Btn.getAttribute('aria-expanded') === 'true';
 
     const allRows = document.querySelectorAll('.cg-ref2-faq-row');
     allRows.forEach(other => {
@@ -290,15 +254,16 @@ document.addEventListener('click', (e) => {
     return;
   }
 
-  // 2. Blog & Article FAQ (.cg-faq-question, .cg-faq-btn)
+  // 2. Blog, Articles & General FAQ Accordion (.cg-faq-question, .cg-faq-btn)
   const faqBtn = e.target.closest('.cg-faq-question, .cg-faq-btn');
   if (faqBtn) {
     e.preventDefault();
     const item = faqBtn.closest('.cg-faq-item');
     if (!item) return;
     const ans = item.querySelector('.cg-faq-answer, .cg-faq-ans');
-    const isActive = item.classList.contains('active') || item.classList.contains('is-open');
+    const isCurrentlyActive = item.classList.contains('active') || item.classList.contains('is-open') || faqBtn.getAttribute('aria-expanded') === 'true';
 
+    // Close other sibling accordions in same list or document
     const container = item.closest('.cg-faq-list') || document;
     container.querySelectorAll('.cg-faq-item').forEach(other => {
       if (other !== item) {
@@ -306,19 +271,31 @@ document.addEventListener('click', (e) => {
         const ob = other.querySelector('.cg-faq-question, .cg-faq-btn');
         const oa = other.querySelector('.cg-faq-answer, .cg-faq-ans');
         if (ob) ob.setAttribute('aria-expanded', 'false');
-        if (oa && oa.hasAttribute('hidden')) oa.hidden = true;
+        if (oa) {
+          oa.removeAttribute('data-open');
+          if (oa.hasAttribute('hidden')) oa.hidden = true;
+        }
       }
     });
 
-    if (isActive) {
+    if (isCurrentlyActive) {
+      // Collapse
       item.classList.remove('active', 'is-open');
       faqBtn.setAttribute('aria-expanded', 'false');
-      if (ans && ans.hasAttribute('hidden')) ans.hidden = true;
+      if (ans) {
+        ans.removeAttribute('data-open');
+        if (ans.hasAttribute('hidden')) ans.hidden = true;
+      }
     } else {
+      // Expand
       item.classList.add('active', 'is-open');
       faqBtn.setAttribute('aria-expanded', 'true');
-      if (ans && ans.hasAttribute('hidden')) ans.hidden = false;
+      if (ans) {
+        ans.setAttribute('data-open', 'true');
+        if (ans.hasAttribute('hidden')) ans.hidden = false;
+      }
     }
+    return;
   }
 });
 
@@ -1015,38 +992,7 @@ function initHomepageRedesignInteractions() {
     th.addEventListener('click', () => switchTab(i));
   });
 
-  // 2. FAQ Accordion Toggle
-  const faqBtns = document.querySelectorAll('.cg-faq-btn');
-  faqBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.cg-faq-item');
-      const ans = item.querySelector('.cg-faq-ans');
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
-      // Close other accordions
-      document.querySelectorAll('.cg-faq-item').forEach((other) => {
-        if (other !== item) {
-          other.classList.remove('active');
-          const otherBtn = other.querySelector('.cg-faq-btn');
-          const otherAns = other.querySelector('.cg-faq-ans');
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          if (otherAns) otherAns.hidden = true;
-        }
-      });
-
-      // Toggle current accordion
-      if (isExpanded) {
-        btn.setAttribute('aria-expanded', 'false');
-        ans.hidden = true;
-        item.classList.remove('active');
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        ans.hidden = false;
-        item.classList.add('active');
-      }
-    });
-  });
-
+  // 2. FAQ Accordion handled exclusively by global event delegation
   // 3. Mitra Logo Slider Controls
   const mitraTrack = document.getElementById('mitraLogosTrack');
   const mitraPrev = document.getElementById('mitraPrev');

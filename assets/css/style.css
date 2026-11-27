@@ -7640,3 +7640,21 @@ aside.col-lg-4,
   border-top: 1px solid #F0EAE1;
   padding-top: 16px;
 }
+
+/* --------------------------------------------------------------------------
+   Enhanced FAQ Accordion Robustness (Articles & Blog)
+   -------------------------------------------------------------------------- */
+.cg-faq-item.active .cg-faq-answer,
+.cg-faq-item.is-open .cg-faq-answer,
+.cg-faq-answer[data-open="true"] {
+  max-height: 800px !important;
+  opacity: 1 !important;
+  transition: max-height 0.35s ease-in-out, opacity 0.25s ease-in-out;
+  padding-bottom: 22px !important;
+}
+
+.cg-faq-item.active .cg-faq-icon,
+.cg-faq-item.is-open .cg-faq-icon {
+  transform: rotate(180deg) !important;
+  color: var(--cg-brown) !important;
+}
