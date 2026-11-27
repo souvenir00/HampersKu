@@ -7658,3 +7658,29 @@ aside.col-lg-4,
   transform: rotate(180deg) !important;
   color: var(--cg-brown) !important;
 }
+
+/* Guarantees 100% FAQ visibility when active */
+.cg-faq-item.active .cg-faq-answer,
+.cg-faq-item.is-open .cg-faq-answer,
+.cg-faq-answer[data-open="true"] {
+  max-height: 1000px !important;
+  opacity: 1 !important;
+  display: block !important;
+  padding-bottom: 22px !important;
+  overflow: visible !important;
+}
+
+.cg-faq-item.active .cg-faq-icon,
+.cg-faq-item.is-open .cg-faq-icon {
+  transform: rotate(180deg) !important;
+  color: var(--cg-brown) !important;
+}
+
+.cg-ref2-faq-row.active .cg-ref2-faq-content {
+  display: block !important;
+}
+
+.cg-ref2-faq-row.active .cg-ref2-faq-toggle {
+  transform: rotate(45deg) !important;
+  color: #C59B27 !important;
+}

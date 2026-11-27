@@ -746,7 +746,7 @@
                 <div class="cg-faq-list mb-5" aria-label="FAQ Seputar Hampers Corporate untuk Anniversary Perusahaan dan Closing Deal yang Meninggalkan Kesan">
                   
                   <div class="cg-faq-item">
-                    <button class="cg-faq-question" aria-expanded="false" id="faq-item-0">
+                    <button class="cg-faq-question" type="button" aria-expanded="false" id="faq-item-0" onclick="toggleArticleFaq(this)">
                       Apa isi hampers corporate yang paling cocok untuk perusahaan?
                       <span class="cg-faq-icon" aria-hidden="true">&#9662;</span>
                     </button>
@@ -755,7 +755,7 @@
                     </div>
                   </div>
                   <div class="cg-faq-item">
-                    <button class="cg-faq-question" aria-expanded="false" id="faq-item-1">
+                    <button class="cg-faq-question" type="button" aria-expanded="false" id="faq-item-1" onclick="toggleArticleFaq(this)">
                       Apakah hampers corporate bisa menggunakan logo perusahaan?
                       <span class="cg-faq-icon" aria-hidden="true">&#9662;</span>
                     </button>
@@ -764,7 +764,7 @@
                     </div>
                   </div>
                   <div class="cg-faq-item">
-                    <button class="cg-faq-question" aria-expanded="false" id="faq-item-2">
+                    <button class="cg-faq-question" type="button" aria-expanded="false" id="faq-item-2" onclick="toggleArticleFaq(this)">
                       Apakah hadiah closing deal harus mahal?
                       <span class="cg-faq-icon" aria-hidden="true">&#9662;</span>
                     </button>
@@ -773,7 +773,7 @@
                     </div>
                   </div>
                   <div class="cg-faq-item">
-                    <button class="cg-faq-question" aria-expanded="false" id="faq-item-3">
+                    <button class="cg-faq-question" type="button" aria-expanded="false" id="faq-item-3" onclick="toggleArticleFaq(this)">
                       Apa perbedaan hampers corporate dengan seminar kit?
                       <span class="cg-faq-icon" aria-hidden="true">&#9662;</span>
                     </button>
@@ -782,7 +782,7 @@
                     </div>
                   </div>
                   <div class="cg-faq-item">
-                    <button class="cg-faq-question" aria-expanded="false" id="faq-item-4">
+                    <button class="cg-faq-question" type="button" aria-expanded="false" id="faq-item-4" onclick="toggleArticleFaq(this)">
                       Berapa minimal pemesanan hampers corporate?
                       <span class="cg-faq-icon" aria-hidden="true">&#9662;</span>
                     </button>
@@ -791,7 +791,7 @@
                     </div>
                   </div>
                   <div class="cg-faq-item">
-                    <button class="cg-faq-question" aria-expanded="false" id="faq-item-5">
+                    <button class="cg-faq-question" type="button" aria-expanded="false" id="faq-item-5" onclick="toggleArticleFaq(this)">
                       Kapan waktu terbaik memesan hampers perusahaan?
                       <span class="cg-faq-icon" aria-hidden="true">&#9662;</span>
                     </button>
@@ -989,8 +989,41 @@
     </div>
   </footer>
 
+  <script>
+    function toggleArticleFaq(btn) {
+      if (!btn) return;
+      var item = btn.closest('.cg-faq-item');
+      if (!item) return;
+      var container = item.closest('.cg-faq-list') || document;
+      var isCurrentlyOpen = item.classList.contains('active') || item.classList.contains('is-open') || btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all items in the same container
+      var allItems = container.querySelectorAll('.cg-faq-item');
+      allItems.forEach(function(el) {
+        el.classList.remove('active', 'is-open');
+        var b = el.querySelector('.cg-faq-question, .cg-faq-btn');
+        if (b) b.setAttribute('aria-expanded', 'false');
+        var a = el.querySelector('.cg-faq-answer, .cg-faq-ans');
+        if (a) {
+          a.removeAttribute('data-open');
+          a.style.maxHeight = null;
+        }
+      });
+
+      // Toggle current item
+      if (!isCurrentlyOpen) {
+        item.classList.add('active', 'is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        var ans = item.querySelector('.cg-faq-answer, .cg-faq-ans');
+        if (ans) {
+          ans.setAttribute('data-open', 'true');
+          ans.style.maxHeight = '800px';
+        }
+      }
+    }
+  </script>
   <!-- Script JS Asli -->
-  <script src="/assets/js/main.js?v=1795252049481"></script>
+  <script src="/assets/js/main.js?v=20261127_faqfix"></script>
 </body>
 
 </html>

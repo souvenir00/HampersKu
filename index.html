@@ -2365,7 +2365,7 @@
           <div class="cg-ref2-faq-right">
             <!-- FAQ 1 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-1" id="ref2-q-1">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-1" id="ref2-q-1" onclick="toggleHomepageFaq(this)">
                 <span class="cg-ref2-faq-question">Apakah bisa custom isi dan desain kemasan hampers?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2376,7 +2376,7 @@
 
             <!-- FAQ 2 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-2" id="ref2-q-2">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-2" id="ref2-q-2" onclick="toggleHomepageFaq(this)">
                 <span class="cg-ref2-faq-question">Berapa minimum jumlah pemesanan (MOQ)?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2387,7 +2387,7 @@
 
             <!-- FAQ 3 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-3" id="ref2-q-3">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-3" id="ref2-q-3" onclick="toggleHomepageFaq(this)">
                 <span class="cg-ref2-faq-question">Berapa lama estimasi proses pengerjaan dan produksi?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2398,7 +2398,7 @@
 
             <!-- FAQ 4 -->
             <div class="cg-ref2-faq-row">
-              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-4" id="ref2-q-4">
+              <button class="cg-ref2-faq-trigger" type="button" aria-expanded="false" aria-controls="ref2-ans-4" id="ref2-q-4" onclick="toggleHomepageFaq(this)">
                 <span class="cg-ref2-faq-question">Apakah melayani pengiriman langsung ke alamat masing-masing penerima?</span>
                 <span class="cg-ref2-faq-toggle" aria-hidden="true">+</span>
               </button>
@@ -2543,7 +2543,51 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="/assets/js/main.js?v=1795252049481"></script>
+  <script src="/assets/js/main.js?v=20261127_faqfix"></script>
+
+  
+  <script>
+    function toggleHomepageFaq(btn) {
+      if (!btn) return;
+      var row = btn.closest('.cg-ref2-faq-row');
+      if (!row) return;
+      var container = row.closest('.cg-ref2-faq-right') || document;
+      var isExpanded = row.classList.contains('active') || btn.getAttribute('aria-expanded') === 'true';
+
+      // Close other items
+      var allRows = container.querySelectorAll('.cg-ref2-faq-row');
+      allRows.forEach(function(r) {
+        if (r !== row) {
+          r.classList.remove('active');
+          var ob = r.querySelector('.cg-ref2-faq-trigger');
+          var oc = r.querySelector('.cg-ref2-faq-content');
+          if (ob) ob.setAttribute('aria-expanded', 'false');
+          if (oc) {
+            oc.setAttribute('hidden', '');
+            oc.style.display = 'none';
+          }
+        }
+      });
+
+      // Toggle current
+      var content = row.querySelector('.cg-ref2-faq-content');
+      if (isExpanded) {
+        btn.setAttribute('aria-expanded', 'false');
+        row.classList.remove('active');
+        if (content) {
+          content.setAttribute('hidden', '');
+          content.style.display = 'none';
+        }
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        row.classList.add('active');
+        if (content) {
+          content.removeAttribute('hidden');
+          content.style.display = 'block';
+        }
+      }
+    }
+  </script>
 
   <script id="cg-ref2-inline-js">
     (function initRef2() {
